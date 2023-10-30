@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--- CSS BOOTSTRAP  -->
+  <title>Leisuri Imóveis</title>
+  <link rel="icon" type="image/x-icon" href="../imagem/leisuriLogo.png">
+  <meta name="viewport" content="width=device-width">
+  <style>
+  
+  </style>
+<body>
+<h1>Criar Usuário</h1>
+
+									<!--FORMULÁRIO-->
+	<form id="form" action="/login/cadastrar-atualizar" method="post">
+		<input type="hidden" name="id" th:value="${usuario.id}">
+		<div class="formulario">
+		<p>Nome do Usuário: <input type="text" id="nome" placeholder="Nome" name="nome" th:value="${usuario.nome}"> </p><br>
+		<p>Email: <input type="text" id="email" placeholder="email@example.com" name="email" th:value="${usuario.email}"></p><br>
+		<p>Telefone: <input type="text" id="telefone" placeholder="(xx)xxxxx-xxxx" name="telefone" th:value="${usuario.telefone}"></p><br>
+		<p>CPF: <input type="text" id="cpf" placeholder="xxx.xxx.xxx-xx" name="cpf" th:value="${usuario.cpf}"></p><br>
+		<p>Endereço: <input type="text" id="endereco" placeholder="Endereço" name="endereco" th:value="${usuario.endereco}"></p><br>
+		<p>Senha: <input type="text" id="senha" placeholder="Senha" name="senha" th:value="${usuario.senha}"></p><br>
+		<button type="submit" class="btn btn-primary btn-block mb-4">Enviar</button>
+		</form>
+		</div>
+</body>
+</html>  

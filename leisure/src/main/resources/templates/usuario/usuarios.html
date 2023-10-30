@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--- CSS BOOTSTRAP  -->
+  <title>Leisuri Imóveis - Login</title>
+  <link rel="icon" type="image/x-icon" href="../imagem/leisuriLogo.png">
+  <meta name="viewport" content="width=device-width">
+  <style>
+  
+  </style>
+ <body> 
+  <h1>Tabela de usuários</h1>
+		<table border="1">
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>Telefone</th>
+				<th>CPF</th>
+				<th>Endereço</th>
+				<th>Senha</th>
+			</tr>
+			<tr th:each="login : ${usuarios}">
+				<td>
+					<span th:text="${usuario.id}"></span>
+				</td>
+				<td>
+					<span th:text="${usuario.nome}"></span>
+				</td>
+				<td>
+					<span th:text="${usuario.email}"></span>
+				</td>
+								<td>
+					<span th:text="${usuario.telefone}"></span>
+				</td>
+								<td>
+					<span th:text="${usuario.cpf}"></span>
+				</td>
+								<td>
+					<span th:text="${usuario.endereco}"></span>
+				</td>
+								<td>
+					<span th:text="${usuario.senha}"></span>
+				</td>
+			</tr>
+		</table>
+ </body>
+ </html>

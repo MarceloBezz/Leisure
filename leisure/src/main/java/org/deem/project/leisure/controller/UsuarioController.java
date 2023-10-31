@@ -28,7 +28,7 @@ public class UsuarioController {
 	@GetMapping("/usuario/criar")
 	public String novo(Model model) {
 		model.addAttribute("usuario", new Usuario());
-		return "usuario/criar-usuario";
+		return "usuario/usuario-beta/criar-usuario";
 	}
 
 	// ATUALIZAR DADOS
@@ -37,10 +37,10 @@ public class UsuarioController {
 		Usuario usuario = buscarPorId(id);
 		if (usuario != null) {
 			model.addAttribute("usuario", usuario);
-			return "usuario/criar-usuario";
+			return "usuario/usuario-beta/criar-usuario";
 		}
 		redirect.addFlashAttribute("mensagem", "Usuario não existente");
-		return "uasuario/criar-usuario";
+		return "usuario/usuario-beta/criar-usuario";
 	}
 
 	// DELETAR USUÁRIO
@@ -118,7 +118,7 @@ public class UsuarioController {
 //-------------------- MÉTODO CHAMADO ATRAVÉS DO FORM ACTION E METHOD, NO HTML --------//
 	@PostMapping("/login/cadastrar-atualizar")
 	public ModelAndView criarOuAtualizar(Usuario usuario, RedirectAttributes redirect) {
-		ModelAndView modelView = new ModelAndView("usuario/login");
+		ModelAndView modelView = new ModelAndView("usuario/usuario-beta/login");
 		if (usuario.getId() == 0) {
 			inserir(usuario);
 			redirect.addFlashAttribute("mensagem", "Usuario criado com sucesso!");
@@ -133,7 +133,7 @@ public class UsuarioController {
 
 	@GetMapping("/login/usuarios")
 	public ModelAndView usuarios() {
-		ModelAndView modelView = new ModelAndView("usuario/usuarios");
+		ModelAndView modelView = new ModelAndView("usuario/usuario-beta/usuarios");
 		modelView.addObject("usuarios", lista);
 		return modelView;
 	}
@@ -142,7 +142,7 @@ public class UsuarioController {
 	@GetMapping("/cadastro")
 	public String cadastrar(Model model) {
 		model.addAttribute("usuario", new Usuario());
-		return "usuario/logar-ou-cadastrar";
+		return "usuario/usuario-beta/logar-ou-cadastrar";
 	}
 	
 	@PostMapping("/cadastro")
@@ -151,7 +151,7 @@ public class UsuarioController {
 		Usuario usuarioEncontrado = buscarUsuario(nome, senha);
 		if (usuarioEncontrado != null) {
 			model.addAttribute("usuario", usuarioEncontrado);
-			return "usuario/login";
+			return "usuario/usuario-beta/login";
 		}
 		return "usuario-senha-invalido";
 	}

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leisuri Imóveis</title>
+  <link rel="icon" type="image/x-icon" th:href="@{/imagem/leisuriLogo.png}">
+  <meta name="viewport" content="width=device-width">
+  <!-- -----------------------------------------------------------------ESTILOS------------------------------------------------------------------ -->
+  <!-- BOOTSTRAP CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="./style/bootstrap/css/bootstrap.css" rel="Stylesheet"/> -->
+  
+  <!-- SWIPER -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet">
+  <!-- <link href="./style/swiper/swiper-bundle.css" rel="stylesheet"/> -->
+  
+  <!-- @MEDIA -->
+  <link th:href="@{/style/mediaStyleBoot.css}" rel="Stylesheet"/>
+  
+  <!-- FONTAWESOME 6.4.2 ICONS -->
+  <script src="https://kit.fontawesome.com/4c7894104f.js" crossorigin="anonymous"></script>
+  <!-- <link href="./style/fontawesome/css/all.css" rel="Stylesheet"/>
+  <link href="./style/fontawesome/css/brands.css" rel="Stylesheet"/>
+  <link href="./style/fontawesome/css/fontawesome.css" rel="Stylesheet"/> -->
+</head>
+
+<body>
+  <!-- MENU GRANDE -->
+  <div class="grande">
+    <div class="container-fluid faixa-nav fixed-top"></div>
+    <div class="container fixed-top">
+      <div id="barraPesquisa" class="col-7">
+        <form class="d-flex mx-auto" role="search">
+          <input class="form-control form-control-lg" type="search" placeholder="Pesquisar" aria-label="Search">
+          <button id="botaoPesquisa" class="btn btn-lg" type="submit">⌕</button>
+        </form>
+      </div>
+      <div class="gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary login-register position-absolute end-0" data-bs-target="#exampleModalToggle"
+          data-bs-toggle="modal"><i class="fa-solid fa-user"></i>Login</button>
+      </div>
+    </div>
+    <nav class="navMargin navbar navbar-expand-sm fixed-top mb-2">
+      <div id="nav-fixed" class="container">
+        <div id="hoverMenu" class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Apartamentos</a></li>
+                <li><a class="dropdown-item" href="#">Casas</a></li>
+                <li><a class="dropdown-item" href="#">Sitios</a></li>
+                <li><a class="dropdown-item" href="#">Terrenos</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Corretores</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servicos-area">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#time-area">Time</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Anunciar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#bottomMenu">Contatos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="faq.html">Duvidas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- MENU PEQUENO -->
+  <div class="pequeno">
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid ">
+        <img id="mini-home" class="navbar-brand" th:src="@{imagem/mini-home.png}" alt="Inicio">
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Anunciar</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Apartamentos</a></li>
+                <li><a class="dropdown-item" href="#">Casas</a></li>
+                <li><a class="dropdown-item" href="#">Sitios</a></li>
+                <li><a class="dropdown-item" href="#">Terrenos</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Corretores</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servicos-area">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#time-area">Time</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#bottomMenu">Contatos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="faq.html">Duvidas</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+            <button id="botaoPesquisa" class="btn btn-lg" type="submit">⌕</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- MINI IMAGENS -->
+  <div class="container-fluid">
+    <div id="container-topMini" class="row">
+      <div class="col-12">
+        <img id="offPequeno" class="img-fluid mt-2 rounded-3" th:src="@{/anuncio/10OFFmini.png}" alt="10OFF ">
+      </div>
+      <div class="col-12">
+        <img id="offPequeno" class="img-fluid mt-1 rounded-3" th:src="@{/anuncio/20OFFmini.png}" alt="20OFF">
+      </div>
+      <div class="col-12">
+        <img id="offPequeno" class="img-fluid mt-1 rounded-3" src="@{/anuncio/50OFFmini.png}" alt="50OFF">
+      </div>
+    </div>
+  </div>
+  <!-- CAROUSEL -->
+  <div id="container-top" class="container-fluid">
+    <div class="row">
+      <div class="col-10 mx-auto">
+        <div id="carouselExampleAutoplaying" class="carousel slide mt-2" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+              <img src="./anuncio/anuncio1.png" class="d-block w-100" alt="Banner">
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+              <img src="./anuncio/anuncio2.png" class="d-block w-100" alt="Banner">
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+              <img src="./anuncio/anuncio3.png" class="d-block w-100" alt="Banner">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+          </button>
+        </div>
+        <!-- ANUNCIO DE PRODUTOS -->
+        <div id="anuncios-area">
+          <div class="container mt-5 mb-5">
+            <div class="row just-content-center swiper mySwiper mx-auto">
+              <div class="swiper-wrapper col-md-3">
+                <div class="swiper-slide col-md-3">
+                  <div class="card" style="width: 90%; height: auto;">
+                    <img src="./anuncio/card/card01.png" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">R$2.000.000,00</h5>
+                      <p class="card-text"><i class="fa-solid fa-bed"></i> Quartos:</p>
+                      <p class="card-text"><i class="fa-solid fa-shower"></i> Banheiros:</p>
+                      <p class="card-text"><i class="fa-solid fa-car"></i> Vagas :</p>
+                      <a href="#" alt="Local"><i class="fa-solid fa-location-dot"></i> Barueri-SP</a>
+                      <a href="#" class="btn btn-primary">Falar com anunciante</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide col-md-3">
+                  <div class="card" style="width: 90%; height: auto;">
+                    <img src="@{anuncio/card/card02.png}" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">R$2.000.000,00</h5>
+                      <p class="card-text"><i class="fa-solid fa-bed"></i> Quartos:</p>
+                      <p class="card-text"><i class="fa-solid fa-shower"></i> Banheiros:</p>
+                      <p class="card-text"><i class="fa-solid fa-car"></i> Vagas :</p>
+                      <a href="#" alt="Local"><i class="fa-solid fa-location-dot"></i> Barueri-SP</a>
+                      <a href="#" class="btn btn-primary">Falar com anunciante</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide col-md-3">
+                  <div class="card" style="width: 90%; height: auto;">
+                    <img src="./anuncio/card/card03.png" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">R$2.000.000,00</h5>
+                      <p class="card-text"><i class="fa-solid fa-bed"></i> Quartos:</p>
+                      <p class="card-text"><i class="fa-solid fa-shower"></i> Banheiros:</p>
+                      <p class="card-text"><i class="fa-solid fa-car"></i> Vagas :</p>
+                      <a href="#" alt="Local"><i class="fa-solid fa-location-dot"></i> Barueri-SP</a>
+                      <a href="#" class="btn btn-primary">Falar com anunciante</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide col-md-3">
+                  <div class="card" style="width: 90%; height: auto;">
+                    <img src="./anuncio/card/card04.png" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">R$2.000.000,00</h5>
+                      <p class="card-text"><i class="fa-solid fa-bed"></i> Quartos:</p>
+                      <p class="card-text"><i class="fa-solid fa-shower"></i> Banheiros:</p>
+                      <p class="card-text"><i class="fa-solid fa-car"></i> Vagas :</p>
+                      <a href="#" alt="Local"><i class="fa-solid fa-location-dot"></i> Barueri-SP</a>
+                      <a href="#" class="btn btn-primary">Falar com anunciante</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+        <!-- IMAGENS GRANDE -->
+        <div class="row">
+          <div id="OFF" class="col-4">
+            <img id="offGrandeL" class="img-fluid" src="./anuncio/10OFF.png" alt="10OFF ">
+          </div>
+          <div id="OFF" class="col-4">
+            <img id="offGrandeC" class="img-fluid" src="./anuncio/20OFF.png" alt="20OFF">
+          </div>
+          <div id="OFF" class="col-4">
+            <img id="offGrandeR" class="img-fluid" src="./anuncio/50OFF.png" alt="50OFF">
+          </div>
+        </div>
+      </div>
+      <!-- SOBRE NÓS -->
+      <div id="sobre">
+        <div class="container mt-3">
+          <div class="row">
+            <div class="col-12">
+              <h3 class="main-title">Sobre a Leisuri Imóveis</h3>
+              <h3 class="barra"></h3>
+            </div>
+            <div class="col-md-6 mb-5">
+              <img id="escritorioImg" class="img-fluid mt-5" src="./imagem/escritorio.png" alt="Leisuri Imóveis">
+            </div>
+            <div class="col-md-6 mt-5">
+              <h3></h3>
+              <h4 class="sub-title mt-2">Compromisso</h4>
+              <p>
+                Na Leisuri Imóveis, estamos empenhados em ajudar você a encontrar o lar perfeito, onde possa
+                criar memórias preciosas e viver momentos especiais. Somos o resultado de uma colaboração com a
+                DEEM, uma empresa especializada no desenvolvimento de sites e aplicativos para terceiros.
+              </p>
+              <h4 class="sub-title mt-5">Nossa Missão</h4>
+              <p>
+                Nossa missão é simplificar a busca por imóveis. Com um catálogo diversificado, que abrange desde
+                apartamentos urbanos a casas espaçosas nos subúrbios, oferecemos opções para todos os estilos de
+                vida e orçamentos.
+              </p>
+              <h4 class="sub-title mt-5">O Que Nos Torna Únicos</h4>
+              <p>
+                Na Leisuri Imóveis, nos destacamos pelo nosso comprometimento com a qualidade e a satisfação
+                do cliente.
+              </p>
+              <ul id="sobre-lista">
+                <li><i><b>✓</b></i>Tecnologias modernas</li>
+                <li><i><b>✓</b></i>Itegração de dados</li>
+                <li><i><b>✓</b></i>Facilidade de acesso</li>
+                <li><i><b>✓</b></i>Selos de qualidade</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SERVIÇOS DA EMPRESA -->
+      <div id="servicos-area">
+        <div id="container-top" class="container">
+          <div class="row">
+            <div class="col-12">
+              <h3 class="main-title">Nossa especialidade</h3>
+              <h3 class="barra"></h3>
+            </div>
+            <div class="col-md-4 servicos-box mt-5">
+              <i class="fas fa-mobile-alt"></i>
+              <h4>Aplicativos Nativos</h4>
+              <p>Utilizamos o poder dos dispositivos móveis para melhor experiência, afinal estamos na era da tecnologia
+                na palma da mão, podemos fazer nossas compras até do banheiro, não é mesmo? rsrs.</p>
+            </div>
+            <div class="col-md-4 servicos-box mt-5">
+              <i class="fas fa-shopping-cart"></i>
+              <h4>E-commerce</h4>
+              <p>Nós trabalhamos fazendo uma conexão entre cliente e vendedor para melhor atende-los e também para que
+                você não saia do conforto de sua casa tomando aquela água de coco ;)</p>
+            </div>
+            <div class="col-md-4 servicos-box mt-5">
+              <i class="fas fa-paint-brush"></i>
+              <h4>Design Criativo</h4>
+              <p>Temos um design moderno, atraente e fácil de utilizar para você encontrar tudo o que precisa. Também
+                pensamos naquelas pessoas que gostam de ver só as imagens nos livros, por isso temos bastante imagens
+                ilustrando nosso conteúdo. *-*</p>
+            </div>
+            <div class="col-md-4 servicos-box mt-5">
+              <i class="fab fa-google"></i>
+              <h4>Expert em SEO</h4>
+              <p>Visibilidade e classificação em motores de busca garantindo maior alcance. Todo mundo quer ser top nos
+                resultados de pesquisa. Hahaha.</p>
+            </div>
+            <div class="col-md-4 servicos-box mt-5">
+              <i class="fas fa-hands-helping"></i>
+              <h4>Suporte 24/7</h4>
+              <p>Para melhor atende-lo temos um suporte 24 horas por dia para ajudar com dúvidas ou até mesmo resolver
+                aquele probleminha chato. =/</p>
+            </div>
+            <div class="col-md-4 servicos-box mt-5">
+              <i class="fas fa-server"></i>
+              <h4>Experiência em Servidores</h4>
+              <p>Haaaa, vale muito a pena lembrar que nosso site e o aplicativo mobile são integrados em um unico banco
+                de dados, ou seja, tudo que você fizer em nosso site também estará no App. Arrasamos!!! =D</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- DADOS -->
+      <div id="dados-area">
+        <div class="container-fluid">
+          <div class="row mx-auto">
+            <div class="col-12 main-title">
+            </div>
+            <div class="col-md-12 dadosImg parallax" style="background-image: url('./imagem/cidadeFundo.png');">
+              <div class="row mx-auto">
+                <div class="col-md-4 mt-5 dados-box">
+                  <i class="fa-regular fa-pen-to-square"></i>
+                  <h4>Satisfação</h4>
+                  <p>Milhares de contratos assinados e clientes satisfeitos com o seu negócio.</p>
+                </div>
+                <div class="col-md-4 mt-5 dados-box">
+                  <i class="fa-solid fa-seedling"></i>
+                  <h4>Sustentabilidade</h4>
+                  <p>Além de contribuir com o meio ambiente, imóveis sustentáveis tem amis benefil com a gente.</p>
+                </div>
+                <div class="col-md-4 mt-5 dados-box">
+                  <i class="fa-solid fa-medal"></i>
+                  <h4>Qualidade Garantida</h4>
+                  <p>Garantimos a transparência, qualidade e preços conpativeis com o mercado para melhor atende-lo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- TIME -->
+      <div id="time-area">
+        <div class="container mt-5 mb-5">
+          <div class="col-12" id="nosso-time">
+            <h3 class="main-title">Nosso time</h3>
+            <h3 class="barra"></h3>
+          </div>
+          <div class="row just-content-center swiper mySwiper mx-auto">
+            <div class="swiper-wrapper col-md-3">
+              <div class="swiper-slide col-md-3">
+                <div id="card-body-time" class="card" style="width: 90%; height: auto;">
+                  <img src="./imagem/Danilo.jpg" class="card-img-top img-fluid" alt="Danilo">
+                  <div class="card-body">
+                    <h5 class="card-title">Danilo da Cruz</h5>
+                    <p class="card-text-time">Fundador - CEO</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide col-md-3">
+                <div id="card-body-time" class="card" style="width: 90%; height: auto;">
+                  <img src="./imagem/Enzo.jpg" class="card-img-top img-fluid" alt="Enzo">
+                  <div class="card-body">
+                    <h5 class="card-title">Enzo Brito</h5>
+                    <p class="card-text-time">Cofundador - DEV/DBA</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide col-md-3">
+                <div id="card-body-time" class="card" style="width: 90%; height: auto;">
+                  <img src="./imagem/Esau.jpg" class="card-img-top img-fluid" alt="Esau">
+                  <div class="card-body">
+                    <h5 class="card-title">Esau Isaac</h5>
+                    <p class="card-text-time">Cofundador - DEV</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide col-md-3">
+                <div id="card-body-time" class="card" style="width: 90%; height: auto;">
+                  <img src="./imagem/Marcelo.jpg" class="card-img-top img-fluid" alt="Marcelo">
+                  <div class="card-body">
+                    <h5 class="card-title">Marcelo Bezerra</h5>
+                    <p class="card-text-time">Cofundador - QA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- TRABALHE CONOSCO -->
+  <div id="trabalhe-area">
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <div class="col-md-6 trabalhe-box parallax-trabalhe" id="empresa-img"></div>
+        <div class="col-md-6 trabalhe-box" id="padrao-img">
+          <h4>Gosta de desafios?</h4>
+          <p>Temos várias posições abertas, entre elas: Software Engineer, UI/UX Designer, Project Manager e mais.
+          </p>
+          <p>Clique no botão abaixo e confira os beneficios e as posições em aberto.</p>
+          <p>Aqui você terá chance de trabalhar com as melhores tecnologias e os profissionais mais capacitados.</p>
+          <a href="#" class="btn btn-primary rounded-5" id="apply-btn" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Bora!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- RODAPÉ -->
+  <div id="bottomMenu" class="container mt-5">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Sessões</h5>
+          <ul class="nav flex-column d-inline-block">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Sobre</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Serviços</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Time</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Dúvidas</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Categorias</h5>
+          <ul class="nav flex-column d-inline-block">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Apartamentos</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Casas</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Sitios</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terrenos</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Corretores</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Contato</h5>
+          <ul class="nav flex-column d-inline-block">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">E-mail</a></li>
+            <li class="nav-item mb-2"><a href="https://twitter.com/" target="_blank" class="nav-link p-0 text-body-secondary">Twitter</a></li>
+            <li class="nav-item mb-2"><a href="https://instagram.com/" target="_blank" class="nav-link p-0 text-body-secondary">Instagram</a></li>
+            <li class="nav-item mb-2"><a href="https://facebook.com/" target="_blank" class="nav-link p-0 text-body-secondary">Facebook</a></li>
+            <li class="nav-item mb-2"><a href="https://whatsapp.com/" target="_blank" class="nav-link p-0 text-body-secondary">Whatsapp</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-md-5 offset-md-1 mb-3 mt-5">
+          <form>
+            <h5>Se inscreva para receber todas as novidades</h5>
+            <!-- <p>Monthly digest of what's new and exciting from us.</p> -->
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Email address</label>
+              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+              <button class="btn btn-primary" type="button">Inscrever</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p>&copy;2023 DEEM Apps. Development.</p>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3"><a class="link-body-emphasis" href="https://twitter.com/" target="_blank"><i class="fa-brands fa-square-twitter fa-2xl"></i></a></li>
+          <li class="ms-3"><a class="link-body-emphasis" href="https://instagram.com/" target="_blank"><i class="fa-brands fa-instagram fa-2xl"></i></a></li>
+          <li class="ms-3"><a class="link-body-emphasis" href="https://facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook fa-2xl"></i></a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+  <!-- MODAL -->
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="col-md-12 d-flex justify-content-end">
+          <button id="close-cadastro" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>          
+        <div class="row mx-auto">
+          <div class="col-md-12 mx-auto">
+            <h1 class="modal-title fs-5 mt-5 mb-4" id="exampleModalToggleLabel">Login</h1>
+          </div> 
+        </div>
+        <div class="modal-body">
+          <!-- FORM LOGIN -->
+          <form class="row g-3">
+            <div class="col-md-7 mx-auto">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-7 mx-auto">
+              <label for="inputPassword4" class="form-label">Password</label>
+              <input type="password" class="form-control" id="inputPassword4">
+            </div>
+          </form>
+        </div>
+        <div class="mx-auto">
+          <button type="submit" class="btn btn-success mt-5 mb-3">Entrar</button>
+          <button class="btn btn-primary login-btn mt-5 mb-3" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Não tenho Cadastro</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- CADASTRO -->
+  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="col-md-12 d-flex justify-content-end">
+          <button id="close-cadastro" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="row mx-auto">
+          <div class="col-md-12 mx-auto">
+            <h1 class="modal-title fs-5 mt-5 mb-4" id="exampleModalToggleLabel2">Cadastro</h1>
+          </div> 
+        </div>
+        <div class="modal-body">
+          <form class="row g-3" method="get" action=".">
+            <div class="col-md-12">
+              <label for="inputNome" class="form-label">Nome completo</label>
+              <input type="text" class="form-control" id="inputNome">
+            </div>
+            <div class="col-md-12">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-12">
+              <label for="inputData" class="form-label">Data de Nascimento</label>
+              <input type="date" class="form-control" id="inputData">
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Repetir senha</label>
+              <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-md-3">
+              <label>Cep: <input class="form-control" name="cep" type="text" id="cep" value="" maxlength="9" onblur="pesquisacep(this.value);" /></label><br />
+            </div>
+            <div class="col-md-9">
+              <label>Rua: <input class="form-control" name="rua" type="text" id="rua" size="100" readonly /></label><br />
+            </div>
+            <div class="col-md-7">
+              <label>Cidade: <input class="form-control" name="cidade" type="text" id="cidade" size="100" readonly /></label><br />
+            </div>
+            <div class="col-md-3">
+              <label>Estado: <input class="form-control" name="uf" type="text" id="uf"  readonly /></label><br />
+            </div> 
+            <div class="col-md-2">
+              <label>Número: <input class="form-control" name="numero" type="text" id="numero" size="40" maxlength="5" /></label><br />
+            </div>
+            <div class="col-md-12">
+              <label>Ponto de referência: <input class="form-control" name="numero" type="text" id="numero" size="100" maxlength="100" /></label><br />
+            </div> 
+          </form>
+        </div>
+        <div class="mx-auto">
+          <button type="submit" class="btn btn-success mt-5 mb-3">Enviar</button>
+        <button class="btn btn-primary register-btn mt-5 mb-3" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Já tenho Cadastro</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL TRABALHE CONOSCO -->
+  <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="col-md-12 d-flex justify-content-end">
+          <button id="close-cadastro" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="row mx-auto">
+          <div class="col-md-12 mx-auto">
+            <h1 class="modal-title fs-5 mt-5 mb-4" id="exampleModalToggleLabel3">VENHA FAZER PARTE DA NOSSA EQUIPE</h1>
+          </div> 
+        </div>
+        <div class="modal-body">
+          <form class="row g-3" method="get" action=".">
+            <div class="col-md-12">
+              <label for="inputName" class="form-label">Nome completo</label>
+              <input type="text" class="form-control" id="inputName">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCpf" class="form-label">CPF</label>
+              <input type="number" class="form-control" id="inputCpf">
+            </div>
+            <div class="col-md-6">
+              <label for="inputDate" class="form-label">Data de nascimento</label>
+              <input type="date" class="form-control" id="inputDate">
+            </div>
+            <div class="col-md-12">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            
+            <!-- <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Repetir senha</label>
+              <input type="password" class="form-control" id="inputPassword4">
+            </div> -->
+            <div class="col-md-6">
+              <label>Cep: <input class="form-control" name="cep" type="text" id="cep" value="" maxlength="9" onblur="pesquisacep(this.value);" /></label><br />
+            </div>
+            <div class="col-md-12 mb-4">
+              <span><a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank">Não sei meu cep</a></span><br />
+            </div>
+            <div class="col-md-9">
+              <label>Rua: <input class="form-control" name="rua" type="text" id="rua" size="100" readonly /></label><br />
+            </div>
+            <div class="col-md-7">
+              <label>Cidade: <input class="form-control" name="cidade" type="text" id="cidade" size="100" readonly /></label><br />
+            </div>
+            <div class="col-md-3">
+              <label>Estado: <input class="form-control" name="uf" type="text" id="uf"  readonly /></label><br />
+            </div> 
+            <div class="col-md-2">
+              <label>Número: <input class="form-control" name="numero" type="text" id="numero" size="40" maxlength="5" /></label><br />
+            </div>
+            <div class="col-md-12">
+              <label>Ponto de referência: <input class="form-control" name="numero" type="text" id="numero" size="100" maxlength="100" /></label><br />
+            </div>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Selecione a área desejada</option>
+              <option value="1">Front-End</option>
+              <option value="2">Back-End</option>
+              <option value="3">Full-Stack</option>
+              <option value="4">Segurança da Informação</option>
+              <option value="5">IA e Machine Learning</option>
+              <option value="6">DBA</option>
+              <option value="7">Marketing</option>
+              <option value="8">Financeiro</option>
+              <option value="9">RH</option>
+              <option value="10">Tecnico em Informática</option>
+              <option value="11">Support</option>
+              <option value="12">QA</option>
+              <option value="13">Software Enginner</option>
+              <option value="14">Project Manager</option>
+            </select>
+            <div class="col-mb-12">
+              <label for="validationTextarea" class="form-label">Sobre mim</label>
+              <textarea class="form-control" placeholder="Em poucas palavras fale sobre você e seus objetivos"></textarea>
+            </div>
+            <div class="col-md-12 mx-auto d-flex tex-center">
+              <label for="curriculo" id="enviarCuriculo" class="d-block mt-2 mx-auto">Enviar curriculo <i class="fa-regular fa-file-word"></i></label> 
+              <input id="curriculo" type="file" accept=".doc, .dox, .pdf, .png, .jpg" style="display: none">
+            </div>  
+          </form>
+        </div>
+        <div class="mx-auto">
+          <button type="submit" class="btn btn-success mt-5 mb-3" onclick="curriculoEnviado()">Enviar</button>
+        <!-- <button class="btn btn-primary register-btn mt-5 mb-3" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Já tenho Cadastro</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- -----------------------------------------------------------------SCRIPTS------------------------------------------------------------------ -->
+  <!-- JS SWIPER -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!-- <script src="./style/swiper/swiper-bundle.js"></script> -->
+  
+  <!-- JS BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="./style/bootstrap/js/bootstrap.js"></script> -->
+  <!-- <script src="./style/bootstrap/js/bootstrap.bundle.js"></script> -->
+  <!-- JS -->
+  <script th:src="@{/style/ScriptBoot.js}"></script>
+</body>
+</html>

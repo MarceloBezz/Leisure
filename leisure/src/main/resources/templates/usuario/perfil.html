@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leisuri Imóveis</title>
+  <link rel="icon" type="image/x-icon" href="/imagem/leisuriLogo.png">
+  <meta name="viewport" content="width=device-width">
+  <!-- -----------------------------------------------------------------ESTILOS------------------------------------------------------------------ -->
+  <!-- BOOTSTRAP CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="./style/bootstrap/css/bootstrap.css" rel="Stylesheet"/> -->
+  
+  <!-- SWIPER -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet">
+  <!-- <link href="./style/swiper/swiper-bundle.css" rel="stylesheet"/> -->
+  
+  <!-- @MEDIA -->
+  <link th:href="@{style/mediaStyleBoot.css}" rel="Stylesheet"/>
+  
+  <!-- FONTAWESOME 6.4.2 ICONS -->
+  <script src="https://kit.fontawesome.com/4c7894104f.js" crossorigin="anonymous"></script>
+  <!-- <link href="./style/fontawesome/css/all.css" rel="Stylesheet"/>
+  <link href="./style/fontawesome/css/brands.css" rel="Stylesheet"/>
+  <link href="./style/fontawesome/css/fontawesome.css" rel="Stylesheet"/> -->
+</head>
+
+<body>
+  <!-- MENU GRANDE -->
+  <div class="grande">
+    <div class="container-fluid faixa-nav-2 fixed-top"></div>
+    <div class="container fixed-top">
+      <div id="barraPesquisa" class="col-7">
+        <form class="d-flex mx-auto" role="search">
+          <input class="form-control form-control-lg" type="search" placeholder="Pesquisar" aria-label="Search">
+          <button id="botaoPesquisa" class="btn btn-lg" type="submit">⌕</button>
+        </form>
+      </div>
+      <button id="botaoPerfil" class="btn position-absolute" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="./imagem/Danilo.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong>Danilo</strong>
+          </a>
+          <ul class="dropdown-menu text-small shadow mt-2">
+            <li><a class="dropdown-item pointer" onclick="anunciar()">Anunciar</a></li> <!-- data-bs-toggle="modal" data-bs-target="#anunciarModal"-->
+            <li><a class="dropdown-item pointer" onclick="meusAnuncios()">Meus anuncios</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item pointer" onclick="meusDados()">Meus dados</a></li>
+            <li><a class="dropdown-item pointer" >Favoritos</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="Index.html">Sair</a></li>
+          </ul>
+        </div>
+      </button>
+    </div>
+  </div>
+  <!-- PROFILE MENU --> 
+  <div class="container-fluid anunciar-cont">
+    <div class="row">
+      <div class="col-md-12 d-flex">
+        <div class="perfil p-3 ">
+          <a href="#" class="d-flex mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <span class="fs-4">Bem-vido(a)</span>
+          </a>
+          <hr>
+          <ul class="nav nav-pills d-flex flex-column mb-auto">
+            <li class="nav-item">
+              <a class="pointer nav-link active d-flex" aria-current="page" onclick="anunciar()"> <!--data-bs-toggle="modal" data-bs-target="#anunciarModal" -->
+                <i class="fa-solid fa-house-medical d-flex align-items-center me-2"></i> Anunciar  
+              </a>
+            </li>
+            <li>
+              <a class="pointer nav-link link-body-emphasis d-flex" onclick="meusAnuncios()">
+                <i class="fa-solid fa-house-flag d-flex align-items-center me-2"></i>Meus anuncios
+              </a>
+            </li>
+            <br>
+            <li>
+              <a class="pointer nav-link link-body-emphasis d-flex" onclick="meusDados()">
+                <i class="fa-solid fa-user-pen d-flex align-items-center me-2"></i>Meus dados
+              </a>
+            </li>
+            <li>
+              <a class="pointer nav-link link-body-emphasis d-flex" onclick="favoritos()">
+                <i class="fa-solid fa-star d-flex align-items-center me-2""></i>Favoritos
+              </a>
+            </li>
+            <li>
+              <a href="Index.html" class="pointer nav-link link-body-emphasis d-flex" onclick="sair()"> <!--FAZER A FUNÇÃO DE LOGOUT -->
+                <i class="fa-solid fa-right-from-bracket d-flex align-items-center me-2"></i>Sair
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- IFRAME -->
+        <iframe class="frame-anunciar mt-5" src="anunciar.html" frameborder="0"></iframe>
+        <iframe class="frame-meus-anuncios mt-5" src="meus-anuncios.html" frameborder="0"></iframe>
+        <iframe class="frame-meus-dados mt-5" src="meus-dados.html" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+  <!-- MENU PEQUENO -->
+  <div class="pequeno">
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid ">
+        <img id="mini-home" class="navbar-brand" src="./imagem/mini-home.png" alt="Inicio">
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <!-- <span class="navbar-toggler-icon"></span> -->
+          <span>
+            <img src="./imagem/Danilo.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
+          </span>
+        </button>
+        <div class="collapse navbar-collapse mt-4" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- <li class="nav-item">
+              <a class="nav-link active" href="#" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Perfil</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link active d-flex pointer" aria-current="page" onclick="anunciarMini()"><i class="fa-solid fa-house-medical d-flex align-items-center me-2"></i>Anunciar</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Categorias</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Apartamentos</a></li>
+                <li><a class="dropdown-item" href="#">Casas</a></li>
+                <li><a class="dropdown-item" href="#">Sitios</a></li>
+                <li><a class="dropdown-item" href="#">Terrenos</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Corretores</a></li>
+              </ul>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link d-flex pointer" onclick="meusAnunciosMini()"><i class="fa-solid fa-house-flag d-flex align-items-center me-2"></i>Meus anúncios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex pointer" onclick="meusDadosMini()"><i class="fa-solid fa-user-pen d-flex align-items-center me-2"></i>Meus dados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex pointer"><i class="fa-solid fa-star d-flex align-items-center me-2"></i>Favoritos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex pointer" href="Index.html"><i class="fa-solid fa-right-from-bracket d-flex align-items-center me-2"></i>Sair</a>
+            </li>
+          </ul>
+          <!-- <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+            <button id="botaoPesquisa" class="btn btn-lg" type="submit">⌕</button>
+          </form> -->
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- IFRAME -->
+  <div class="mini-frame">
+    <iframe class="frame-anunciar-mini mt-5" src="anunciar.html" frameborder="0"></iframe>
+    <iframe class="frame-meus-anuncios-mini mt-5" src="meus-anuncios.html" frameborder="0"></iframe>
+    <iframe class="frame-meus-dados-mini mt-5" src="meus-dados.html" frameborder="0"></iframe>
+  </div>
+  <!-- RODAPÉ -->
+  <div class="container mt-5">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Sessões</h5>
+          <ul class="nav flex-column d-inline-block">
+            <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-body-secondary">Home</a></li>
+            <li class="nav-item mb-2"><a href="index.html#sobre" class="nav-link p-0 text-body-secondary">Sobre</a></li>
+            <li class="nav-item mb-2"><a href="index.html#servicos-area" class="nav-link p-0 text-body-secondary">Serviços</a></li>
+            <li class="nav-item mb-2"><a href="index.html#time-area" class="nav-link p-0 text-body-secondary">Time</a></li>
+            <li class="nav-item mb-2"><a href="faq.html" class="nav-link p-0 text-body-secondary">Dúvidas</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Categorias</h5>
+          <ul class="nav flex-column d-inline-block">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Apartamentos</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Casas</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Sitios</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terrenos</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Corretores</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Contato</h5>
+          <ul class="nav flex-column d-inline-block">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">E-mail</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Twitter</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Instagram</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Facebook</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Whatsapp</a></li>
+          </ul>
+        </div>
+        <div class="col-md-5 offset-md-1 mb-3 mt-5">
+          <form>
+            <h5>Se inscreva para receber todas as novidades</h5>
+            <!-- <p>Monthly digest of what's new and exciting from us.</p> -->
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Email address</label>
+              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+              <button class="btn btn-primary" type="button">Inscrever</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p>&copy;2023 DEEM Apps. Development.</p>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa-brands fa-square-twitter fa-2xl"></i></a>
+          </li>
+          <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa-brands fa-instagram fa-2xl"></i></a></li>
+          <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa-brands fa-square-facebook fa-2xl"></i></a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+  <!-- -----------------------------------------------------------------SCRIPTS------------------------------------------------------------------ -->
+  <!-- JS SWIPER -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!-- <script src="./style/swiper/swiper-bundle.js"></script> -->
+  
+  <!-- JS BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="./style/bootstrap/js/bootstrap.js"></script> -->
+  <!-- <script src="./style/bootstrap/js/bootstrap.bundle.js"></script> -->
+  <!-- JS -->
+  <script src="@{style/ScriptBoot.js}"></script>
+</body>
+
+</html>

@@ -19,10 +19,10 @@ public class UsuarioController {
 	private static List<Usuario> lista = new ArrayList<>();
 	private static int proxId = 1;
 
-	static {
-		lista.add(new Usuario(1, "Marcelo", "@email.com", "11 970757430", "123.456.789-00", "rua 123", "senha123"));
-	}
-	
+//	static {
+//		lista.add(new Usuario(1, "Marcelo", "@email.com", "11 970757430", "123.456.789-00", "rua 123", "senha123"));
+//	}
+//	
 
 	// CRIAR USUÁRIO
 	@GetMapping("/usuario/criar")
@@ -131,7 +131,7 @@ public class UsuarioController {
 		return modelView;
 	}
 
-	@GetMapping("login/usuarios")
+	@GetMapping("/login/usuarios")
 	public ModelAndView usuarios() {
 		ModelAndView modelView = new ModelAndView("usuario/usuarios");
 		modelView.addObject("usuarios", lista);

@@ -17,7 +17,13 @@
   <!-- <link href="./style/swiper/swiper-bundle.css" rel="stylesheet"/> -->
   
   <!-- @MEDIA -->
-  <link th:href="@{/style/mediaStyleBoot.css}" rel="Stylesheet"/>
+  <link  rel="Stylesheet" type="text/css" th:href="@{/style/mediaStyleBoot.css}"/>
+  
+  <style th:inline="text">
+	  #cidadeFundo{
+		  background-image: url([[@{/imagem/cidadeFundo.png}]]);
+	  }
+  </style>
   
   <!-- FONTAWESOME 6.4.2 ICONS -->
   <script src="https://kit.fontawesome.com/4c7894104f.js" crossorigin="anonymous"></script>
@@ -44,7 +50,7 @@
     </div>
     <nav class="navMargin navbar navbar-expand-sm fixed-top mb-2">
       <div id="nav-fixed" class="container">
-        <div id="hoverMenu" class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div id="hoverMenu" class="collapse navbar-collapse">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
@@ -86,7 +92,7 @@
   <div class="pequeno">
     <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid ">
-        <img id="mini-home" class="navbar-brand" th:src="@{imagem/mini-home.png}" alt="Inicio">
+        <img id="mini-home" class="navbar-brand" th:src="@{/imagem/mini-home.png}" alt="Inicio">
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -146,7 +152,7 @@
         <img id="offPequeno" class="img-fluid mt-1 rounded-3" th:src="@{/anuncio/20OFFmini.png}" alt="20OFF">
       </div>
       <div class="col-12">
-        <img id="offPequeno" class="img-fluid mt-1 rounded-3" src="@{/anuncio/50OFFmini.png}" alt="50OFF">
+        <img id="offPequeno" class="img-fluid mt-1 rounded-3" th:src="@{/anuncio/50OFFmini.png}" alt="50OFF">
       </div>
     </div>
   </div>
@@ -157,13 +163,13 @@
         <div id="carouselExampleAutoplaying" class="carousel slide mt-2" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="5000">
-              <img src="./anuncio/anuncio1.png" class="d-block w-100" alt="Banner">
+              <img th:src="@{/anuncio/anuncio1.png}" class="d-block w-100" alt="Banner">
             </div>
             <div class="carousel-item" data-bs-interval="5000">
-              <img src="./anuncio/anuncio2.png" class="d-block w-100" alt="Banner">
+              <img th:src="@{/anuncio/anuncio2.png}" class="d-block w-100" alt="Banner">
             </div>
             <div class="carousel-item" data-bs-interval="5000">
-              <img src="./anuncio/anuncio3.png" class="d-block w-100" alt="Banner">
+              <img th:src="@{/anuncio/anuncio3.png}" class="d-block w-100" alt="Banner">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -182,7 +188,7 @@
               <div class="swiper-wrapper col-md-3">
                 <div class="swiper-slide col-md-3">
                   <div class="card" style="width: 90%; height: auto;">
-                    <img src="./anuncio/card/card01.png" class="card-img-top img-fluid" alt="...">
+                    <img th:src="@{/anuncio/card/card01.png}" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">R$2.000.000,00</h5>
                       <p class="card-text"><i class="fa-solid fa-bed"></i> Quartos:</p>
@@ -195,7 +201,7 @@
                 </div>
                 <div class="swiper-slide col-md-3">
                   <div class="card" style="width: 90%; height: auto;">
-                    <img src="@{anuncio/card/card02.png}" class="card-img-top img-fluid" alt="...">
+                    <img th:src="@{/anuncio/card/card02.png}" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">R$2.000.000,00</h5>
                       <p class="card-text"><i class="fa-solid fa-bed"></i> Quartos:</p>
@@ -208,7 +214,7 @@
                 </div>
                 <div class="swiper-slide col-md-3">
                   <div class="card" style="width: 90%; height: auto;">
-                    <img src="./anuncio/card/card03.png" class="card-img-top img-fluid" alt="...">
+                    <img th:src="@{/anuncio/card/card03.png}" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">R$2.000.000,00</h5>
                       <p class="card-text"><i class="fa-solid fa-bed"></i> Quartos:</p>
@@ -221,7 +227,7 @@
                 </div>
                 <div class="swiper-slide col-md-3">
                   <div class="card" style="width: 90%; height: auto;">
-                    <img src="./anuncio/card/card04.png" class="card-img-top img-fluid" alt="...">
+                    <img th:src="@{/anuncio/card/card04.png}" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">R$2.000.000,00</h5>
                       <p class="card-text"><i class="fa-solid fa-bed"></i> Quartos:</p>
@@ -241,13 +247,13 @@
         <!-- IMAGENS GRANDE -->
         <div class="row">
           <div id="OFF" class="col-4">
-            <img id="offGrandeL" class="img-fluid" src="./anuncio/10OFF.png" alt="10OFF ">
+            <img id="offGrandeL" class="img-fluid" th:src="@{/anuncio/10OFF.png}" alt="10OFF ">
           </div>
           <div id="OFF" class="col-4">
-            <img id="offGrandeC" class="img-fluid" src="./anuncio/20OFF.png" alt="20OFF">
+            <img id="offGrandeC" class="img-fluid" th:src="@{/anuncio/20OFF.png}" alt="20OFF">
           </div>
           <div id="OFF" class="col-4">
-            <img id="offGrandeR" class="img-fluid" src="./anuncio/50OFF.png" alt="50OFF">
+            <img id="offGrandeR" class="img-fluid" th:src="@{/anuncio/50OFF.png}" alt="50OFF">
           </div>
         </div>
       </div>
@@ -260,7 +266,7 @@
               <h3 class="barra"></h3>
             </div>
             <div class="col-md-6 mb-5">
-              <img id="escritorioImg" class="img-fluid mt-5" src="./imagem/escritorio.png" alt="Leisuri Imóveis">
+              <img id="escritorioImg" class="img-fluid mt-5" th:src="@{/imagem/escritorio.png}" alt="Leisuri Imóveis">
             </div>
             <div class="col-md-6 mt-5">
               <h3></h3>
@@ -345,7 +351,7 @@
           <div class="row mx-auto">
             <div class="col-12 main-title">
             </div>
-            <div class="col-md-12 dadosImg parallax" style="background-image: url('./imagem/cidadeFundo.png');">
+            <div id="cidadeFundo" class="col-md-12 dadosImg parallax">
               <div class="row mx-auto">
                 <div class="col-md-4 mt-5 dados-box">
                   <i class="fa-regular fa-pen-to-square"></i>
@@ -378,7 +384,7 @@
             <div class="swiper-wrapper col-md-3">
               <div class="swiper-slide col-md-3">
                 <div id="card-body-time" class="card" style="width: 90%; height: auto;">
-                  <img src="./imagem/Danilo.jpg" class="card-img-top img-fluid" alt="Danilo">
+                  <img th:src="@{/imagem/Danilo.jpg}" class="card-img-top img-fluid" alt="Danilo">
                   <div class="card-body">
                     <h5 class="card-title">Danilo da Cruz</h5>
                     <p class="card-text-time">Fundador - CEO</p>
@@ -387,7 +393,7 @@
               </div>
               <div class="swiper-slide col-md-3">
                 <div id="card-body-time" class="card" style="width: 90%; height: auto;">
-                  <img src="./imagem/Enzo.jpg" class="card-img-top img-fluid" alt="Enzo">
+                  <img th:src="@{/imagem/Enzo.jpg}" class="card-img-top img-fluid" alt="Enzo">
                   <div class="card-body">
                     <h5 class="card-title">Enzo Brito</h5>
                     <p class="card-text-time">Cofundador - DEV/DBA</p>
@@ -396,7 +402,7 @@
               </div>
               <div class="swiper-slide col-md-3">
                 <div id="card-body-time" class="card" style="width: 90%; height: auto;">
-                  <img src="./imagem/Esau.jpg" class="card-img-top img-fluid" alt="Esau">
+                  <img th:src="@{/imagem/Esau.jpg}" class="card-img-top img-fluid" alt="Esau">
                   <div class="card-body">
                     <h5 class="card-title">Esau Isaac</h5>
                     <p class="card-text-time">Cofundador - DEV</p>
@@ -405,7 +411,7 @@
               </div>
               <div class="swiper-slide col-md-3">
                 <div id="card-body-time" class="card" style="width: 90%; height: auto;">
-                  <img src="./imagem/Marcelo.jpg" class="card-img-top img-fluid" alt="Marcelo">
+                  <img th:src="@{/imagem/Marcelo.jpg}" class="card-img-top img-fluid" alt="Marcelo">
                   <div class="card-body">
                     <h5 class="card-title">Marcelo Bezerra</h5>
                     <p class="card-text-time">Cofundador - QA</p>

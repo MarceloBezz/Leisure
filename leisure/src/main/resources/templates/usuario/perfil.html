@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leisuri Imóveis</title>
-  <link rel="icon" type="image/x-icon" href="/imagem/leisuriLogo.png">
+  <link rel="icon" type="image/x-icon" th:href="@{/imagem/leisuriLogo.png}">
   <meta name="viewport" content="width=device-width">
   <!-- -----------------------------------------------------------------ESTILOS------------------------------------------------------------------ -->
   <!-- BOOTSTRAP CSS -->
@@ -17,7 +17,7 @@
   <!-- <link href="./style/swiper/swiper-bundle.css" rel="stylesheet"/> -->
   
   <!-- @MEDIA -->
-  <link th:href="@{style/mediaStyleBoot.css}" rel="Stylesheet"/>
+  <link  rel="Stylesheet" type="text/css" th:href="@{/style/mediaStyleBoot.css}"/>
   
   <!-- FONTAWESOME 6.4.2 ICONS -->
   <script src="https://kit.fontawesome.com/4c7894104f.js" crossorigin="anonymous"></script>
@@ -41,7 +41,7 @@
         <div class="dropdown">
           <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
             data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="./imagem/Danilo.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
+            <img th:src="@{/imagem/Danilo.jpg}" alt="" width="32" height="32" class="rounded-circle me-2">
             <strong>Danilo</strong>
           </a>
           <ul class="dropdown-menu text-small shadow mt-2">
@@ -89,7 +89,7 @@
             </li>
             <li>
               <a class="pointer nav-link link-body-emphasis d-flex" onclick="favoritos()">
-                <i class="fa-solid fa-star d-flex align-items-center me-2""></i>Favoritos
+                <i class="fa-solid fa-star d-flex align-items-center me-2"></i>Favoritos
               </a>
             </li>
             <li>
@@ -100,9 +100,9 @@
           </ul>
         </div>
         <!-- IFRAME -->
-        <iframe class="frame-anunciar mt-5" src="anunciar.html" frameborder="0"></iframe>
-        <iframe class="frame-meus-anuncios mt-5" src="meus-anuncios.html" frameborder="0"></iframe>
-        <iframe class="frame-meus-dados mt-5" src="meus-dados.html" frameborder="0"></iframe>
+        <iframe class="frame-anunciar mt-5" th:src="@{anunciar.html}" frameborder="0"></iframe>
+        <iframe class="frame-meus-anuncios mt-5" th:src="@{meus-anuncios.html}" frameborder="0"></iframe>
+        <iframe class="frame-meus-dados mt-5" th:src="@{meus-dados.html}" frameborder="0"></iframe>
       </div>
     </div>
   </div>
@@ -110,13 +110,13 @@
   <div class="pequeno">
     <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid ">
-        <img id="mini-home" class="navbar-brand" src="./imagem/mini-home.png" alt="Inicio">
+        <img id="mini-home" class="navbar-brand" th:src="@{/imagem/mini-home.png}" alt="Inicio">
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
           aria-label="Toggle navigation">
           <!-- <span class="navbar-toggler-icon"></span> -->
           <span>
-            <img src="./imagem/Danilo.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
+            <img th:src="@{/imagem/Danilo.jpg}" alt="" width="32" height="32" class="rounded-circle me-2">
           </span>
         </button>
         <div class="collapse navbar-collapse mt-4" id="navbarSupportedContent">
@@ -236,7 +236,7 @@
   <!-- <script src="./style/bootstrap/js/bootstrap.js"></script> -->
   <!-- <script src="./style/bootstrap/js/bootstrap.bundle.js"></script> -->
   <!-- JS -->
-  <script src="@{style/ScriptBoot.js}"></script>
+  <script th:src="@{/style/ScriptBoot.js}"></script>
 </body>
 
 </html>

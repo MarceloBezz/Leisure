@@ -7,7 +7,7 @@
   <title>Leisuri Imóveis</title>
   <link rel="icon" type="image/x-icon" th:href="@{/imagem/leisuriLogo.png}">
   <meta name="viewport" content="width=device-width">
-  <!-- -----------------------------------------------------------------ESTILOS------------------------------------------------------------------ -->
+  <!-- -ESTILOS -->
   <!-- BOOTSTRAP CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="./style/bootstrap/css/bootstrap.css" rel="Stylesheet"/> -->
@@ -55,7 +55,7 @@
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="Index.html">Sair</a></li>
+            <li><a class="dropdown-item" th:href="@{/usuario/criar}">Sair</a></li>
           </ul>
         </div>
       </button>
@@ -93,7 +93,7 @@
               </a>
             </li>
             <li>
-              <a href="Index.html" class="pointer nav-link link-body-emphasis d-flex" onclick="sair()"> <!--FAZER A FUNÇÃO DE LOGOUT -->
+              <a th:href="@{/usuario/criar}" class="pointer nav-link link-body-emphasis d-flex" onclick="sair()"> <!--FAZER A FUNÇÃO DE LOGOUT -->
                 <i class="fa-solid fa-right-from-bracket d-flex align-items-center me-2"></i>Sair
               </a>
             </li>
@@ -151,7 +151,7 @@
               <a class="nav-link d-flex pointer"><i class="fa-solid fa-star d-flex align-items-center me-2"></i>Favoritos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex pointer" href="Index.html"><i class="fa-solid fa-right-from-bracket d-flex align-items-center me-2"></i>Sair</a>
+              <a class="nav-link d-flex pointer" th:href="@{/usuario/criar}"><i class="fa-solid fa-right-from-bracket d-flex align-items-center me-2"></i>Sair</a>
             </li>
           </ul>
           <!-- <form class="d-flex" role="search">
@@ -226,7 +226,7 @@
     </footer>
   </div>
 
-  <!-- -----------------------------------------------------------------SCRIPTS------------------------------------------------------------------ -->
+  <!-- -SCRIPTS -->
   <!-- JS SWIPER -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <!-- <script src="./style/swiper/swiper-bundle.js"></script> -->

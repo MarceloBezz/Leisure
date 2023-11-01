@@ -28,7 +28,7 @@ public class UsuarioController {
 	@GetMapping("/usuario/criar")
 	public String novo(Model model) {
 		model.addAttribute("usuario", new Usuario());
-		return "usuario/usuario-beta/criar-usuario";
+		return "usuario/index";
 	}
 
 	// ATUALIZAR DADOS
@@ -37,16 +37,16 @@ public class UsuarioController {
 		Usuario usuario = buscarPorId(id);
 		if (usuario != null) {
 			model.addAttribute("usuario", usuario);
-			return "usuario/usuario-beta/criar-usuario";
+			return "usuario/perfil";
 		}
 		redirect.addFlashAttribute("mensagem", "Usuario não existente");
-		return "usuario/usuario-beta/criar-usuario";
+		return "usuario/perfil";
 	}
 
 	// DELETAR USUÁRIO
 	@GetMapping("/usuario/{id}/deletar")
 	public ModelAndView deletar(@PathVariable int id, RedirectAttributes redirect) {
-		ModelAndView modelView = new ModelAndView("redirect:/usuario/criar");
+		ModelAndView modelView = new ModelAndView("redirect:/usuario/index");
 		if (id < proxId) {
 			remover(id);
 			redirect.addFlashAttribute("mensagem", "Usuario deletado com sucesso!");
@@ -104,11 +104,11 @@ public class UsuarioController {
 		}
 	}
 
-	public Usuario buscarUsuario(String nome, String senha) {
+	public Usuario buscarUsuario(String email, String senha) {
 		ListIterator<Usuario> iterator = lista.listIterator();
 		while (iterator.hasNext()) {
 			Usuario usuario = iterator.next();
-			if (nome.equals(usuario.getNome()) && senha.equals(usuario.getSenha())) {
+			if (email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
 				return usuario;
 			}
 		}
@@ -118,7 +118,7 @@ public class UsuarioController {
 //-------------------- MÉTODO CHAMADO ATRAVÉS DO FORM ACTION E METHOD, NO HTML --------//
 	@PostMapping("/login/cadastrar-atualizar")
 	public ModelAndView criarOuAtualizar(Usuario usuario, RedirectAttributes redirect) {
-		ModelAndView modelView = new ModelAndView("usuario/usuario-beta/login");
+		ModelAndView modelView = new ModelAndView("usuario/perfil");
 		if (usuario.getId() == 0) {
 			inserir(usuario);
 			redirect.addFlashAttribute("mensagem", "Usuario criado com sucesso!");
@@ -142,16 +142,16 @@ public class UsuarioController {
 	@GetMapping("/cadastro")
 	public String cadastrar(Model model) {
 		model.addAttribute("usuario", new Usuario());
-		return "usuario/usuario-beta/logar-ou-cadastrar";
+		return "usuario/meus-dados";
 	}
 	
-	@PostMapping("/cadastro")
-	public String cadastro(@RequestParam String nome, @RequestParam String senha, Model model) {
+	@PostMapping("/login")
+	public String login(@RequestParam String email, @RequestParam String senha, Model model) {
 //		ModelAndView modelView = new ModelAndView("/cadastro");
-		Usuario usuarioEncontrado = buscarUsuario(nome, senha);
+		Usuario usuarioEncontrado = buscarUsuario(email, senha);
 		if (usuarioEncontrado != null) {
 			model.addAttribute("usuario", usuarioEncontrado);
-			return "usuario/usuario-beta/login";
+			return "usuario/perfil";
 		}
 		return "usuario-senha-invalido";
 	}

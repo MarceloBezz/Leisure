@@ -517,7 +517,7 @@
         </div>
         <div class="modal-body">
           <!-- FORM LOGIN -->
-          <form class="row g-3" action="@{/login}" method="post">
+          <form class="row g-3" action="/login" method="post">
             <div class="col-md-7 mx-auto">
               <label for="inputEmail4" class="form-label">Email</label>
               <input type="email" class="form-control" id="inputEmail4" name="email" th:value="${usuario.email}">
@@ -529,7 +529,7 @@
             </div>
             <div class="mx-auto">
               <button type="submit" class="btn btn-success mt-5 mb-3">Entrar</button>
-              <button class="btn btn-primary login-btn mt-5 mb-3" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Não tenho Cadastro</button>
+              <button type="button" class="btn btn-primary login-btn mt-5 mb-3" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Não tenho Cadastro</button>
             </div>
           </form>
       </div>

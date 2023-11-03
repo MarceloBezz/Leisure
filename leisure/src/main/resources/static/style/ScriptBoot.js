@@ -88,53 +88,77 @@ function pesquisacep(valor) {
 
 //PÁGINA DO PERFIL
 
-var botaoAnunciar = document.querySelector(".frame-anunciar"),
-botaoMeusAnuncios = document.querySelector(".frame-meus-anuncios"),
-botaoMeusDados = document.querySelector(".frame-meus-dados"),
-botaoAnunciarMini = document.querySelector(".frame-anunciar-mini"),
-botaoMeusAnunciosMini = document.querySelector(".frame-meus-anuncios-mini"),
-botaoMeusDadosMini = document.querySelector(".frame-meus-dados-mini")
+var botaoAnunciar = document.querySelector("#anunciar")
+botaoMeusAnuncios = document.querySelector("#meus-anuncios")
+botaoMeusDados = document.querySelector("#meus-dados")
+botaoAnunciarMini = document.querySelector("#anunciar-mini")
+botaoMeusAnunciosMini = document.querySelector("#meus-anuncios-mini")
+botaoMeusDadosMini = document.querySelector("#meus-dados-mini")
+botaoMeusFavoritos = document.querySelector("#favoritos")
+botaoMeusFavoritosMini = document.querySelector("#favoritos")
 
 function anunciar()
 {
-  botaoAnunciar.style.display = "block",
-  botaoMeusAnuncios.style.display = "none",
+  botaoMeusDados.style.display = "none"
+  botaoAnunciar.style.display = "block"
+  botaoMeusAnuncios.style.display = "none"
+  botaoMeusFavoritos.style.display = "none"
+}
+
+function meusAnuncios()
+{
+  botaoMeusAnuncios.style.display = "block"
+  botaoAnunciar.style.display = "none" 
+  botaoMeusDados.style.display = "none"
+  botaoMeusFavoritos.style.display = "none"
+}
+
+function meusDados()
+{
+  botaoMeusDados.style.display = "block"
+  botaoAnunciar.style.display = "none"
+  botaoMeusAnuncios.style.display = "none"
+  botaoMeusFavoritos.style.display = "none"
+}
+
+function favoritos()
+{
+  botaoMeusFavoritos.style.display = "block"
+  botaoAnunciar.style.display = "none"
+  botaoMeusAnuncios.style.display = "none"
   botaoMeusDados.style.display = "none"
 }
 
 function anunciarMini()
 {
-  botaoAnunciarMini.style.display = "block",
-  botaoMeusAnunciosMini.style.display = "none",
-  botaoMeusDadosMini.style.display = "none"
-}
-
-function meusAnuncios()
-{
-  botaoAnunciar.style.display = "none",
-  botaoMeusAnuncios.style.display = "block",
   botaoMeusDados.style.display = "none"
+  botaoAnunciar.style.display = "block"
+  botaoMeusAnuncios.style.display = "none"
+  botaoMeusFavoritos.style.display = "none"
 }
 
 function meusAnunciosMini()
 {
-  botaoAnunciarMini.style.display = "none",
-  botaoMeusAnunciosMini.style.display = "block",
-  botaoMeusDadosMini.style.display = "none"
-}
-
-function meusDados()
-{
-  botaoAnunciar.style.display = "none",
-  botaoMeusAnuncios.style.display = "none",
-  botaoMeusDados.style.display = "block"
+  botaoMeusAnuncios.style.display = "block"
+  botaoAnunciar.style.display = "none" 
+  botaoMeusDados.style.display = "none"
+  botaoMeusFavoritos.style.display = "none"
 }
 
 function meusDadosMini()
 {
-  botaoAnunciarMini.style.display = "none",
-  botaoMeusAnunciosMini.style.display = "none",
-  botaoMeusDadosMini.style.display = "block"
+  botaoMeusDados.style.display = "block"
+  botaoAnunciar.style.display = "none"
+  botaoMeusAnuncios.style.display = "none"
+  botaoMeusFavoritos.style.display = "none"
+}
+
+function favoritosMini()
+{
+  botaoMeusFavoritos.style.display = "block"
+  botaoAnunciar.style.display = "none"
+  botaoMeusAnuncios.style.display = "none"
+  botaoMeusDados.style.display = "none"
 }
 
 function curriculoEnviado(){
@@ -147,6 +171,31 @@ function curriculoEnviado(){
 
 function atualizarDados(){
   alert(
-    "\nDados atualziados com sucesso");
-    parent.location.href = "perfil.html";
+    "\nDados atualizados com sucesso");
+    location.href = "perfil.html";
 }
+
+function deletarDados(){
+var resposta = confirm(
+    "\nTem certeza que deseja deletar seu cadastro?"+
+    "\nUma vez deletado você perderá todos seus dados e sua reputação em nosso site.\n"+
+    "\nDeseja continuar?\n")
+
+    if(resposta == true)
+    {
+    alert(
+      "\nDados deletados com sucesso");
+      parent.location.href = "index.html";
+    }else{
+      parent.location.href = "perfil.html";
+    }
+}
+window.sr = ScrollReveal({reset:true});
+sr.reveal('#anuncios-area, #carouselExampleAutoplaying, #offGrandeL, #sobre2', {duration: 500});
+sr.reveal('#carouselExampleAutoplaying, #sobre2, #sobre3, #time-area2', {delay: 300, duration: 1000});
+sr.reveal('#offGrandeC, #sobre4, #servicos-area2, #dados-area2, #time-area3', {delay: 300, duration:1000});
+sr.reveal('#offGrandeR, #sobre5, #servicos-area3', {delay: 300, duration: 1000});
+sr.reveal('#sobre6, #servicos-area4, #dados-area3, #time-area4', {delay: 400, duration: 1000});
+sr.reveal('#sobre-lista', {delay: 500, duration: 1000});
+sr.reveal('#sobre-lista, #dados-area4, #time-area5', {delay: 600, duration: 1000});
+sr.reveal('#time-area6', {delay: 700, duration: 1000});

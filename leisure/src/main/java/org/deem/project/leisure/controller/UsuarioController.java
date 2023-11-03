@@ -1,36 +1,109 @@
 package org.deem.project.leisure.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ListIterator;
-
 import org.deem.project.leisure.model.Usuario;
+import org.deem.project.leisure.service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
+@RequestMapping("/usuario")
 public class UsuarioController {
-	private static List<Usuario> lista = new ArrayList<>();
-	private static int proxId = 1;
-
-//	static {
-//		lista.add(new Usuario(1, "Marcelo", "@email.com", "11 970757430", "123.456.789-00", "rua 123", "senha123"));
-//	}
-//	
-
-	// CRIAR USUÁRIO
-	@GetMapping("/usuario/criar")
-	public String novo(Model model) {
-		model.addAttribute("usuario", new Usuario());
-		return "usuario/index";
+	
+	@Autowired
+	private UsuarioService service;
+	
+//	---------------------------------------------- CADASTRO E ATUALIZAÇÃO DE DADOS ------------------------------------------
+	@PostMapping("/cadastrar-atualizar")
+	public String cadastrarOuAtualizar(Usuario usuario, String mensagem, String redirecionamento, RedirectAttributes redirect) {
+		service.takeOffMask(usuario);
+		boolean save = service.existsByEmailOrCpf(usuario);
+		
+		if (usuario.getId() == 0) {
+			if (save) {
+				redirect.addFlashAttribute("mensagem", "Cadastro realizado com sucesso.\nSeja bem vindo, " + usuario.getNome());
+			} else {
+				redirect.addFlashAttribute("mensagem", "Não foi possível concluir seu cadastro.\nEmail ou cpf já está sendo usado.");
+				return "redirect:/leisure/index";
+			}
+		} else {
+			if (save) {
+				redirect.addFlashAttribute("mensagem", "Atualização realizada com sucesso.");
+			} else {
+				redirect.addFlashAttribute("mensagem", "Não foi possível realizar a atualização.\nEmail ou cpf já está sendo usado.");
+				redirect.addAttribute("usuario", usuario);
+			}
+		}
+		
+		if (save) {
+			Usuario _usuario = service.save(usuario);
+			redirect.addAttribute("usuario", _usuario);
+		}
+		
+		return "redirect:/usuario/perfil";
 	}
 
+//	------------------------------------------------ LOGIN ------------------------------------------------------------------
+	@PostMapping("/login")
+	public String login(@RequestParam String email, @RequestParam String senha, RedirectAttributes redirect) {
+		Usuario usuario = service.findByEmailAndSenha(email, senha);
+		if (usuario != null && usuario.isAtivo() == true) {
+			redirect.addFlashAttribute("mensagem", "Seja bem vindo, " + usuario.getNome());
+			redirect.addAttribute("usuario", usuario);
+			return "redirect:/usuario/perfil";
+		}
+		redirect.addFlashAttribute("mensagem", "Email ou senha inválidos.\nCertifique-se de que seus dados estão corretos.");
+		return "redirect:/leisure/index";
+	}
+	
+	
+//  ------------------------------------------- ACESSO AO PERFIL ------------------------------------------------------------
+	@GetMapping("/perfil")
+	public String getPerfil(Usuario usuario, RedirectAttributes redirect) {
+		if (usuario.getId() != 0) {
+			return "usuario/perfil";
+		}
+		redirect.addFlashAttribute("mensagem", "Erro ao tentar acessar esta página. Faça login primeiro!");
+		return "redirect:/leisure/index";
+	}
+	
+//  ------------------------------------------- DELETAR USUÁRIO -------------------------------------------------------------	
+	@GetMapping("/deletar/{id}")
+	public ModelAndView deletar(@PathVariable int id, RedirectAttributes redirect) {
+		ModelAndView modelView = new ModelAndView("redirect:/leisure/index");
+		Usuario usuario = service.findById(id);
+		if (usuario != null && usuario.isAtivo() == true) {
+			redirect.addFlashAttribute("mensagem", "Sua conta foi deletada!");
+			usuario.setAtivo(false);
+			service.save(usuario);
+		} else {
+			redirect.addFlashAttribute("mensagem", "Este usuário não existe.\nVerifique se os dados estão corretos.");
+		}
+		return modelView;
+	}  
+	
+// --------------------------------------- VISUALIZAR DADOS DAS CONTAS ------------------------------------------------------
+	@GetMapping("/contas")
+	public ModelAndView usuarios() {
+		ModelAndView modelView = new ModelAndView("usuario/usuario-beta/usuarios");
+		modelView.addObject("usuarios", service.findAll());
+		return modelView;
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	/* 
 	// ATUALIZAR DADOS
 	@GetMapping("/usuario/{id}/atualizar")
 	public String atualizacao(@PathVariable int id, Model model, RedirectAttributes redirect) {
@@ -43,116 +116,11 @@ public class UsuarioController {
 		return "usuario/perfil";
 	}
 
-	// DELETAR USUÁRIO
-	@GetMapping("/usuario/{id}/deletar")
-	public ModelAndView deletar(@PathVariable int id, RedirectAttributes redirect) {
-		ModelAndView modelView = new ModelAndView("redirect:/usuario/index");
-		if (id < proxId) {
-			remover(id);
-			redirect.addFlashAttribute("mensagem", "Usuario deletado com sucesso!");
-			if (lista.size() == 0) {
-				return modelView;
-			}
-		} else {
-			redirect.addFlashAttribute("mensagem", "Usuário selecionado não existente!");
-		}
-		return modelView;
-	}
-
-	// MÉTODO PARA ANALISAR O ID
-	public static Usuario buscarPorId(int id) {
-		for (Usuario usuario : lista) {
-			if (usuario.getId() == id) {
-				return usuario;
-			}
-		}
-		return null;
-	}
-
-//	@GETMAPPING("/LOGIN")
-//	PUBLIC STRING LOGIN(MODEL MODEL) {
-////		MODEL.ADDATTRIBUTE("LOGIN", LISTA);
-//		RETURN "LOGIN/LOGIN";
-//	}
-
-// ---------------------------------------- MÉTODOS ------------------------------------//
-
-	private static void remover(int id) {
-		ListIterator<Usuario> iterator = lista.listIterator();
-		while (iterator.hasNext()) {
-			Usuario usuario = iterator.next();
-			if (usuario.getId() == id) {
-				iterator.remove();
-				break;
-			}
-		}
-	}
-
-	public static void inserir(Usuario usuario) {
-		usuario.setId(proxId++);
-		lista.add(usuario);
-	}
-
-	public static void atualizar(Usuario usuario) {
-		ListIterator<Usuario> iterator = lista.listIterator();
-		while (iterator.hasNext()) {
-			Usuario usuario_desatualizado = iterator.next();
-			if (usuario_desatualizado.getId() == usuario.getId()) {
-				iterator.set(usuario);
-				break;
-			}
-		}
-	}
-
-	public Usuario buscarUsuario(String email, String senha) {
-		ListIterator<Usuario> iterator = lista.listIterator();
-		while (iterator.hasNext()) {
-			Usuario usuario = iterator.next();
-			if (email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
-				return usuario;
-			}
-		}
-		return null;
-	}
-
 //-------------------- MÉTODO CHAMADO ATRAVÉS DO FORM ACTION E METHOD, NO HTML --------//
-	@PostMapping("/login/cadastrar-atualizar")
-	public ModelAndView criarOuAtualizar(Usuario usuario, RedirectAttributes redirect) {
-		ModelAndView modelView = new ModelAndView("usuario/perfil");
-		if (usuario.getId() == 0) {
-			inserir(usuario);
-			redirect.addFlashAttribute("mensagem", "Usuario criado com sucesso!");
-		} else {
-			atualizar(usuario);
-			redirect.addFlashAttribute("mensagem", "Usuario atualizado com sucesso!");
-		}
-//	redirect.addFlashAttribute("login", login);
-		modelView.addObject("usuario", usuario);
-		return modelView;
-	}
-
-	@GetMapping("/login/usuarios")
-	public ModelAndView usuarios() {
-		ModelAndView modelView = new ModelAndView("usuario/usuario-beta/usuarios");
-		modelView.addObject("usuarios", lista);
-		return modelView;
-	}
-
 	
 	@GetMapping("/cadastro")
 	public String cadastrar(Model model) {
 		model.addAttribute("usuario", new Usuario());
 		return "usuario/meus-dados";
-	}
-	
-	@PostMapping("/login")
-	public String login(@RequestParam String email, @RequestParam String senha, Model model) {
-//		ModelAndView modelView = new ModelAndView("/cadastro");
-		Usuario usuarioEncontrado = buscarUsuario(email, senha);
-		if (usuarioEncontrado != null) {
-			model.addAttribute("usuario", usuarioEncontrado);
-			return "usuario/perfil";
-		}
-		return "usuario-senha-invalido";
-	}
+	} */
 }

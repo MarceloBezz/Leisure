@@ -28,86 +28,134 @@
       <div class="col-md-1">
       </div>
       <div class="col-md-10 mt-2">
-        <form class="row g-3 d-flex d-inline-block" method="get" action=".">
+		  
+		  
+        <form class="row g-3 d-flex d-inline-block" action="/usuario/cadastrar-atualizar" method="post"> 
+			
+		  <input type="hidden" name="id" th:value="${usuario.id}">
+		  
+		  
           <div id="imagem-circle" class="col-md-12 d-block text-center">
             <div id="imagemUsuario" class="mx-auto">
               <span><i class="foto-perfil fa-solid fa-circle-user"></i></span>
             </div>
-            
-            <label for="input-file" id="input-imagem" class="d-block mt-2 mb-4 mx-auto">Alterar imagem  <i class="fa-regular fa-pen-to-square"></i></label> 
+            <label for="input-file" id="input-imagem" class="d-block mt-2 mb-4 mx-auto">Alterar imagem<i class="fa-regular fa-pen-to-square"></i></label> 
             <input id="input-file" type="file" accept="image/*">
             <!-- <div class="invalid-feedback">Example invalid form file feedback</div> -->
           </div>
+          
+          
           <div class="col-md-12">
             <label for="nome" class="form-label">Nome completo</label>
-            <input id="nome" class="form-control mt-1" type="text" placeholder="Nome do usuario" aria-label="Disabled input example" disabled name="nome" th:value="${usuario.nome}">
+            <input id="nome" class="form-control mt-1" type="text" placeholder="Nome do usuario" aria-label="Disabled input example" name="nome" th:value="${usuario.nome}">
           </div>
+          
+          
           <div class="col-md-12">
             <label for="inputData" class="form-label">Data de Nascimento</label>
             <input type="date" class="form-control" id="inputData" aria-label="Disabled input example" disabled> <!--name="data" th:value="${usuario.data}"-->
           </div>
+          
+          
           <div class="col-md-12">
             <label for="email" class="form-label">e-Mail</label>
-            <input id="email" class="form-control mt-1" type="text" placeholder="e-Mail do usuario" aria-label="Disabled input example" disabled name="email" th:value="${usuario.email}">
+            <input id="email" class="form-control mt-1" type="text" placeholder="e-Mail do usuario" aria-label="Disabled input example" name="email" th:value="${usuario.email}">
           </div>
+          
+          
           <div class="col-md-6">
             <label for="cpf" class="form-label">CPF</label>
-            <input id="cdf" class="form-control mt-1" type="text" placeholder="CPF" aria-label="Disabled input example" disabled> <!--name="cpf" th:value="${usuario.cpf}"-->
+            <input id="cdf" class="form-control mt-1" type="text" placeholder="CPF" aria-label="Disabled input example" name="cpf" th:value="${usuario.cpf}">
           </div>
+          
+          
           <div class="col-md-6">
             <label for="telefone" class="form-label">Telefone</label>
             <input id="telefone" class="form-control mt-1" type="text" placeholder="Telefone" aria-label="Disabled input example" name="telefone" th:value="${usuario.telefone}">
           </div>
+          
+          
           <div class="col-md-6">
             <label for="senha" class="form-label">Senha Atual</label>
-            <input id="senha" type="password" class="form-control mt-1" name="senha" th:value="${usuario.senha}">
+            <input id="senha" type="password" class="form-control mt-1" th:value="${usuario.senha}">
           </div>
+          
+          
           <div class="col-md-6">
             <label for="novaSenha" class="form-label">Nova senha</label>
-            <input id="novaSenha" type="password" class="form-control mt-1">
+            <input id="novaSenha" type="password" class="form-control mt-1" th:value="${usuario.senha}">
           </div>
+          
+          
           <div class="col-md-6">
             <label for="reNovaSenha" class="form-label">Repetir nova senha</label>
-            <input id="reNovaSenha" type="password" class="form-control mt-1">
+            <input id="reNovaSenha" type="password" class="form-control mt-1" name="senha" th:value="${usuario.senha}">
           </div>
+          
+          
           <hr class="mt-4 mb-4">
           <div class="col-md-4">
-            <label class="form-label">CEP<input class="form-control mt-1" name="cep" type="text" id="cep" value="" maxlength="9" onblur="pesquisacep(this.value);" /></label><!--name="cep" th:value="${usuario.cep}"-->
+            <label class="form-label">CEP<input class="form-control mt-1" name="cep" type="text" id="cep" th:value="${usuario.cep}" maxlength="9" onblur="pesquisacep(this.value);" /></label><!--name="cep"-->
             <!-- <input class="form-control mt-1" name="cep" type="text" id="cep" value="" maxlength="9" onblur="pesquisacep(this.value);" /> -->
           </div>
+          
+          
           <div class="col-md-8">
             <label class="form-label">Rua<input class="form-control mt-1" name="rua" type="text" id="rua" size="100" readonly /></label> <!--name="rua" th:value="${endereco.rua}"-->
             <!-- <input class="form-control mt-1" name="rua" type="text" id="rua" size="100" readonly /> -->
           </div>
+          
+          
           <div class="col-md-7">
             <label class="form-label">Cidade<input class="form-control mt-1" name="cidade" type="text" id="cidade" size="100" readonly /></label> <!--name="cidade" th:value="${endereco.cidade}"-->
             <!-- <input class="form-control mt-1" name="cidade" type="text" id="cidade" size="100" readonly /> -->
           </div>
+          
+          
           <div class="col-md-2">
             <label class="form-label">Estado<input class="form-control mt-1" name="uf" type="text" id="uf"  readonly /></label> <!--name="uf" th:value="${endereco.uf}"-->
             <!-- <input class="form-control mt-1" name="uf" type="text" id="uf"  readonly /> -->
           </div> 
+          
+          
           <div class="col-md-3">
-            <label class="form-label">Número<input class="form-control mt-1" name="numero" type="text" id="numero" size="40" maxlength="5" /></label> <!--name="numero" th:value="${endereco.numero}"-->
+            <label class="form-label">Número<input class="form-control mt-1" name="numResidencia" th:value="${usuario.numResidencia}" type="text" id="numero" size="40" maxlength="5" /></label> <!--name="numero"-->
             <!-- <input class="form-control mt-1" name="numero" type="text" id="numero" size="40" maxlength="5" /> -->
           </div>
+          
+          
           <div class="col-md-12">
-            <label class="form-label">Ponto de referência<input class="form-control mt-1" name="numero" type="text" id="numero" size="100" maxlength="100" /></label> <!--name="referencia" th:value="${endereco.referencia}"-->
+            <label class="form-label">Complemento<input class="form-control mt-1" name="complemento" type="text" id="referencia" size="100" maxlength="100" th:value="${usuario.complemento}"/></label> <!--name="referencia" th:value="${endereco.referencia}"-->
             <!-- <input class="form-control mt-1" name="numero" type="text" id="numero" size="40" maxlength="5" /> -->
           </div>
+          
+          
           <div class="col-mb-12">
             <label for="validationTextarea" class="form-label">Minha bio</label>
             <textarea class="form-control" placeholder="Fale um pouco sobre você aqui."></textarea>
           </div>
+          
+          
           <div class="col-md-12">
-            <button class="btn btn-success" type="submit" onclick="atualizarDados()" th:href="@{/usuario/{id}/atualizar (id=${usuario.id})}">Atualizar</button>
+          <button class="btn btn-success" type="submit" onclick="atualizarDados()">Atualizar</button>
           </div>
         </form>
+        
       </div>
     </div>
   </div>
+  <a th:href="@{/leisure/index}"><button type="button" class="btn btn-outline-warning">SAIR</button></a>
+  <a th:href="@{/usuario/deletar/{id} (id=${usuario.id})}"><button type="button" class="btn btn-outline-danger">DELETAR CONTA</button></a>
   <!-- -----------------------------------------------------------------SCRIPTS------------------------------------------------------------------ -->
   <!-- JS -->
   <script th:src="@{/style/ScriptBoot.js}"></script>
+  <script th:inline="javascript">
+	 /*<![CDATA[*/
+	 var mensagem = /*[[${mensagem}]]*/ null;
+	 if (mensagem != null) {
+		 alert(mensagem);
+	 }
+	 /*]]>*/ 
+  </script>
 </body>
 </html>

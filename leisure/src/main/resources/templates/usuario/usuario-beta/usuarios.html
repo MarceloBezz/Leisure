@@ -20,7 +20,7 @@
 				<th>Email</th>
 				<th>Telefone</th>
 				<th>CPF</th>
-				<th>Endereço</th>
+				<th>CEP</th>
 				<th>Senha</th>
 			</tr>
 			<tr th:each="usuario : ${usuarios}">
@@ -40,7 +40,7 @@
 					<span th:text="${usuario.cpf}"></span>
 				</td>
 								<td>
-					<span th:text="${usuario.endereco}"></span>
+					<span th:text="${usuario.cep}"></span>
 				</td>
 								<td>
 					<span th:text="${usuario.senha}"></span>

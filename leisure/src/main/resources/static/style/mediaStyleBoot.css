@@ -249,15 +249,11 @@
     .time-area{
         margin-top: 100px !important;
     }
-    .anunciar-cont{
-        display: none !important;
-    }
     .foto-perfil{
         width: 200px !important;
         font-size: 150px !important;
     }
     #imagemUsuario{
-        /* background-color:#b1afaf; */
         max-width: 160px;
         width: auto;
         height: 160px;
@@ -271,30 +267,35 @@
         display: none;
     }
     /* PAGINAS */
-    .frame-anunciar-mini{
-        display: none;
-        width: 100%;
-        height: 1700px;
-        margin-left: 1%;
-    }
-    .frame-meus-anuncios-mini{
-        display: none;
-        width: 100%;
-        height: 1700px;
-        margin-left: 1%;
-    }
-    .frame-meus-dados-mini{
-        display: none;
-        width: 100%;
-        height: 1700px;
-        margin-left: 1%;
-    }
     .pointer{
         cursor: pointer;
     }
     #input-imagem, #enviarCurriculo{
         cursor: pointer;
     }
+    #anunciar{
+        margin-left: 23%;
+        display: none;
+    }
+    #meus-anuncios{
+        margin-left: 23%;
+        display: none;
+    }
+    #meus-dados{
+        margin-left: 23%;
+        display: none;
+    }
+    #favoritos{
+        margin-left: 23%;
+        display: none;
+    }
+    #anunciar, #meus-anuncios, #meus-dados, #favoritos{
+        margin-top: 75px !important;
+    }
+    .anunciar-cont{
+        display: none;
+    }
+    
 }
 
 @media screen and (min-width: 576px) /* MEDIA 576px */
@@ -632,32 +633,7 @@
         width: 200px;
         margin: 75px 0;  
     }
-    .anunciar-cont{
-        display: block !important;
-    }
-    /* PAGINAS */
-    .frame-anunciar{
-        display: none;
-        max-width: 50%;
-        width: 100%;
-        height: 1700px;
-        margin-left: 11.5%;
-        z-index: 10 !important;
-    }
-    .frame-meus-anuncios{
-        display: none;
-        max-width: 800px;
-        width: 100%;
-        height: 1700px;
-        margin-left: 11.5%;
-    }
-    .frame-meus-dados{
-        display: none;
-        max-width: 800px;
-        width: 100%;
-        height: 1700px;
-        margin-left: 11.5%;
-    }
+
     #botaoPerfil{
         right: -2% !important;
         top: 17px !important;
@@ -677,9 +653,6 @@
     .pointer{
         cursor: pointer;
     }
-    .mini-frame{
-        display: none;
-    }
     #imagemUsuario{
         /* background-color:#b1afaf; */
         max-width: 210px;
@@ -691,11 +664,44 @@
         border-radius: 50%;
         border: #333 2px solid;
     }
-    #imgFaq{
-        max-width: 100px;
-        width: 100px !important;
+    #anunciar{
+        margin-left: 5%;
+        display: none;
     }
-    .Faq{
-        background-color: rgb(240, 240, 240);
+    #meus-anuncios{
+        margin-left: 5%;
+        display: none;
+    }
+    #meus-dados{
+        margin-left: 5%;
+        display: none;
+    }
+    #favoritos{
+        margin-left: 5%;
+        display: none;
+    }
+    #anunciar, #meus-anuncios, #meus-dados, #favoritos{
+        margin-top: 75px !important;
+    }
+    .anunciar-cont{
+        display: block;
+    }
+    #admtablefromleisuri{
+        margin-top: 200px;
+    }
+    #anuncios-area, #carouselExampleAutoplaying, #offGrandeL, #offGrandeC, #offGrandeR{
+        visibility: hidden;
+    }
+    #sobre2, #sobre3, #sobre4, #sobre5, #sobre6, #sobre-lista{
+        visibility: hidden;
+    }
+    #servicos-area2, #servicos-area3, #servicos-area4{
+        visibility: hidden;
+    }
+    #dados-area2, #dados-area3, #dados-area4{
+        visibility: hidden;
+    }
+    #time-area2, #time-area3, #time-area4, #time-area5, #time-area6{
+        visibility: hidden;
     }
 }

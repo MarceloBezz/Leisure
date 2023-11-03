@@ -8,6 +8,8 @@
   <link rel="icon" type="image/x-icon" th:href="@{/imagem/leisuriLogo.png}">
   <meta name="viewport" content="width=device-width">
   <!-- -----------------------------------------------------------------ESTILOS------------------------------------------------------------------ -->
+    <!-- SCROLL REVEAL -->
+    <script src="https://unpkg.com/scrollreveal"></script>
   <!-- BOOTSTRAP CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="./style/bootstrap/css/bootstrap.css" rel="Stylesheet"/> -->
@@ -17,19 +19,18 @@
   <!-- <link href="./style/swiper/swiper-bundle.css" rel="stylesheet"/> -->
   
   <!-- @MEDIA -->
-  <link  rel="Stylesheet" type="text/css" th:href="@{/style/mediaStyleBoot.css}"/>
-  
-  <style th:inline="text">
-	  #cidadeFundo{
-		  background-image: url([[@{/imagem/cidadeFundo.png}]]);
-	  }
-  </style>
+  <link th:href="@{/style/mediaStyleBoot.css}" rel="Stylesheet"/>
   
   <!-- FONTAWESOME 6.4.2 ICONS -->
   <script src="https://kit.fontawesome.com/4c7894104f.js" crossorigin="anonymous"></script>
   <!-- <link href="./style/fontawesome/css/all.css" rel="Stylesheet"/>
   <link href="./style/fontawesome/css/brands.css" rel="Stylesheet"/>
   <link href="./style/fontawesome/css/fontawesome.css" rel="Stylesheet"/> -->
+  <style th:inline="text">
+	  #imagemFundo {
+		  background-image: url([[@{/imagem/cidadeFundo.png}]]);
+	  }
+  </style>
 </head>
 
 <body>
@@ -83,6 +84,13 @@
             <li class="nav-item">
               <a class="nav-link" href="faq.html">Duvidas</a>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Download</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://play.google.com/store/games?hl=pt_BR&gl=US" target="_blank"><i class="fa-brands fa-google-play me-2"></i>Google Play</a></li>
+                <li><a class="dropdown-item" href="https://www.apple.com/br/app-store/" target="_blank"><i class="fa-brands fa-apple me-2 fa-lg"></i>App Store</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -132,6 +140,13 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="faq.html">Duvidas</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Download</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://play.google.com/store/games?hl=pt_BR&gl=US" target="_blank"><i class="fa-brands fa-google-play me-2"></i>Google Play</a></li>
+                <li><a class="dropdown-item" href="https://www.apple.com/br/app-store/" target="_blank"><i class="fa-brands fa-apple me-2 fa-lg"></i>App Store</a></li>
+              </ul>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -262,28 +277,28 @@
         <div class="container mt-3">
           <div class="row">
             <div class="col-12">
-              <h3 class="main-title">Sobre a Leisuri Imóveis</h3>
-              <h3 class="barra"></h3>
+              <h3 id="sobre2" class="main-title">Sobre a Leisuri Imóveis</h3>
+              <h3 id="sobre2" class="barra"></h3>
             </div>
             <div class="col-md-6 mb-5">
-              <img id="escritorioImg" class="img-fluid mt-5" th:src="@{/imagem/escritorio.png}" alt="Leisuri Imóveis">
+              <img id="escritorioImg sobre3" class="img-fluid mt-5" th:src="@{/imagem/escritorio.png}" alt="Leisuri Imóveis">
             </div>
             <div class="col-md-6 mt-5">
               <h3></h3>
-              <h4 class="sub-title mt-2">Compromisso</h4>
-              <p>
+              <h4 id="sobre4" class="sub-title mt-2">Compromisso</h4>
+              <p id="sobre4">
                 Na Leisuri Imóveis, estamos empenhados em ajudar você a encontrar o lar perfeito, onde possa
                 criar memórias preciosas e viver momentos especiais. Somos o resultado de uma colaboração com a
                 DEEM, uma empresa especializada no desenvolvimento de sites e aplicativos para terceiros.
               </p>
-              <h4 class="sub-title mt-5">Nossa Missão</h4>
-              <p>
+              <h4 id="sobre5" class="sub-title mt-5">Nossa Missão</h4>
+              <p id="sobre5">
                 Nossa missão é simplificar a busca por imóveis. Com um catálogo diversificado, que abrange desde
                 apartamentos urbanos a casas espaçosas nos subúrbios, oferecemos opções para todos os estilos de
                 vida e orçamentos.
               </p>
-              <h4 class="sub-title mt-5">O Que Nos Torna Únicos</h4>
-              <p>
+              <h4 id="sobre6" class="sub-title mt-5">O Que Nos Torna Únicos</h4>
+              <p id="sobre6">
                 Na Leisuri Imóveis, nos destacamos pelo nosso comprometimento com a qualidade e a satisfação
                 do cliente.
               </p>
@@ -302,41 +317,41 @@
         <div id="container-top" class="container">
           <div class="row">
             <div class="col-12">
-              <h3 class="main-title">Nossa especialidade</h3>
-              <h3 class="barra"></h3>
+              <h3 id="servicos-area2" class="main-title">Nossa especialidade</h3>
+              <h3 id="servicos-area2" class="barra"></h3>
             </div>
-            <div class="col-md-4 servicos-box mt-5">
+            <div id="servicos-area3" class="col-md-4 servicos-box mt-5">
               <i class="fas fa-mobile-alt"></i>
               <h4>Aplicativos Nativos</h4>
               <p>Utilizamos o poder dos dispositivos móveis para melhor experiência, afinal estamos na era da tecnologia
                 na palma da mão, podemos fazer nossas compras até do banheiro, não é mesmo? rsrs.</p>
             </div>
-            <div class="col-md-4 servicos-box mt-5">
+            <div id="servicos-area3" class="col-md-4 servicos-box mt-5">
               <i class="fas fa-shopping-cart"></i>
               <h4>E-commerce</h4>
               <p>Nós trabalhamos fazendo uma conexão entre cliente e vendedor para melhor atende-los e também para que
                 você não saia do conforto de sua casa tomando aquela água de coco ;)</p>
             </div>
-            <div class="col-md-4 servicos-box mt-5">
+            <div id="servicos-area3" class="col-md-4 servicos-box mt-5">
               <i class="fas fa-paint-brush"></i>
               <h4>Design Criativo</h4>
               <p>Temos um design moderno, atraente e fácil de utilizar para você encontrar tudo o que precisa. Também
                 pensamos naquelas pessoas que gostam de ver só as imagens nos livros, por isso temos bastante imagens
                 ilustrando nosso conteúdo. *-*</p>
             </div>
-            <div class="col-md-4 servicos-box mt-5">
+            <div id="servicos-area4" class="col-md-4 servicos-box mt-5">
               <i class="fab fa-google"></i>
               <h4>Expert em SEO</h4>
               <p>Visibilidade e classificação em motores de busca garantindo maior alcance. Todo mundo quer ser top nos
                 resultados de pesquisa. Hahaha.</p>
             </div>
-            <div class="col-md-4 servicos-box mt-5">
+            <div id="servicos-area4" class="col-md-4 servicos-box mt-5">
               <i class="fas fa-hands-helping"></i>
               <h4>Suporte 24/7</h4>
               <p>Para melhor atende-lo temos um suporte 24 horas por dia para ajudar com dúvidas ou até mesmo resolver
                 aquele probleminha chato. =/</p>
             </div>
-            <div class="col-md-4 servicos-box mt-5">
+            <div id="servicos-area4" class="col-md-4 servicos-box mt-5">
               <i class="fas fa-server"></i>
               <h4>Experiência em Servidores</h4>
               <p>Haaaa, vale muito a pena lembrar que nosso site e o aplicativo mobile são integrados em um unico banco
@@ -351,19 +366,19 @@
           <div class="row mx-auto">
             <div class="col-12 main-title">
             </div>
-            <div id="cidadeFundo" class="col-md-12 dadosImg parallax">
+            <div class="col-md-12 dadosImg parallax" id="imagemFundo">
               <div class="row mx-auto">
-                <div class="col-md-4 mt-5 dados-box">
+                <div id="dados-area2" class="col-md-4 mt-5 dados-box">
                   <i class="fa-regular fa-pen-to-square"></i>
                   <h4>Satisfação</h4>
                   <p>Milhares de contratos assinados e clientes satisfeitos com o seu negócio.</p>
                 </div>
-                <div class="col-md-4 mt-5 dados-box">
+                <div id="dados-area3" class="col-md-4 mt-5 dados-box">
                   <i class="fa-solid fa-seedling"></i>
                   <h4>Sustentabilidade</h4>
                   <p>Além de contribuir com o meio ambiente, imóveis sustentáveis tem amis benefil com a gente.</p>
                 </div>
-                <div class="col-md-4 mt-5 dados-box">
+                <div id="dados-area4" class="col-md-4 mt-5 dados-box">
                   <i class="fa-solid fa-medal"></i>
                   <h4>Qualidade Garantida</h4>
                   <p>Garantimos a transparência, qualidade e preços conpativeis com o mercado para melhor atende-lo.</p>
@@ -377,30 +392,30 @@
       <div id="time-area">
         <div class="container mt-5 mb-5">
           <div class="col-12" id="nosso-time">
-            <h3 class="main-title">Nosso time</h3>
-            <h3 class="barra"></h3>
+            <h3 id="time-area2" class="main-title">Nosso time</h3>
+            <h3 id="time-area2" class="barra"></h3>
           </div>
           <div class="row just-content-center swiper mySwiper mx-auto">
             <div class="swiper-wrapper col-md-3">
-              <div class="swiper-slide col-md-3">
+              <div id="time-area3" class="swiper-slide col-md-3">
                 <div id="card-body-time" class="card" style="width: 90%; height: auto;">
                   <img th:src="@{/imagem/Danilo.jpg}" class="card-img-top img-fluid" alt="Danilo">
                   <div class="card-body">
                     <h5 class="card-title">Danilo da Cruz</h5>
-                    <p class="card-text-time">Fundador - CEO</p>
+                    <p class="card-text-time">Fundador - Front-End/UX</p>
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide col-md-3">
+              <div id="time-area4" class="swiper-slide col-md-3">
                 <div id="card-body-time" class="card" style="width: 90%; height: auto;">
                   <img th:src="@{/imagem/Enzo.jpg}" class="card-img-top img-fluid" alt="Enzo">
                   <div class="card-body">
                     <h5 class="card-title">Enzo Brito</h5>
-                    <p class="card-text-time">Cofundador - DEV/DBA</p>
+                    <p class="card-text-time">Cofundador - DBA/Back-End</p>
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide col-md-3">
+              <div id="time-area5" class="swiper-slide col-md-3">
                 <div id="card-body-time" class="card" style="width: 90%; height: auto;">
                   <img th:src="@{/imagem/Esau.jpg}" class="card-img-top img-fluid" alt="Esau">
                   <div class="card-body">
@@ -409,12 +424,12 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide col-md-3">
+              <div id="time-area6" class="swiper-slide col-md-3">
                 <div id="card-body-time" class="card" style="width: 90%; height: auto;">
                   <img th:src="@{/imagem/Marcelo.jpg}" class="card-img-top img-fluid" alt="Marcelo">
                   <div class="card-body">
                     <h5 class="card-title">Marcelo Bezerra</h5>
-                    <p class="card-text-time">Cofundador - QA</p>
+                    <p class="card-text-time">Cofundador - QA/Back-End</p>
                   </div>
                 </div>
               </div>
@@ -444,14 +459,14 @@
     </div>
   </div>
 <!-- RODAPÉ -->
-  <div id="bottomMenu" class="container mt-5">
+  <div class="container mt-5">
     <footer class="py-5">
       <div class="row">
         <div class="col-6 col-md-2 mb-3">
           <h5>Sessões</h5>
           <ul class="nav flex-column d-inline-block">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Sobre</a></li>
+            <li class="nav-item mb-2"><a th:href="@{/leisure/index}" class="nav-link p-0 text-body-secondary">Home</a></li>
+            <li class="nav-item mb-2"><a th:href="@{/index.html#sobre}" class="nav-link p-0 text-body-secondary">Sobre</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Serviços</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Time</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Dúvidas</a></li>
@@ -516,9 +531,6 @@
           </div> 
         </div>
         <div class="modal-body">
-			
-			
-			
           <!-- FORM LOGIN -->
           <form class="row g-3" action="/usuario/login" method="post">
             <div class="col-md-7 mx-auto">
@@ -529,16 +541,12 @@
               <label for="inputPassword4" class="form-label">Password</label>
               <input type="password" class="form-control" id="inputPassword4" name="senha">
             </div>  
-        </div>
+            </div>
             <div class="mx-auto">
               <button type="submit" class="btn btn-success mt-5 mb-3">Entrar</button>
-              <button  type="button" class="btn btn-primary login-btn mt-5 mb-3" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Não tenho Cadastro</button>
+              <button type="button" class="btn btn-primary login-btn mt-5 mb-3" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Não tenho Cadastro</button>
             </div>
           </form>
-          
-          
-          
-          
       </div>
     </div>
   </div>
@@ -555,61 +563,54 @@
           </div> 
         </div>
         <div class="modal-body">
-			
-			
-			
-			
           <form class="row g-3" action="/usuario/cadastrar-atualizar" method="post">
             <div class="col-md-12">
               <label for="inputNome" class="form-label">Nome completo</label>
               <input type="text" class="form-control" id="inputNome" name="nome">
             </div>
-            
             <div class="col-md-12">
               <label for="inputEmail4" class="form-label">Email</label>
               <input type="email" class="form-control" id="inputEmail4" name="email">
             </div>
-            
-             <div class="col-md-12">
+            <div class="col-md-6">
+              <label for="inputCpf" class="form-label">CPF</label>
+              <input type="text" class="form-control" id="inputCpf" name="cpf">
+            </div>
+            <div class="col-md-6">
+              <label for="inputTelefone" class="form-label">Telefone</label>
+              <input type="text" class="form-control" id="inputTelefone" name="telefone">
+            </div>
+            <div class="col-md-12">
               <label for="inputData" class="form-label">Data de Nascimento</label>
-              <input type="date" class="form-control" id="inputData" name="data">
-            </div> 
-            
+              <input type="date" class="form-control" id="inputData" name="data"> 
+            </div>
             <div class="col-md-6">
               <label for="inputPassword4" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="inputPassword4" name="senha">
+              <input type="password" class="form-control" id="inputPassword4" name="reSenha">
             </div>
-            
-            <!--  <div class="col-md-6">
+            <div class="col-md-6">
               <label for="inputPassword4" class="form-label">Repetir senha</label>
               <input type="password" class="form-control" id="inputPassword4" name="senha">
-            </div> --> 
-            
-            <div class="col-md-3">
-              <label>Cep: <input class="form-control" name="cep" type="text" id="cep" maxlength="9" onblur="pesquisacep(this.value);"/></label><br />
             </div>
-            
+            <div class="col-md-3">
+              <label>Cep: <input class="form-control" name="cep" type="text" id="cep" value="" maxlength="9" onblur="pesquisacep(this.value);" /></label><br />
+            </div>
             <div class="col-md-9">
-              <label>CPF: <input class="form-control" name="cpf" type="text" id="cpf" size="100"/></label><br/> 
+              <label>Rua: <input class="form-control" name="rua" type="text" id="rua" size="100" readonly /></label><br /> 
             </div>
-
             <div class="col-md-7">
-              <label>Telefone: <input class="form-control" name="telefone" type="text" id="telefone" size="100"/></label><br /> 
+              <label>Cidade: <input class="form-control" name="cidade" type="text" id="cidade" size="100" readonly /></label><br /> 
             </div>
-            
             <div class="col-md-3">
-              <label>Estado: <input class="form-control" name="estado" type="text" id="uf"  readonly /></label><br /> 
+              <label>Estado: <input class="form-control" name="uf" type="text" id="uf"  readonly /></label><br /> 
             </div> 
-            
             <div class="col-md-2">
-              <label>Número: <input class="form-control" name="numResidencia" type="text" id="numero" size="40" maxlength="5" value="0"/></label><br />
+              <label>Número: <input class="form-control" name="numero" type="text" id="numero" size="40" maxlength="5" /></label><br />
             </div>
-            
             <div class="col-md-12">
-              <label>Complemento: <input class="form-control" name="complemento" type="text" id="numero" size="100" maxlength="100"/></label><br /> 
-            </div> 
+              <label>Ponto de referência: <input class="form-control" name="referencia" type="text" id="numero" size="100" maxlength="100" /></label><br /> 
             </div>
-            
+            </div>
             <div class="mx-auto">
               <button type="submit" class="btn btn-success mt-5 mb-3">Enviar</button>
               <button type="button" class="btn btn-primary register-btn mt-5 mb-3" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Já tenho Cadastro</button>
@@ -631,7 +632,7 @@
           </div> 
         </div>
         <div class="modal-body">
-          <form class="row g-3" method="get" action=".">
+          <form class="row g-3" method="get" action="/usuario/cadastrar-atualizar">
             <div class="col-md-12">
               <label for="inputName" class="form-label">Nome completo</label>
               <input type="text" class="form-control" id="inputName">
@@ -723,6 +724,7 @@
   <!-- <script src="./style/bootstrap/js/bootstrap.bundle.js"></script> -->
   <!-- JS -->
   <script th:src="@{/style/ScriptBoot.js}"></script>
+  
   <script th:inline="javascript">
 	  /*<![CDATA[*/
 	  var mensagem = /*[[${mensagem}]]*/ null;
@@ -731,5 +733,7 @@
 	  }
 	  /*]]>*/
   </script>
+  
+
 </body>
 </html>

@@ -171,7 +171,11 @@ function curriculoEnviado(){
 
 function atualizarDados(){
   alert(
+<<<<<<< HEAD
     "\nDados atualziados com sucesso");
+=======
+    "\nDados atualizados com sucesso");
+>>>>>>> a322e2a0a635e6fe1d9aee806f0cb6623a0b5ddc
     location.href = "perfil.html";
 }
 
@@ -198,4 +202,8 @@ sr.reveal('#offGrandeR, #sobre5, #servicos-area3', {delay: 300, duration: 1000})
 sr.reveal('#sobre6, #servicos-area4, #dados-area3, #time-area4', {delay: 400, duration: 1000});
 sr.reveal('#sobre-lista', {delay: 500, duration: 1000});
 sr.reveal('#sobre-lista, #dados-area4, #time-area5', {delay: 600, duration: 1000});
+<<<<<<< HEAD
 sr.reveal('#time-area6', {delay: 700, duration: 1000});
+=======
+sr.reveal('#time-area6', {delay: 700, duration: 1000});
+>>>>>>> a322e2a0a635e6fe1d9aee806f0cb6623a0b5ddc

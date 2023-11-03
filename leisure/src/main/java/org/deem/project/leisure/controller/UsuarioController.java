@@ -67,7 +67,7 @@ public class UsuarioController {
 	@GetMapping("/perfil")
 	public String getPerfil(Usuario usuario, RedirectAttributes redirect) {
 		if (usuario.getId() != 0) {
-			return "usuario/meus-dados";
+			return "usuario/perfil";
 		}
 		redirect.addFlashAttribute("mensagem", "Erro ao tentar acessar esta página. Faça login primeiro!");
 		return "redirect:/leisure/index";

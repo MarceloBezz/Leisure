@@ -19,6 +19,9 @@ public class Usuario {
 	@Column(name="NOME")
 	private String nome;
 	
+	@Column(name="DATA")
+	private String data;
+	
 	@Column(name="EMAIL")
 	private String email;
 	
@@ -46,10 +49,11 @@ public class Usuario {
 	public Usuario() {
 	}
 
-	public Usuario(long id, String nome, String email, String senha, String telefone, String cpf, String cep,
+	public Usuario(long id, String nome, String data, String email, String senha, String telefone, String cpf, String cep,
 			short numResidencia, String complemento, boolean ativo) {
 		this.id = id;
 		this.nome = nome;
+		this.data = data;
 		this.email = email;
 		this.senha = senha;
 		this.telefone = telefone;
@@ -74,6 +78,14 @@ public class Usuario {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public String getEmail() {

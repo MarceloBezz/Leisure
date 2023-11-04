@@ -55,7 +55,7 @@
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" th:href="@{usuario/criar}">Sair</a></li>
+            <li><a class="dropdown-item" th:href="@{/leisure/index}">Sair</a></li>
           </ul>
         </div>
       </button>
@@ -73,7 +73,7 @@
             <hr>
             <ul class="nav nav-pills d-inline-block mb-auto">
               <li class="nav-item">
-                <a class="pointer nav-link active d-flex" aria-current="page" onclick="anunciar()"> <!--data-bs-toggle="modal" data-bs-target="#anunciarModal" -->
+                <a class="pointer nav-link active d-flex" aria-current="page" onclick="anunciar()">
                   <i class="fa-solid fa-house-medical d-flex align-items-center me-2"></i> Anunciar  
                 </a>
               </li>
@@ -94,7 +94,7 @@
                 </a>
               </li>
               <li>
-                <a th:href="@{/leisure/index}" class="pointer nav-link link-body-emphasis d-flex" onclick="sair()"> <!-- FAZER A FUNÇÃO DE LOGOUT -->
+                <a th:href="@{/leisure/index}" class="pointer nav-link link-body-emphasis d-flex"> <!-- FAZER A FUNÇÃO DE LOGOUT -->
                   <i class="fa-solid fa-right-from-bracket d-flex align-items-center me-2"></i>Sair
                 </a>
               </li>
@@ -278,14 +278,14 @@
 <!--          <form id="atualizarSenha" class="container p-2 border border-1 rounded-2" action="/usuario/cadastrar-atualizar" method="post">-->
             <div class="col-auto mt-2">
 				<span>Senha:</span>
-              <input id="senha" name="antigaSenha" type="password" class="form-control" th:value="${usuario.senha}">
+              <input id="senha" name="senha" type="password" class="form-control" th:value="${usuario.senha}">
             </div>
-            <div class="col-auto mt-2">
-              <input id="novaSenha" name="novaSenha" type="password" class="form-control" placeholder="Nova senha">
-            </div>
-            <div class="col-auto mt-2">
-              <input id="reNovaSenha" name="senha" type="password" class="form-control" placeholder="Confirme a nova senha">
-            </div>
+<!--            <div class="col-auto mt-2">-->
+<!--              <input id="novaSenha" name="novaSenha" type="password" class="form-control" placeholder="Nova senha">-->
+<!--            </div>-->
+<!--            <div class="col-auto mt-2">-->
+<!--              <input id="reNovaSenha" name="senha" type="password" class="form-control" placeholder="Confirme a nova senha">-->
+<!--            </div>-->
             <div class="col-sm-12 mt-2 mb-2 text-center">
               <button class="btn btn-light" type="submit" onclick="atualizarDados()">Atualizar</button> 
             </div>
@@ -385,7 +385,7 @@
   </div>
   <!-- RODAPÉ -->
   <div class="container mt-5">
-    <footer class="py-5">
+    <footer id="bottomMenu" class="py-5">
       <div class="row">
         <div class="col-6 col-sm-2 mb-3">
           <h5>Sessões</h5>
@@ -394,7 +394,7 @@
             <li class="nav-item mb-2"><a th:href="@{/leisure/index.html#sobre}" class="nav-link p-0 text-body-secondary">Sobre</a></li>
             <li class="nav-item mb-2"><a th:href="@{leisure/index.html#servicos-area}" class="nav-link p-0 text-body-secondary">Serviços</a></li>
             <li class="nav-item mb-2"><a th:href="@{leisure/index.html#time-area}" class="nav-link p-0 text-body-secondary">Time</a></li>
-            <li class="nav-item mb-2"><a th:href="@{usuario/faq.html}" class="nav-link p-0 text-body-secondary">Dúvidas</a></li>
+            <li class="nav-item mb-2"><a th:href="@{/leisure/faq#duvidas}" class="nav-link p-0 text-body-secondary">Dúvidas</a></li>
           </ul>
         </div>
         <div class="col-6 col-sm-2 mb-3">

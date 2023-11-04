@@ -60,22 +60,22 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#sobre">Sobre</a>
+              <a class="nav-link" th:href="@{/leisure/index#sobre}">Sobre</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#servicos-area">Serviços</a>
+              <a class="nav-link" th:href="@{/leisure/index#servicos-area}">Serviços</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#time-area">Time</a>
+              <a class="nav-link" th:href="@{/leisure/index#time-area}">Time</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Anunciar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#bottomMenu">Contatos</a>
+              <a class="nav-link" th:href="@{/leisure/index#bottomMenu}">Contatos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="faq.html">Duvidas</a>
+              <a class="nav-link" th:href="@{/leisure/faq#duvidas}">Duvidas</a>
             </li>
           </ul>
         </div>
@@ -113,19 +113,19 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#sobre">Sobre</a>
+              <a class="nav-link" th:href="@{/leisure/index#sobre}">Sobre</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#servicos-area">Serviços</a>
+              <a class="nav-link" th:href="@{leisure/index#servicos-area}">Serviços</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#time-area">Time</a>
+              <a class="nav-link" th:href="@{leisure/index#time-area}">Time</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#bottomMenu">Contatos</a>
+              <a class="nav-link" th:href="@{/leisure/index#bottomMenu}">Contatos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="faq.html">Duvidas</a>
+              <a class="nav-link" th:href="@{/leisure/faq#duvidas}">Duvidas</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -164,7 +164,8 @@
       </div>      
     </div>
   </div>
-  <div class="container mt-5">
+  <div id="duvidas"></div>
+  <div class="container">
     <div class="row">
       <div class="Faq col-8 d-flex flex-column justify-content-center mt-3 rounded-start-4">
         <span class="ms-5"><h3>Posso criar um anúncio sem realizar um cadastro?</h3></span>
@@ -213,20 +214,20 @@
     </div>
   </div>
 <!-- RODAPÉ -->
-  <div id="bottomMenu" class="container mt-5">
-    <footer class="py-5">
+  <div class="container mt-5">
+    <footer id="bottomMenu" class="py-5">
       <div class="row">
         <div class="col-6 col-md-2 mb-3">
           <h5>Sessões</h5>
           <ul class="nav flex-column d-inline-block">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Sobre</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Serviços</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Time</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Dúvidas</a></li>
+            <li class="nav-item mb-2"><a th:href="@{/leisure/index}" class="nav-link p-0 text-body-secondary">Home</a></li>
+            <li class="nav-item mb-2"><a th:href="@{/leisure/index#sobre}" class="nav-link p-0 text-body-secondary">Sobre</a></li>
+            <li class="nav-item mb-2"><a th:href="@{/leisure/index#servicos-area}" class="nav-link p-0 text-body-secondary">Serviços</a></li>
+            <li class="nav-item mb-2"><a th:href="@{/leisure/index#time-area}" class="nav-link p-0 text-body-secondary">Time</a></li>
+            <li class="nav-item mb-2"><a th:href="@{/leisure/faq#duvidas}" class="nav-link p-0 text-body-secondary">Dúvidas</a></li>
           </ul>
         </div>
-  
+
         <div class="col-6 col-md-2 mb-3">
           <h5>Categorias</h5>
           <ul class="nav flex-column d-inline-block">
@@ -237,7 +238,7 @@
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Corretores</a></li>
           </ul>
         </div>
-  
+
         <div class="col-6 col-md-2 mb-3">
           <h5>Contato</h5>
           <ul class="nav flex-column d-inline-block">
@@ -248,7 +249,7 @@
             <li class="nav-item mb-2"><a href="https://whatsapp.com/" target="_blank" class="nav-link p-0 text-body-secondary">Whatsapp</a></li>
           </ul>
         </div>
-  
+
         <div class="col-md-5 offset-md-1 mb-3 mt-5">
           <form>
             <h5>Se inscreva para receber todas as novidades</h5>
@@ -261,7 +262,7 @@
           </form>
         </div>
       </div>
-  
+
       <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
         <p>&copy;2023 DEEM Apps. Development.</p>
         <ul class="list-unstyled d-flex">

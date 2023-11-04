@@ -689,7 +689,10 @@
     #admtablefromleisuri{
         margin-top: 200px;
     }
-    #anuncios-area, #carouselExampleAutoplaying, #offGrandeL, #offGrandeC, #offGrandeR{
+    #duvidas{
+		padding-top: 130px;
+	}
+    /* #anuncios-area, #carouselExampleAutoplaying, #offGrandeL, #offGrandeC, #offGrandeR{
         visibility: hidden;
     }
     #sobre2, #sobre3, #sobre4, #sobre5, #sobre6, #sobre-lista{
@@ -703,5 +706,5 @@
     }
     #time-area2, #time-area3, #time-area4, #time-area5, #time-area6{
         visibility: hidden;
-    }
+    } */
 }

@@ -95,7 +95,7 @@ public class UsuarioController {
 		modelView.addObject("usuarios", service.findAll());
 		return modelView;
 	}
-
+	
 	
 	
 	

@@ -1,0 +1,66 @@
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+  tabindex="-1" th:fragment="cadastro">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="col-md-12 d-flex justify-content-end">
+        <button id="close-cadastro" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="row mx-auto">
+        <div class="col-md-12 mx-auto">
+          <h1 class="modal-title fs-5 mt-5 mb-4" id="exampleModalToggleLabel2">Cadastro</h1>
+        </div>
+      </div>
+      <div class="modal-body">
+        <!-- <form class="row g-3" action="/login/cadastrar-atualizar" method="post">
+            <div class="col-md-12">
+              <label for="inputNome" class="form-label">Nome completo</label>
+              <input type="text" class="form-control" id="inputNome" name="nome" th:value="${usuario.nome}">
+            </div>
+            <div class="col-md-12">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" name="email" th:value="${usuario.email}">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCpf" class="form-label">CPF</label>
+              <input type="text" class="form-control" id="inputCpf" name="cpf" th:value="${usuario.cpf}">
+            </div>
+            <div class="col-md-12">
+              <label for="inputData" class="form-label">Data de Nascimento</label>
+              <input type="date" class="form-control" id="inputData" name="data" th:value="${usuario.data}"> 
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="inputPassword4" name="senha" th:value="${usuario.senha}">
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Repetir senha</label>
+              <input type="password" class="form-control" id="inputPassword4" name="senha" th:value="${usuario.senha}">
+            </div>
+            <div class="col-md-3">
+              <label>Cep: <input class="form-control" name="cep" type="text" id="cep" value="" maxlength="9" onblur="pesquisacep(this.value);" /></label><br />
+            </div>
+            <div class="col-md-9">
+              <label>Rua: <input class="form-control" name="rua" type="text" id="rua" size="100" readonly /></label><br /> 
+            </div>
+            <div class="col-md-7">
+              <label>Cidade: <input class="form-control" name="cidade" type="text" id="cidade" size="100" readonly /></label><br /> 
+            </div>
+            <div class="col-md-3">
+              <label>Estado: <input class="form-control" name="uf" type="text" id="uf"  readonly /></label><br /> 
+            </div> 
+            <div class="col-md-2">
+              <label>Número: <input class="form-control" name="numero" type="text" id="numero" size="40" maxlength="5" /></label><br />
+            </div>
+            <div class="col-md-12">
+              <label>Ponto de referência: <input class="form-control" name="referencia" type="text" id="numero" size="100" maxlength="100" /></label><br /> 
+            </div>
+            </div>
+            <div class="mx-auto">
+              <button type="submit" class="btn btn-success mt-5 mb-3">Enviar</button>
+          </form> -->
+        <button class="btn btn-primary register-btn mt-5 mb-3" data-bs-target="#exampleModalToggle"
+          data-bs-toggle="modal">Já tenho Cadastro</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,127 @@
+@import './variaveis';
+
+@media screen and (min-width: 320px)
+{
+    @include mainTitle();
+    @include imgEscritorio();
+    @include sobreLista();
+    @include servicosBox();
+    @include dadosArea();
+    @include dadosBox();
+    @include botaoPesquisa();
+    @include footer();
+    @include imgEmpresa();
+    @include parallax();
+    @include imgPadrao();
+    @include applyBtn();
+    @include imgUsuario();
+    @include dadosImg();
+    @include sobre();
+    @include tema();
+    @include card();
+
+    #mini-home {
+        width: 50%;
+    }
+
+    #offGrandeL, #offGrandeC, #offGrandeR, .grande, .carousel {
+        display: none;
+    }
+
+    #offPequeno, .pequeno {
+        display: block;
+    }
+
+    .anuncioGridmini {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    #container-topMini {
+        margin-top: 75px;
+    }
+
+    .sub-title {
+        text-transform: uppercase;
+        @include font-padrao();
+    }
+ 
+    #trabalhe-area {
+        .container-fluid{
+            height: 100%;
+        }
+        .row{
+            height: 100%;
+        }
+        .trabalhe-box{
+            text-align: center;
+            padding: 70px;
+        }
+    }
+
+    .faixaBottom {
+        footer{
+            padding-bottom: 10px;
+            padding-top: 30px;
+            margin-top: 10px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        background-color: rgb(110, 110, 110);
+        margin-top: 560px;
+        margin-bottom: -560px;
+        padding-top: 30px;
+    }
+
+    .navbar-toggler{
+        &:focus{
+            box-shadow: none !important;
+        }
+    }
+    .card{
+        border: 3px solid rgba(63, 100, 233, 0.185);
+        left: 2%;
+    }
+    // .card-time{
+    //     border: 3px solid rgba(63, 100, 233, 0.185);
+    //     left: 2%;
+    // }
+    .time-area{
+        margin-top: 100px !important;
+    }
+    .foto-perfil{
+        width: 200px !important;
+        font-size: 150px !important;
+    }
+
+    #input-file{
+        display: none;
+    }
+
+    #input-imagem, #enviarCurriculo, .pointer{
+        cursor: pointer;
+    }
+    #anunciar{
+        margin-left: 23%;
+        display: none;
+        margin-top: 75px !important;
+    }
+    #meus-anuncios{
+        margin-left: 23%;
+        display: none;
+        margin-top: 75px !important;
+    }
+    #meus-dados{
+        margin-left: 23%;
+        display: none;
+        margin-top: 75px !important;
+    }
+    #favoritos{
+        margin-left: 23%;
+        display: none;
+        margin-top: 75px !important;
+    }
+    .anunciar-cont{
+        display: none;
+    }
+}

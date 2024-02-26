@@ -1,0 +1,129 @@
+<div class="pequeno mb-3" th:fragment="miniMenu">
+  <nav class="navbar fixed-top navbar-expand-lg bg-light">
+    <div class="container-fluid ">
+      <div class="d-flex">
+        <div class="justify-content-start">
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="d-flex position-fixed top start-50 translate-middle mt-3">
+          <label for="switch">
+            <input type="checkbox" id="switch" class="d-none"><i class="fa-thin fa-sun" style="color: #f1d104;"></i>
+          </label>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse hoverMenu ms-2" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link font-light" href="#" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-light" aria-current="page" href="#">Anunciar</a>
+          </li>
+          <li class="nav-item dropdown font-light">
+            <a class="nav-link dropdown-toggle font-light" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Categorias</a>
+            <ul class="dropdown-menu bg-light">
+              <li><a class="font-light dropdown-item" href="#">Apartamentos</a></li>
+              <li><a class="font-light dropdown-item" href="#">Casas</a></li>
+              <li><a class="font-light dropdown-item" href="#">Sitios</a></li>
+              <li><a class="font-light dropdown-item" href="#">Terrenos</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item bg-light font-light" href="#">Corretores</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-light" th:href="@{index#sobre}">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-light" th:href="@{index#servicos}">Especialidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-light" th:href="@{index#time}">Time</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-light" aria-current="page" th:href="@{premium}">Premium</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-light" href="#bottomMenu">Contatos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-light" th:href="@{faq#duvidas}">Duvidas</a>
+          </li>
+          <li class="nav-item dropdown font-light">
+            <a class="nav-link dropdown-toggle font-light" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Download</a>
+            <ul class="dropdown-menu bg-light font-light">
+              <li><a class="dropdown-item bg-light font-light" href="https://play.google.com/store/games?hl=pt_BR&gl=US"
+                  target="_blank"><i class="fa-brands fa-google-play me-2"></i>Google Play</a></li>
+              <li><a class="dropdown-item bg-light font-light" href="https://www.apple.com/br/app-store/"
+                  target="_blank"><i class="fa-brands fa-apple me-2 fa-lg"></i>App Store</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+          <button id="botaoPesquisa" class="btn btn-lg" type="submit"><i
+              class="fa-thin fa-magnifying-glass fa-rotate-90"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div class="pequeno" th:fragment="miniMenuAdm">
+  <nav class="navbar font-light navbar-expand-lg bg-light">
+    <div class="container-fluid ">
+      <img id="mini-home" class="navbar-brand" th:src="@{/imagem/mini-home.png}" alt="Inicio">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse hoverMenu" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a id="mudarTema" class="nav-link font-light" href="#" onclick="consultaGeral()">Consulta geral</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-light" href="#">Consultar anuncios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-light" href="#">Consultar premium</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-light" href="#">Consultar inativos</a>
+          </li>
+          <li class="nav-item dropdown font-light">
+            <a class="nav-link dropdown-toggle font-light" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Consulta refinada</a>
+            <ul class="dropdown-menu bg-light">
+              <li><a class="font-light dropdown-item" href="#">Nome</a></li>
+              <li><a class="font-light dropdown-item" href="#">CPF</a></li>
+              <li><a class="font-light dropdown-item" href="#">E-mail</a></li>
+              <li><a class="font-light dropdown-item" href="#">Sexo</a></li>
+              <li><a class="font-light dropdown-item" href="#">Qtde anuncios</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="font-light dropdown-item" href="#">Valor</a></li>
+              <li><a class="font-light dropdown-item" href="#">Cidade</a></li>
+              <li><a class="font-light dropdown-item" href="#">Estado</a></li>
+              <li><a class="font-light dropdown-item" href="#">CEP</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+          <button id="botaoPesquisa" class="btn btn-lg" type="submit"><i
+              class="fa-thin fa-magnifying-glass fa-rotate-90"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</div>

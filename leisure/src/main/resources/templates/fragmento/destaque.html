@@ -1,0 +1,161 @@
+<div id="anuncios-area" th:fragment="destaque">
+    <div class="container d-flex justify-content-center mt-5 mb-5">
+        <div class="row just-content-center swiper mySwiper mx-auto">
+            <div class="swiper-wrapper col-md-3">
+                <div class="swiper-slide col-md-3">
+                    <div class="card-border-light bg-light font-light" style="width: 90%; height: auto;">
+                        <img th:src="@{/anuncio/card/card01.png}" class="imgDetails img-border-light card-img-top img-fluid"
+                            alt="...">
+                        <div class="card-body bg-light font-light">
+                            <h5 class="card-title bg-light font-light">R$2.000.000,00</h5>
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-bed"></i> Quartos:
+                            </p>
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-shower"></i>
+                                Banheiros:</p>
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-car"></i> Vagas :
+                            </p>
+                            <a class="azulTemabg-light font-light" href="#" alt="Local"><i
+                                    class="fa-thin fa-location-dot"></i> Barueri-SP</a>
+                            <a class="btnDetalhes btn btn-outline-primary" onclick="maisDetalhes()"
+                            th:href="@{anuncio-detalhes}">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide col-md-3">
+                    <div class="card-border-light bg-light font-light" style="width: 90%; height: auto;">
+                        <img th:src="@{/anuncio/card/card02.png}" class="imgDetails img-border-light card-img-top img-fluid"
+                            alt="...">
+                        <div class="card-body bg-light font-light">
+                            <h5 class="card-title bg-light font-light">R$2.000.000,00</h5>
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-bed"></i> Quartos:
+                            </p>
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-shower"></i>
+                                Banheiros:</p>
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-car"></i> Vagas :
+                            </p>
+                            <a class="azulTemabg-light font-light" href="#" alt="Local"><i
+                                    class="fa-thin fa-location-dot"></i> Barueri-SP</a>
+                            <a class="btnDetalhes btn btn-outline-primary" onclick="maisDetalhes()"
+                                th:href="@{anuncio-detalhes}">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide col-md-3">
+                    <div class="card-border-light bg-light font-light" style="width: 90%; height: auto;">
+                        <img th:src="@{/anuncio/card/card03.png}" class="imgDetails img-border-light card-img-top img-fluid"
+                            alt="...">
+                        <div class="card-body bg-light font-light">
+                            <h5 class="card-title bg-light font-light">R$2.000.000,00</h5>
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-bed"></i> Quartos:
+                            </p>
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-shower"></i>
+                                Banheiros:</p>
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-car"></i> Vagas :
+                            </p>
+                            <a class="azulTemabg-light font-light" href="#" alt="Local"><i
+                                    class="fa-thin fa-location-dot"></i> Barueri-SP</a>
+                            <a class="btn btn-outline-primary" onclick="maisDetalhes()"
+                                th:href="@{anuncio-detalhes}">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide col-md-3">
+                    <div class="card-border-light bg-light font-light" style="width: 90%; height: auto;">
+                        <img th:src="@{/anuncio/card/card04.png}" class="imgDetails img-border-light card-img-top img-fluid"
+                            alt="...">
+                        <div class="card-body bg-light font-light">
+                            <h5 class="card-title bg-light font-light">R$2.000.000,00</h5>
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-bed"></i> Quartos:
+                            </p>
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-shower"></i>
+                                Banheiros:</p>
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-car"></i> Vagas :
+                            </p>
+                            <a class="azulTemabg-light font-light" href="#" alt="Local"><i
+                                    class="fa-thin fa-location-dot"></i> Barueri-SP</a>
+                            <a class="btn btn-outline-primary" onclick="maisDetalhes()"
+                                th:href="@{anuncio-detalhes}">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next seta-light"></div>
+            <div class="swiper-button-prev seta-light"></div>
+        </div>
+    </div>
+</div>
+
+
+<div th:fragment="anuncioDetalhes">
+    <div class="card-border-light bg-light font-light" style="width: 100%; height: auto;">
+        <div class="row align-items-center">
+
+            <div class="col-4" id="img-anuncio">
+                <div class="close font-light">
+                    <a href="#"><i class="fa-thin fa-xmark fa-xl"></i></a>
+                </div>
+                <a href="#img-anuncio">
+                    <img id="detalhes" src="./" class="ms-4 float-start img-border-light card-img-details img-fluid"
+                        alt="...">
+                </a>
+            </div>
+
+            <div class="col-8">
+                <div class="row">
+                    <div class="col d-flex justify-content-end mt-4 me-3">
+                        <i class="fav-like fa-thin fa-heart fa-xl me-1" style="color: #ff2600;" alt="Amei"></i>
+                        <i class="fav-like fa-thin fa-star fa-xl" style="color: #fec700;" alt="Favoritar"></i>
+                    </div>
+                </div>
+                <div class="card-body bg-light font-light">
+
+                    <div class="row mt-4">
+                        <div class="col fs-6">
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-bed"></i> Quarto:
+                            </p>
+                        </div>
+                        <div class="col fs-6">
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-couch"></i> Sala:
+                            </p>
+                        </div>
+                        <div class="col fs-6">
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-kitchen-set"></i>
+                                Cozinha:</p>
+                        </div>
+                        <div class="col fs-6">
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-shower"></i>
+                                Banheiro:</p>
+                        </div>
+                        <div class="col fs-6">
+                            <p class="card-text bg-light font-light text-start"><i class="fa-thin fa-car"></i> Vaga :
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mt-4 mx-auto fs-6">
+                        <div class="col-12 mx-auto">
+                            <p class="mx-auto card-text bg-light font-light">Área: <i class="fa-thin fa-thumbs-up"></i>
+                            </p>
+                            <p class="mx-auto card-text bg-light font-light">Imóvel sustentável: <i
+                                    class="fa-thin fa-thumbs-up"></i></p>
+                        </div>
+                    </div>
+                    <div class="row mt-4 mb-4">
+                        <div class="col">
+                            <div class="col">
+                                <textarea class="form-control" id="validationTextarea" disabled></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="azulTemabg-light font-light" href="#" alt="Local"><i class="fa-thin fa-location-dot"></i>
+                    Barueri-SP</a>
+                <div class="row ">
+                    <div class="col d-flex justify-content-between ms-5 me-5 mb-3">
+                        <h5 class="card-title bg-light font-light fs-3">R$2.000.000,00</h5>
+                        <button class="btn btn-success">Solicitar contato</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

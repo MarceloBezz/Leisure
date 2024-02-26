@@ -1,0 +1,50 @@
+<div class="container-fluid mt-5" th:fragment="profileMenu">
+    <div class="row d-flex">
+      <div class="col-12 d-flex mt-4">
+        <div class="col-sm-auto anunciar-cont">
+          <div class="perfil p-3 ">
+            <a href="#" class="d-flex mb-3 mb-sm-0 me-sm-auto link-body-emphasis text-decoration-none">
+              <span class="fs-4 font-light">Bem-vido(a)</span>
+            </a>
+            <hr>
+            <ul class="nav d-inline-block mb-auto hoverMenu">
+              <li class="nav-item">
+                <a class="pointer nav-link d-flex font-light px-0" aria-current="page" onclick="anunciar()"> <!--data-bs-toggle="modal" data-bs-target="#anunciarModal" -->
+                  <i class="fa-thin fa-house-medical d-flex align-items-center me-2"></i> Anunciar  
+                </a>
+              </li>
+              <li>
+                <a class="pointer nav-link link-body-emphasis d-flex font-light px-0" onclick="meusAnuncios()">
+                  <i class="fa-thin fa-house-flag d-flex align-items-center me-2"></i>Meus anuncios
+                </a>
+              </li>
+              <br>
+              <li>
+                <a class="pointer nav-link link-body-emphasis d-flex font-light px-0" onclick="meusDados()">
+                  <i class="fa-thin fa-user-pen d-flex align-items-center me-2"></i>Meus dados
+                </a>
+              </li>
+              <li>
+                <a class="pointer nav-link link-body-emphasis d-flex font-light px-0" onclick="favoritos()">
+                  <i class="fa-thin fa-star d-flex align-items-center me-2"></i>Favoritos
+                </a>
+              </li>
+              <li>
+                <a href="Index.html" class="pointer nav-link link-body-emphasis d-flex font-light px-0" onclick="sair()"> <!--FAZER A FUNÇÃO DE LOGOUT -->
+                  <i class="fa-thin fa-right-from-bracket d-flex align-items-center me-2"></i>Sair
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- ANUNCIAR -->
+        <div th:replace="~{fragmento/anunciar :: anunciar}"></div>
+        <!-- MEUS DADOS -->
+        <div th:replace="~{fragmento/meusDados :: meusDados}"></div>
+        <!-- MEUS ANUNCIOS -->
+        <div th:replace="~{fragmento/meusAnuncios :: meusAnuncios}"></div>
+        <!-- MEUS FAVORITOS -->
+        <div th:replace="~{fragmento/favoritos :: favoritos}"></div>
+      </div>      
+    </div>
+  </div>

@@ -1,0 +1,195 @@
+@import './variaveis';
+
+@media screen and (min-width: 768px)
+{
+    @include mainTitle();
+    @include imgEscritorio();
+    @include sobreLista();
+    @include servicosBox();
+    @include dadosArea();
+    @include dadosBox();
+    @include botaoPesquisa();
+    @include footer();
+    @include imgEmpresa();
+    @include parallax();
+    @include imgPadrao();
+    @include applyBtn();
+    @include imgUsuario();
+    @include dadosImg();
+    @include sobre();
+    @include tema();
+    @include card();
+
+    #barraPesquisa {
+        z-index: 2;
+        margin-top: 15px !important;
+    }
+
+    .navMargin{
+        top: 90px !important;
+        padding: 0 !important;
+    }
+
+    .grande {
+        display: block;
+    }
+
+    .pequeno, #offPequeno, .anuncioGridmini {
+        display: none;
+    }
+
+    #container-top {
+        margin-top: 175px;
+    }
+    #nav-fixed {
+        margin-top: 30px;
+        z-index: 2;
+    } 
+
+    #offGrandeC{
+        display: block !important;
+        margin-top: 2%;
+        width: 20rem;
+    }
+    #offGrandeL {
+        @extend #offGrandeC;
+        border-bottom-left-radius: 20px;
+        width: 20rem;
+    }
+    
+    #offGrandeR{
+        @extend #offGrandeC;
+        border-bottom-right-radius: 20px;
+        width: 20rem;
+    }
+    .carousel {
+        display: block;
+        width: 80.7rem;
+    }
+
+    .row {
+        #OFF{
+            &:hover {
+                cursor: pointer;
+                opacity: 0.9;
+            }
+        }
+    }
+
+    .faixa-nav {
+        height: 170px;
+    }
+
+    #trabalhe-area, .trabalhe-box{
+        text-align: center;
+
+    }
+
+    .login-register{
+        top: 50px !important;
+        padding: 10px;
+        margin: 0 8% !important;
+        border-color: $cor-azul;
+        color: white;
+        &:hover{
+            border-color: black;
+        }
+    }
+    .home-page{
+        top: 60px !important;
+        padding: 10px;
+        margin: 0 12% !important;
+    }
+    .fa-user{
+        margin-right: 12px;
+    }
+    
+    .fa-location-dot
+    {
+        text-align: center !important;
+        margin-bottom: 15px;
+    }
+    .swiper-button-next, .swiper-button-prev{
+        color: $cor-azul !important;
+    }
+    .swiper-slide{
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    #nosso-time{
+        margin-bottom: 50px;
+    }
+
+    .swiper-pagination{
+        display: flex !important;
+    }
+    #close-cadastro{
+        margin: 15px 10px 0 0;
+    }
+    .time-area{
+        margin-top: 100px !important;
+    }
+
+    .perfil{
+        width: 200px;
+        margin: 75px 0;  
+    }
+
+    #botaoPerfil{
+        top: 45px !important;
+        padding: 10px;
+        margin: 0 5% !important;
+    }
+
+    .foto-perfil{
+        width: 500px !important;
+        font-size: 200px !important;
+    }
+    #input-file{
+        display: none;
+    }
+    #input-imagem, #enviarCuriculo, .pointer{
+        cursor: pointer;
+    }
+    
+    #anunciar{
+        margin-left: 5%;
+        display: none;
+        margin-top: 75px !important;
+    }
+    #meus-anuncios{
+        margin-left: 5%;
+        display: none;
+        margin-top: 75px !important;
+    }
+    #meus-dados{
+        margin-left: 5%;
+        display: none;
+        margin-top: 75px !important;
+    }
+    #favoritos{
+        margin-left: 5%;
+        display: none;
+        margin-top: 75px !important;
+    }
+    .anunciar-cont{
+        display: block;
+    }
+    #admtablefromleisuri{
+        margin-top: 200px;
+    }
+    #duvidas{
+		padding-top: 130px;
+	}
+    .ms-3{
+        a{
+            &:hover{
+                color: $cor-azul;
+            }
+        }
+    }
+    .margem{
+        padding: 75px !important;
+    }
+}

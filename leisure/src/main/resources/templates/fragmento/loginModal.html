@@ -1,0 +1,34 @@
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+  tabindex="-1" th:fragment="loginModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="col-md-12 d-flex justify-content-end">
+        <button id="close-cadastro" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="row mx-auto">
+        <div class="col-md-12 mx-auto">
+          <h1 class="modal-title fs-5 mt-5 mb-4" id="exampleModalToggleLabel">Login</h1>
+        </div>
+      </div>
+      <div class="modal-body">
+        <!-- FORM LOGIN -->
+         <form class="row g-3" action="/usuario/login" method="post">
+              <div class="col-md-7 mx-auto">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" name="email">
+              </div>
+              <div class="col-md-7 mx-auto">
+                <label for="inputPassword4" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword4" name="senha">
+              </div>  
+              </div>
+              <div class="mx-auto">
+                <button type="submit" class="btn btn-success mt-5 mb-3">Entrar</button>
+				</form>
+                <button class="btn btn-primary login-btn mt-5 mb-3" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Não tenho Cadastro</button>
+              </div>
+
+            
+      </div>
+    </div>
+  </div>

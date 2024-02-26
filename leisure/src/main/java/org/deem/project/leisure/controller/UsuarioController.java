@@ -5,12 +5,15 @@ import org.deem.project.leisure.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import jakarta.persistence.OneToMany;
 
 @Controller
 @RequestMapping("/usuario")
@@ -51,7 +54,7 @@ public class UsuarioController {
 
 //	------------------------------------------------ LOGIN ------------------------------------------------------------------
 	@PostMapping("/login")
-	public String login(@RequestParam String email, @RequestParam String senha, RedirectAttributes redirect) {
+	public String login(@RequestParam(value="email") String email, @RequestParam(value="senha") String senha, RedirectAttributes redirect) {
 		Usuario usuario = service.findByEmailAndSenha(email, senha);
 		if (usuario != null && usuario.isAtivo() == true) {
 			redirect.addFlashAttribute("mensagem", "Seja bem vindo, " + usuario.getNome());
@@ -67,10 +70,10 @@ public class UsuarioController {
 	@GetMapping("/perfil")
 	public String getPerfil(Usuario usuario, RedirectAttributes redirect) {
 		if (usuario.getId() != 0) {
-			return "usuario/perfil";
+			return "perfil";
 		}
 		redirect.addFlashAttribute("mensagem", "Erro ao tentar acessar esta página. Faça login primeiro!");
-		return "redirect:/leisure/index";
+		return "redirect:leisure/index";
 	}
 	
 //  ------------------------------------------- DELETAR USUÁRIO -------------------------------------------------------------	
@@ -91,7 +94,7 @@ public class UsuarioController {
 // --------------------------------------- VISUALIZAR DADOS DAS CONTAS ------------------------------------------------------
 	@GetMapping("/contas")
 	public ModelAndView usuarios() {
-		ModelAndView modelView = new ModelAndView("usuario/usuario-beta/usuarios");
+		ModelAndView modelView = new ModelAndView("LEISURIADMPAGE");
 		modelView.addObject("usuarios", service.findAll());
 		return modelView;
 	}

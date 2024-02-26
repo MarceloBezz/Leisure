@@ -1,0 +1,100 @@
+<div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3"
+  tabindex="-1" th:fragment="trabalheModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="col-md-12 d-flex justify-content-end">
+        <button id="close-cadastro" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="row mx-auto">
+        <div class="col-md-12 mx-auto">
+          <h1 class="modal-title fs-5 mt-5 mb-4" id="exampleModalToggleLabel3">VENHA FAZER PARTE DA NOSSA EQUIPE</h1>
+        </div>
+      </div>
+      <div class="modal-body">
+        <form class="row g-3" method="get" action=".">
+          <div class="col-md-12">
+            <label for="inputName" class="form-label">Nome completo</label>
+            <input type="text" class="form-control" id="inputName">
+          </div>
+          <div class="col-md-6">
+            <label for="inputCpf" class="form-label">CPF</label>
+            <input type="number" class="form-control" id="inputCpf">
+          </div>
+          <div class="col-md-6">
+            <label for="inputDate" class="form-label">Data de nascimento</label>
+            <input type="date" class="form-control" id="inputDate">
+          </div>
+          <div class="col-md-12">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4">
+          </div>
+
+          <!-- <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Repetir senha</label>
+              <input type="password" class="form-control" id="inputPassword4">
+            </div> -->
+          <div class="col-md-6">
+            <label>Cep: <input class="form-control" name="cep" type="text" id="cep" value="" maxlength="9"
+                onblur="pesquisacep(this.value);" /></label><br />
+          </div>
+          <div class="col-md-12 mb-4">
+            <span><a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank">Não sei meu
+                cep</a></span><br />
+          </div>
+          <div class="col-md-9">
+            <label>Rua: <input class="form-control" name="rua" type="text" id="rua" size="100" readonly /></label><br />
+          </div>
+          <div class="col-md-7">
+            <label>Cidade: <input class="form-control" name="cidade" type="text" id="cidade" size="100"
+                readonly /></label><br />
+          </div>
+          <div class="col-md-3">
+            <label>Estado: <input class="form-control" name="uf" type="text" id="uf" readonly /></label><br />
+          </div>
+          <div class="col-md-2">
+            <label>Número: <input class="form-control" name="numero" type="text" id="numero" size="40"
+                maxlength="5" /></label><br />
+          </div>
+          <div class="col-md-12">
+            <label>Ponto de referência: <input class="form-control" name="numero" type="text" id="numero" size="100"
+                maxlength="100" /></label><br />
+          </div>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Selecione a área desejada</option>
+            <option value="1">Front-End</option>
+            <option value="2">Back-End</option>
+            <option value="3">Full-Stack</option>
+            <option value="4">Segurança da Informação</option>
+            <option value="5">IA e Machine Learning</option>
+            <option value="6">DBA</option>
+            <option value="7">Marketing</option>
+            <option value="8">Financeiro</option>
+            <option value="9">RH</option>
+            <option value="10">Tecnico em Informática</option>
+            <option value="11">Support</option>
+            <option value="12">QA</option>
+            <option value="13">Software Enginner</option>
+            <option value="14">Project Manager</option>
+          </select>
+          <div class="col-mb-12">
+            <label for="validationTextarea" class="form-label">Sobre mim</label>
+            <textarea class="form-control" placeholder="Em poucas palavras fale sobre você e seus objetivos"></textarea>
+          </div>
+          <div class="col-md-12 mx-auto d-flex tex-center">
+            <label for="curriculo" id="enviarCuriculo" class="d-block mt-2 mx-auto">Enviar curriculo <i
+                class="fa-thin fa-file-word"></i></label>
+            <input id="curriculo" type="file" accept=".doc, .dox, .pdf, .png, .jpg" style="display: none">
+          </div>
+        </form>
+      </div>
+      <div class="mx-auto">
+        <button type="submit" class="btn btn-success mt-5 mb-3" onclick="curriculoEnviado()">Enviar</button>
+        <!-- <button class="btn btn-primary register-btn mt-5 mb-3" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Já tenho Cadastro</button> -->
+      </div>
+    </div>
+  </div>
+</div>

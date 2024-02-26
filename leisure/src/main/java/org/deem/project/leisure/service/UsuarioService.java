@@ -53,5 +53,9 @@ public class UsuarioService {
 	public Usuario save(Usuario usuario) {
 		return repository.save(usuario);
 	}
+
+	/*public boolean findByEmailOrCpf(String email, String cpf) {
+		return repository.findByEmailOrCpf(email, cpf);
+	}*/
 	
 }

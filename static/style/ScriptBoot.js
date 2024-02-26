@@ -184,9 +184,9 @@ var resposta = confirm(
   {
   alert(
     "\nDados deletados com sucesso");
-    parent.location.href = "/";
+    // parent.location.href = "/";
   }else{
-    parent.location.href = "perfil";
+    // parent.location.href = "perfil";
   }
 }
 

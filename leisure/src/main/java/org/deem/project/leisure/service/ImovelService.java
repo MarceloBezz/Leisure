@@ -3,7 +3,6 @@ package org.deem.project.leisure.service;
 import java.util.List;
 
 import org.deem.project.leisure.model.Imovel;
-import org.deem.project.leisure.model.Usuario;
 import org.deem.project.leisure.repository.ImovelRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,15 +15,15 @@ public class ImovelService {
 	}
 	
 	public List<Imovel> findAll() {
-		return repository.findAllByAVenda(true);
+		return repository.findAllByAtivo(true);
 	}
 	
 	public Imovel findById(long id) {
 		return repository.findById(id);
 	}
 	
-	public Imovel findByProprietario(Usuario proprietario) {
-		return repository.findByProprietario(proprietario);
+	public Imovel findByUsuario(Imovel imovel) {
+		return repository.findByUsuario(imovel.usuario);
 	}
 	
 	public Imovel save(Imovel imovel) {

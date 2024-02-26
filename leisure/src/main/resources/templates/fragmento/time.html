@@ -1,0 +1,55 @@
+<div th:fragment="time">
+    <div class="container mt-5 mb-5">
+        <div class="col-12" id="nosso-time">
+            <h3 class="main-title font-light">Nosso time</h3>
+            
+        </div>
+        <div class="row justify-content-between swiper mySwiper mx-auto">
+            <div class="swiper-wrapper col-md-3">
+                <div class="swiper-slide col-md-3">
+                    <div class="card card-body-time">
+                        <img th:src="@{/imagem/Danilo.jpg}" class="img-border-light card-img-top img-fluid" alt="Danilo">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Danilo da Cruz</h5>
+                            <p>Fundador - Front-End/UX</p>
+                            <i class="fa-thin fa-laptop-code">&nbsp;&nbsp;</i><i class="fa-thin fa-code"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide col-md-3">
+                    <div class="card card-body-time">
+                        <img th:src="@{/imagem/Enzo.jpg}" class="img-border-light card-img-top img-fluid" alt="Enzo">
+                        <div class="card-body">
+                            <h5 class="card-title">Enzo Brito</h5>
+                            <p class="card-text-time">Cofundador - DBA/Back-End</p>
+                            <i class="fa-thin fa-database">&nbsp;&nbsp;</i><i class="fa-thin fa-gear-complex-code"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide col-md-3">
+                    <div class="card card-body-time">
+                        <img th:src="@{/imagem/Esau.jpg}" class="img-border-light card-img-top img-fluid" alt="Esau">
+                        <div class="card-body">
+                            <h5 class="card-title">Esau Isaac</h5>
+                            <p class="card-text-time">Cofundador - DEV</p>
+                            <i class="fa-thin fa-code"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide col-md-3">
+                    <div class="card card-body-time">
+                        <img th:src="@{/imagem/Marcelo.jpg}" class="img-border-light card-img-top img-fluid" alt="Marcelo">
+                        <div class="card-body">
+                            <h5 class="card-title">Marcelo Bezerra</h5>
+                            <p class="card-text-time">Cofundador - QA/Back-End</p>
+                            <i class="fa-thin fa-gear-complex-code"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next seta-light"></div>
+            <div class="swiper-button-prev seta-light"></div>
+            <div class="swiper-pagination seta-light"></div>
+        </div>
+    </div>
+</div>

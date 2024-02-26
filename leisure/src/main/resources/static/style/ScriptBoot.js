@@ -2,14 +2,13 @@
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 'auto',
   pagination: {
-      el: ".swiper-pagination",
-      dynamicBullets: true,
+    el: ".swiper-pagination",
+    dynamicBullets: true,
   },
   navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",  
-  },
-  
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",  
+  }, 
   breakpoints: {
     640: {
       slidesPerView: 2,
@@ -20,12 +19,12 @@ var swiper = new Swiper(".mySwiper", {
     1280: {
       slidesPerView: 4,
     },
-    1920: {
-      slidesPerView: 5,
-    },
-    2560: {
-      slidesPerView: 7,
-    },
+    // 1920: {
+    //   slidesPerView: 5,
+    // },
+    // 2560: {
+    //   slidesPerView: 7,
+    // },
   },
 });
 
@@ -171,33 +170,159 @@ function curriculoEnviado(){
 
 function atualizarDados(){
   alert(
-    "\nDados atualizados com sucesso")
-    location.href = "perfil.html"
+    "\nDados atualziados com sucesso");
+    location.href = "perfil.html";
 }
 
 function deletarDados(){
 var resposta = confirm(
-    "\nTem certeza que deseja deletar seu cadastro?"+
-    "\nUma vez deletado você perderá todos seus dados e sua reputação em nosso site.\n"+
-    "\nDeseja continuar?\n")
+  "\nTem certeza que deseja deletar seu cadastro?"+
+  "\nUma vez deletado você perderá todos seus dados e sua reputação em nosso site.\n"+
+  "\nDeseja continuar?\n")
 
-    if(resposta == true)
-    {
-    alert(
-      "\nDados deletados com sucesso");
-      parent.location.href = "index.html";
-    }else{
-      parent.location.href = "perfil.html";
-    }
+  if(resposta == true)
+  {
+  alert(
+    "\nDados deletados com sucesso");
+    parent.location.href = "http://localhost:8080/usuario/deletar/${usuario.id}";
+  }else{
+    parent.location.href = "http://localhost:8080/usuario/perfil";
+  }
 }
-// window.sr = ScrollReveal({reset:true});
-// sr.reveal('#anuncios-area, #carouselExampleAutoplaying, #offGrandeL, #sobre2', {duration: 500});
-// sr.reveal('#carouselExampleAutoplaying, #sobre2, #sobre3, #time-area2', {delay: 300, duration: 1000});
-// sr.reveal('#offGrandeC, #sobre4, #servicos-area2, #dados-area2, #time-area3', {delay: 300, duration:1000});
-// sr.reveal('#offGrandeR, #sobre5, #servicos-area3', {delay: 300, duration: 1000});
-// sr.reveal('#sobre6, #servicos-area4, #dados-area3, #time-area4', {delay: 400, duration: 1000});
-// sr.reveal('#sobre-lista', {delay: 500, duration: 1000});
-// sr.reveal('#sobre-lista, #dados-area4, #time-area5', {delay: 600, duration: 1000});
-// sr.reveal('#time-area6', {delay: 700, duration: 1000});
-// sr.reveal('#time-area6', {delay: 700, duration: 1000});
 
+// ALTERAR TEMA
+const $sobre = document.querySelectorAll('.sobreTemaLight');
+const $color = document.querySelectorAll('.azulTemaLight');
+const $btn = document.querySelectorAll('.btn-outline-primary');
+const $bg = document.querySelectorAll('.bg-light');
+const $icon = document.querySelectorAll('.fa-sun');
+const $font = document.querySelectorAll('.font-light');
+const $seta = document.querySelectorAll('.seta-light');
+const $cardBorder = document.querySelectorAll('.card-border-light');
+const $imgBorder = document.querySelectorAll('.img-border-light');
+const $body = document.querySelector('body');
+const $checkTema = document.querySelector('#switch');
+const savedTheme = localStorage.getItem('theme'); // Verifica se há um tema armazenado no localStorage
+
+// Aplica o tema armazenado, se existir
+if (savedTheme === 'dark-mode') {
+  applyDarkMode();
+  $checkTema.checked = true;
+}
+
+$checkTema.addEventListener('change', function () {
+  if ($checkTema.checked) {
+    applyDarkMode();
+    localStorage.setItem('theme', 'dark-mode');
+  } else {
+    removeDarkMode();
+    localStorage.removeItem('theme');
+  }
+});
+
+function applyDarkMode() {
+  $bg.forEach(div => div.classList.add('bg-dark'));
+  $font.forEach(div => div.classList.add('font-dark'));
+  $btn.forEach(div => div.classList.add('btn-info'));
+  $color.forEach(div => div.classList.add('azulTemaDark'));
+  $sobre.forEach(div => div.classList.add('sobreTemaDark'));
+  $cardBorder.forEach(div => div.classList.add('card-border-dark'));
+  $imgBorder.forEach(div => div.classList.add('img-border-dark'));
+  $seta.forEach(div => div.classList.add('seta-dark'));
+  $icon.forEach(div => div.classList.add('fa-moon'));
+  $body.classList.add('bg-dark');
+}
+
+function removeDarkMode() {
+  $bg.forEach(div => div.classList.remove('bg-dark'));
+  $font.forEach(div => div.classList.remove('font-dark'));
+  $btn.forEach(div => div.classList.remove('btn-info'));
+  $color.forEach(div => div.classList.remove('azulTemaDark'));
+  $sobre.forEach(div => div.classList.remove('sobreTemaDark'));
+  $cardBorder.forEach(div => div.classList.remove('card-border-dark'));
+  $imgBorder.forEach(div => div.classList.remove('img-border-dark'));
+  $seta.forEach(div => div.classList.remove('seta-dark'));
+  $icon.forEach(div => div.classList.remove('fa-moon'));
+  $body.classList.remove('bg-dark');
+}
+
+// PAGINA ADM
+/*const $consultaGeral = document.querySelector('.consultaGeral')
+const $paginaAnuncios = document.querySelector('.paginaAnuncios')
+const $paginaPremium = document.querySelector('.paginaPremium')
+const $paginaInativos = document.querySelector('.paginaInativos')
+
+document.querySelector('#consultaGeral').addEventListener("click", function(){
+  if($consultaGeral.classList.contains('d-block')){
+    $consultaGeral.classList.replace('d-block', 'd-none');
+  }else{
+    $consultaGeral.classList.replace('d-none', 'd-block');
+    $paginaAnuncios.classList.replace('d-block', 'd-none')
+    $paginaPremium.classList.replace('d-block', 'd-none')
+    $paginaInativos.classList.replace('d-block', 'd-none')
+  } 
+});
+
+document.querySelector("#consultaAnuncios").addEventListener("click", function() {
+  if($paginaAnuncios.classList.contains('d-block')){
+    $paginaAnuncios.classList.replace('d-block','d-none')
+  }else{
+    $consultaGeral.classList.replace('d-block', 'd-none')
+    $paginaAnuncios.classList.replace('d-none','d-block')
+    $paginaPremium.classList.replace('d-block', 'd-none')
+    $paginaInativos.classList.replace('d-block', 'd-none')
+  }
+});
+
+document.querySelector("#consultaPremium").addEventListener("click", function() {
+  if($paginaPremium.classList.contains('d-block')){
+    $paginaPremium.classList.replace('d-block','d-none')
+  }else{
+    $consultaGeral.classList.replace('d-block', 'd-none')
+    $paginaAnuncios.classList.replace('d-block', 'd-none')
+    $paginaPremium.classList.replace('d-none','d-block')
+    $paginaInativos.classList.replace('d-block', 'd-none')
+  }
+});
+
+document.querySelector("#consultaInativos").addEventListener("click", function() {
+  if($paginaInativos.classList.contains('d-block')){
+    $paginaInativos.classList.replace('d-block','d-none')
+  }else{
+    $consultaGeral.classList.replace('d-block', 'd-none')
+    $paginaAnuncios.classList.replace('d-block', 'd-none')
+    $paginaPremium.classList.replace('d-block', 'd-none')
+    $paginaInativos.classList.replace('d-none','d-block')
+  }
+});PÁGINA ADM COMENTADA PARA TESTE*/
+
+
+// PRE LOAD
+// setTimeout(function(){
+//   document.querySelector('.pre').style.display = 'none';
+// }, 2000);
+
+// setTimeout(function loading(){
+//   document.querySelector('.loaded').style.display = 'block';
+// }, 2500);
+
+
+/*const btn = document.querySelector('.btnDetalhes')
+
+
+
+btn.addEventListener('click', function(){
+  const parent = this.parentNode;
+  const acima = parent.closest('.imgDetails')
+
+  const teste = document.querySelector(acima)
+  const imgSrc = teste.getAttribute('src')
+  
+})FUNÇÃO COMENTADA PARA TESTE */
+
+// HABILITAR ESSA FUNÇÃO QUANDO O SITE ESTIVER ONLINE !!!
+// function loading(){
+
+//   document.querySelector('.pre').style.display = 'none';
+//   document.querySelector('.loaded').style.display = 'block';
+// }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="~{/fragmento/head :: head}"></head>
+
+<body>
+  <!-- MENU GRANDE -->
+  <div class="grande">
+    <div class="container-fluid faixa-nav fixed-top bg-light"></div>
+    <!-- BARRA DE PESQUISA -->
+    <div th:replace="~{fragmento/barraPesquisa :: barraPesquisaPerfil}"></div>
+
+    <!-- NAVBAR MAX MEDIA -->
+    <!-- <div th:replace="~{fragmento/navbar :: navbarHome}"></div> -->
+  </div>
+  <!-- PROFILE MENU -->
+  <div th:replace="~{fragmento/profileMenu :: profileMenu}"></div>
+  <!-- MENU PEQUENO -->
+  <div class="pequeno">
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid ">
+        <img id="mini-home" class="navbar-brand" th:src="@{/imagem/mini-home.png}" alt="Inicio">
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <!-- <span class="navbar-toggler-icon"></span> -->
+          <span>
+            <img th:src="@{/imagem/Danilo.jpg}" alt="" width="32" height="32" class="rounded-circle me-2">
+          </span>
+        </button>
+        <div class="collapse navbar-collapse mt-4" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active d-flex pointer" aria-current="page" onclick="anunciarMini()"><i
+                  class="fa-thin fa-house-medical d-flex align-items-center me-2"></i>Anunciar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex pointer" onclick="meusAnunciosMini()"><i
+                  class="fa-thin fa-house-flag d-flex align-items-center me-2"></i>Meus anúncios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex pointer" onclick="meusDadosMini()"><i
+                  class="fa-thin fa-user-pen d-flex align-items-center me-2"></i>Meus dados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex pointer" onclick="favoritos()"><i
+                  class="fa-thin fa-star d-flex align-items-center me-2"></i>Favoritos</a>
+            </li>
+            <li class="nav-item">
+              <!-- <a class="nav-link d-flex pointer" href="Index.html"><i class="fa-thin fa-right-from-bracket d-flex align-items-center me-2"></i>Sair</a> -->
+              <a class="nav-link d-flex pointer" href="Index.html"><i
+                  class="bi bi-box-arrow-right d-flex align-items-center me-2"></i>Sair</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- RODAPÉ -->
+  <div th:replace="~{/fragmento/footer :: footer}"></div>
+
+  <!-- SCRIPTS -->
+  <div th:replace="~{fragmento/scripts :: scripts}"></div>
+</body>
+
+</html>

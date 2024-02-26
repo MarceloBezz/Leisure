@@ -5,6 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 
@@ -17,8 +20,9 @@ public class Imovel {
 	@Column(name="ID")
 	private long id;
 	
-	@Column(name="PROPRIETARIO")
-	public Usuario proprietario;
+	@ManyToOne
+	@JoinColumn(name="USUARIO", nullable = false)
+	public Usuario usuario;
 	
 	@Column(name="NUM QUARTOS")
 	private int numQuartos;
@@ -56,10 +60,10 @@ public class Imovel {
 	public Imovel() {	
 	}
 	
-	public Imovel(long id, Usuario proprietario, int numQuartos, int numBanheiros, int vagasGaragem, int cep,
+	public Imovel(long id, Usuario usuario, int numQuartos, int numBanheiros, int vagasGaragem, int cep,
 			String rua, String cidade, String estado, int numero, String descricao, int valor, boolean ativo) {
 		this.id = id;
-		this.proprietario = proprietario;
+		this.usuario = usuario;
 		this.numQuartos = numQuartos;
 		this.numBanheiros = numBanheiros;
 		this.vagasGaragem = vagasGaragem;
@@ -87,12 +91,12 @@ public class Imovel {
 		this.id = id;
 	}
 
-	public Usuario getProprietario() {
-		return proprietario;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setProprietario(Usuario proprietario) {
-		this.proprietario = proprietario;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	public int getNumQuartos() {

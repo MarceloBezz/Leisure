@@ -15,7 +15,7 @@
     </form>
   </div>
   <div class="gap-2 d-md-flex">
-    <a th:href="@{index}"><i class="fa-thin fa-house-blank fa-2xl position-absolute home-page font-light"></i></a>
+    <a th:href="@{/leisure/index}"><i class="fa-thin fa-house-blank fa-2xl position-absolute home-page font-light"></i></a>
   </div>
   <div class="gap-2 d-md-flex justify-content-md-end">
     <button class="btn btn-info rounded-5 login-register position-absolute end-0" data-bs-target="#exampleModalToggle"
@@ -41,15 +41,15 @@
     </form>
   </div>
   <div class="gap-2 d-md-flex">
-    <a th:href="@{index}"><i class="fa-thin fa-house-blank fa-2xl position-absolute home-page font-light"></i></a>
+    <a th:href="@{/leisure/index}"><i class="fa-thin fa-house-blank fa-2xl position-absolute home-page font-light"></i></a>
   </div>
   <button id="botaoPerfil" class="btn position-absolute end-0" type="button" data-bs-toggle="offcanvas"
     data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
     <div class="dropdown">
       <a href="#" class="font-light d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
         data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
-        <strong class="font-light">User name</strong>
+        <img th:src="@{/imagem/Marcelo.jpg}" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong class="font-light">Meu perfil</strong>
       </a>
       <ul class="hoverMenu dropdown-menu bg-light text-small shadow mt-2">
         <li><a class="dropdown-item pointer font-light" onclick="anunciar()">Anunciar</a></li>
@@ -87,7 +87,7 @@
     </form>
   </div>
   <div class="gap-2 d-md-flex">
-    <a th:href="@{index}"><i class="fa-thin fa-house-blank fa-2xl position-absolute home-page font-light"></i></a>
+    <a th:href="@{/leisure/index}"><i class="fa-thin fa-house-blank fa-2xl position-absolute home-page font-light"></i></a>
   </div>
   <button id="botaoPerfil" class="btn position-absolute end-0" type="button" data-bs-toggle="offcanvas"
     data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">

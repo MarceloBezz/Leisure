@@ -6,7 +6,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -54,14 +53,18 @@ public class Imovel {
 	@Column(name="VALOR")
 	private int valor;
 	
-	@Column(name="ATIVO")
-	private boolean ativo = true;
+	@Column(name="TIPO")
+	private String tipo;
+	
+	@Column(name="SUSTENTABILIDADE")
+	private String sustentabilidade;
 	
 	public Imovel() {	
 	}
 	
-	public Imovel(long id, Usuario usuario, int numQuartos, int numBanheiros, int vagasGaragem, int cep,
-			String rua, String cidade, String estado, int numero, String descricao, int valor, boolean ativo) {
+	public Imovel(long id, Usuario usuario, int numQuartos, int numBanheiros, int vagasGaragem, int cep, String rua,
+			String cidade, String estado, int numero, String descricao, int valor, String tipo, String sustentabilidade) {
+		super();
 		this.id = id;
 		this.usuario = usuario;
 		this.numQuartos = numQuartos;
@@ -74,15 +77,10 @@ public class Imovel {
 		this.numero = numero;
 		this.descricao = descricao;
 		this.valor = valor;
-		this.ativo = ativo;
+		this.tipo = tipo;
+		this.sustentabilidade = sustentabilidade;
 	}
 	
-	public boolean isAtivo() {
-		return ativo;
-	}
-	public void setAtivo(boolean ativo) {
-		this.ativo = ativo;
-	}
 	public long getId() {
 		return id;
 	}
@@ -177,6 +175,22 @@ public class Imovel {
 
 	public void setValor(int valor) {
 		this.valor = valor;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getSustentabilidade() {
+		return sustentabilidade;
+	}
+
+	public void setSustentabilidade(String sustentabilidade) {
+		this.sustentabilidade = sustentabilidade;
 	}
 
 	

@@ -174,17 +174,14 @@ function atualizarDados(){
     location.href = "perfil.html";
 }
 
-function deletarDados(){
-var resposta = confirm(
+function deletarDados(userId){
+if (confirm(
   "\nTem certeza que deseja deletar seu cadastro?"+
   "\nUma vez deletado você perderá todos seus dados e sua reputação em nosso site.\n"+
-  "\nDeseja continuar?\n")
-
-  if(resposta == true)
-  {
+  "\nDeseja continuar?\n")){
   alert(
     "\nDados deletados com sucesso");
-    parent.location.href = "http://localhost:8080/usuario/deletar/${usuario.id}";
+    parent.location.href = "http://localhost:8080/usuario/deletar/" + userId;
   }else{
     parent.location.href = "http://localhost:8080/usuario/perfil";
   }

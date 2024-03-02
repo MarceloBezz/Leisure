@@ -1,79 +1,77 @@
 <div id="meus-dados" class="col-7 mt-5 pt-5" th:fragment="meusDados">
-  <form class="row g-3 d-flex d-inline-block" method="get" action=".">
+  <form class="row g-3 d-flex d-inline-block" method="post" th:action="@{/usuario/atualizacao}" enctype="multipart/form-data">
+	  <input name="id" th:value="${usuario.id}" hidden>
     <div id="imagem-circle" class="col-sm-12 d-block text-center">
       <div id="imagemUsuario" class="mx-auto">
         <span><i class="foto-perfil fa-thin fa-circle-user"></i></span>
       </div>
       <label for="input-file" id="input-imagem" class="d-block mt-4 mb-4 mx-auto">Alterar imagem <i
           class="fa-thin fa-pen-to-square"></i></label>
-      <input id="input-file" type="file" accept="image/*">
+      <input id="input-file" name="foto_perfil" type="file" accept="image/*">
+      <input type="submit" value="Enviar">
     </div>
   </form>
+  <input type="image" th:value="${usuario.foto_perfil}">
   <div id="dados-pessoais">
     <div class="col-sm-12 mt-2">
-      <!-- <label for="nome" class="form-label">Nome completo</label> -->
-      <input id="nome" class="form-control" type="text" placeholder="Nome do usuario"
-        aria-label="Disabled input example" disabled>
+		<!-- ATUALIZAÇÃO DE DADOS -->
+		<form method="post" th:action="@{/usuario/atualizacao}">
+			<input name="id" th:value="${usuario.id}" hidden>
+      <input id="nome" class="form-control" type="text" th:value="${usuario.nome}"
+        aria-label="Disabled input example" name="nome" disabled>
     </div>
     <div class="col-sm-12 mt-2">
-      <!-- <label for="inputData" class="form-label">Data de Nascimento</label> -->
-      <input type="date" class="form-control" id="inputData" aria-label="Disabled input example" disabled>
+      <input type="date" class="form-control" name="data" id="inputData" aria-label="Disabled input example" th:value="${usuario.data}" disabled>
     </div>
     <div class="col-sm-6 mt-2">
-      <!-- <label for="cpf" class="form-label">CPF</label> -->
-      <input id="cdf" class="form-control mt-1" type="text" placeholder="CPF" aria-label="Disabled input example"
+      <input id="cdf" class="form-control mt-1" name="cpf" type="text" placeholder="CPF" aria-label="Disabled input example" th:value="${usuario.cpf}"
         disabled>
     </div>
   </div>
   <hr class="mt-4 mb-4">
-  <!-- ATUALIZAÇÃO DE EMAIL -->
-  <form id="atualziarEmail" class="container p-2 border border-1 rounded-2">
     <div class="row">
       <div class="col-12 d-flex p-2">
-        <input id="email" name="inputEmail" class="form-control" type="text" placeholder="E-mail">
-      </div>
-      <div class="col-sm-12 mt-2 mb-2 text-center">
-        <button class="btn btn-light" type="submit" onclick="atualizarDados()">Atualizar</button>
+        <input id="email" name="email" class="form-control" type="text"  th:value="${usuario.email}" disabled>
       </div>
     </div>
-  </form>
   <hr class="mt-4 mb-4">
   <!-- ATUALIZAÇÃO DE TELEFONE -->
-  <form id="atualizarTelefone" class="container p-2 border border-1 rounded-2">
     <div class="row">
       <div class="col-12 d-flex p-2">
-        <input id="telefone" name="atualizarTelefone" class="form-control" type="text" placeholder="Telefone">
+        <input id="telefone" name="telefone" class="form-control" type="text" th:value="${usuario.telefone}">
       </div>
       <div class="col-sm-12 mt-2 mb-2 text-center">
-        <button class="btn btn-light" type="submit" onclick="atualizarDados()">Atualizar</button>
+        <button class="btn btn-light" type="submit">Atualizar</button>
       </div>
     </div>
-  </form>
   <hr class="mt-4 mb-4">
   <!-- ATUALIZAÇÃO DE SENHA -->
-  <form id="atualizarSenha" class="container p-2 border border-1 rounded-2">
     <div class="col-auto mt-2">
-      <input id="senha" name="senha" type="password" class="form-control" placeholder="Senha atual">
+      <input id="senha" name="senhaa" type="password" class="form-control" placeholder="Senha atual">
     </div>
     <div class="col-auto mt-2">
-      <input id="novaSenha" name="senha" type="password" class="form-control" placeholder="Nova senha">
+      <input id="novaSenha" name="senha" type="password" class="form-control" th:value="${usuario.senha}">
     </div>
     <div class="col-auto mt-2">
-      <input id="reNovaSenha" name="senha" type="password" class="form-control" placeholder="Confirme a nova senha">
+      <input id="reNovaSenha" name="senhaa" type="password" class="form-control" placeholder="Confirme a nova senha">
     </div>
     <div class="col-sm-12 mt-2 mb-2 text-center">
-      <button class="btn btn-light" type="submit" onclick="atualizarDados()">Atualizar</button>
+      <button class="btn btn-light" type="submit">Atualizar</button>
     </div>
-  </form>
   <hr class="mt-4 mb-4">
-  <!-- ATUALIZAÇÃO DE ENDEREÇO -->
-  <form id="atualizarEndereco" class="container border border-1 rounded-2">
+  <!-- ATUALIZAÇÃO DE CEP -->
     <div class="row">
       <div class="col-auto mt-2 me-3">
-        <input class="form-control" name="cep" type="text" id="cep" value="" maxlength="9"
-          onblur="pesquisacep(this.value);" placeholder="CEP" />
+        <input class="form-control" name="cep" type="text" id="cep" th:value="${usuario.cep}" maxlength="9"/>
       </div>
-      <div class="col-auto mt-2">
+			<div class="col-2 mt-2">
+				<input class="form-control" name="numResidencia" type="text" id="numero" maxlength="5"
+					th:value="${usuario.numResidencia}" />
+			</div>
+			      <div class="col-auto mt-2">
+        <input class="form-control" name="complemento" type="text" id="numero" size="100" maxlength="100" th:value="${usuario.complemento}" />
+      </div> 
+    <!--  <div class="col-auto mt-2">
         <input class="form-control" name="rua" type="text" id="rua" readonly placeholder="Rua" />
       </div>
       <div class="col-auto mt-2">
@@ -82,31 +80,26 @@
       <div class="col-2 mt-2">
         <input class="form-control" name="uf" type="text" id="uf" readonly placeholder="Estado" />
       </div>
-      <div class="col-2 mt-2">
-        <input class="form-control" name="numero" type="text" id="numero" maxlength="5" placeholder="Número" />
-      </div>
-      <div class="col-auto mt-2">
-        <input class="form-control" name="numero" type="text" id="numero" size="100" maxlength="100"
-          placeholder="Ponto de referência" />
-      </div>
+
+
       <div class="col-sm-12 mt-2 mb-2 text-center">
-        <button class="btn btn-light" type="submit" onclick="atualizarDados()">Atualizar</button>
+        <button class="btn btn-light" type="submit">Atualizar</button>
       </div>
     </div>
-  </form>
   <hr class="mt-4 mb-4">
-  <form id="editarBio" class="container p-2 border border-1 rounded-2">
     <div class="row">
-      <div class="col-mb-12">
-        <!-- <label for="validationTextarea" class="form-label">Minha bio</label> -->
-        <textarea class="form-control" placeholder="Fale um pouco sobre você aqui."></textarea>
+      <div class="col-mb-12"> -->
+     <!--   <textarea class="form-control" placeholder="Fale um pouco sobre você aqui."></textarea> -->
       </div>
       <div class="col-sm-12 mt-2 mb-2 text-center">
-        <button class="btn btn-light" type="submit" onclick="atualizarDados()">Atualizar</button>
+        <button class="btn btn-light" type="submit">Atualizar</button>
       </div>
-    </div>
+    <!--</div> -->
   </form>
   <div class="col-12 text-center mt-4">
-    <button class="btn btn-danger" type="alert" onclick="deletarDados()">Apagar cadastro</button>
+	<form th:action="@{'/usuario/deletar/' + ${usuario.id}}" method="post">
+	<!--<input type="hidden" name="id" th:value="${usuario.id}"> -->
+		<button class="btn btn-danger" type="submit">Apagar cadastro</button>
+	</form>
   </div>
 </div>

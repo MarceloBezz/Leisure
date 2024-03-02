@@ -9,7 +9,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -48,20 +48,23 @@ public class Usuario {
 	private String cep;
 	
 	@Column(name="NUM_RESIDENCIA")
-	private short numResidencia;
+	private int numResidencia;
 	
 	@Column(name="COMPLEMENTO", nullable=true)
 	private String complemento;
 	
-	@Column(name="ATIVO")
-	private boolean ativo = true;
+	@Lob
+	@Column(name="FOTO_PERFIL")
+	private byte[] foto_perfil;
 	
 	public Usuario() {
 	}
 
-	public Usuario(long id, String nome, String data, String email, String senha, String telefone, String cpf, String cep,
-			short numResidencia, String complemento, boolean ativo) {
+	public Usuario(long id, List<Imovel> imoveis, String nome, String data, String email, String senha, String telefone,
+			String cpf, String cep, int numResidencia, String complemento, byte[] foto_perfil) {
+		super();
 		this.id = id;
+		this.imoveis = imoveis;
 		this.nome = nome;
 		this.data = data;
 		this.email = email;
@@ -71,7 +74,7 @@ public class Usuario {
 		this.cep = cep;
 		this.numResidencia = numResidencia;
 		this.complemento = complemento;
-		this.ativo = ativo;
+		this.foto_perfil = foto_perfil;
 	}
 
 	public long getId() {
@@ -138,12 +141,12 @@ public class Usuario {
 		this.cep = cep;
 	}
 
-	public short getNumResidencia() {
+	public int getNumResidencia() {
 		return numResidencia;
 	}
 
-	public void setNumResidencia(short numResidencia) {
-		this.numResidencia = numResidencia;
+	public void setNumResidencia(int i) {
+		this.numResidencia = i;
 	}
 
 	public String getComplemento() {
@@ -154,11 +157,23 @@ public class Usuario {
 		this.complemento = complemento;
 	}
 
-	public boolean isAtivo() {
-		return ativo;
+	public List<Imovel> getImoveis() {
+		return imoveis;
 	}
 
-	public void setAtivo(boolean ativo) {
-		this.ativo = ativo;
+	public void setImoveis(List<Imovel> imoveis) {
+		this.imoveis = imoveis;
 	}
+
+	public byte[] getFoto_perfil() {
+		return foto_perfil;
+	}
+
+	public Usuario setFoto_perfil(byte[] foto_perfil) {
+		this.foto_perfil = foto_perfil;
+		return this;
+	}
+	
+	
+	
 }

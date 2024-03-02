@@ -14,10 +14,6 @@ public class UsuarioService {
 		this.repository = repository;
 	}
 	
-	public List<Usuario> findAll() {
-		return repository.findAllByAtivo(true);
-	}
-	
 	public Usuario findById(long id) {
 		return repository.findById(id);
 	}
@@ -44,18 +40,36 @@ public class UsuarioService {
 		List<Usuario> usuarioByEmailOrCpf = repository.findByEmailOrCpf(email, cpf);
 		for (Usuario _usuario : usuarioByEmailOrCpf) {
 			if (_usuario != null && _usuario.getId() != usuario.getId() ) {
-				return false;
+				return false; //NÃO EXISTE
 			}
 		}	
-		return true;
+		return true; //EXISTE
 	}
 	
 	public Usuario save(Usuario usuario) {
 		return repository.save(usuario);
 	}
 
-	/*public boolean findByEmailOrCpf(String email, String cpf) {
-		return repository.findByEmailOrCpf(email, cpf);
-	}*/
+	public void delete(Long id) {
+	 repository.deleteById(id);
+}
+	
+	public void atualizacao(Usuario usuarioDes, Usuario usuarioNovo) {
+		if(usuarioDes.getCep() != null) {
+			usuarioNovo.setCep(usuarioDes.getCep());
+		}
+		if(usuarioDes.getComplemento() != null) {
+			usuarioNovo.setComplemento(usuarioDes.getComplemento());
+		}
+		if(usuarioDes.getTelefone() != null) {
+			usuarioNovo.setTelefone(usuarioDes.getTelefone());
+		}
+		if(usuarioDes.getSenha() != null) {
+			usuarioNovo.setSenha(usuarioDes.getSenha());
+		}
+	/*	if(usuarioDes.getNumResidencia() != null) {
+			usuarioNovo.setNumResidencia(usuarioDes.getNumResidencia());
+		}*/
+}
 	
 }

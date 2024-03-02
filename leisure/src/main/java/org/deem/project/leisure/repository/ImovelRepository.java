@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ImovelRepository extends JpaRepository<Imovel, Long>{
 	Imovel findById(long id);
-	List<Imovel> findAllByAtivo(boolean ativo);
+	//List<Imovel> findAllByAtivo(boolean ativo);
 	
 	//@Query("SELECT i FROM Imovel i WHERE i.proprietario = :usuario")
 	Imovel findByUsuario(@Param("usuario") Usuario usuario);

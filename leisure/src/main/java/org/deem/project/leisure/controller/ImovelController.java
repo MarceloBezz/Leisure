@@ -60,7 +60,7 @@ public class ImovelController {
 	@GetMapping("/deletar-imovel")
 	public String deletar(Imovel imovel, RedirectAttributes redirect) {
 		redirect.addFlashAttribute("mensagem", "Imóvel deletado!");
-		imovel.setAtivo(false);
+		//imovel.setAtivo(false);
 		service.save(imovel);
 		
 		return "redirect:/usuario/perfil/imovel";

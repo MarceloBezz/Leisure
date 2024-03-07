@@ -1,23 +1,21 @@
 package org.deem.project.leisure.controller;
 
 import java.io.IOException;
-import java.lang.ProcessBuilder.Redirect;
-import java.util.List;
 
 import org.deem.project.leisure.model.Usuario;
 import org.deem.project.leisure.service.UsuarioService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -61,16 +59,19 @@ public class UsuarioController {
 	
 // ------------------------------------------------ ATUALIZAR DADOS ---------------------------------------------------------
 	@PostMapping("/atualizacao")
-	public String updateAll(RedirectAttributes redirect, Usuario usuario,@RequestParam(name = "foto_perfil", required = false)MultipartFile fotoPerfil, String mensagem) throws IOException {
+	public String updateAll(RedirectAttributes redirect, 
+							Usuario usuario, 
+							@RequestParam(name = "fotoPerfil", required = false) MultipartFile fotoPerfil,
+							String mensagem) throws IOException {
 		
 //		MUDAR SOMENTE FOTO DE PERFIL
 		if(fotoPerfil != null) {
 			Usuario usuarioBd = service.findById(usuario.getId());
-			 usuarioBd = usuarioBd.setFoto_perfil(fotoPerfil.getBytes());
+			usuarioBd.setFoto_perfil(fotoPerfil.getBytes());
 			 service.save(usuarioBd);
 			 redirect.addAttribute("usuario", usuarioBd);
 			 return "redirect:/usuario/perfil";
-			}
+		}
 
 		Usuario usuarioBD = service.findById(usuario.getId());
 		service.atualizacao(usuario, usuarioBD); //PASSAR OS DADOS ENVIADOS DO FORMS PARA O BANCO
@@ -78,8 +79,8 @@ public class UsuarioController {
 		redirect.addAttribute("usuario", usuarioBD);
 		redirect.addFlashAttribute("mensagem", "Dados atualizados com sucesso!");
 		return "redirect:/usuario/perfil";
+		
 	}
-
 //	------------------------------------------------ LOGIN ------------------------------------------------------------------
 	@PostMapping("/login")
 	public String login(@RequestParam(value="email") String email, @RequestParam(value="senha") String senha, RedirectAttributes redirect) {
@@ -119,39 +120,12 @@ public class UsuarioController {
 		return "redirect:/leisure/index";
 	}  
 	
-// --------------------------------------- VISUALIZAR DADOS DAS CONTAS ------------------------------------------------------
-	/*@GetMapping("/contas")
-	public ModelAndView usuarios() {
-		ModelAndView modelView = new ModelAndView("LEISURIADMPAGE");
-		modelView.addObject("usuarios", service.findAll());
-		return modelView;
-	}*/
-	
-	
-	
-	
-	
-	
-	
-	
-	/* 
-	// ATUALIZAR DADOS
-	@GetMapping("/usuario/{id}/atualizar")
-	public String atualizacao(@PathVariable int id, Model model, RedirectAttributes redirect) {
-		Usuario usuario = buscarPorId(id);
-		if (usuario != null) {
-			model.addAttribute("usuario", usuario);
-			return "usuario/perfil";
-		}
-		redirect.addFlashAttribute("mensagem", "Usuario não existente");
-		return "usuario/perfil";
+// --------------------------------------- VISUALIZAR IMAGEM DE PERFIL ------------------------------------------------------
+	@GetMapping("/imagem/{id}")
+	public ResponseEntity<byte[]> getImagem(@PathVariable int id) {
+		Usuario usuario = service.findById(id);
+		HttpHeaders header = new HttpHeaders();
+		header.setContentType(MediaType.IMAGE_PNG);
+		return new ResponseEntity<>(usuario.getFoto_perfil(), header, HttpStatus.OK);
 	}
-
-//-------------------- MÉTODO CHAMADO ATRAVÉS DO FORM ACTION E METHOD, NO HTML --------//
-	
-	@GetMapping("/cadastro")
-	public String cadastrar(Model model) {
-		model.addAttribute("usuario", new Usuario());
-		return "usuario/meus-dados";
-	} */
 }

@@ -169,9 +169,8 @@ public class Usuario {
 		return foto_perfil;
 	}
 
-	public Usuario setFoto_perfil(byte[] foto_perfil) {
-		this.foto_perfil = foto_perfil;
-		return this;
+	public void setFoto_perfil(byte[] foto_perfil) {
+		 this.foto_perfil = foto_perfil;
 	}
 	
 	

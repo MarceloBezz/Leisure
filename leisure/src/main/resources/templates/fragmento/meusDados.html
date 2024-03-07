@@ -3,20 +3,20 @@
 	  <input name="id" th:value="${usuario.id}" hidden>
     <div id="imagem-circle" class="col-sm-12 d-block text-center">
       <div id="imagemUsuario" class="mx-auto">
-        <span><i class="foto-perfil fa-thin fa-circle-user"></i></span>
+        <!-- <span><i class="foto-perfil fa-thin fa-circle-user"></i></span> -->
+        <span><img th:src="@{/usuario/imagem/{id} (id=${usuario.id})}"></img></span>
       </div>
       <label for="input-file" id="input-imagem" class="d-block mt-4 mb-4 mx-auto">Alterar imagem <i
           class="fa-thin fa-pen-to-square"></i></label>
-      <input id="input-file" name="foto_perfil" type="file" accept="image/*">
+      <input id="input-file" name="fotoPerfil" type="file" accept="image/*">
       <input type="submit" value="Enviar">
     </div>
   </form>
-  <input type="image" th:value="${usuario.foto_perfil}">
   <div id="dados-pessoais">
     <div class="col-sm-12 mt-2">
 		<!-- ATUALIZAÇÃO DE DADOS -->
 		<form method="post" th:action="@{/usuario/atualizacao}">
-			<input name="id" th:value="${usuario.id}" hidden>
+			<input name="id" th:value="${usuario.id}" hidden> 
       <input id="nome" class="form-control" type="text" th:value="${usuario.nome}"
         aria-label="Disabled input example" name="nome" disabled>
     </div>

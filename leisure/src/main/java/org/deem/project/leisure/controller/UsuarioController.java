@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/usuario")
 public class UsuarioController {
@@ -27,7 +29,7 @@ public class UsuarioController {
 	
 //	---------------------------------------------- CADASTRO E ATUALIZAÇÃO DE DADOS ------------------------------------------
 	@PostMapping("/cadastrar-atualizar")
-	public String cadastrarOuAtualizar(Long id, Usuario usuario,@RequestParam(name = "foto_perfil", required = false)MultipartFile fotoPerfil, String mensagem, String redirecionamento, RedirectAttributes redirect) throws IOException {
+	public String cadastrarOuAtualizar(Long id, Usuario usuario,@RequestParam(name = "foto_perfil", required = false)MultipartFile fotoPerfil, String mensagem, String redirecionamento, RedirectAttributes redirect,HttpSession session) throws IOException {
 		
 //		CADASTRO
 		if (usuario.getId() == 0) {
@@ -52,7 +54,8 @@ public class UsuarioController {
 //		SALVAMENTO DOS DADOS
 		if (service.existsByEmailOrCpf(usuario)) {
 			service.save(usuario);
-			redirect.addAttribute("usuario", usuario);			
+			redirect.addAttribute("usuario", usuario);
+			session.setAttribute("user", usuario);
 		}		
 		return "redirect:/usuario/perfil";
 	}
@@ -83,11 +86,12 @@ public class UsuarioController {
 	}
 //	------------------------------------------------ LOGIN ------------------------------------------------------------------
 	@PostMapping("/login")
-	public String login(@RequestParam(value="email") String email, @RequestParam(value="senha") String senha, RedirectAttributes redirect) {
+	public String login(HttpSession session, @RequestParam(value="email") String email, @RequestParam(value="senha") String senha, RedirectAttributes redirect) {
 		Usuario usuario = service.findByEmailAndSenha(email, senha);
 		if (usuario != null) {
 			redirect.addFlashAttribute("mensagem", "Seja bem vindo, " + usuario.getNome());
 			redirect.addAttribute("usuario", usuario);
+			session.setAttribute("user", usuario);
 			return "redirect:/usuario/perfil";
 		}
 		redirect.addFlashAttribute("mensagem", "Email ou senha inválidos.\nCertifique-se de que seus dados estão corretos.");
@@ -102,7 +106,7 @@ public class UsuarioController {
 		redirect.addFlashAttribute("mensagem", "Erro ao tentar acessar esta página. Faça login primeiro!");
 		return "redirect:/leisure/index";
 		}else {
-			redirect.addAttribute("usuario", usuario);
+			//redirect.addAttribute("usuario", usuario);
 			return "perfil";
 		}
 	} 
@@ -127,5 +131,13 @@ public class UsuarioController {
 		HttpHeaders header = new HttpHeaders();
 		header.setContentType(MediaType.IMAGE_PNG);
 		return new ResponseEntity<>(usuario.getFoto_perfil(), header, HttpStatus.OK);
+	}
+	
+// ------------------------------------------ LOGOUT ----------------------------------------------------------------------
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("user");
+		//session.invalidate();
+		return "redirect:/leisure/index";
 	}
 }

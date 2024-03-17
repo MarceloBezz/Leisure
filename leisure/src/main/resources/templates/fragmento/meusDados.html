@@ -3,8 +3,8 @@
 	  <input name="id" th:value="${usuario.id}" hidden>
     <div id="imagem-circle" class="col-sm-12 d-block text-center">
       <div id="imagemUsuario" class="mx-auto">
-        <!-- <span><i class="foto-perfil fa-thin fa-circle-user"></i></span> -->
-        <span><img th:src="@{/usuario/imagem/{id} (id=${usuario.id})}"></img></span>
+         <!-- <span><img class="rounded-circle" th:src="@{/imagem/Danilo.jpg}"> </img></span>-->
+        <span><img class="rounded-circle img-thumbnail"  th:src="@{/usuario/imagem/{id} (id=${usuario.id})}"></img></span>
       </div>
       <label for="input-file" id="input-imagem" class="d-block mt-4 mb-4 mx-auto">Alterar imagem <i
           class="fa-thin fa-pen-to-square"></i></label>
@@ -20,6 +20,14 @@
       <input id="nome" class="form-control" type="text" th:value="${usuario.nome}"
         aria-label="Disabled input example" name="nome" disabled>
     </div>
+    
+      <div class="gap-2 d-md-flex justify-content-md-end">
+	<div th:if="${user} == null">
+	<p>batata doce</p>
+  </div>
+  <div th:unless="${user} == null"><p>Arroz</p> </div>
+</div>
+    
     <div class="col-sm-12 mt-2">
       <input type="date" class="form-control" name="data" id="inputData" aria-label="Disabled input example" th:value="${usuario.data}" disabled>
     </div>

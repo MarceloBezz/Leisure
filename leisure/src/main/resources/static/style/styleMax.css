@@ -428,15 +428,13 @@ body {
     width: 200px;
     margin: 75px 0;
   }
+  
   #botaoPerfil {
     top: 45px !important;
     padding: 10px;
     margin: 0 5% !important;
   }
-  .foto-perfil {
-    width: 500px !important;
-    font-size: 200px !important;
-  }
+  
   #input-file {
     display: none;
   }

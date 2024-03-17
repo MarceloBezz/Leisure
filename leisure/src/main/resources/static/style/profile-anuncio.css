@@ -53,3 +53,15 @@
     border-radius: 5px;
     background: var(--cor-font-destaque);
 }
+
+@media screen and (min-width: 1024px){
+    .anuncio__card__conteudo label{
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 1920px){
+    .anuncio__card__conteudo label{
+        font-size: 1.5em;
+    }
+}

@@ -46,3 +46,9 @@
         font-size: 1em;
     }
 }
+
+@media screen and (min-width: 1920px){
+    .especialidade__conteudo__lista-texto{
+        font-size: 1.5em;
+    }
+}

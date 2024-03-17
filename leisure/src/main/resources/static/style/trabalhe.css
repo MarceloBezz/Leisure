@@ -26,4 +26,23 @@
 .trabalhe__conteudo__botao-link{
     text-decoration: none;
     color: white;
+    font-size: 0.75em;
+}
+
+@media screen and (min-width: 1024px){
+    .trabalhe__conteudo-texto{
+        font-size: 1em;
+    }
+    .trabalhe__conteudo__botao-link{
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 1920px){
+    .trabalhe__conteudo-texto{
+        font-size: 1.5em;
+    }
+    .trabalhe__conteudo__botao-link{
+        font-size: 1.5em;
+    }
 }

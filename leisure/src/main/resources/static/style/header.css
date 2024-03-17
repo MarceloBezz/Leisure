@@ -11,7 +11,7 @@
 .container_hamburguer{
     display: block;
 }
-.container__rotulo{
+.container__rotulo, .container__rotulo__login{
     display: flex;
     padding: 1em;
     cursor: pointer;
@@ -94,8 +94,26 @@
         flex-direction: column-reverse;
         align-items: center;
     }
-    .container__rotulo{
+    .cabecalho__container .container__rotulo{
         display: none;
+    }
+    .container__usuario{
+        display: flex;
+        column-gap: 0.5em;
+        align-items: center;
+        color: white;
+        text-align: center;
+        height: 2.5em;
+        width: auto;
+        padding: 0 0.5em 0 0.25em;
+        border-radius: 22px;
+        background: var(--cor-font-destaque);
+        box-shadow: 5px 5px 10px var(--cor-font-destaque);
+    }
+    .container__usuario{
+        position: absolute;
+        right: 2em;
+        top: 2em;
     }
     .lista-menu{
         display: flex;
@@ -118,7 +136,43 @@
 }
 /* -------------------------------------- MEDIA SCREEN MIN 1024px -------------------------------------- */
 @media screen and (min-width: 1024px){
+    .container__pesquisa-barra{
+        font-size: 1em;
+    }
+    .container__pesquisa-barra::placeholder{
+        font-size: 1em;
+    }
     .lista-menu__item{
         font-size: 1em;
+    }
+    .container__link{
+        font-size: 1em;
+    }
+    .lista-menu__item span{
+        font-size: 1em;
+    }
+    .container__usuario{
+        font-size: 1em;
+    }
+}
+/* -------------------------------------- MEDIA SCREEN MIN 1920px -------------------------------------- */
+@media screen and (min-width: 1920px){
+    .container__pesquisa-barra{
+        font-size: 1.5em;
+    }
+    .container__pesquisa-barra::placeholder{
+        font-size: 1.5em;
+    }
+    .lista-menu__item{
+        font-size: 1.5em;
+    }
+    .lista-menu__item span{
+        font-size: 1.25em;
+    }
+    .container__link{
+        font-size: 1.25em;
+    }
+    .container__usuario{
+        font-size: 1.5em;
     }
 }

@@ -17,3 +17,9 @@
 .duvidas__container__imagem-conteudo{
     width: 50%;
 }
+
+@media screen and (min-width: 1024px){
+    .duvidas__container-texto{
+        font-size: 1em;
+    }
+}

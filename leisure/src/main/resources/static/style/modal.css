@@ -32,3 +32,17 @@
     font-size: 0.75em;
     color: var(--cor-font-destaque);
 }
+
+/* -------------------------------------- MEDIA SCREEN MIN 1024px -------------------------------------- */
+@media screen and (min-width: 1024px){
+    .modal-body__botoes > span{
+        font-size: 1em;
+    }
+}
+
+/* -------------------------------------- MEDIA SCREEN MIN 1920px -------------------------------------- */
+@media screen and (min-width: 1920px){
+    .modal-body__botoes > span{
+        font-size: 1.5em;
+    }
+}

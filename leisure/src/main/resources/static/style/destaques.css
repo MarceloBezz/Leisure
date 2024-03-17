@@ -117,3 +117,8 @@
         font-size: 2em;
     }
 }
+@media screen and (min-width: 1920px){
+    .card__lista-item{
+        font-size: 2.75em;
+    }
+}

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<!-- HEAD -->
+<!------------------------------ HEAD ------------------------------>
 <head th:replace="~{fragments/head :: head}"></head>
 
 <body class="body">
-    <!-- TROCAR TEMA -->
+    <!------------------------------ TROCAR TEMA ------------------------------>
     <div th:replace="~{fragments/trocarTema :: trocarTema}"></div>
 
-    <!-- CABEÇALHO -->
+    <!------------------------------ CABEÇALHO ------------------------------>
     <header th:replace="~{fragments/cabecalho :: perfil}"></header>
 
     <main class="main">
-        <!-- ANUNCIAR -->
+        <!---------------------------- ANUNCIAR ---------------------------->
         <section class="anunciar hidden">
             <form action="" class="anunciar__conteudo">
                 <div class="anunciar__conteudo__progresso-linha" >
@@ -217,7 +217,7 @@
                 <div id="form13" class="anunciar__conteudo__box" >
                     <h3 class="titulo__terciario">Parabéns! Seu anuncio foi criado</h3>
                     <div class="anunciar__conteudo__box__imagem">
-                        <img src="/img/imagem/congrat.gif" alt="Parabéns">
+                        <img src="./img/imagem/congrat.gif" alt="Parabéns">
                     </div>
                     <div class="anunciar__conteudo__botao">
                         <button type="submit">
@@ -228,11 +228,11 @@
             </form>
         </section>
         
-        <!-- MEUS ANUNCIOS -->
+        <!---------------------------- MEUS ANUNCIOS ---------------------------->
         <section class="anuncio hidden">
             <div class="anuncio__card">
                 <div class="anuncio__card__imagem">
-                    <img src="/img/anuncio/card/card03.png" alt="Casa a venda">
+                    <img src="./img/anuncio/card/card03.png" alt="Casa a venda">
                 </div>
                 <form action="" method="get">
                     <div class="anuncio__card__conteudo">
@@ -294,7 +294,7 @@
             </div>
         </section>
 
-        <!-- MEUS DADOS -->
+        <!---------------------------- MEUS DADOS ---------------------------->
         <section class="meusdados hidden">
             <div class="meusdados__imagem">
                 <label for="meusdadosImagem"></label>
@@ -356,7 +356,7 @@
         </section>
     </main>
 
-    <!-- RODAPE -->
+    <!------------------------------ RODAPE ------------------------------>
     <footer th:replace="~{fragments/rodape :: rodape}"></footer>
 
 </body>

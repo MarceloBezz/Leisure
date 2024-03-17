@@ -1,0 +1,34 @@
+.modal__cadastrar, .modal__login{
+    padding: 1em;
+    border-radius: 10px;
+}
+.modal__cadastrar > i, .modal__login > i{
+    position: relative;
+    top: 10px;
+    left: 95%;
+    display: inline-block;
+}
+.modal__titulo h2{
+    font-family: var(--font-secundaria);
+    margin-top: 1em;
+    text-align: center;
+    font-size: 3em;
+}
+.cadastro__container__conteudo > label{
+    font-family: var(--font-secundaria);
+}
+.cadastro__container__conteudo > input{
+    font-family: var(--font-secundaria);
+    background: transparent;
+}
+.cadastro__container__conteudo > input::placeholder{
+    color: lightgray;
+}
+.modal-body__botoes{
+    text-align: center;
+}
+.modal-body__botoes > span{
+    margin: 2em 0 1em 0;
+    font-size: 0.75em;
+    color: var(--cor-font-destaque);
+}

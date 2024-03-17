@@ -1,0 +1,29 @@
+.trabalhe__conteudo{
+    background-image: url('../img/imagem/programar.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    margin-top: 2em;
+    padding: 1em;
+    color: white;
+}
+.trabalhe__conteudo-texto{
+    font-size: 0.75em;
+    margin: 1em 5em;
+}
+.trabalhe__conteudo__botao{
+    cursor: pointer;
+    background-color: var(--cor-font-destaque);
+    display: inline-block;
+    padding: 0.75em 1em;
+    margin: 1em;
+    border-radius: 30px;
+    border: 1px solid white;
+}
+.trabalhe__conteudo__botao:hover{
+    border: 1px solid var(--cor-font-destaque);
+}
+.trabalhe__conteudo__botao-link{
+    text-decoration: none;
+    color: white;
+}

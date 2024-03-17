@@ -1,0 +1,55 @@
+.hidden{
+    display: none;
+}
+
+.anuncio {
+    padding: 1em;
+}
+.anuncio__card {
+    height: auto;
+    padding: 0 1em;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 10px 10px rgba(0, 0, 0, 0.2);
+
+}
+.anuncio__card__imagem{
+    margin: 0.5em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.anuncio__card img {
+    
+    width: 100%;
+    border-radius: 10px;
+}
+.anuncio__card__conteudo{
+    width: 100%;
+    margin: 0.5em 0;
+}
+.anuncio__card__conteudo label{
+    font-weight: 600;
+    font-size: 0.75em;
+}
+.anuncio__card__conteudo input{
+    width: 100%;
+    border: none;
+}
+.anuncio__card__botao{
+    margin: 1em 0;
+    display: flex;
+    justify-content: center;
+}
+.anuncio__card__botao button{
+    font-family: var(--font-principal);
+    color: white;
+    padding: 0.75em 2.5em;
+    width: auto;
+    border: none;
+    border-radius: 5px;
+    background: var(--cor-font-destaque);
+}

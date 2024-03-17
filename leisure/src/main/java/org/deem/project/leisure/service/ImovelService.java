@@ -1,6 +1,6 @@
 package org.deem.project.leisure.service;
 
-import java.util.List;
+
 
 import org.deem.project.leisure.model.Imovel;
 import org.deem.project.leisure.repository.ImovelRepository;

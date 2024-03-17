@@ -1,94 +1,259 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<!-- HEAD -->
+<head th:replace="~{fragments/head :: head}"></head>
+<body class="body">
+    <!--TROCAR TEMA-->
+    <div th:replace="~{fragments/trocarTema :: trocarTema}"></div>
 
-<head th:replace="~{fragmento/head :: head}"></head>
+    <!--- CABEÇALHO -->
+    <header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
 
-<body onload="loading()">
-  <!-- <div class="pre">
-    <div class="preLoading">
-      <i class="fa-solid fa-spinner-third fa-spin fa-2xl"></i>
-    </div>
-  </div> -->
+    <main class="main">
+        <section class="carrossel">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="/img/anuncio/anuncio1.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <img src="/img/anuncio/anuncio2.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <img src="/img/anuncio/anuncio3.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <a href="https://suntech.eco.br" target="_blank"><img src="/img/anuncio/anuncio4.png" class="d-block w-100" alt="..."></a>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </section>
 
-  <!-- <div class="loaded"> -->
-  <!-- MENU GRANDE -->
-  <div class="grande">
-    <div class="container-fluid faixa-nav fixed-top bg-light"></div>
-    <!-- BARRA DE PESQUISA -->
-    <div th:replace="~{fragmento/barraPesquisa :: barraPesquisa}"></div>
+        <section class="destaques">
+            <div class="swiperDestaques">
+                <div class="swiper-wrapper destaques__swiper__conteudo">
+                    <!-- <div class="swiper-slide"> -->
+                    <!-- CARD ANUNCIO-->
+                    <!-- INSERIR O FRAGMENT DO ANUNCIO ABAIXO -->
 
-    <!-- NAVBAR MAX MEDIA -->
-    <div th:replace="~{fragmento/navbar :: navbarHome}"></div>
-  </div>
+                    <div th:replace="~{fragments/destaques-card :: card}"></div>
 
-  <!-- NAVBAR MIN MEDIA -->
-  <div th:replace="~{fragmento/miniMenu :: miniMenu}"></div>
+                    <!--- EXEMPLO ACIMA -->
+                </div>
+                <div class="destaques__swiper">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>   
+        </section>
 
-  <!-- <div class="container-fluid" th:replace="~{fragmento/carousel :: carousel}"></div> -->
-  <div id="container-top" class="container-fluid ">
-    <!-- CAROUSEL -->
-    <div th:replace="~{fragmento/carousel :: carousel}"></div>
-    <div class="row">
-      <div class="col-10 mx-auto">
+        <section class="procurados">
+            <ul class="procurados__lista">
+                <li class="procurados__lista-item">
+                    <img src="/img/anuncio/10OFF.png" alt="" class="procurados__lista-imagem">
+                </li>
+                <li class="procurados__lista-item">
+                    <img src="/img/anuncio/20OFF.png" alt="" class="procurados__lista-imagem">
+                </li>
+                <li class="procurados__lista-item">
+                    <img src="/img/anuncio/50OFF.png" alt="" class="procurados__lista-imagem">
+                </li>
+            </ul>
+        </section>
 
-        <!-- ANUNCIOS EM DESTAQUE -->
-        <div th:replace="~{fragmento/destaque :: destaque}"></div>
+        <section id="sobre" class="sobre">
+            <h2 class="titulo__secundario">Sobre a Leisure imóveis</h2>
+            <div class="sobre__conteudo">
+                <div class="sobre__container-imagem">
+                    <img class="sobre__imagem" src="/img/imagem/escritorio.png" alt="Imagem do escritório Leisure imóveis">
+                </div>
+                <ul class="sobre__conteudo__lista">
+                    <li class="sobre__conteudo__lista-item">
+                        <ul class="sobre__conteudo__lista">
+                            <li class="sobre__conteudo__lista-item">
+                                <h3 class="titulo__terciario">Compromisso</h3>
+                                <p class="sobre__conteudo__lista-texto">Na Leisure Imóveis, estamos empenhados em ajudar você a encontrar o lar perfeito, onde possa criar memórias preciosas e viver momentos especiais.</p>
+                                <p class="sobre__conteudo__lista-texto">Somos o resultado de uma colaboração com a DEEM, uma empresa especializada no desenvolvimento de sites e aplicativos para terceiros.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sobre__conteudo__lista-item">
+                        <ul class="sobre__conteudo__lista">
+                            <li class="sobre__conteudo__lista-item">
+                                <h3 class="titulo__terciario">Nossa missão</h3>
+                                <p class="sobre__conteudo__lista-texto">Nossa missão é simplificar a busca por imóveis. Com um catálogo diversificado, que abrange desde apartamentos urbanos a casas espaçosas nos subúrbios, oferecemos opções para todos os estilos de vida e orçamentos.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sobre__conteudo__lista-item">
+                        <ul class="sobre__conteudo__lista">
+                            <li class="sobre__conteudo__lista-item">
+                                <h3 class="sobre__conteudo__lista-titulo">O que nos torna únicos</h3>
+                                <p class="sobre__conteudo__lista-texto">Na Leisure Imóveis, nos destacamos pelo nosso comprometimento com a qualidade e a satisfação do cliente.</p>
+                                <ul class="sobre__conteudo__lista">
+                                    <li class="sobre__conteudo__lista-item lista-lista">
+                                        <p class="sobre__conteudo__lista-texto">
+                                            <i class="fa-light fa-check" style="color: #74C0FC;"></i>
+                                        </p>
+                                        <p class="sobre__conteudo__lista-texto">Tecnologias modernas</p>
+                                    </li>
+                                    <li class="sobre__conteudo__lista-item lista-lista">
+                                        <p class="sobre__conteudo__lista-texto">
+                                            <i class="fa-light fa-check" style="color: #74C0FC;"></i>
+                                        </p>
+                                        <p class="sobre__conteudo__lista-texto">Integração de dados</p>
+                                    </li>
+                                    <li class="sobre__conteudo__lista-item lista-lista">
+                                        <p class="sobre__conteudo__lista-texto">
+                                            <i class="fa-light fa-check" style="color: #74C0FC;"></i>
+                                        </p>
+                                        <p class="sobre__conteudo__lista-texto">Facilidade de acesso</p>
+                                    </li>
+                                    <li class="sobre__conteudo__lista-item lista-lista">
+                                        <p class="sobre__conteudo__lista-texto">
+                                            <i class="fa-light fa-check" style="color: #74C0FC;"></i>
+                                        </p>
+                                        <p class="sobre__conteudo__lista-texto">Selos de qualidade</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>  
+        </section>
 
-        <!-- PROPAGANDA -->
-        <div th:replace="~{fragmento/propaganda :: propaganda}"></div>
+        <section id="servicos" class="especialidade">
+            <h2 class="titulo__secundario">Nossas especialidades</h2>
+            <div class="especialidade__conteudo">
+                <ul class="especialidade__conteudo__lista">
+                    <li class="especialidade__conteudo__lista-item">
+                        <i class="fa-light fa-2xl fa-mobile-notch"></i>
+                        <h3 class="titulo__terciario">Aplicativos nativos</h3>
+                        <p class="especialidade__conteudo__lista-texto">Utilizamos o poder dos dispositivos móveis para melhor experiência, afinal estamos na era da tecnologia na palma da mão, podemos fazer nossas compras até do banheiro, não é mesmo? rsrs.</p>
+                    </li>
+                    <li class="especialidade__conteudo__lista-item">
+                        <i class="fa-light fa-2xl fa-cart-shopping"></i>
+                        <h3 class="titulo__terciario">E-commerce</h3>
+                        <p class="especialidade__conteudo__lista-texto">Nós trabalhamos fazendo uma conexão entre cliente e vendedor para melhor atende-los e também para que você não saia do conforto de sua casa tomando aquela água de coco ;)</p>
+                    </li>
+                    <li class="especialidade__conteudo__lista-item">
+                        <i class="fa-light fa-2xl fa-paintbrush"></i>
+                        <h3 class="titulo__terciario">Design Criativo</h3>
+                        <p class="especialidade__conteudo__lista-texto">Temos um design moderno, atraente e fácil de utilizar para você encontrar tudo o que precisa. Também pensamos naquelas pessoas que gostam de ver só as imagens nos livros, por isso temos bastante imagens ilustrando nosso conteúdo. *-*</p>
+                    </li>
+                    <li class="especialidade__conteudo__lista-item">
+                        <i class="fa-brands fa-2xl fa-google"></i>
+                        <h3 class="titulo__terciario">Expert em SEO</h3>
+                        <p class="especialidade__conteudo__lista-texto">Visibilidade e classificação em motores de busca garantindo maior alcance. Todo mundo quer ser top nos resultados de pesquisa. Hahaha.</p>
+                    </li>
+                    <li class="especialidade__conteudo__lista-item">
+                        <i class="fa-light fa-2xl fa-headset"></i>
+                        <h3 class="titulo__terciario">Suporte 24/7</h3>
+                        <p class="especialidade__conteudo__lista-texto">Para melhor atende-lo temos um suporte 24 horas por dia para ajudar com dúvidas ou até mesmo resolver aquele probleminha chato. =/</p>
+                    </li>
+                </ul>
+            </div>   
+        </section>
 
-        <!-- MINI PROPAGANDA -->
-        <div th:replace="~{fragmento/propaganda :: miniPropaganda}"></div>
-      </div>
+        <section class="resposabilidade">
+            <div class="responsabilidade__conteudo">
+                <ul class="responsabilidade__conteudo__lista">
+                    <li class="responsabilidade__conteudo__lista-item">
+                        <i class="fa-light fa-2xl fa-face-smile-hearts fa-beat"></i>
+                        <h3 class="titulo__terciario">Satisfação</h3>
+                        <p class="responsabilidade__conteudo__lista-texto">Milhares de contratos assinados e clientes satisfeitos com o seu negócio.</p>
+                    </li>
+                    <li class="responsabilidade__conteudo__lista-item">
+                        <i class="fa-light fa-2xl fa-hand-holding-seedling fa-beat"></i>
+                        <h3 class="titulo__terciario">Sustentabilidade</h3>
+                        <p class="responsabilidade__conteudo__lista-texto">Além de contribuir com o meio ambiente, imóveis sustentáveis tem amis benefil com a gente.</p>
+                    </li>
+                    <li class="responsabilidade__conteudo__lista-item">
+                        <i class="fa-light fa-2xl fa-award fa-beat"></i>
+                        <h3 class="titulo__terciario">Qualidade garantida</h3>
+                        <p class="responsabilidade__conteudo__lista-texto">Garantimos a transparência, qualidade e preços conpativeis com o mercado para melhor atende-lo.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-      <!-- SOBRE NÓS -->
-      <div class="margem" id="sobre"></div>
-      <div th:replace="~{fragmento/sobre :: sobre}"></div>
+        <section id="time" class="time">
+            <div class="swiper">
+                <div class="swiper-pagination"></div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="time__card">
+                            <img class="time__card-imagem" src="/img/imagem/Danilo.jpg" alt="Foto do Danilo">
+                            <div class="time__card__info">
+                                <h3 class="titulo__terciario">Danilo</h3>
+                                <p class="time_card__info-texto">Front-end / UX</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="time__card">
+                            <img class="time__card-imagem" src="/img/imagem/Enzo.jpg" alt="Foto do Enzo">
+                            <div class="time__card__info">
+                                <h3 class="titulo__terciario">Enzo</h3>
+                                <p class="time_card__info-texto">Back-end / DBA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="time__card">
+                            <img class="time__card-imagem" src="img/imagem/Esau.jpg" alt="Foto do Esau">
+                            <div class="time__card__info">
+                                <h3 class="titulo__terciario">Esau</h3>
+                                <p class="time_card__info-texto">Dev mobile / UX</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="time__card">
+                            <img class="time__card-imagem" src="/img/imagem/Marcelo.jpg" alt="Foto do Marcelo">
+                            <div class="time__card__info">
+                                <h3 class="titulo__terciario">Marcelo</h3>
+                                <p class="time_card__info-texto">Back-end / DBA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="time__card">
+                            <img class="time__card-imagem" src="/img/imagem/Marcos.jpeg" alt="Foto do Marcos">
+                            <div class="time__card__info">
+                                <h3 class="titulo__terciario">Marcos</h3>
+                                <p class="time_card__info-texto">Dev movile / QA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
 
-      <!-- ESPECIALIDADES DA EMPRESA -->
-      <div class="margem" id="servicos"></div>
-      <div th:replace="~{fragmento/servicos :: servicos}"></div>
-
-      <!-- COMPROMISSO -->
-      <div th:replace="~{fragmento/compromisso :: compromisso}"></div>
-
-      <!-- TIME -->
-      <div class="margem" id="time"></div>
-      <div th:replace="~{fragmento/time :: time}"></div>
-    </div>
-  </div>
-  <!-- TRABALHE CONOSCO -->
-  <div id="trabalhe-area">
-    <div class="container-fluid mt-5">
-      <div class="row">
-        <div class="col-md-6 trabalhe-box parallax-trabalhe" id="empresa-img"></div>
-        <div class="col-md-6 trabalhe-box d-inline-block mx-auto" id="padrao-img">
-          <h4>Gosta de desafios?</h4>
-          <p>Temos várias posições abertas, entre elas: Software Engineer, UI/UX Designer, Project Manager e mais.
-          </p>
-          <p>Clique no botão abaixo e confira os beneficios e as posições em aberto.</p>
-          <p>Aqui você terá chance de trabalhar com as melhores tecnologias e os profissionais mais capacitados.</p>
-          <a href="#" class="btn btn-primary rounded-5" id="apply-btn" data-bs-target="#exampleModalToggle3"
-            data-bs-toggle="modal">Bora!</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- RODAPÉ -->
-  <div th:replace="~{fragmento/footer :: footer}"></div>
-
-  <!-- MODAL LOGIN-->
-  <div th:replace="~{fragmento/loginModal :: loginModal}"></div>
-
-  <!-- CADASTRO -->
-  <div th:replace="~{fragmento/cadastro :: cadastro}"></div>
-
-  <!-- MODAL TRABALHE CONOSCO -->
-  <div th:replace="~{fragmento/trabalheModal :: trabalheModal}"></div>
-  <!-- </div> -->
-
-  <!-- SCRIPTS -->
-  <div th:replace="~{fragmento/scripts :: scripts}"></div>
+        <section class="trabalhe">
+            <div class="trabalhe__conteudo">
+                <h3 class="titulo__terciario trabalhe__conteudo-titulo">Quer fazer parte da equipe?</h3>
+                <p class="trabalhe__conteudo-texto">Temos várias posições abertas, entre elas: Software Engineer, UI/UX Designer, Project Manager e mais.</p>
+                <p class="trabalhe__conteudo-texto">Clique no botão abaixo e confira os beneficios e as posições em aberto.</p>
+                <p class="trabalhe__conteudo-texto">Aqui você terá chance de trabalhar com as melhores tecnologias e os profissionais mais capacitados.</p>
+                <div class="trabalhe__conteudo__botao">
+                    <a class="trabalhe__conteudo__botao-link" href="#">Eu quero!</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- RODAPE -->
+    <footer th:replace="~{fragments/rodape :: rodape}"></footer>
 </body>
-
 </html>

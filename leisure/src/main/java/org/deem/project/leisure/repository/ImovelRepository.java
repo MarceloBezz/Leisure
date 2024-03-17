@@ -1,7 +1,5 @@
 package org.deem.project.leisure.repository;
 
-import java.util.List;
-
 import org.deem.project.leisure.model.Imovel;
 import org.deem.project.leisure.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;

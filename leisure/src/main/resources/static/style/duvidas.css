@@ -1,0 +1,19 @@
+.duvidas{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    row-gap: 2em;
+}
+.duvidas__container{
+    margin: 1em 0;
+}
+.duvidas__container-texto{
+    font-size: 0.75em;
+    line-height: 1.5;
+}
+.duvidas__container__imagem-conteudo{
+    width: 50%;
+}

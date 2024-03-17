@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<!------------------------------ HEAD ------------------------------>
+<!-- HEAD -->
 <head th:replace="~{fragments/head :: head}"></head>
 <body class="body">
-    <!------------------------------ TROCAR TEMA ------------------------------>
+    <!-- TROCAR TEMA -->
     <div th:replace="~{fragments/trocarTema :: trocarTema}"></div>
 
-    <!------------------------------ CABEÇALHO ------------------------------>
+    <!-- CABEÇALHO -->
     <header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
 
     <main class="main">
@@ -14,16 +14,16 @@
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="./img/anuncio/anuncio1.png" class="d-block w-100" alt="...">
+                    <img src="/img/anuncio/anuncio1.png" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item" data-bs-interval="3000">
-                    <img src="./img/anuncio/anuncio2.png" class="d-block w-100" alt="...">
+                    <img src="/img/anuncio/anuncio2.png" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item" data-bs-interval="3000">
-                    <img src="./img/anuncio/anuncio3.png" class="d-block w-100" alt="...">
+                    <img src="/img/anuncio/anuncio3.png" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item" data-bs-interval="3000">
-                    <a href="https://suntech.eco.br" target="_blank"><img src="./img/anuncio/anuncio4.png" class="d-block w-100" alt="..."></a>
+                    <a href="https://suntech.eco.br" target="_blank"><img src="/img/anuncio/anuncio4.png" class="d-block w-100" alt="..."></a>
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -41,12 +41,12 @@
             <div class="swiperDestaques">
                 <div class="swiper-wrapper destaques__swiper__conteudo">
                     <!-- <div class="swiper-slide"> -->
-                    <!------------------------------ CARD ANUNCIO ------------------------------>
-                    <!---------------- INSERIR O FRAGMENT DO ANUNCIO ABAIXO -------------------->
+                    <!-- CARD ANUNCIO -->
+                    <!-- INSERIR O FRAGMENT DO ANUNCIO ABAIXO -->
 
                     <div th:replace="~{fragments/destaques-card :: card}"></div>
 
-                    <!----------------------------- EXEMPLO ACIMA ------------------------------>
+                    <!-- EXEMPLO ACIMA -->
                 </div>
                 <div class="destaques__swiper">
                     <div class="swiper-button-prev"></div>
@@ -58,13 +58,13 @@
         <section class="procurados">
             <ul class="procurados__lista">
                 <li class="procurados__lista-item">
-                    <img src="./img/anuncio/10OFF.png" alt="" class="procurados__lista-imagem">
+                    <img src="/img/anuncio/10OFF.png" alt="" class="procurados__lista-imagem">
                 </li>
                 <li class="procurados__lista-item">
-                    <img src="./img/anuncio/20OFF.png" alt="" class="procurados__lista-imagem">
+                    <img src="/img/anuncio/20OFF.png" alt="" class="procurados__lista-imagem">
                 </li>
                 <li class="procurados__lista-item">
-                    <img src="./img/anuncio/50OFF.png" alt="" class="procurados__lista-imagem">
+                    <img src="/img/anuncio/50OFF.png" alt="" class="procurados__lista-imagem">
                 </li>
             </ul>
         </section>
@@ -73,7 +73,7 @@
             <h2 class="titulo__secundario">Sobre a Leisure imóveis</h2>
             <div class="sobre__conteudo">
                 <div class="sobre__container-imagem">
-                    <img class="sobre__imagem" src="./img/imagem/escritorio.png" alt="Imagem do escritório Leisure imóveis">
+                    <img class="sobre__imagem" src="/img/imagem/escritorio.png" alt="Imagem do escritório Leisure imóveis">
                 </div>
                 <ul class="sobre__conteudo__lista">
                     <li class="sobre__conteudo__lista-item">
@@ -192,7 +192,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="time__card">
-                            <img class="time__card-imagem" src="./img/imagem/Danilo.jpg" alt="Foto do Danilo">
+                            <img class="time__card-imagem" src="/img/imagem/Danilo.jpg" alt="Foto do Danilo">
                             <div class="time__card__info">
                                 <h3 class="titulo__terciario">Danilo</h3>
                                 <p class="time_card__info-texto">Front-end / UX</p>
@@ -201,7 +201,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="time__card">
-                            <img class="time__card-imagem" src="./img/imagem/Enzo.jpg" alt="Foto do Enzo">
+                            <img class="time__card-imagem" src="/img/imagem/Enzo.jpg" alt="Foto do Enzo">
                             <div class="time__card__info">
                                 <h3 class="titulo__terciario">Enzo</h3>
                                 <p class="time_card__info-texto">Back-end / DBA</p>
@@ -210,7 +210,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="time__card">
-                            <img class="time__card-imagem" src="./img/imagem/Esau.jpg" alt="Foto do Esau">
+                            <img class="time__card-imagem" src="/img/imagem/Esau.jpg" alt="Foto do Esau">
                             <div class="time__card__info">
                                 <h3 class="titulo__terciario">Esau</h3>
                                 <p class="time_card__info-texto">Dev mobile / UX</p>
@@ -219,7 +219,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="time__card">
-                            <img class="time__card-imagem" src="./img/imagem/Marcelo.jpg" alt="Foto do Marcelo">
+                            <img class="time__card-imagem" src="/img/imagem/Marcelo.jpg" alt="Foto do Marcelo">
                             <div class="time__card__info">
                                 <h3 class="titulo__terciario">Marcelo</h3>
                                 <p class="time_card__info-texto">Back-end / DBA</p>
@@ -228,7 +228,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="time__card">
-                            <img class="time__card-imagem" src="./img/imagem/Marcos.jpeg" alt="Foto do Marcos">
+                            <img class="time__card-imagem" src="/img/imagem/Marcos.jpeg" alt="Foto do Marcos">
                             <div class="time__card__info">
                                 <h3 class="titulo__terciario">Marcos</h3>
                                 <p class="time_card__info-texto">Dev movile / QA</p>
@@ -253,7 +253,7 @@
             </div>
         </section>
     </main>
-    <!------------------------------ RODAPE ------------------------------>
+    <!-- RODAPE -->
     <footer th:replace="~{fragments/rodape :: rodape}"></footer>
 </body>
 </html>

@@ -33,3 +33,15 @@
         width: 90vw;
     }
 }
+
+@media screen and (min-width: 1024px){
+    .responsabilidade__conteudo__lista-texto{
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 1920px){
+    .responsabilidade__conteudo__lista-texto{
+        font-size: 1.5em;
+    }
+}

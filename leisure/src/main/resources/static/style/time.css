@@ -34,3 +34,15 @@
     position: initial;
     margin: 1em 0;
 }
+
+@media screen and (min-width: 1024px){
+    .time_card__info-texto{
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 1920px){
+    .time_card__info-texto{
+        font-size: 1.5em;
+    }
+}

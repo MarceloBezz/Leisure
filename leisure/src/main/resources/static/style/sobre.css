@@ -58,3 +58,9 @@
         font-size: 1em;
     }
 }
+
+@media screen and (min-width: 1920px){
+    .sobre__conteudo__lista-texto{
+        font-size: 1.5em;
+    }
+}

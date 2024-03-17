@@ -17,7 +17,7 @@ public class ImovelController {
 	@Autowired
 	private ImovelService service;
 	
-//				---------------------- CADASTRAR IMÓVEL ----------------------------- fejioada
+//				---------------------- CADASTRAR IMÓVEL ----------------------------- fejão
 	@PostMapping("/cadastrar")
 	public String cadastrarImovel(Imovel imovel, String mensagem, RedirectAttributes redirect) {
 		boolean save = service.existsByCepAndNumero(imovel.getCep(), imovel.getNumero());

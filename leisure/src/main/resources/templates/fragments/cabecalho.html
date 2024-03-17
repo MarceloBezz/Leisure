@@ -1,4 +1,4 @@
-<!------------------------------ CABEÇALHO GERAL------------------------------>
+<!-- CABEÇALHO GERAL -->
 <header th:fragment="cabecalho" class="cabecalho">
     <nav class="cabecalho__container">
         <div class="container_hamburguer">
@@ -92,6 +92,7 @@
         <span class="container__rotulo">
             <div class="container__usuario" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <i class="fa-light fa-circle-user fa-2xl"></i>
+                <span>Entrar</span>
             </div>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -175,10 +176,10 @@
     </div>
 </header>
 
-<!------------------------------ CABEÇALHO PERFIL ------------------------------>
+<!-- CABEÇALHO PERFIL -->
 
 <header th:fragment="perfil" class="cabecalho">
-    <div class="cabecalho__container">
+    <nav class="cabecalho__container">
         <div class="container_hamburguer">
             <input type="checkbox" id="menu">
             <label for="menu">
@@ -228,15 +229,16 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </nav>
     <div class="container__pesquisa">
         <input class="container__pesquisa-barra" type="search" name="pesquisa" id="pesquisa" placeholder="Digite sua pesquisa">
     </div>
-    <nav class="cabecalho__navegacao">
-        <span class="container__rotulo">
+    <div class="cabecalho__navegacao">
+        <div class="container__usuario">
             <i class="fa-light fa-circle-user fa-2xl"></i>
-        </span>
-    </nav>
+            <span></span>
+        </div>
+    </div>
 </header>
 
 

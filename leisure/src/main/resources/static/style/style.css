@@ -118,10 +118,25 @@ table {
 }
 
 @media screen and (min-width: 1024px){
+	.btnTema{
+		font-size: 1em;
+	}
 	.titulo__secundario{
 		font-size: 2.5em;
 	}
 	.titulo__terciario{
 		font-size: 1.25em;
+	}
+}
+
+@media screen and (min-width: 1920px){
+	.btnTema{
+		font-size: 1.5em;
+	}
+	.titulo__secundario{
+		font-size: 3.25em;
+	}
+	.titulo__terciario{
+		font-size: 2em;
 	}
 }

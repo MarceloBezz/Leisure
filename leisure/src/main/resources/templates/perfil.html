@@ -7,7 +7,7 @@
     <!-- TROCAR TEMA -->
     <div th:replace="~{fragments/trocarTema :: trocarTema}"></div>
 
-    <!-- CABEÇALHO ---->
+    <!-- CABEÇALHO -->
     <header th:replace="~{fragments/cabecalho :: perfil}"></header>
 
     <main class="main">
@@ -232,7 +232,7 @@
         <section class="anuncio hidden">
             <div class="anuncio__card">
                 <div class="anuncio__card__imagem">
-                    <img src="/img/anuncio/card/card03.png" alt="Casa a venda">
+                    <img src="/img/anuncio/card/card03.png" alt="Casa a venda">    
                 </div>
                 <form action="" method="get">
                     <div class="anuncio__card__conteudo">
@@ -297,39 +297,54 @@
         <!-- MEUS DADOS -->
         <section class="meusdados hidden">
             <div class="meusdados__imagem">
-                <label for="meusdadosImagem"></label>
+			<form class="row g-3 d-flex d-inline-block" method="post" 
+					enctype="multipart/form-data">
+					<input name="id" th:value="${usuario.id}" hidden>
+						<div id="imagem-circle" class="col-sm-12 d-block text-center">
+							<div id="imagemUsuario" class="mx-auto">								
+								<span>
+									<img th:src="@{/usuario/imagem/{id} (id=${usuario.id})}"></img>
+								</span>
+								</div>
+								<label for="input-file" id="input-imagem" class="d-block mt-4 mb-4 mx-auto">Alterar imagem <i
+										class="fa-thin fa-pen-to-square"></i></label>
+									<input id="input-file"name="fotoPerfil"type="file"accept="image /*">
+										<input type="submit"value="Enviar">
+											</div>
+											</form> 
+               <label for="meusdadosImagem"></label>
                 <span>Alterar imagem</span>
-                <input type="file" name="foto" id="meusdadosImagem">
+                <input type="file" name="foto" id="meusdadosImagem"> 
             </div>
             <form class="meusdados__container">
                 <div class="meusdados__container__conteudo">
                     <label for="meusdadosNome">Nome completo:</label>
-                    <input type="text" name="nome" id="meusdadosNome">
+                    <input type="text" name="nome" id="meusdadosNome" th:value="${usuario.nome}">
                 </div>
                 <div class="meusdados__container__conteudo">
                     <label for="meusdadosData">Data de nascimento:</label>
-                    <input type="date" name="data" id="meusdadosData">
+                    <input type="date" name="data" id="meusdadosData" th:value="${usuario.data}">
                 </div>
                 <div class="meusdados__container__conteudo">
                     <label for="meusdadosEmail">E-mail:</label>
-                    <input type="email" name="email" id="meusdadosEmail">
+                    <input type="email" name="email" id="meusdadosEmail" th:value="${usuario.email}">
                 </div>
                 <div class="meusdados__container__conteudo">
                     <label for="meusdadosSenha">Senha:</label>
-                    <input type="password" name="senha" id="meusdadosSenha">
+                    <input type="password" name="senha" id="meusdadosSenha" th:value="${usuario.senha}">
                 </div>
                 <div class="meusdados__container__conteudo">
                     <label for="dadoTelefone">Telefone:</label>
-                    <input type="tel" name="telefone" id="dadoTelefone">
+                    <input type="tel" name="telefone" id="dadoTelefone" th:value="${usuario.telefone}">
                 </div>
                 <div class="meusdados__container__conteudo">
                     <label for="meusdadosCpf">CPF</label>
-                    <input type="password" name="cpf" id="meusdadosCpf">
+                    <input type="password" name="cpf" id="meusdadosCpf" th:value="${usuario.cpf}">
                 </div>
 
                 <div class="meusdados__container__conteudo">
                     <label>Cep:</label>
-                    <input name="cep" type="text" id="meusdadosCep" value="" maxlength="9" onblur="pesquisacep(this.value);" />
+                    <input name="cep" type="text" id="meusdadosCep" th:value="${usuario.nome}" maxlength="9" onblur="pesquisacep(this.value);" />
                 </div>
                 <div class="meusdados__container__conteudo">
                     <label>Rua:</label>

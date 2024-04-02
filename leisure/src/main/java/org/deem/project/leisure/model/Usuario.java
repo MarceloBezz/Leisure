@@ -1,28 +1,35 @@
 package org.deem.project.leisure.model;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="USUARIO")
-public class Usuario {
+public class Usuario implements UserDetails {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID")
 	private long id;
 
-	//@JoinColumn(name="PROPRIETARIO_ID", nullable=true)
     @OneToMany(mappedBy="usuario", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
     private List<Imovel> imoveis; 
 	
@@ -57,13 +64,27 @@ public class Usuario {
 	@Column(name="FOTO_PERFIL")
 	private byte[] foto_perfil;
 	
-	public Usuario() {
-	}
+	@Column(name="ROLE_USUARIO")
+	private String role_usuario;
 
-	public Usuario(long id, List<Imovel> imoveis, String nome, String data, String email, String senha, String telefone,
-			String cpf, String cep, int numResidencia, String complemento, byte[] foto_perfil) {
-		super();
-		this.id = id;
+	// FetchType.EAGER => Busca também os relacionados
+	// FetchType.Lazy => Traz somente o referido
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(name = "USUARIO_ROLES",
+			   joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName="id"),
+			   inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName="role_id"))
+	private Collection<Roles> roles;
+	
+	
+	public Usuario() {
+		
+	}
+	
+	
+	
+
+	public Usuario(List<Imovel> imoveis, String nome, String data, String email, String senha, String telefone,
+			String cpf, String cep, int numResidencia, String complemento, byte[] foto_perfil, String role_usuario, Collection<Roles> roles) {
 		this.imoveis = imoveis;
 		this.nome = nome;
 		this.data = data;
@@ -75,6 +96,38 @@ public class Usuario {
 		this.numResidencia = numResidencia;
 		this.complemento = complemento;
 		this.foto_perfil = foto_perfil;
+		this.role_usuario = role_usuario;
+		this.roles = roles;
+	}
+
+
+
+
+	public Usuario(String nome, String email, String senha, String cpf, Collection<Roles> roles) {
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+		this.cpf = cpf;
+		this.roles = roles;
+	}
+
+	
+
+
+	public String getRole_usuario() {
+		return role_usuario;
+	}
+
+	public void setRole_usuario(String role) {
+		this.role_usuario = role;
+	}
+
+	public Collection<Roles> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Collection<Roles> roles) {
+		this.roles = roles;
 	}
 
 	public long getId() {
@@ -171,6 +224,64 @@ public class Usuario {
 
 	public void setFoto_perfil(byte[] foto_perfil) {
 		 this.foto_perfil = foto_perfil;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return this.roles;
+	}
+
+	@Override
+	public String getPassword() {
+		return this.senha;
+	}
+
+	@Override
+	public String getUsername() {
+		return this.nome;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
+
+
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Usuario other = (Usuario) obj;
+		return id == other.id;
 	}
 	
 	

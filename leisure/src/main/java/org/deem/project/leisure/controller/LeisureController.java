@@ -7,24 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import jakarta.servlet.http.HttpSession;
-
 @Controller
 @RequestMapping("/leisure")
 public class LeisureController {
 	
 	@GetMapping("/index")
-	public String getIndex(Usuario usuario, RedirectAttributes redirect, HttpSession sessao, Model model) {
-		// if(usuario != null) {
-		// 	redirect.addAttribute("usuario", usuario);
-		//	return "/index";
-		// }else {
-		// return "/index";
-		// }
-		Usuario user = (Usuario) sessao.getAttribute("user");
-		model.addAttribute("user", user);
+	public String getIndex(Usuario usuario, RedirectAttributes redirect, Model model) {
 		return "index";
-		
 	}
 	@GetMapping("/faq")
 	public String getFaq() {

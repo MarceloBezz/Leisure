@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+/*HEAD*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import url('header.css');
@@ -140,7 +140,7 @@ table {
 	.titulo__terciario{
 		font-size: 2em;
 	}
-=======
+/*=======*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import url('header.css');
@@ -282,5 +282,6 @@ table {
 	.titulo__terciario{
 		font-size: 2em;
 	}
->>>>>>> 2e9d0d9828207d2b8e791388e79afe50cb0c9527
+/*>>>>>>>2e9d0d9828207d2b8e791388e79afe50cb0c9527*/
+}
 }

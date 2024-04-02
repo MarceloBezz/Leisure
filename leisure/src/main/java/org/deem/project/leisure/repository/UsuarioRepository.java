@@ -9,14 +9,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 	Usuario findById(long id);
-	//List<Usuario> findAllByAtivo(boolean ativo);
 	List<Usuario> findByEmailOrCpf(String email, String cpf);
 	Usuario findByEmailAndSenha(String email, String senha);
 	void deleteById(Long id);
-	
-	//@Modifying(clearAutomatically = true, flushAutomatically = true)	
-	//@Query("UPDATE Usuario u set u.senha = :senha, u.telefone = :telefone, u.cep = :cep, u.numResidencia = :numResidencia, u.complemento = :complemento WHERE u.id = :id RETURNING u")
-	//Usuario updateAll(@Param(value = "id")Long id,@Param(value = "senha")String senha, @Param(value = "telefone")String telefone, @Param(value = "cep")String cep, @Param(value = "numResidencia")Short numResidencia, @Param(value = "complemento")String complemento);
-	
-	//void atualizacao(String senha, String telefone, String cep, Short numResidencia, String complemento);;
+	Usuario findByNome(String nome);
+	Usuario findByEmail(String email);
 }

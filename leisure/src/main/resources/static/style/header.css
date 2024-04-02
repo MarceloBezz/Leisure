@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .cabecalho{
     background-color: white;
     padding: 1em 0;
@@ -176,7 +176,7 @@
     .container__usuario{
         font-size: 1.5em;
     }
-=======
+
 .cabecalho{
     background-color: white;
     padding: 1em 0;
@@ -354,5 +354,6 @@
     .container__usuario{
         font-size: 1.5em;
     }
->>>>>>> 2e9d0d9828207d2b8e791388e79afe50cb0c9527
+/* 2e9d0d9828207d2b8e791388e79afe50cb0c9527*/
+}
 }

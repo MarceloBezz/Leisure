@@ -103,7 +103,7 @@
                             <h2>Cadastro</h2>
                         </div>
                         <div class="modal-body">
-                            <form class="cadastro__container">
+                            <form class="cadastro__container" th:action="@{/usuario/cadastrar}" method="post">
                                 <div class="cadastro__container__conteudo">
                                     <label for="meusdadosNome">Nome completo</label>
                                     <input type="text" name="nome" id="cadastroNome">
@@ -128,7 +128,7 @@
                                     <label for="cadastroCpf">CPF</label>
                                     <input type="password" name="cpf" id="cadastroCpf">
                                 </div>
-                                <form method="get" action=".">
+                                <!--<form method="get" action="."> -->
                                 <div class="cadastro__container__conteudo">
                                     <label>Cep</label>
                                     <input name="cep" type="text" value="" maxlength="9" onblur="pesquisacep(this.value);" />
@@ -137,14 +137,15 @@
                                     <label>Número</label>
                                     <input name="numero" type="text"/>
                                 </div>
+                                <button type="submit" class="btn btn-primary">Cadastrar</button>
                             </form>
                             <div class="modal-body__botoes d-flex flex-column gap-2 justify-content-center">
                                 <!-- <button type="button" class="btn btn-secondary btn-login">Login</button> -->
-                                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                               
                                 <span class="btn-login">Já tenho cadastro</span>
                             </div>
                             
-                            </form>
+                           <!-- </form>-->
                         </div>
                     </div>
                     <div class="modal-content modal__login hidden">
@@ -153,14 +154,14 @@
                             <h2>Login</h2>
                         </div>
                         <div class="modal-body">
-                            <form class="cadastro__container">
+                            <form class="cadastro__container" method="post" th:action="@{/usuario/login}">
                                 <div class="cadastro__container__conteudo">
                                     <label for="loginEmail">E-mail</label>
-                                    <input type="email" name="email" id="loginEmail">
+                                    <input type="email" name="username" id="loginEmail">
                                 </div>
                                 <div class="cadastro__container__conteudo">
                                     <label for="loginSenha">Senha</label>
-                                    <input type="password" name="senha" id="loginSenha">
+                                    <input type="password" name="password" id="loginSenha">
                                 </div>
                                 <div class="modal-body__botoes d-flex flex-column gap-2 justify-content-center">
                                     <!-- <button type="button" class="btn btn-secondary btn-cadastrar">Cadastrar</button> -->
@@ -225,7 +226,7 @@
                 </li>
                 <li class="lista-menu__item">
                     <!-- <a class="container__link" href="#">Sair</a> -->
-                    <span class="container__link">Sair</span>
+                   <a th:href="@{/usuario/logout}"><span class="container__link">Sair</span></a> 
                 </li>
             </ul>
         </div>

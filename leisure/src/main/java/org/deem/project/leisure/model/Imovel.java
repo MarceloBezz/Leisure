@@ -51,19 +51,21 @@ public class Imovel {
 	private String descricao;
 	
 	@Column(name="VALOR")
-	private int valor;
+	private double valor;
 	
 	@Column(name="TIPO")
 	private String tipo;
 	
-	@Column(name="SUSTENTABILIDADE")
-	private String sustentabilidade;
+	@Column
+	private double iptu;
+	private double area;
+	private String foto;
 	
 	public Imovel() {	
 	}
 	
 	public Imovel(long id, Usuario usuario, int numQuartos, int numBanheiros, int vagasGaragem, int cep, String rua,
-			String cidade, String estado, int numero, String descricao, int valor, String tipo, String sustentabilidade) {
+			String cidade, String estado, int numero, String descricao, int valor, String tipo) {
 		super();
 		this.id = id;
 		this.usuario = usuario;
@@ -78,7 +80,6 @@ public class Imovel {
 		this.descricao = descricao;
 		this.valor = valor;
 		this.tipo = tipo;
-		this.sustentabilidade = sustentabilidade;
 	}
 	
 	public long getId() {
@@ -169,7 +170,7 @@ public class Imovel {
 		this.descricao = descricao;
 	}
 
-	public int getValor() {
+	public double getValor() {
 		return valor;
 	}
 
@@ -185,13 +186,6 @@ public class Imovel {
 		this.tipo = tipo;
 	}
 
-	public String getSustentabilidade() {
-		return sustentabilidade;
-	}
-
-	public void setSustentabilidade(String sustentabilidade) {
-		this.sustentabilidade = sustentabilidade;
-	}
 
 	
 	

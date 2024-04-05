@@ -1,5 +1,6 @@
 package org.deem.project.leisure.model;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
@@ -31,7 +32,7 @@ public class Usuario implements UserDetails {
 	private long id;
 
     @OneToMany(mappedBy="usuario", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
-    private List<Imovel> imoveis; 
+    private List<Imovel> imoveis = new ArrayList<>(); 
 	
 	@Column(name="NOME")
 	private String nome;
@@ -51,28 +52,18 @@ public class Usuario implements UserDetails {
 	@Column(name="CPF")
 	private String cpf;
 	
-	@Column(name="CEP_ENDERECO")
-	private String cep;
-	
-	@Column(name="NUM_RESIDENCIA")
-	private int numResidencia;
-	
-	@Column(name="COMPLEMENTO", nullable=true)
-	private String complemento;
-	
-	@Lob
-	@Column(name="FOTO_PERFIL")
-	private byte[] foto_perfil;
-	
-	@Column(name="ROLE_USUARIO")
+	@Column(name="PERFIL")
 	private String role_usuario;
+	
+	@Column(name="NOME_IMAGEM")
+	private String nomeImagem;
 
 	// FetchType.EAGER => Busca também os relacionados
 	// FetchType.Lazy => Traz somente o referido
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "USUARIO_ROLES",
+	@JoinTable(name = "USUARIO_PERFIL",
 			   joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName="id"),
-			   inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName="role_id"))
+			   inverseJoinColumns = @JoinColumn(name = "perfil_id", referencedColumnName="id"))
 	private Collection<Roles> roles;
 	
 	
@@ -83,8 +74,9 @@ public class Usuario implements UserDetails {
 	
 	
 
-	public Usuario(List<Imovel> imoveis, String nome, String data, String email, String senha, String telefone,
-			String cpf, String cep, int numResidencia, String complemento, byte[] foto_perfil, String role_usuario, Collection<Roles> roles) {
+	public Usuario(long id,List<Imovel> imoveis, String nome, String data, String email, String senha, String telefone,
+			String cpf,String role_usuario, Collection<Roles> roles, String nomeImagem) {
+		this.id = id;
 		this.imoveis = imoveis;
 		this.nome = nome;
 		this.data = data;
@@ -92,11 +84,19 @@ public class Usuario implements UserDetails {
 		this.senha = senha;
 		this.telefone = telefone;
 		this.cpf = cpf;
-		this.cep = cep;
-		this.numResidencia = numResidencia;
-		this.complemento = complemento;
-		this.foto_perfil = foto_perfil;
 		this.role_usuario = role_usuario;
+		this.roles = roles;
+		this.nomeImagem = nomeImagem;
+	}
+	
+	public Usuario(long id, String nome, String telefone, String cep, int numResidencia, String complemento,
+			String role_usuario, String nomeImagem, Collection<Roles> roles) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.telefone = telefone;
+		this.role_usuario = role_usuario;
+		this.nomeImagem = nomeImagem;
 		this.roles = roles;
 	}
 
@@ -112,6 +112,20 @@ public class Usuario implements UserDetails {
 	}
 
 	
+
+
+	public String getNomeImagem() {
+		return nomeImagem;
+	}
+
+
+
+
+	public void setNomeImagem(String nomeImagem) {
+		this.nomeImagem = nomeImagem;
+	}
+
+
 
 
 	public String getRole_usuario() {
@@ -186,44 +200,12 @@ public class Usuario implements UserDetails {
 		this.cpf = cpf;
 	}
 
-	public String getCep() {
-		return cep;
-	}
-
-	public void setCep(String cep) {
-		this.cep = cep;
-	}
-
-	public int getNumResidencia() {
-		return numResidencia;
-	}
-
-	public void setNumResidencia(int i) {
-		this.numResidencia = i;
-	}
-
-	public String getComplemento() {
-		return complemento;
-	}
-
-	public void setComplemento(String complemento) {
-		this.complemento = complemento;
-	}
-
 	public List<Imovel> getImoveis() {
 		return imoveis;
 	}
 
 	public void setImoveis(List<Imovel> imoveis) {
 		this.imoveis = imoveis;
-	}
-
-	public byte[] getFoto_perfil() {
-		return foto_perfil;
-	}
-
-	public void setFoto_perfil(byte[] foto_perfil) {
-		 this.foto_perfil = foto_perfil;
 	}
 
 	@Override

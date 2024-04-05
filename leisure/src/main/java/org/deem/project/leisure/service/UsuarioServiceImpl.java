@@ -54,22 +54,26 @@ public class UsuarioServiceImpl implements UsuarioService{
 	//MÉTODO PARA SALVAR USUÁRIO
 	@Override
 	public Usuario save(Usuario usuario) {
-		usuario = new Usuario(usuario.getImoveis(),
+		usuario = new Usuario(usuario.getId(),
+							  usuario.getImoveis(),
 							  usuario.getNome(),
 							  usuario.getData(),
 							  usuario.getEmail(),
 							  passwordEncoder.encode(usuario.getSenha()),
 							  usuario.getTelefone(),
 							  usuario.getCpf(),
-							  usuario.getCep(),
-							  usuario.getNumResidencia(),
-							  usuario.getComplemento(),
-							  usuario.getFoto_perfil(),
 							  usuario.getRole_usuario(),
-							  new ArrayList<>()); 
+							  new ArrayList<>(),
+							  usuario.getNomeImagem()); 
 		usuario.setRole_usuario("ROLE_USER");
 		usuarioRepository.save(usuario);
 		this.addRoleToUser(usuario.getEmail(), "ROLE_USER");
+		return usuario;
+	}
+	
+	@Override
+	public Usuario atualizar(Usuario usuario) {
+		usuarioRepository.save(usuario);
 		return usuario;
 	}
 
@@ -137,8 +141,6 @@ public class UsuarioServiceImpl implements UsuarioService{
 		usuario.setCpf(cpf);
 		String telefone = usuario.getTelefone().replaceAll("[^0-9]", "");
 		usuario.setTelefone(telefone);
-		String cep = usuario.getCep().replaceAll("[^0-9]", "");
-		usuario.setCep(cep);
 	}
 
 	@Override

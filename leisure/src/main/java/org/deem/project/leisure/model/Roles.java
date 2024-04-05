@@ -11,15 +11,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="ROLES")
+@Table(name="PERFIL")
 public class Roles implements GrantedAuthority{
     //private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ROLE_ID", nullable = false)
+    @Column(name="ID", nullable = false)
     private Long roleId;
-    @Column(name="ROLE", nullable = false)
+    @Column(name="TIPO", nullable = false)
     private String role;
 
     @Override

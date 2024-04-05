@@ -12,6 +12,11 @@ const listaBtnProximo = document.querySelectorAll('.anunciar__conteudo__botao-pr
 const formBox = document.querySelectorAll('.anunciar__conteudo__box');
 var progresso = 0;
 var i = 0;
+	
+	var id = document.getElementById("id_usuario").value;
+	var label = document.getElementById("input-imagem");
+	var nomeImagem = document.getElementById("nomeImagem").value;
+	label.style.backgroundImage = "url('http://localhost:8080/usuario/imagem/" + id + "')";
 
 if(btnMeusAnuncios){
 	btnMeusAnuncios.addEventListener('click', ()=>{
@@ -94,3 +99,4 @@ listaBtnAnterior.forEach(function (botao){
 		}
 	})
 })
+

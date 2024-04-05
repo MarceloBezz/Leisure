@@ -21,15 +21,5 @@ public interface UsuarioService extends UserDetailsService{
 	Usuario findByEmail(String email);
 	Roles saveRole(Roles role);
 	Usuario getAuthenticatedUser();
+	Usuario atualizar(Usuario usuario);
 }
-	
-
-
-	
-	
-	/*	if(usuarioDes.getNumResidencia() != null) {
-			usuarioNovo.setNumResidencia(usuarioDes.getNumResidencia());
-		}*/
- 
-	
-

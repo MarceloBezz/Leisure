@@ -45,7 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception{
          http
         .authorizeRequests()
-        .antMatchers("/leisure/index", "/static/**").permitAll()
+        .antMatchers("/leisure/index", "/static/**", "/usuario/cadastrar","/usuario/cadastrar**").permitAll()
         .and()
         .authorizeRequests()
         .antMatchers(POST,"/usuario/perfil").hasAnyAuthority("ROLE_USER")
@@ -72,9 +72,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
     
     
-    /*public void configure(WebSecurity web)throws Exception{
-    	web.ignoring().antMatchers("/style/**", "/script/**");
-    }*/
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder(){

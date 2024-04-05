@@ -1,8 +1,12 @@
 package org.deem.project.leisure.controller;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.deem.project.leisure.model.Usuario;
+import org.deem.project.leisure.repository.UsuarioRepository;
 import org.deem.project.leisure.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -23,8 +27,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/usuario")
 public class UsuarioController{
 	
+	private static String pathImage = "C:\\Users\\marce\\Desktop\\Projeto\\leisure\\src\\main\\resources\\imagens\\";
+	
 	@Autowired
 	private UsuarioService usuarioService;
+	
+	@Autowired
+	private UsuarioRepository usuarioRepository;
 
 //	Página direcionada após o login bem sucedido		
 	@GetMapping("/perfil")
@@ -34,15 +43,6 @@ public class UsuarioController{
 		return "perfil";
 	}
 	
-	// --------------------------------------- VISUALIZAR IMAGEM DE PERFIL ------------------------------------------------------
-		@GetMapping("/imagem/{id}")
-		public ResponseEntity<byte[]> getImagem(@PathVariable int id) {
-			Usuario usuario = usuarioService.findById(id);
-			HttpHeaders header = new HttpHeaders();
-			header.setContentType(MediaType.IMAGE_PNG);
-			return new ResponseEntity<>(usuario.getFoto_perfil(), header, HttpStatus.OK);
-			}
-		
 	//  ------------------------------------------- DELETAR USUÁRIO -------------------------------------------------------------	
 		@PostMapping("/deletar/{id}")
 		public String deletar(@PathVariable(value = "id") Long id, RedirectAttributes redirect) {
@@ -63,15 +63,6 @@ public class UsuarioController{
 								@RequestParam(name = "fotoPerfil", required = false) MultipartFile fotoPerfil,
 								String mensagem) throws IOException {
 			
-//			MUDAR SOMENTE FOTO DE PERFIL
-			if(fotoPerfil != null) {
-				Usuario usuarioBd = usuarioService.findById(usuario.getId());
-				usuarioBd.setFoto_perfil(fotoPerfil.getBytes());
-				 usuarioService.save(usuarioBd);
-				 redirect.addAttribute("usuario", usuarioBd);
-				 return "redirect:/usuario/perfil";
-			}
-
 			Usuario usuarioBD = usuarioService.findById(usuario.getId());
 			usuarioService.atualizacao(usuario, usuarioBD); //PASSAR OS DADOS ENVIADOS DO FORMS PARA O BANCO
 			usuarioService.save(usuarioBD);
@@ -80,6 +71,39 @@ public class UsuarioController{
 			return "redirect:/usuario/perfil";
 			
 	}
+		
+		@PostMapping("/salvar-foto")
+		public String salvarFoto(Usuario usuario, @RequestParam("file") MultipartFile file, RedirectAttributes redirect) {
+			Usuario usuario_ = usuarioService.findById(usuario.getId());
+			try {
+				if(!file.isEmpty()) {
+					byte[] bytes = file.getBytes();
+					Path caminho = Paths.get(pathImage + String.valueOf(usuario_.getId()) +"fotoPerfil.png");
+					Files.write(caminho, bytes);
+					
+					usuario_.setNomeImagem(String.valueOf(caminho).replace(".png", ""));
+					usuarioService.atualizar(usuario_);
+				}
+			} catch(IOException e){
+				e.printStackTrace();
+			}
+			
+			redirect.addAttribute("usuario", usuario);
+			return "redirect:/usuario/perfil";
+		}
+
+		// --------------------------------------- VISUALIZAR IMAGEM DE PERFIL ------------------------------------------------------
+		@GetMapping("/imagem/{id}")
+		public ResponseEntity<byte[]> getImagem(@PathVariable int id, Usuario usuario) throws IOException {
+			Usuario usuario_ = usuarioService.findById(id);
+			String path = pathImage + usuario_.getId() + "fotoPerfil.png";
+			Path caminho = Paths.get(path);
+			byte[] bytes = Files.readAllBytes(caminho);
+			HttpHeaders header = new HttpHeaders();
+			header.setContentType(MediaType.IMAGE_PNG);
+			return new ResponseEntity<>(bytes, header, HttpStatus.OK);
+			}
+
 
 	
 }

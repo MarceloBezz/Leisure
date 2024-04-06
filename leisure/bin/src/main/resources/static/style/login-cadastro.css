@@ -1,0 +1,14 @@
+.cadastro__container__conteudo{
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+}
+.cadastro__container__conteudo input{
+    margin: 0.5em 0;
+    height: 30px;
+    border: 0;
+    border-bottom: 1px solid lightgray;
+}
+.cadastro__container__conteudo input:focus{
+    outline: none;
+}

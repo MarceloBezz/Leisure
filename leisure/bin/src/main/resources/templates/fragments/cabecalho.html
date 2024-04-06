@@ -1,0 +1,253 @@
+<!-- CABEÇALHO GERAL -->
+<header th:fragment="cabecalho" class="cabecalho">
+    <nav class="cabecalho__container">
+        <div class="container_hamburguer">
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <span class="container__rotulo">
+                    <i class="fa-light fa-bars fa-xl"></i>
+                </span>
+            </label>
+            <ul class="lista-menu">
+                <li class="lista-menu__item home">
+                    <a class="container__link" href="/">Home</a>
+                    <label for="menu">
+                        <i class="fa-light fa-xmark fa-2xl"></i>
+                    </label>
+                </li>
+                <li class="lista-menu__item btn-submenu">
+                    <span>Categorias <i class="arrow-replace-categoria fa-solid fa-sm fa-chevron-right"></i></span>
+                    <span>
+                        
+                    </span>
+                    <ul class="lista-menu__sublista-categoria hidden">
+                        <li class="lista-menu__sublista-item">
+                            <a class="container__link" href="#"><span>Apartamentos</span></a>
+                        </li>
+                        <li class="lista-menu__sublista-item">
+                            <a class="container__link" href="#"><span>Casas</span></a>
+                        </li>
+                        <li class="lista-menu__sublista-item">
+                            <a class="container__link" href="#"><span>Sitíos</span></a>
+                        </li>
+                        <li class="lista-menu__sublista-item">
+                            <a class="container__link" href="#"><span>Terrenos</span></a>
+                        </li>
+                        <li class="lista-menu__sublista-item">
+                            <a class="container__link" href="#"><span>Corretores</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="lista-menu__item">
+                    <a class="container__link" href="/#sobre">Sobre</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a class="container__link" href="/#servicos">Serviços</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a class="container__link" href="/#time">Time</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a class="container__link" href="/premium">Premium</a>
+                    <!-- <span href="@{premium}" class="container__link">Premium</span> -->
+                </li>
+                <li class="lista-menu__item">
+                    <a class="container__link" href="#">Anunciar</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a class="container__link" href="/#contato">Contatos</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a class="container__link" href="/duvidas">Dúvidas</a>
+                </li>
+                <li class="lista-menu__item btn-download">
+                    <span>Nosso App <i class="arrow-replace-download fa-solid fa-sm fa-chevron-right"></i></span>
+                    <span>
+                        
+                    </span>
+                    <ul class="lista-menu__sublista-download hidden">
+                        <li class="lista-menu__sublista-item">
+                            <a class="container__link" href="https://play.google.com/store/apps" target="_blank">
+                                <span>Google play</span>
+                                <span>
+                                    <i class="fa-brands fa-google-play"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="lista-menu__sublista-item">
+                            <a class="container__link" href="https://www.apple.com/br/store" target="_blank">
+                                <span>Apple store</span>
+                                <span>
+                                    <i class="fa-brands fa-apple fa-lg"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <div th:replace="~{fragments/trocarTema :: trocarTema}"></div>
+            </ul>
+        </div>
+    </nav>
+    <div class="container__pesquisa">
+        <input class="container__pesquisa-barra" type="search" name="pesquisa" id="pesquisa" placeholder="Digite sua pesquisa">
+    </div>
+    <div class="cabecalho__navegacao">
+        <span class="container__rotulo">
+            <div class="container__usuario" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-light fa-circle-user fa-2xl"></i>
+                <span>Entrar</span>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content modal__cadastrar">
+                        <i class="fa-regular fa-xmark fa-2xl" data-bs-dismiss="modal"></i>
+                        <div class="modal__titulo">
+                            <h2>Cadastro</h2>
+                        </div>
+                        <div class="modal-body">
+                            <form class="cadastro__container" th:action="@{/usuario/cadastrar}" method="post">
+                                <div class="cadastro__container__conteudo">
+                                    <label for="meusdadosNome">Nome completo</label>
+                                    <input type="text" name="nome" id="cadastroNome">
+                                </div>
+                                <div class="cadastro__container__conteudo">
+                                    <label for="cadastroData">Data de nascimento</label>
+                                    <input type="date" name="data" id="cadastroData">
+                                </div>
+                                <div class="cadastro__container__conteudo">
+                                    <label for="cadastroEmail">E-mail</label>
+                                    <input type="email" name="email" id="cadastroEmail">
+                                </div>
+                                <div class="cadastro__container__conteudo">
+                                    <label for="cadastroSenha">Senha</label>
+                                    <input type="password" name="senha" id="cadastroSenha">
+                                </div>
+                                <div class="cadastro__container__conteudo">
+                                    <label for="dadoTelefone">Telefone</label>
+                                    <input type="tel" name="telefone">
+                                </div>
+                                <div class="cadastro__container__conteudo">
+                                    <label for="cadastroCpf">CPF</label>
+                                    <input type="password" name="cpf" id="cadastroCpf">
+                                </div>
+                              <!--  <form method="get" action=".">
+                                <div class="cadastro__container__conteudo">
+                                    <label>Cep</label>
+                                    <input name="cep" type="text" value="" maxlength="9" onblur="pesquisacep(this.value);" />
+                                </div>
+                                <div class="cadastro__container__conteudo">
+                                    <label>Número</label>
+                                    <input name="numero" type="text"/>
+                                </div>
+                            </form> -->
+                            <div class="modal-body__botoes d-flex flex-column gap-2 justify-content-center">
+                                <!-- <button type="button" class="btn btn-secondary btn-login">Login</button> -->
+                                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                <span class="btn-login">Já tenho cadastro</span>
+                            </div>
+                            
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-content modal__login hidden">
+                        <i class="fa-regular fa-xmark fa-2xl" data-bs-dismiss="modal"></i>
+                        <div class="modal__titulo">
+                            <h2>Login</h2>
+                        </div>
+                        <div class="modal-body">
+                            <form class="cadastro__container" method="post"th:action="@{/usuario/login}">
+                                <div class="cadastro__container__conteudo">
+                                    <label for="loginEmail">E-mail</label>
+                                    <input type="email" name="username" id="loginEmail">
+                                </div>
+                                <div class="cadastro__container__conteudo">
+                                    <label for="loginSenha">Senha</label>
+                                    <input type="password" name="password" id="loginSenha">
+                                </div>
+                                <div class="modal-body__botoes d-flex flex-column gap-2 justify-content-center">
+                                    <!-- <button type="button" class="btn btn-secondary btn-cadastrar">Cadastrar</button> -->
+                                    <button type="submit" class="btn btn-primary">Entrar</button>
+                                    <span class="btn-cadastrar">Não tenho cadastro</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </span>
+    </div>
+</header>
+
+<!-- CABEÇALHO PERFIL -->
+
+<header th:fragment="perfil" class="cabecalho">
+    <nav class="cabecalho__container">
+        <div class="container_hamburguer">
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <span class="container__rotulo">
+                    <i class="fa-light fa-bars fa-2xl"></i>
+                </span>
+            </label>
+            <ul class="lista-menu">
+                <li class="lista-menu__item">
+                    <a class="container__link" href="/">Home</a>
+                </li>
+                <li class="lista-menu__item btnAnunciar">
+                    <a class="container__link btnAnunciar" href="/perfil/anunciar">
+                        <span>Anunciar</span>
+                    </a>
+                </li>
+                <li class="lista-menu__item btnMeusAnuncios">
+                    <a class="container__link btnAnunciar" href="/perfil/anuncio">
+                        <span>Meus anuncios</span>
+                    </a>
+                </li>
+                <li class="lista-menu__item btnMeusDados">
+                    <a class="container__link" href="/perfil/meusdados">
+                        <span>Meus Dados</span>
+                    </a>
+                </li>
+                <li class="lista-menu__item btn-download">
+                    <span>Nosso App</span>
+                    <span>
+                        <i class="arrow-replace-download fa-solid fa-sm fa-chevron-right"></i>
+                    </span>
+                    <ul class="lista-menu__sublista-download hidden">
+                        <li class="lista-menu__sublista-item">
+                            <a href="https://play.google.com/store/apps" target="_blank">
+                                <span>Google play</span>
+                                <i class="fa-brands fa-google-play"></i>
+                            </a>
+                        </li>
+                        <li class="lista-menu__sublista-item">
+                            <a href="https://www.apple.com/br/store" target="_blank">
+                                <span>Apple store</span>
+                                <i class="fa-brands fa-apple fa-lg"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="lista-menu__item">
+                    <!-- <a class="container__link" href="#">Sair</a> -->
+                    <a th:href="@{/usuario/logout}"><span class="container__link">Sair</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container__pesquisa">
+        <input class="container__pesquisa-barra" type="search" name="pesquisa" id="pesquisa" placeholder="Digite sua pesquisa">
+    </div>
+    <div class="cabecalho__navegacao">
+        <span class="container__rotulo">
+            <div class="container__usuario">
+                <i class="fa-light fa-circle-user fa-2xl"></i>
+                <span></span>
+            </div>
+        </span>
+    </div>
+</header>
+
+

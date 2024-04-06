@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- HEAD -->
+<head th:replace="~{fragments/head :: head}"></head>
+
+<body class="body">
+    <!-- TROCAR TEMA -->
+    <div th:replace="~{fragments/trocarTema :: trocarTema}"></div>
+
+    <!-- CABEÇALHO -->
+    <header th:replace="~{fragments/cabecalho :: perfil}"></header>
+
+    <main class="main">
+       
+        <section th:replace="
+            ( (${selecao} == anunciar) ? ~{fragments/profile :: anunciar} :
+            ( (${selecao} == anuncio) ? ~{fragments/profile :: anuncio} :
+            ( (${selecao} == meusdados) ? ~{fragments/profile :: meusdados} :
+            ~{fragments/profile :: perfil} )))">
+        </section>
+
+    </main>
+
+    <!-- RODAPE -->
+    <footer th:replace="~{fragments/rodape :: rodape}"></footer>
+
+</body>
+</html>

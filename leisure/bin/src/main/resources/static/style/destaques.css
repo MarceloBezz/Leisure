@@ -1,0 +1,124 @@
+.destaques{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiperDestaques{
+    margin-top: 2em;
+    width: 90vw;
+    height: auto;
+    overflow: hidden;
+    padding: 1em;
+}
+.destaques__swiper__card{
+    display: flex;
+    flex-direction: row;
+}
+.card{
+    max-width: 400px;
+    max-height: 400px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+}
+.card::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid white;
+    border-radius: inherit;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+}
+.card:hover::after{
+    opacity: 1;
+    inset: 10px;
+}
+.card:hover > .card__imagem{
+    filter: grayscale(1) brightness(0.4);
+}
+.card:hover .card__lista-item {
+    scale: 1;
+    opacity: 1;
+    transform: translateY(0);
+}
+.card__titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.75em;
+    color:white;
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    bottom: 45%;
+    left: 5%;
+    right: 5%;
+    padding: 0.75em 0;
+    background: rgba(30, 144, 255, 0.7);
+    border-radius: 40px;
+}
+
+.card__imagem{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+}
+.card__lista{
+    margin: 1em 0;
+    display: inline-block;
+
+    font-size: 0.75em;
+
+    width: 80%;
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.card__lista-item{
+    margin: 0.5em 0;
+    font-size: 1em;
+
+    opacity: 0;
+    transition: 0.4s 0.2s ease;
+    color: #d1d1d1;
+    transform: translateY(50%);
+}
+
+.card__lista-icone{
+    padding: 0 0.5em;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    display: none;
+}
+
+@media screen and (min-width: 768px){
+    .swiper-button-prev, .swiper-button-next{
+    display: block;
+    }
+    .destaques__swiper{
+        position: relative;
+        bottom: 100px;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .card__lista-item{
+        margin: 0.5em 0;
+        font-size: 2em;
+    }
+}
+@media screen and (min-width: 1920px){
+    .card__lista-item{
+        font-size: 2.75em;
+    }
+}

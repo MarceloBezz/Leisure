@@ -1,5 +1,6 @@
 package org.deem.project.leisure.controller;
 
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -20,6 +21,9 @@ public class AuthController {
 	@Autowired
 	private UsuarioService usuarioService;
 	
+	@Autowired
+	private AuthenticationManager authenticationManager;
+	
 	/*@GetMapping("/cadastrar")
 	public String cadastro(Usuario usuario, Model model) {
 		model.addAttribute("usuario", usuario);
@@ -29,19 +33,15 @@ public class AuthController {
 	@PostMapping("/cadastrar")
 	public String registrar(Usuario usuario, RedirectAttributes redirect, Model model) {
 		usuarioService.save(usuario);
-		
-		usuarioService.loadUserByUsername(usuario.getEmail());
-		
-		Authentication authentication = new UsernamePasswordAuthenticationToken(
-	            usuario.getUsername(),
-	            usuario.getPassword(),
-	            usuario.getAuthorities());
-	    SecurityContextHolder.getContext().setAuthentication(authentication);
 
-		
+		 UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
+		            usuario.getEmail(), usuario.getPassword(), usuario.getAuthorities());
+		    Authentication authentication = authenticationManager.authenticate(authenticationToken);
+		    SecurityContextHolder.getContext().setAuthentication(authentication);
+
 		model.addAttribute("usuario", usuario);
 		redirect.addFlashAttribute("mensagem", "Usuário cadastrado com sucesso!");
-		return "redirect:/leisure/index";
+		return "redirect:/usuario/perfil";
 	}
 	
 	

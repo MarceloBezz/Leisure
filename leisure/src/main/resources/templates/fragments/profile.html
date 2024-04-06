@@ -293,11 +293,12 @@
 		<div class="meusdados__imagem">
 
 			<label for="meusdadosImagem">
-				<input type="file" name="file" id="meusdadosImagem" hidden>
+			<!--	<input type="file" name="file" id="meusdadosImagem" hidden> -->
 				<!-- ADICIONAR O CODIGO DA IMAGEM DO USUARIO NO SPAN -->
 			</label>
 			<span id="visualizarFoto"></span>
 			<span>Alterar imagem</span>
+			<input id="input-file" name="file" type="file" accept="image /*">
 			<button type="submit">Enviar foto</button>
 		</div>
 	</form>
@@ -306,30 +307,30 @@
         <div class="meusdados__container__form">
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosNome">Nome completo:</label>
-                <input type="text" name="nome" id="meusdadosNome">
+                <input type="text" name="nome" id="meusdadosNome" th:value="${usuario.nome}">
             </div>
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosData">Data de nascimento:</label>
-                <input type="date" name="data" id="meusdadosData">
+                <input type="date" name="data" id="meusdadosData" th:value="${usuario.data}">
             </div>
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosEmail">E-mail:</label>
-                <input type="email" name="email" id="meusdadosEmail">
+                <input type="email" name="email" id="meusdadosEmail" th:value="${usuario.email}" disabled>
             </div>
-            <div class="meusdados__container__conteudo">
+       <!--     <div class="meusdados__container__conteudo">
                 <label for="meusdadosSenha">Senha:</label>
                 <input type="password" name="senha" id="meusdadosSenha">
-            </div>
+            </div> -->
             <div class="meusdados__container__conteudo">
                 <label for="dadoTelefone">Telefone:</label>
-                <input type="tel" name="telefone" id="dadoTelefone">
+                <input type="tel" name="telefone" id="dadoTelefone" th:value="${usuario.telefone}">
             </div>
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosCpf">CPF</label>
-                <input type="password" name="cpf" id="meusdadosCpf">
+                <input type="password" name="cpf" id="meusdadosCpf" th:value="${usuario.cpf}" disabled>
             </div>
     
-            <div class="meusdados__container__conteudo">
+           <!-- <div class="meusdados__container__conteudo">
                 <label>Cep:</label>
                 <input name="cep" type="text" id="meusdadosCep" value="" maxlength="9" onblur="pesquisacep(this.value);" />
             </div>
@@ -349,7 +350,7 @@
                 <label>Estado:</label>
                 <input name="uf" type="text" id="meusdadosUf" />
             </div>
-        </div>
+        </div> -->
         
         <div class="anuncio__card__botao">
             <button type="submit">

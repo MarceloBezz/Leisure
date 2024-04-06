@@ -35,7 +35,6 @@ public class UsuarioServiceImpl implements UsuarioService{
 	//tenta acessar um recurso protegido
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		
 		Usuario usuario = usuarioRepository.findByEmail(username);
 		if(usuario == null) {
 			throw new UsernameNotFoundException("Nome de usuário ou senha inválido(s)");

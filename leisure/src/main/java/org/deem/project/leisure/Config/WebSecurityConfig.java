@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -48,8 +49,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers("/leisure/index", "/static/**", "/usuario/cadastrar","/usuario/cadastrar**").permitAll()
         .and()
         .authorizeRequests()
-        .antMatchers(POST,"/usuario/perfil").hasAnyAuthority("ROLE_USER")
-        .antMatchers(GET,"/usuario/perfil").hasAnyAuthority("ROLE_USER")
+        .antMatchers(POST,"/usuario/perfil**").hasAnyAuthority("ROLE_USER")
+        .antMatchers(GET,"/usuario/perfil**").hasAnyAuthority("ROLE_USER")
         .anyRequest().permitAll()
         .and()
         .httpBasic()  
@@ -76,6 +77,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
+    }
+    
+    @Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
     }
     
 }

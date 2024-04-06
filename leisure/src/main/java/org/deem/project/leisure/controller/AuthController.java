@@ -41,7 +41,7 @@ public class AuthController {
 		
 		model.addAttribute("usuario", usuario);
 		redirect.addFlashAttribute("mensagem", "Usuário cadastrado com sucesso!");
-		return "redirect:/usuario/perfil";
+		return "redirect:/leisure/index";
 	}
 	
 	

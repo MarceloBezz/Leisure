@@ -1,68 +1,17 @@
-const frameAnuncio = document.querySelector('.anuncio');
-const btnMeusAnuncios = document.querySelector('.btnMeusAnuncios');
-const frameAnunciar = document.querySelector('.anunciar')
-const btnAnunciar = document.querySelector('.btnAnunciar');
 const notCheckedBox = document.querySelector('#menu');
-const frameDados = document.querySelector('.meusdados');
-const btnMeusDados = document.querySelector('.btnMeusDados');
 
-var barra = document.querySelector('.anunciar__conteudo__progresso-barra')
+var barra = document.querySelector('.anunciar__conteudo__progresso-barra');
 const listaBtnAnterior = document.querySelectorAll('.anunciar__conteudo__botao-anterior');
 const listaBtnProximo = document.querySelectorAll('.anunciar__conteudo__botao-proximo');
 const formBox = document.querySelectorAll('.anunciar__conteudo__box');
 var progresso = 0;
 var i = 0;
-	
-	var id = document.getElementById("id_usuario").value;
-	var label = document.getElementById("input-imagem");
-	var nomeImagem = document.getElementById("nomeImagem").value;
-	label.style.backgroundImage = "url('http://localhost:8080/usuario/imagem/" + id + "')";
 
-if(btnMeusAnuncios){
-	btnMeusAnuncios.addEventListener('click', ()=>{
-    notCheckedBox.checked = false;
-		if(frameAnuncio.classList.contains('hidden')){
-			frameAnunciar.classList.add('hidden');
-			frameDados.classList.add('hidden');
-			frameAnuncio.classList.remove('hidden');
-		}else{
-			frameAnuncio.classList.add('hidden');
-		}
-	});
-}else{
-
-}
-
-if(btnAnunciar){
-	btnAnunciar.addEventListener('click', ()=>{
-    notCheckedBox.checked = false;
-		if(frameAnunciar.classList.contains('hidden')){
-			frameAnuncio.classList.add('hidden');
-			frameDados.classList.add('hidden');
-			frameAnunciar.classList.remove('hidden');
-		}else{
-			frameAnunciar.classList.add('hidden');
-		}
-	});
-}else{
-
-}
-
-if(btnMeusDados){
-	btnMeusDados.addEventListener('click', ()=>{
-    notCheckedBox.checked = false;
-		if(frameDados.classList.contains('hidden')){
-			frameAnuncio.classList.add('hidden');
-			frameAnunciar.classList.add('hidden');
-			frameDados.classList.remove('hidden');
-		}else{
-			frameDados.classList.add('hidden');
-		}
-	});
-
-}else{
-
-}
+// IMAGEM PERFIL
+const id = document.getElementById("id_usuario").value;
+const imagemPerfil = document.querySelector('#visualizarFoto');
+const nomeImagem = document.getElementById("nomeImagem").value;
+imagemPerfil.style.backgroundImage = "url('http://localhost:8080/usuario/imagem/" + id + "')";
 
 // NOVA FUNCAO DE PROXIMO/ANTERIOR
 
@@ -81,7 +30,7 @@ listaBtnProximo.forEach(function (botao){
 			proximoForm();
 		}		
 	})
-})
+});
 listaBtnAnterior.forEach(function (botao){
 	botao.addEventListener('click', function (){
 		const index = Array.from(listaBtnAnterior).indexOf(this);
@@ -98,5 +47,4 @@ listaBtnAnterior.forEach(function (botao){
 			anteriorForm();
 		}
 	})
-})
-
+});

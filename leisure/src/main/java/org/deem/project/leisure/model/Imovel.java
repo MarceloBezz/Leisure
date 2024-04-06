@@ -23,13 +23,13 @@ public class Imovel {
 	@JoinColumn(name="USUARIO", nullable = false)
 	public Usuario usuario;
 	
-	@Column(name="NUM QUARTOS")
+	@Column(name="NUM_QUARTOS")
 	private int numQuartos;
 	
-	@Column(name="NUM BANHEIROS")
+	@Column(name="NUM_BANHEIROS")
 	private int numBanheiros;
 	
-	@Column(name="VAGAS GARAGEM")
+	@Column(name="VAGAS_GARAGEM")
 	private int vagasGaragem;
 	
 	@Column(name="CEP")
@@ -56,7 +56,7 @@ public class Imovel {
 	@Column(name="TIPO")
 	private String tipo;
 	
-	@Column
+	//@Column
 	private double iptu;
 	private double area;
 	private String foto;

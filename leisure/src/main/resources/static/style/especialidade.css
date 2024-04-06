@@ -9,7 +9,7 @@
     font-size: 0.75em;
 }
 
-/* -------------------------------------- MEDIA SCREEN MIN 768px -------------------------------------- */
+/*  MEDIA SCREEN MIN 768px  */
     @media screen and (min-width: 768px){
     .especialidade__conteudo{
         display: flex;
@@ -28,7 +28,7 @@
     }
 }
 
-/* -------------------------------------- MEDIA SCREEN MIN 1024px -------------------------------------- */
+/*  MEDIA SCREEN MIN 1024px  */
 @media screen and (min-width: 1024px){
     
     .especialidade__conteudo__lista{

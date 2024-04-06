@@ -32,7 +32,7 @@
     line-height: 1.3;
 }
 
-/* -------------------------------------- MEDIA SCREEN MIN 768px -------------------------------------- */
+/*  MEDIA SCREEN MIN 768px  */
 @media screen and (min-width: 768px){
     .sobre{
         padding: 1em 0.5em;
@@ -52,7 +52,7 @@
     }
 }
 
-/* -------------------------------------- MEDIA SCREEN MIN 1024px -------------------------------------- */
+/*  MEDIA SCREEN MIN 1024px  */
 @media screen and (min-width: 1024px){
     .sobre__conteudo__lista-texto{
         font-size: 1em;

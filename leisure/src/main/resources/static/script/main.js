@@ -17,6 +17,7 @@ const btnCadastrar = document.querySelector('.btn-cadastrar');
 
 const body = document.querySelectorAll('.body');
 const btnTrocarTema = document.querySelector('.btnTemaChange');
+const logo = document.querySelectorAll('.logo__leisure');
 const iconSol = document.querySelectorAll('.fa-sun');
 const iconLua = document.querySelectorAll('.fa-moon');
 const header = document.querySelectorAll('.cabecalho');
@@ -64,6 +65,9 @@ function aplicarDark (){
 		tema.classList.toggle('hidden');
 	})
 	iconLua.forEach(tema =>{
+		tema.classList.toggle('hidden');
+	})
+	logo.forEach(tema =>{
 		tema.classList.toggle('hidden');
 	})
 	body.forEach(tema => {
@@ -119,6 +123,9 @@ function removerDark (){
 		tema.classList.toggle('hidden');
 	})
 	iconLua.forEach(tema =>{
+		tema.classList.toggle('hidden');
+	})
+	logo.forEach(tema =>{
 		tema.classList.toggle('hidden');
 	})
 	body.forEach(tema => {
@@ -241,8 +248,8 @@ btnSubmenuDownload.addEventListener('click', () => {
 
 if(btnLogin){
 	btnLogin.addEventListener('click', () =>{
-		modalCadastrar.classList.toggle('hidden')
-		modalLogin.classList.toggle('hidden')
+		modalCadastrar.classList.toggle('hidden');
+		modalLogin.classList.toggle('hidden');
 	});
 }else{
 
@@ -250,8 +257,8 @@ if(btnLogin){
 
 if(btnCadastrar){
 	btnCadastrar.addEventListener('click', () =>{
-		modalCadastrar.classList.toggle('hidden')
-		modalLogin.classList.toggle('hidden')
+		modalCadastrar.classList.toggle('hidden');
+		modalLogin.classList.toggle('hidden');
 	});
 }else{
 

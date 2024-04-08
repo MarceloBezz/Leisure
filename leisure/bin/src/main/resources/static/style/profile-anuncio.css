@@ -1,0 +1,104 @@
+.anuncio {
+    padding: 1em;
+}
+.anuncio__card {
+    height: auto;
+    padding: 0 1em;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 10px 10px rgba(0, 0, 0, 0.2);
+
+}
+.anuncio__card__imagem{
+    margin: 0.5em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.anuncio__card img {
+    
+    width: 100%;
+    border-radius: 10px;
+}
+.anuncio__card__conteudo{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5em;
+    width: 100%;
+    margin: 0.5em 0;
+}
+.anuncio__card__conteudo label{
+    font-weight: 500;
+    font-size: 0.75em;
+}
+.anuncio__card__conteudo input{
+    width: 100%;
+    border: none;
+    background: transparent;
+}
+.anuncio__card__conteudo input:focus{
+    outline: 0;
+}
+.anuncio__card__botao{
+    margin: 1em 0;
+    display: flex;
+    justify-content: center;
+}
+.anuncio__card__botao button{
+    font-family: var(--font-principal);
+    color: white;
+    padding: 0.75em 2.5em;
+    width: auto;
+    border: none;
+    border-radius: 5px;
+    background: var(--cor-font-destaque);
+}
+.anuncio__card__botao button:hover{
+    background-color: #00FF00;
+    transition: 0.2s;
+}
+
+@media screen and (min-width: 768px){
+    .anuncio {
+        padding: 1em 5em;
+    }
+    .anuncio__card{
+        display: flex;
+        flex-direction: row;
+        column-gap: 2em;
+        align-items: center;
+        padding: 2em 1em;
+    }
+    .anuncio__card__imagem{
+        width: 25%;
+    }
+    .anuncio__card__form{
+        padding: 2em 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.5em;
+    }
+    .anuncio__card__conteudo{
+        margin: 0.25em;
+    }
+    .anuncio__card__botao{
+        margin: 1em ;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .anuncio__card__conteudo label{
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 1920px){
+    .anuncio__card__conteudo label{
+        font-size: 1.5em;
+    }
+}

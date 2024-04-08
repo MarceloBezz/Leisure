@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- HEAD -->
+<head th:replace="~{fragments/head :: head}"></head>
+
+<body class="body">
+    <!-- TROCAR TEMA -->
+    <div th:replace="~{fragments/trocarTema :: trocarTema}"></div>
+
+    <!-- CABEÇALHO -->
+    <header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
+    
+    <main class="main">
+        <section class="premium">
+            <div class="premium__conteudo">
+                <h1 class="titulo__secundario">Seja Premium</h1>
+                <p class="premium__conteudo-texto">Adiquirir um pacote premium te dará vantagens e ainda aumentará suas chances de vender seu imóvel.</p>
+                <ul class="premium__conteudo_lista">
+                    <li class="premium__conteudo__lista-item">
+                        <i class="fa-light fa-check premium__lista-item-icone"></i>
+                        <p class="premium__conteudo__lista-texto">Mais anúncios</p>
+                    </li>
+                    <li class="premium__conteudo__lista-item">
+                        <i class="fa-light fa-check premium__lista-item-icone"></i>
+                        <p class="premium__conteudo__lista-texto">Renove seus anúncios</p>
+                    </li>
+                    <li class="premium__conteudo__lista-item">
+                        <i class="fa-light fa-check premium__lista-item-icone"></i>
+                        <p class="premium__conteudo__lista-texto">Anúncios por mais tempo</p>
+                    </li>
+                    <li class="premium__conteudo__lista-item">
+                        <i class="fa-light fa-check premium__lista-item-icone"></i>
+                        <p class="premium__conteudo__lista-texto">Maior visibilidade</p>
+                    </li>
+                    <li class="premium__conteudo__lista-item">
+                        <i class="fa-light fa-check premium__lista-item-icone"></i>
+                        <p class="premium__conteudo__lista-texto">Impulsione seu anúncio</p>
+                    </li>
+                    <li class="premium__conteudo__lista-item">
+                        <i class="fa-light fa-check premium__lista-item-icone"></i>
+                        <p class="premium__conteudo__lista-texto">Selos de qualidade do imóvel</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="premium__conteudo__pacotes">
+                <div class="premium__conteudo__box box-pessoal">
+                    <ul class="premium__conteudo__box-lista">
+                        <h3 class="titulo__premium pessoal">Pessoal</h3>
+                        <li class="premium__conteudo__box-item">
+                            <p class="premium__conteudo__box-texto box-texto-price">R$9,90<b>/mês</b></p>
+                        </li>
+                        <li class="premium__conteudo__box-item">
+                            <p class="premium__conteudo__box-texto">* 5 impulsionamentos de anúncios</p>
+                        </li>
+                        <li class="premium__conteudo__box-item">
+                            <p class="premium__conteudo__box-texto">Anúncios podem ser reativados</p>
+                        </li>
+                        <li class="premium__conteudo__box-item">
+                            <p class="premium__conteudo__box-texto">Anúncios expiram em 72h</p>
+                        </li>
+                        <li class="premium__conteudo__box-item">
+                            <p class="premium__conteudo__box-texto">30 anúncios /mês</p>
+                        </li>
+                        <li class="premium__conteudo__box-botao">
+                            <a href="#" class="premium__conteudo__box-link">Adquirir</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="premium__conteudo__box box-imobiliario">
+                    <ul class="premium__conteudo__box-lista">
+                        <h3 class="titulo__premium imobiliario">Imobiliário</h3>
+                        <li class="premium__conteudo__box-item">
+                            <p class="premium__conteudo__box-texto box-texto-price">R$19,90<b>/mês</b></p>
+                        </li>
+                        <li class="premium__conteudo__box-item">
+                            <p class="premium__conteudo__box-texto">* 15 impulsionamentos de anúncios</p>
+                        </li>
+                        <li class="premium__conteudo__box-item">
+                            <p class="premium__conteudo__box-texto">Anúncios podem ser reativados</p>
+                        </li>
+                        <li class="premium__conteudo__box-item">
+                            <p class="premium__conteudo__box-texto">Anúncios expiram semanalmente</p>
+                        </li>
+                        <li class="premium__conteudo__box-item">
+                            <p class="premium__conteudo__box-texto">30 anúncios /mês</p>
+                        </li>
+                        <li class="premium__conteudo__box-item">
+                            <p class="premium__conteudo__box-texto">** Selo de qualidade</p>
+                        </li>
+                        <li class="premium__conteudo__box-botao">
+                            <a href="#" class="premium__conteudo__box-link">Adquirir</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <table class="premium__tabela">
+                <tr class="premium__tabela__conteudo">
+                    <th class="premium__tabela-titulo"></th>
+                    <th class="premium__tabela-titulo">Free</th>
+                    <th class="premium__tabela-titulo">Pessoal</th>
+                    <th class="premium__tabela-titulo">Imobiliário</th>
+                </tr>
+                <tr class="premium__tabela__conteudo">
+                    <th class="premium__tabela-titulo">Anuncios/mês</th>
+                    <th class="premium__tabela-dados">10</th>
+                    <th class="premium__tabela-dados">30</th>
+                    <th class="premium__tabela-dados">60</th>
+                </tr>
+                <tr class="premium__tabela__conteudo">
+                    <th class="premium__tabela-titulo">Tempo dos anúncios</th>
+                    <th class="premium__tabela-dados">24 horas</th>
+                    <th class="premium__tabela-dados">72 horas</th>
+                    <th class="premium__tabela-dados">7 dias</th>
+                </tr>
+                <tr class="premium__tabela__conteudo">
+                    <th class="premium__tabela-titulo">Reativação de anúncios</th>
+                    <th class="premium__tabela-dados">não</th>
+                    <th class="premium__tabela-dados">sim</th>
+                    <th class="premium__tabela-dados">sim</th>
+                </tr>
+                <tr class="premium__tabela__conteudo">
+                    <th class="premium__tabela-titulo">Impulsionamentos</th>
+                    <th class="premium__tabela-dados">não</th>
+                    <th class="premium__tabela-dados">5</th>
+                    <th class="premium__tabela-dados">15</th>
+                </tr>
+                <tr class="premium__tabela__conteudo">
+                    <th class="premium__tabela-titulo">Selo de qualidade</th>
+                    <th class="premium__tabela-dados">não</th>
+                    <th class="premium__tabela-dados">não</th>
+                    <th class="premium__tabela-dados">sim</th>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <!-- RODAPE -->
+    <footer th:replace="~{fragments/rodape :: rodape}"></footer>
+
+</body>
+</html>

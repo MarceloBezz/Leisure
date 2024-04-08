@@ -37,7 +37,7 @@ public class Usuario implements UserDetails {
 	@Column(name="NOME")
 	private String nome;
 	
-	@Column(name="DATA")
+	@Column(name="NASCIMENTO")
 	private String data;
 	
 	@Column(name="EMAIL")
@@ -55,15 +55,15 @@ public class Usuario implements UserDetails {
 	@Column(name="PERFIL")
 	private String role_usuario;
 	
-	@Column(name="NOME_IMAGEM")
+	@Column(name="CAMINHO_IMAGEM")
 	private String nomeImagem;
 
 	// FetchType.EAGER => Busca também os relacionados
 	// FetchType.Lazy => Traz somente o referido
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(name = "USUARIO_PERFIL",
-			   joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName="id"),
-			   inverseJoinColumns = @JoinColumn(name = "perfil_id", referencedColumnName="id"))
+			   joinColumns = @JoinColumn(name = "id_usuario", referencedColumnName="id"),
+			   inverseJoinColumns = @JoinColumn(name = "id_perfil", referencedColumnName="id"))
 	private Collection<Roles> roles;
 	
 	

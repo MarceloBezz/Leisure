@@ -1,0 +1,212 @@
+.cabecalho{
+    background-color: white;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+}
+.cabecalho__container, .cabecalho__navegacao{
+    display: flex;
+    align-items: center;
+}
+.container_hamburguer{
+    display: block;
+}
+.container__usuario span{
+    display: none;
+}
+
+.container__rotulo, .container__rotulo__login{
+    display: flex;
+    padding: 1em;
+    cursor: pointer;
+}
+
+#menu{
+    display: none;
+}
+
+.lista-menu{
+    text-transform: uppercase;
+    /* display: none; */
+    top: 0;
+    left: -600px;
+    position: absolute;
+    background-color: white;
+    width: 60vw;
+    margin-top: 16px;
+    z-index: 2;
+    padding-bottom: 1em;
+    transition: 0.5s;
+}
+.home{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.75em;
+}
+
+.btn-submenu > span, .btn-download > span{
+    font-weight: 700;
+    margin: 1em 0 0.25em 0;
+}
+.btn-submenu i, .btn-download i{
+    margin-left: 0.5em;
+}
+
+.btn-submenu, .btn-download, .lista-menu__item{
+    padding: 0.75em 1em;
+    font-size: 0.75em;
+    cursor: pointer;
+}
+.lista-menu__sublista-categoria, .lista-menu__sublista-download{
+    text-transform: uppercase;
+    background-color: white;
+    width: 50vw;
+    margin-top: 16px;
+    z-index: 2;
+    padding-bottom: 1em;
+}
+.lista-menu__sublista-item{
+    display: flex;
+    align-items: center;
+    padding: 0.75em 1em;
+}
+.lista-menu__sublista-item > a{
+    text-decoration: none;
+    color: var(--cor-font-principal);
+}
+
+#menu:checked ~ .lista-menu{
+    /* display: block; */
+    left: 0;
+    transition: 0.5s;
+}
+.container__link{
+    text-decoration: none;
+    color: var(--cor-font-principal);
+}
+.container__link i{
+    margin-left: 0.5em;
+}
+.container__pesquisa{
+    display: none;
+}
+.container__pesquisa-barra{
+    background: transparent;
+    width: 60vw;
+    padding: 0.5em 1em;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    font-family: var(--cor-font-principal);
+}
+.container__pesquisa-barra:focus{
+    outline: 0;
+}
+.container__pesquisa-barra::placeholder{
+    text-align: center;
+}
+
+/*  MEDIA SCREEN MIN 768px  */
+@media screen and (min-width: 768px){
+    .cabecalho{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .cabecalho__container .container__rotulo{
+        display: none;
+    }
+    .container__usuario{
+        display: flex;
+        position: absolute;
+        right: 2em;
+        top: 2em;
+        column-gap: 0.5em;
+        align-items: center;
+        color: white;
+        text-align: center;
+        height: 2.5em;
+        width: auto;
+        padding: 0 0.5em 0 0.25em;
+        border-radius: 22px;
+        background: var(--cor-font-destaque);
+        box-shadow: 3px 2px 10px var(--cor-font-destaque);
+    }
+    /* .container__usuario{
+        position: absolute;
+        right: 2em;
+        top: 2em;
+    } */
+    .container__usuario span{
+        display: block;
+    }
+    .lista-menu{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100vw;
+        left: 0;
+    }
+    .home{
+        margin-top: 0em;
+    }
+    .home label{
+        display: none;
+    }
+    .lista-menu__item{
+        padding: 0.75em 0.5em;
+    }
+    .lista-menu__sublista-categoria, .lista-menu__sublista-download{
+        width: auto;
+        position: absolute;
+        border-radius: 10px;
+    }
+    .lista-menu__sublista-item{
+        padding: 0.75em 1em 0.75em 0.75em;
+    }
+    .container__pesquisa{
+        display: block;
+    }
+    
+}
+/*  MEDIA SCREEN MIN 1024px  */
+@media screen and (min-width: 1024px){
+    .container__pesquisa-barra{
+        font-size: 1em;
+    }
+    .container__pesquisa-barra::placeholder{
+        font-size: 1em;
+    }
+    .lista-menu__item{
+        font-size: 1em;
+    }
+    .container__link{
+        font-size: 1em;
+    }
+    .lista-menu__item span{
+        font-size: 1em;
+    }
+    .container__usuario{
+        font-size: 1em;
+    }
+}
+/*  MEDIA SCREEN MIN 1920px  */
+@media screen and (min-width: 1920px){
+    .container__pesquisa-barra{
+        font-size: 1.5em;
+    }
+    .container__pesquisa-barra::placeholder{
+        font-size: 1.5em;
+    }
+    .lista-menu__item{
+        font-size: 1.5em;
+    }
+    .lista-menu__item span{
+        font-size: 1.25em;
+    }
+    .container__link{
+        font-size: 1.25em;
+    }
+    .container__usuario{
+        font-size: 1.5em;
+    }
+}

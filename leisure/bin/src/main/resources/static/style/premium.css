@@ -1,0 +1,163 @@
+.premium{
+    padding: 0 1em;
+}
+.premium__conteudo{
+    text-align: center;
+    margin: 0 2em;
+}
+.titulo__principal{
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 1em 0;
+}
+.premium__conteudo-texto{
+    font-size: 0.75em;
+}
+.premium__conteudo__lista-item{
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+    font-size: 0.75em;
+}
+.premium__lista-item-icone{
+    color: rgb(8, 212, 8);
+    margin-right: 0.75em;
+}
+.box-pessoal{
+    border: 1px solid lightgray;
+    padding-bottom: 1em;
+    border-radius: 11px;
+}
+.box-imobiliario{
+    border: 1px solid rgb(32, 130, 242);
+    padding-bottom: 1em;
+    border-radius: 11px;
+}
+.titulo__premium{
+    border-radius: 10px 10px 0 0;
+    color: white;
+    display: block;
+    padding: 1.5em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.pessoal{
+    background-color: lightgrey;
+}
+.imobiliario{
+    background-color: rgb(32, 130, 242);
+}
+.box-texto-price{
+    font-weight: 700;
+    font-size: 2em;
+    margin: 1em;
+}
+.box-texto-price > b{
+    font-weight: 400;
+    color: gray;
+}
+.premium__conteudo__box{
+    margin-top: 1em;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+}
+.premium__conteudo__box-lista{
+    text-align: center;
+}
+.premium__conteudo__box-item{
+    margin: 1em 0;
+    font-size: 0.75em;
+}
+.premium__conteudo__box-botao{
+    margin: 1em;
+    background-color: rgb(32, 130, 242);
+    display: inline-block;
+    border-radius: 20px;
+    padding: 0.75em 2em;
+}
+.premium__conteudo__box-link{
+    font-size: 0.75em;
+    text-decoration: none;
+    color: white;
+}
+.premium__conteudo__box-botao:hover {
+    background-color: rgb(8, 212, 8);
+}
+
+.premium__tabela{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2em 0;
+}
+.premium__tabela__conteudo{
+    font-size: 0.6em;
+    border-bottom: 1px solid lightgray;
+}
+.premium__tabela-titulo{
+    font-weight: 700;
+}
+.premium__tabela-dados{
+    line-height: 3;
+    padding: 0 1em;
+}
+
+@media screen and (min-width: 768px){
+    .premium__conteudo__pacotes{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2em;
+        padding: 0 1em;
+    }
+    .premium__tabela{
+        margin: 5em 0;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .titulo__principal{
+        font-size: 2em;
+    }
+    .premium__conteudo-texto{
+        font-size: 1em;
+    }
+    .premium__conteudo__lista-item{
+        font-size: 1em;
+    }
+    .box-texto-price{
+        font-size: 2em;
+    }
+    .premium__conteudo__box-item{
+        font-size: 1em;
+    }
+    .premium__conteudo__box-link{
+        font-size: 1em;
+    }
+    .premium__tabela__conteudo{
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 1920px){
+    .titulo__principal{
+        font-size: 2.5em;
+    }
+    .premium__conteudo-texto{
+        font-size: 1.5em;
+    }
+    .premium__conteudo__lista-item{
+        font-size: 1.5em;
+    }
+    .box-texto-price{
+        font-size: 2.5em;
+    }
+    .premium__conteudo__box-item{
+        font-size: 1.5em;
+    }
+    .premium__conteudo__box-link{
+        font-size: 1.5em;
+    }
+    .premium__tabela__conteudo{
+        font-size: 1.5em;
+    }
+}

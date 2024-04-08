@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('header.css');
+@import url('carrossel.css');
+@import url('destaques.css');
+@import url('procurados.css');
+@import url('sobre.css');
+@import url('especialidade.css');
+@import url('responsabilidade.css');
+@import url('time.css');
+@import url('trabalhe.css');
+@import url('footer.css');
+@import url('premium.css');
+@import url('duvidas.css');
+@import url('profile-anunciar.css');
+@import url('profile-anuncio.css');
+@import url('profile-meusdados.css');
+@import url('login-cadastro.css');
+@import url('modal.css');
+
+:root{
+	--font-principal: "Montserrat", sans-serif;
+	--font-secundaria: "Quicksand", sans-serif;
+	--cor-font-principal: #363636;
+	--cor-font-destaque: #1e90ff;
+	--cor-barra-progresso: linear-gradient(to right, #1E90FF, #00FF00);
+	--cor-background-destaque: #ededed;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	font-family: var(--font-principal);
+	color: var(--cor-font-principal);
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.hidden{
+    display: none;
+}
+
+.titulo__secundario{
+    text-align: center;
+    font-weight: 700;
+	font-size: 1.25em;
+    text-transform: uppercase;
+    color: var(--cor-font-destaque);
+	margin: 2em 0;
+	filter: drop-shadow(5px 5px 10px var(--cor-font-destaque));
+}
+.titulo__secundario::after{
+    content: '';
+    display: block;
+    width: 7%;
+    border-bottom: 1px solid var(--cor-font-destaque);
+    margin: 0.5em auto;
+}
+.titulo__terciario{
+    text-transform: uppercase;
+    margin: 1em 0;
+	font-size: 1em;
+    font-weight: 600;
+}
+.trocar__tema img{
+	width: 5em;
+	filter: drop-shadow(5px 5px 5px var(--cor-font-destaque));
+}
+.trocar__tema{
+	font-size: 0.75em;
+	margin: 1em;
+	/* display: grid; */
+	display: flex;
+	/* grid-template-columns: 1fr 1fr 1fr; */
+	
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	/* color: rgb(209, 209, 3); */
+}
+
+.tema-dark{
+	background-color: var(--cor-font-principal);
+	color: white;
+	transition: 0.4s;
+}
+.tema-dark-font{
+	color: white;
+	font-family: var(--font-secundaria);
+}
+.tema-dark-sobre{
+	background-color: rgb(74, 74, 74);
+	transition: 0.4s;
+}
+@media screen and (min-width: 768px){
+	.btnTema{
+		position: absolute;
+		left: 50%;
+		top: -8em;
+		font-size: 1em;
+	}
+}
+
+@media screen and (min-width: 1024px){
+	.btnTema{
+		font-size: 1em;
+	}
+	.titulo__secundario{
+		font-size: 2.5em;
+	}
+	.titulo__terciario{
+		font-size: 1.25em;
+	}
+}
+
+@media screen and (min-width: 1920px){
+	.btnTema{
+		font-size: 1.5em;
+	}
+	.titulo__secundario{
+		font-size: 3.25em;
+	}
+	.titulo__terciario{
+		font-size: 2em;
+	}
+}

@@ -64,7 +64,6 @@ public class UsuarioController{
 								String mensagem) throws IOException {
 			
 			Usuario usuarioBD = usuarioService.findById(usuario.getId());
-			usuarioService.atualizacao(usuario, usuarioBD); //PASSAR OS DADOS ENVIADOS DO FORMS PARA O BANCO
 			usuarioService.save(usuarioBD);
 			redirect.addAttribute("usuario", usuarioBD);
 			redirect.addFlashAttribute("mensagem", "Dados atualizados com sucesso!");
@@ -87,7 +86,7 @@ public class UsuarioController{
 			} catch(IOException e){
 				e.printStackTrace();
 			}
-			
+				
 			redirect.addAttribute("usuario", usuario);
 			return "redirect:/usuario/perfil";
 		}

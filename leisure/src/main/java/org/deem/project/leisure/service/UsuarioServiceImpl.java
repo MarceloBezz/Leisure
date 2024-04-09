@@ -9,7 +9,6 @@ import org.deem.project.leisure.model.Usuario;
 import org.deem.project.leisure.repository.RoleRepository;
 import org.deem.project.leisure.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;

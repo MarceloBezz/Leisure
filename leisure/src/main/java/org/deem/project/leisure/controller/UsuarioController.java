@@ -27,7 +27,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/usuario")
 public class UsuarioController{
 	
-	private static String pathImage = "C:\\Leisure\\leisure-crud-main\\leisure\\src\\main\\resources\\imagens\\";
+	private static String pathImage = "D:\\Imagens\\";
 	
 	@Autowired
 	private UsuarioService usuarioService;

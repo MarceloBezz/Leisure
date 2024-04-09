@@ -34,7 +34,7 @@ public class AuthController {
 	public String registrar(Usuario usuario, RedirectAttributes redirect, Model model) {
 		usuarioService.save(usuario);
 
-		 UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
+	UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
 		            usuario.getEmail(), usuario.getPassword(), usuario.getAuthorities());
 		    Authentication authentication = authenticationManager.authenticate(authenticationToken);
 		    SecurityContextHolder.getContext().setAuthentication(authentication);

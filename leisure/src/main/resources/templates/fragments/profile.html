@@ -303,16 +303,16 @@
 		</div>
 	</form>
     
-    <form class="meusdados__container" th:action="@{/usuario/atualizacao}" method="post">
+    <form class="meusdados__container">
         <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
         <div class="meusdados__container__form">
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosNome">Nome completo:</label>
-                <input type="text" name="nome" id="meusdadosNome" th:value="${usuario.nome}">
+                <input type="text" name="nome" id="meusdadosNome" th:value="${usuario.nome}" disabled>
             </div>
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosData">Data de nascimento:</label>
-                <input type="date" name="data" id="meusdadosData" th:value="${usuario.data}">
+                <input type="date" name="data" id="meusdadosData" th:value="${usuario.data}" disabled>
             </div>
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosEmail">E-mail:</label>
@@ -324,7 +324,7 @@
             </div>
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosCpf">CPF</label>
-                <input type="password" name="cpf" id="meusdadosCpf" th:value="${usuario.cpf}" disabled>
+                <input type="text" name="cpf" id="meusdadosCpf" th:value="${usuario.cpf}" disabled>
             </div>   
         <div class="anuncio__card__botao">
             <button type="submit">

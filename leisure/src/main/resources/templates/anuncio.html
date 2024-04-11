@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- HEAD -->
+<head th:replace="~{fragments/head :: head}"></head>
+<body class="body">
+
+    <!-- CABEÇALHO -->
+    <header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
+
+    <main class="main">
+        <section class="carrossel">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="/img/anuncio/anuncio1.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <img src="/img/anuncio/anuncio2.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <img src="/img/anuncio/anuncio3.png" class="d-block w-100" alt="...">
+                  </div>
+                  <!-- <div class="carousel-item" data-bs-interval="3000">
+                    <a href="https://suntech.eco.br" target="_blank"><img src="/img/anuncio/anuncio4.png" class="d-block w-100" alt="..."></a>
+                  </div> -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </section>
+
+        <section class="resultado-pesquisa">
+            <button id="btnFiltro" class="">
+                <span>Filtrar</span>
+                <i class="fa-solid fa-filter-list"></i>
+            </button>
+            <div class="resultado-pesquisa__filtro hidden">
+                <form action="" class="resultado-pesquisa__filtro-form">
+                    <div class="resultado-pesquisa__filtro-conteudo">
+                        <label>
+                            <span>Imovel</span>
+                            <select class="resultado-pesquisa__filtro-item">
+                                <option value="" selected></option>
+                                <option value="apartamento">apartamento</option>
+                                <option value="casa">casa</option>
+                                <option value="sitio">sitios</option>
+                                <option value="terrenos">Terrenos</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="resultado-pesquisa__filtro-conteudo">
+                        <label>
+                            <span>Valor</span>
+                            <input type="text" name="valorMin" placeholder="Valor min">
+                            <input type="text" name="valorMax" placeholder="Valor max">
+                        </label>
+                    </div>
+
+                    <div class="resultado-pesquisa__filtro-conteudo">
+                        <label>
+                            <span>Cidade</span>
+                            <input type="text" name="cidade" placeholder="Cidade">
+                        </label>
+                    </div>
+
+                    <div class="resultado-pesquisa__filtro-conteudo">
+                        <label>
+                            <span>Bairro</span>
+                            <input type="text" name="bairro" placeholder="Bairro">
+                        </label>
+                    </div>
+
+                    <div class="resultado-pesquisa__filtro-conteudo">
+                        <label>
+                            <span>Quartos</span>
+                            <select class="resultado-pesquisa__filtro-item">
+                                <option value="" selected></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">+4</option>
+                            </select>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+    <!-- RODAPE -->
+    <footer th:replace="~{fragments/rodape :: rodape}"></footer>
+</body>
+</html>

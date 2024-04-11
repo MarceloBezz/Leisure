@@ -12,13 +12,13 @@
     margin: 1em 0;
 }
 .premium__conteudo-texto{
-    font-size: 0.75em;
+    font-size: var(--font-size);
 }
 .premium__conteudo__lista-item{
     display: flex;
     justify-content: center;
     margin: 1em;
-    font-size: 0.75em;
+    font-size: var(--font-size);
 }
 .premium__lista-item-icone{
     color: rgb(8, 212, 8);
@@ -66,7 +66,7 @@
 }
 .premium__conteudo__box-item{
     margin: 1em 0;
-    font-size: 0.75em;
+    font-size: var(--font-size);
 }
 .premium__conteudo__box-botao{
     margin: 1em;
@@ -76,7 +76,7 @@
     padding: 0.75em 2em;
 }
 .premium__conteudo__box-link{
-    font-size: 0.75em;
+    font-size: var(--font-size);
     text-decoration: none;
     color: white;
 }
@@ -91,7 +91,8 @@
     margin: 2em 0;
 }
 .premium__tabela__conteudo{
-    font-size: 0.6em;
+    /* font-size: 0.6em; */
+    font-size: var(--font-size);
     border-bottom: 1px solid lightgray;
 }
 .premium__tabela-titulo{
@@ -103,7 +104,8 @@
 }
 
 @media screen and (min-width: 768px){
-    .premium__conteudo__pacotes{
+    
+    .premium__conteudo__pacotes {
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 2em;
@@ -115,49 +117,25 @@
 }
 
 @media screen and (min-width: 1024px){
-    .titulo__principal{
+
+    .titulo__principal {
         font-size: 2em;
     }
-    .premium__conteudo-texto{
-        font-size: 1em;
-    }
-    .premium__conteudo__lista-item{
-        font-size: 1em;
-    }
-    .box-texto-price{
+    
+    .box-texto-price {
         font-size: 2em;
     }
-    .premium__conteudo__box-item{
-        font-size: 1em;
-    }
-    .premium__conteudo__box-link{
-        font-size: 1em;
-    }
-    .premium__tabela__conteudo{
-        font-size: 1em;
-    }
+    
 }
 
 @media screen and (min-width: 1920px){
-    .titulo__principal{
+
+    .titulo__principal {
         font-size: 2.5em;
     }
-    .premium__conteudo-texto{
-        font-size: 1.5em;
-    }
-    .premium__conteudo__lista-item{
-        font-size: 1.5em;
-    }
-    .box-texto-price{
+    
+    .box-texto-price {
         font-size: 2.5em;
     }
-    .premium__conteudo__box-item{
-        font-size: 1.5em;
-    }
-    .premium__conteudo__box-link{
-        font-size: 1.5em;
-    }
-    .premium__tabela__conteudo{
-        font-size: 1.5em;
-    }
+
 }

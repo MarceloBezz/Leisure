@@ -1,0 +1,21 @@
+.resultado-pesquisa {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultado-pesquisa button {
+    border: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.5em;
+    padding: 0.5em 1em;
+}
+
+.resultado-pesquisa button:hover {
+    background: var(--cor-hover);
+}

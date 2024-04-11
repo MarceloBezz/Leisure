@@ -36,6 +36,14 @@
                 </button>
               </div>
         </section>
+        
+<!-- MÉTODO DE VERIFICAÇÃO DO USUÁRIO -->   
+<div th:if="${usuario != null}">
+    <p>Welcome, usuário</p>
+</div>
+<div th:if="${usuario == null}">
+    <p>Please log in to access this page.</p>
+</div>
 
         <section class="destaques">
             <div class="swiperDestaques">

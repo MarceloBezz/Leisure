@@ -3,8 +3,6 @@
 <!-- HEAD -->
 <head th:replace="~{fragments/head :: head}"></head>
 <body class="body">
-    <!-- TROCAR TEMA -->
-    <!-- <div th:replace="~{fragments/trocarTema :: trocarTema}"></div> -->
 
     <!-- CABEÇALHO -->
     <header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
@@ -22,9 +20,9 @@
                   <div class="carousel-item" data-bs-interval="3000">
                     <img src="/img/anuncio/anuncio3.png" class="d-block w-100" alt="...">
                   </div>
-                  <div class="carousel-item" data-bs-interval="3000">
+                  <!-- <div class="carousel-item" data-bs-interval="3000">
                     <a href="https://suntech.eco.br" target="_blank"><img src="/img/anuncio/anuncio4.png" class="d-block w-100" alt="..."></a>
-                  </div>
+                  </div> -->
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -35,50 +33,17 @@
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
+              <section th:replace="~{fragments/pesquisa :: pesquisa}"></section>
         </section>
         
-<!-- MÉTODO DE VERIFICAÇÃO DO USUÁRIO -->   
-<div th:if="${usuario != null}">
-    <p>Welcome, usuário</p>
-</div>
-<div th:if="${usuario == null}">
-    <p>Please log in to access this page.</p>
-</div>
-
-        <section class="destaques">
-            <div class="swiperDestaques">
-                <div class="swiper-wrapper destaques__swiper__conteudo">
-                    <!-- <div class="swiper-slide"> -->
-                    <!-- CARD ANUNCIO -->
-                    <!-- INSERIR O FRAGMENT DO ANUNCIO ABAIXO -->
-
-                    <div th:replace="~{fragments/destaques-card :: card}"></div>
-
-                    <!-- EXEMPLO ACIMA -->
-                </div>
-                <div class="destaques__swiper">
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
-            </div>   
-        </section>
-
-        <section class="procurados">
-            <ul class="procurados__lista">
-                <li class="procurados__lista-item">
-                    <img src="/img/anuncio/10OFF.png" alt="" class="procurados__lista-imagem">
-                </li>
-                <li class="procurados__lista-item">
-                    <img src="/img/anuncio/20OFF.png" alt="" class="procurados__lista-imagem">
-                </li>
-                <li class="procurados__lista-item">
-                    <img src="/img/anuncio/50OFF.png" alt="" class="procurados__lista-imagem">
-                </li>
-            </ul>
-        </section>
+        <section th:replace="~{fragments/destaques :: destaques}"></section>
+        
+        <section th:replace="~{fragments/fiador :: fiador}"></section>
+        
+        <section th:replace="~{fragments/como-comprar :: como-comprar}"></section>
 
         <section id="sobre" class="sobre">
-            <h2 class="titulo__secundario">Sobre a Leisure imóveis</h2>
+            <h2 class="titulo__segundo">Sobre a Leisure imóveis</h2>
             <div class="sobre__conteudo">
                 <div class="sobre__container-imagem">
                     <img class="sobre__imagem" src="/img/imagem/escritorio.png" alt="Imagem do escritório Leisure imóveis">
@@ -87,16 +52,16 @@
                     <li class="sobre__conteudo__lista-item">
                         <ul class="sobre__conteudo__lista">
                             <li class="sobre__conteudo__lista-item">
-                                <h3 class="titulo__terciario">Compromisso</h3>
+                                <h3 class="titulo__terceiro">Compromisso</h3>
                                 <p class="sobre__conteudo__lista-texto">Na Leisure Imóveis, estamos empenhados em ajudar você a encontrar o lar perfeito, onde possa criar memórias preciosas e viver momentos especiais.</p>
-                                <p class="sobre__conteudo__lista-texto">Somos o resultado de uma colaboração com a DEEM, uma empresa especializada no desenvolvimento de sites e aplicativos para terceiros.</p>
+                                <p class="sobre__conteudo__lista-texto">Somos uma empresa especializada no mercado imobiliario sempre buscando o melhor para atender nossos clientes.</p>
                             </li>
                         </ul>
                     </li>
                     <li class="sobre__conteudo__lista-item">
                         <ul class="sobre__conteudo__lista">
                             <li class="sobre__conteudo__lista-item">
-                                <h3 class="titulo__terciario">Nossa missão</h3>
+                                <h3 class="titulo__terceiro">Nossa missão</h3>
                                 <p class="sobre__conteudo__lista-texto">Nossa missão é simplificar a busca por imóveis. Com um catálogo diversificado, que abrange desde apartamentos urbanos a casas espaçosas nos subúrbios, oferecemos opções para todos os estilos de vida e orçamentos.</p>
                             </li>
                         </ul>
@@ -104,7 +69,7 @@
                     <li class="sobre__conteudo__lista-item">
                         <ul class="sobre__conteudo__lista">
                             <li class="sobre__conteudo__lista-item">
-                                <h3 class="sobre__conteudo__lista-titulo">O que nos torna únicos</h3>
+                                <h3 class="titulo__terceiro">O que nos torna únicos</h3>
                                 <p class="sobre__conteudo__lista-texto">Na Leisure Imóveis, nos destacamos pelo nosso comprometimento com a qualidade e a satisfação do cliente.</p>
                                 <ul class="sobre__conteudo__lista">
                                     <li class="sobre__conteudo__lista-item lista-lista">
@@ -117,7 +82,7 @@
                                         <p class="sobre__conteudo__lista-texto">
                                             <i class="fa-light fa-check" style="color: #74C0FC;"></i>
                                         </p>
-                                        <p class="sobre__conteudo__lista-texto">Integração de dados</p>
+                                        <p class="sobre__conteudo__lista-texto">contribuição com o meio hambiente</p>
                                     </li>
                                     <li class="sobre__conteudo__lista-item lista-lista">
                                         <p class="sobre__conteudo__lista-texto">
@@ -139,62 +104,8 @@
             </div>  
         </section>
 
-        <section id="servicos" class="especialidade">
-            <h2 class="titulo__secundario">Nossas especialidades</h2>
-            <div class="especialidade__conteudo">
-                <ul class="especialidade__conteudo__lista">
-                    <li class="especialidade__conteudo__lista-item">
-                        <i class="fa-light fa-2xl fa-mobile-notch"></i>
-                        <h3 class="titulo__terciario">Aplicativos nativos</h3>
-                        <p class="especialidade__conteudo__lista-texto">Utilizamos o poder dos dispositivos móveis para melhor experiência, afinal estamos na era da tecnologia na palma da mão, podemos fazer nossas compras até do banheiro, não é mesmo? rsrs.</p>
-                    </li>
-                    <li class="especialidade__conteudo__lista-item">
-                        <i class="fa-light fa-2xl fa-cart-shopping"></i>
-                        <h3 class="titulo__terciario">E-commerce</h3>
-                        <p class="especialidade__conteudo__lista-texto">Nós trabalhamos fazendo uma conexão entre cliente e vendedor para melhor atende-los e também para que você não saia do conforto de sua casa tomando aquela água de coco ;)</p>
-                    </li>
-                    <li class="especialidade__conteudo__lista-item">
-                        <i class="fa-light fa-2xl fa-paintbrush"></i>
-                        <h3 class="titulo__terciario">Design Criativo</h3>
-                        <p class="especialidade__conteudo__lista-texto">Temos um design moderno, atraente e fácil de utilizar para você encontrar tudo o que precisa. Também pensamos naquelas pessoas que gostam de ver só as imagens nos livros, por isso temos bastante imagens ilustrando nosso conteúdo. *-*</p>
-                    </li>
-                    <li class="especialidade__conteudo__lista-item">
-                        <i class="fa-brands fa-2xl fa-google"></i>
-                        <h3 class="titulo__terciario">Expert em SEO</h3>
-                        <p class="especialidade__conteudo__lista-texto">Visibilidade e classificação em motores de busca garantindo maior alcance. Todo mundo quer ser top nos resultados de pesquisa. Hahaha.</p>
-                    </li>
-                    <li class="especialidade__conteudo__lista-item">
-                        <i class="fa-light fa-2xl fa-headset"></i>
-                        <h3 class="titulo__terciario">Suporte 24/7</h3>
-                        <p class="especialidade__conteudo__lista-texto">Para melhor atende-lo temos um suporte 24 horas por dia para ajudar com dúvidas ou até mesmo resolver aquele probleminha chato. =/</p>
-                    </li>
-                </ul>
-            </div>   
-        </section>
-
-        <section class="resposabilidade">
-            <div class="responsabilidade__conteudo">
-                <ul class="responsabilidade__conteudo__lista">
-                    <li class="responsabilidade__conteudo__lista-item">
-                        <i class="fa-light fa-2xl fa-face-smile-hearts fa-beat"></i>
-                        <h3 class="titulo__terciario">Satisfação</h3>
-                        <p class="responsabilidade__conteudo__lista-texto">Milhares de contratos assinados e clientes satisfeitos com o seu negócio.</p>
-                    </li>
-                    <li class="responsabilidade__conteudo__lista-item">
-                        <i class="fa-light fa-2xl fa-hand-holding-seedling fa-beat"></i>
-                        <h3 class="titulo__terciario">Sustentabilidade</h3>
-                        <p class="responsabilidade__conteudo__lista-texto">Além de contribuir com o meio ambiente, imóveis sustentáveis tem amis benefil com a gente.</p>
-                    </li>
-                    <li class="responsabilidade__conteudo__lista-item">
-                        <i class="fa-light fa-2xl fa-award fa-beat"></i>
-                        <h3 class="titulo__terciario">Qualidade garantida</h3>
-                        <p class="responsabilidade__conteudo__lista-texto">Garantimos a transparência, qualidade e preços conpativeis com o mercado para melhor atende-lo.</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
         <section id="time" class="time">
+            <h3 class="titulo__terceiro">Nosso time</h3>
             <div class="swiper">
                 <div class="swiper-pagination"></div>
                 <div class="swiper-wrapper">
@@ -202,7 +113,7 @@
                         <div class="time__card">
                             <img class="time__card-imagem" src="/img/imagem/Danilo.jpg" alt="Foto do Danilo">
                             <div class="time__card__info">
-                                <h3 class="titulo__terciario">Danilo</h3>
+                                <h3 class="titulo__terceiro">Danilo</h3>
                                 <p class="time_card__info-texto">Front-end / UX</p>
                             </div>
                         </div>
@@ -211,7 +122,7 @@
                         <div class="time__card">
                             <img class="time__card-imagem" src="/img/imagem/Enzo.jpg" alt="Foto do Enzo">
                             <div class="time__card__info">
-                                <h3 class="titulo__terciario">Enzo</h3>
+                                <h3 class="titulo__terceiro">Enzo</h3>
                                 <p class="time_card__info-texto">Back-end / DBA</p>
                             </div>
                         </div>
@@ -220,7 +131,7 @@
                         <div class="time__card">
                             <img class="time__card-imagem" src="/img/imagem/Esau.jpg" alt="Foto do Esau">
                             <div class="time__card__info">
-                                <h3 class="titulo__terciario">Esau</h3>
+                                <h3 class="titulo__terceiro">Esau</h3>
                                 <p class="time_card__info-texto">Dev mobile / UX</p>
                             </div>
                         </div>
@@ -229,7 +140,7 @@
                         <div class="time__card">
                             <img class="time__card-imagem" src="/img/imagem/Marcelo.jpg" alt="Foto do Marcelo">
                             <div class="time__card__info">
-                                <h3 class="titulo__terciario">Marcelo</h3>
+                                <h3 class="titulo__terceiro">Marcelo</h3>
                                 <p class="time_card__info-texto">Back-end / DBA</p>
                             </div>
                         </div>
@@ -238,7 +149,7 @@
                         <div class="time__card">
                             <img class="time__card-imagem" src="/img/imagem/Marcos.jpeg" alt="Foto do Marcos">
                             <div class="time__card__info">
-                                <h3 class="titulo__terciario">Marcos</h3>
+                                <h3 class="titulo__terceiro">Marcos</h3>
                                 <p class="time_card__info-texto">Dev mobile / QA</p>
                             </div>
                         </div>
@@ -249,9 +160,9 @@
             </div>
         </section>
 
-        <section class="trabalhe">
+        <!-- <section class="trabalhe">
             <div class="trabalhe__conteudo">
-                <h3 class="titulo__terciario trabalhe__conteudo-titulo">Quer fazer parte da equipe?</h3>
+                <h3 class="titulo__terceiro trabalhe__conteudo-titulo">Quer fazer parte da equipe?</h3>
                 <p class="trabalhe__conteudo-texto">Temos várias posições abertas, entre elas: Software Engineer, UI/UX Designer, Project Manager e mais.</p>
                 <p class="trabalhe__conteudo-texto">Clique no botão abaixo e confira os beneficios e as posições em aberto.</p>
                 <p class="trabalhe__conteudo-texto">Aqui você terá chance de trabalhar com as melhores tecnologias e os profissionais mais capacitados.</p>
@@ -259,7 +170,7 @@
                     <a class="trabalhe__conteudo__botao-link" href="#">Eu quero!</a>
                 </div>
             </div>
-        </section>
+        </section> -->
     </main>
     <!-- RODAPE -->
     <footer th:replace="~{fragments/rodape :: rodape}"></footer>

@@ -1,0 +1,17 @@
+<div th:fragment="login" class="container__usuario" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <i class="fa-light fa-circle-user fa-2xl"></i>
+    <span>Entrar</span>
+</div>
+
+<div th:fragment="logout" class="container__usuario logout">
+    <i class="fa-light fa-circle-user fa-2xl"></i>
+    <span>Sair</span>
+    <ul class="logout__lista hidden">
+        <li class="logout__item"><a class="no-decoration" href="/perfil">Perfil</a></li>
+        <li class="logout__item">
+            <a class="no-decoration" th:href="@{/usuario/logout}">
+                <span>Sair</span>
+            </a>
+        </li>
+    </ul>
+</div>

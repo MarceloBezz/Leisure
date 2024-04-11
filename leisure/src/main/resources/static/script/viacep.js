@@ -26,7 +26,7 @@ function meu_callback(conteudo) {
 function pesquisacep(valor) {
 
     //Nova variável "cep" somente com dígitos.
-    var cep = valor.replace(/\D/g, '');
+    var cep = valor.replace(/\D/g, ;
 
     //Verifica se campo cep possui valor informado.
     if (cep != "") {

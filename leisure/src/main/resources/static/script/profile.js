@@ -9,8 +9,7 @@ var i = 0;
 
 // IMAGEM PERFIL
 const id = document.getElementById("id_usuario").value;
-const imagemPerfil = document.querySelector('#visualizarFoto');
-const nomeImagem = document.getElementById("nomeImagem").value;
+const imagemPerfil = document.querySelector('.meusdados__imagem label');
 imagemPerfil.style.backgroundImage = "url('http://localhost:8080/usuario/imagem/" + id + "')";
 
 // NOVA FUNCAO DE PROXIMO/ANTERIOR

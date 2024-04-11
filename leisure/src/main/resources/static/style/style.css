@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import url('header.css');
+@import url('botoes.css');
+@import url('estilizacoes.css');
 @import url('carrossel.css');
+@import url('pesquisa.css');
 @import url('destaques.css');
-@import url('procurados.css');
+@import url('fiador.css');
+@import url('como-comprar.css');
 @import url('sobre.css');
-@import url('especialidade.css');
-@import url('responsabilidade.css');
 @import url('time.css');
 @import url('trabalhe.css');
 @import url('footer.css');
@@ -17,14 +19,24 @@
 @import url('profile-meusdados.css');
 @import url('login-cadastro.css');
 @import url('modal.css');
+@import url('resultado-pesquisa.css');
 
-:root{
-	--font-principal: "Montserrat", sans-serif;
+:root {
+
 	--font-secundaria: "Quicksand", sans-serif;
 	--cor-font-principal: #363636;
 	--cor-font-destaque: #1e90ff;
 	--cor-barra-progresso: linear-gradient(to right, #1E90FF, #00FF00);
 	--cor-background-destaque: #ededed;
+
+	--font-family:"Montserrat", sans-serif;
+	--cor-hover: #F7F7F7;
+    --cor-primeira: #FFFFFF;
+    --cor-segunda: #9cc4e4;
+    --cor-terceira: #3a89c9;
+    --cor-quarta: #1b325f;
+    --cor-quinta: #f26c4f;
+
 }
 
 html, body, div, span, applet, object, iframe,
@@ -53,8 +65,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
-	font-family: var(--font-principal);
+	/* line-height: 1; */
+	font-family: var(--font-family);
 	color: var(--cor-font-principal);
 }
 ol, ul {
@@ -72,91 +84,101 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-.hidden{
+.hidden {
     display: none;
 }
 
-.titulo__secundario{
-    text-align: center;
-    font-weight: 700;
-	font-size: 1.25em;
-    text-transform: uppercase;
-    color: var(--cor-font-destaque);
-	margin: 2em 0;
-	filter: drop-shadow(5px 5px 10px var(--cor-font-destaque));
+input, select {
+
+    font-family: var(--font-family);
+    padding: 0.5em 0;
+    width: 100%;
+    border: 0;
 }
-.titulo__secundario::after{
+
+select {
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select:focus, input:focus {
+    outline: 0;
+}
+
+input::placeholder {
+
+    position: absolute;
+    left: 0;
+}
+
+.titulo__segundo {
+
+	color: var(--cor-font-principal);
+    font-weight: 700;
+	font-size: var(--titulo-segundo);
+    text-transform: uppercase;
+}
+
+.titulo__segundo::after {
+
     content: '';
     display: block;
     width: 7%;
-    border-bottom: 1px solid var(--cor-font-destaque);
     margin: 0.5em auto;
 }
-.titulo__terciario{
+
+.titulo__terceiro {
+
+	color: var(--cor-font-principal);
     text-transform: uppercase;
-    margin: 1em 0;
-	font-size: 1em;
+	font-size: var(--titulo-terceiro);
     font-weight: 600;
 }
-.trocar__tema img{
-	width: 5em;
-	filter: drop-shadow(5px 5px 5px var(--cor-font-destaque));
-}
-.trocar__tema{
-	font-size: 0.75em;
-	margin: 1em;
-	/* display: grid; */
-	display: flex;
-	/* grid-template-columns: 1fr 1fr 1fr; */
-	
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	/* color: rgb(209, 209, 3); */
+
+.titulo__quarto {
+
+	color: var(--cor-font-principal);
+    font-weight: 500;
 }
 
-.tema-dark{
-	background-color: var(--cor-font-principal);
-	color: white;
-	transition: 0.4s;
+.no-decoration {
+    text-decoration: none;
 }
-.tema-dark-font{
-	color: white;
-	font-family: var(--font-secundaria);
+
+@media (max-width: 767px) {
+
+	:root {
+		--font-size: 0.75em;
+		--titulo-segundo: 1em;
+		--titulo-terceiro: 0.85em;
+	}
 }
-.tema-dark-sobre{
-	background-color: rgb(74, 74, 74);
-	transition: 0.4s;
-}
+
 @media screen and (min-width: 768px){
-	.btnTema{
-		position: absolute;
-		left: 50%;
-		top: -8em;
-		font-size: 1em;
+
+	:root {
+		--font-size: 1em;
+		--titulo-segundo: 1.25em;
+		--titulo-terceiro: 1.15em;
 	}
 }
 
 @media screen and (min-width: 1024px){
-	.btnTema{
-		font-size: 1em;
-	}
-	.titulo__secundario{
-		font-size: 2.5em;
-	}
-	.titulo__terciario{
-		font-size: 1.25em;
+
+	:root {
+		--font-size: 1em;
+		--titulo-segundo: 1.25em;
+		--titulo-terceiro: 1.15em;
 	}
 }
 
 @media screen and (min-width: 1920px){
-	.btnTema{
-		font-size: 1.5em;
-	}
-	.titulo__secundario{
-		font-size: 3.25em;
-	}
-	.titulo__terciario{
-		font-size: 2em;
+
+	:root {
+		--font-size: 1.25em;
+		--titulo-segundo: 1.5em;
+		--titulo-terceiro: 1.35em;
 	}
 }

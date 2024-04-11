@@ -304,54 +304,28 @@
 	</form>
     
     <form class="meusdados__container">
+        <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
         <div class="meusdados__container__form">
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosNome">Nome completo:</label>
-                <input type="text" name="nome" id="meusdadosNome" th:value="${usuario.nome}">
+                <input type="text" name="nome" id="meusdadosNome" th:value="${usuario.nome}" disabled>
             </div>
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosData">Data de nascimento:</label>
-                <input type="date" name="data" id="meusdadosData" th:value="${usuario.data}">
+                <input type="date" name="data" id="meusdadosData" th:value="${usuario.data}" disabled>
             </div>
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosEmail">E-mail:</label>
                 <input type="email" name="email" id="meusdadosEmail" th:value="${usuario.email}" disabled>
             </div>
-       <!--     <div class="meusdados__container__conteudo">
-                <label for="meusdadosSenha">Senha:</label>
-                <input type="password" name="senha" id="meusdadosSenha">
-            </div> -->
             <div class="meusdados__container__conteudo">
                 <label for="dadoTelefone">Telefone:</label>
                 <input type="tel" name="telefone" id="dadoTelefone" th:value="${usuario.telefone}">
             </div>
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosCpf">CPF</label>
-                <input type="password" name="cpf" id="meusdadosCpf" th:value="${usuario.cpf}" disabled>
-            </div>
-    
-           <!-- <div class="meusdados__container__conteudo">
-                <label>Cep:</label>
-                <input name="cep" type="text" id="meusdadosCep" value="" maxlength="9" onblur="pesquisacep(this.value);" />
-            </div>
-            <div class="meusdados__container__conteudo">
-                <label>Rua:</label>
-                <input name="rua" type="text" id="meusdadosRua"  />
-            </div>
-            <div class="meusdados__container__conteudo">
-                <label>Bairro:</label>
-                <input name="bairro" type="text" id="meusdadosBairro"  />
-            </div>
-            <div class="meusdados__container__conteudo">
-                <label>Cidade:</label>
-                <input name="cidade" type="text" id="meusdadosCidade"  />
-            </div>
-            <div class="meusdados__container__conteudo">
-                <label>Estado:</label>
-                <input name="uf" type="text" id="meusdadosUf" />
-            </div>
-        </div> -->
-        
+                <input type="text" name="cpf" id="meusdadosCpf" th:value="${usuario.cpf}" disabled>
+            </div>   
         <div class="anuncio__card__botao">
             <button type="submit">
                 <span>Salvar alterações</span>

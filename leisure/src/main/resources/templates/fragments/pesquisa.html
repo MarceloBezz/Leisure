@@ -1,0 +1,55 @@
+<section class="pesquisa" th:fragment="pesquisa">
+    <div class="pesquisa__container">
+        <form action="" class="pesquisa__container__formulario">
+            <h3 class="titulo__terceiro">Encontre um imóvel para chamar de seu</h3>
+            <h4 class="titulo__quarto">Comprar</h4>
+            <hr />
+            <label for="pesquisaCidade" class="pesquisa__container__formulario-item">
+                <div class="pesquisa__container__formulario-icone">
+                    <i class="fa-thin fa-location-dot fa-lg"></i>
+                </div>
+                <div class="pesquisa__container__formulario-conteudo">
+                    <span>Cidade</span>
+                    <input type="text" name="" id="pesquisaCidade" placeholder="Busque por cidade">
+                </div>
+            </label>
+            <label for="pesquisaBairro" class="pesquisa__container__formulario-item">
+                <div class="pesquisa__container__formulario-icone">
+                    <i class="fa-thin fa-house fa-lg"></i>
+                </div>
+                <div class="pesquisa__container__formulario-conteudo">
+                    <span>Bairro</span>
+                    <input type="text" name="" id="pesquisaBairro" placeholder="Busque por bairro">
+                </div>
+            </label>
+            <div class="pesquisa__container__formulario-duplo">
+                <label for="pesquisaValor">
+                    <div class="pesquisa__container__formulario-icone">
+                        <i class="fa-thin fa-brazilian-real-sign fa-lg"></i>
+                    </div>
+                    <div class="pesquisa__container__formulario-conteudo">
+                        <span>Valor total até</span>
+                        <input type="text" name="" id="pesquisaValor" placeholder="Digite um valor">
+                    </div>
+                </label>
+                <label for="pesquisaQuartos">
+                    <div class="pesquisa__container__formulario-icone">
+                        <i class="fa-thin fa-bed fa-lg"></i>
+                    </div>
+                    <div class="pesquisa__container__formulario-conteudo">
+                        <span>Quartos</span>
+                        <select name="" id="pesquisaQuartos">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="+4">+4</option>
+                        </select>
+                    </div>
+                </label>
+            </div>
+            <div class="pesquisa__container__formulario-botao">
+                <button class="btn-primeiro" type="submit">Buscar imóveis</button>
+            </div>
+        </form>
+    </div>
+</section>

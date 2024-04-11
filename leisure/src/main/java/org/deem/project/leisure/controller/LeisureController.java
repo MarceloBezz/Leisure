@@ -24,34 +24,18 @@ public class LeisureController {
 		model.addAttribute("usuario", usuario);
 		return "index";
 	}
-	@GetMapping("/faq")
-	public String getFaq() {
-		return "/faq";
+	@GetMapping("/pesquisa")
+	public String getPesquisa() {
+		return "anuncio";
 	}
-	@GetMapping("/faq#duvidas")
-	public String getFaqDuvidas() {	
-		return "/faq#duvidas";
+	@GetMapping("/premium")
+	public String getPremium() {
+		return "premium";
 	}
-	@GetMapping("/index#sobre")
-	public String getIndexSobre() {
-		return "/index#sobre";
-	}
-	@GetMapping("/index#servicos-area")
-	public String getIndexServicosArea() {
-		return "/index#servicos-area";
-	}
-	@GetMapping("/index#time-area")
-	public String getIndexTimeArea() {
-		return "/index#time-area";
-	}
-	@GetMapping("/index#bottomMenu")
-	public String getIndexContatos() {
-		return "/index#bottomMenu";
-	}
-	@GetMapping("/index/logado")
-	public String getIndexLogado(Usuario usuario, RedirectAttributes redirect) {
-		redirect.addAttribute("usuario", usuario);
-		return "redirect:/leisure/index";
+	
+	@GetMapping("/duvidas")
+	public String getDuvidas() {
+		return "duvidas";
 	}
 	
 }

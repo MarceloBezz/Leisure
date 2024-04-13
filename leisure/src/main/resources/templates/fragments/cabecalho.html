@@ -8,7 +8,7 @@
                     <i class="fa-light fa-bars fa-xl"></i>
                 </span>
                 <span class="cabecalho__container-logo">
-                    <a href="/"><img src="/img/imagem/logo-leisure.svg" alt=""></a>
+                    <a href="/leisure/index"><img src="/img/imagem/logo-leisure.svg" alt="logo leisure imoveis"></a>
                 </span>
             </label>
 
@@ -16,7 +16,7 @@
                 <div class="lista-menu__conteudo">
                     <li class="lista-menu__item home">
                         <span class="cabecalho__container-logo">
-                            <a href="/"><img src="/img/imagem/logo-leisure.svg" alt=""></a>
+                            <a href="/leisure/index"><img src="/img/imagem/logo-leisure.svg" alt="logo leisure imoveis"></a>
                         </span>
                         <label for="menu">
                             <i class="fa-light fa-xmark fa-2xl"></i>
@@ -27,9 +27,7 @@
                 <div class="lista-menu__conteudo">
                     <li class="lista-menu__item btn-submenu">
                         <span>Categorias <i class="arrow-replace-categoria fa-solid fa-sm fa-chevron-right"></i></span>
-                        <!-- <span>
-                            
-                        </span> -->
+
                         <ul class="lista-menu__sublista-categoria hidden">
                             <li class="lista-menu__sublista-item">
                                 <a class="container__link" href="#"><span>Apartamentos</span></a>
@@ -63,7 +61,7 @@
                         <!-- <span href="@{premium}" class="container__link">Premium</span> -->
                     </li>
                     <li class="lista-menu__item">
-                        <a class="container__link" href="/leisure/perfil/anunciar">Anunciar</a>
+                        <a class="container__link" href="/perfil/anunciar">Anunciar</a>
                     </li>
                     <li class="lista-menu__item">
                         <a class="container__link" href="/leisure#contato">Links úteis</a>
@@ -95,12 +93,9 @@
                             </li>
                         </ul>
                     </li>
-
+                    <div th:replace="~{fragments/botoes :: logout}"></div>
+                    
                     <div th:replace="~{fragments/botoes :: login}"></div>
-                    <!-- <div class="container__usuario" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <i class="fa-light fa-circle-user fa-2xl"></i>
-                        <span>Entrar</span>
-                    </div> -->
                 </div>
             </ul>
         </div>
@@ -141,7 +136,6 @@
                                 <input type="password" name="cpf" id="cadastroCpf">
                             </div>
                             <div class="modal-body__botoes d-flex flex-column gap-2 justify-content-center">
-                                <!-- <button type="button" class="btn btn-secondary btn-login">Login</button> -->
                                 <button type="submit" class="btn btn-primary">Cadastrar</button>
                                 <span class="btn-login">Já tenho cadastro</span>
                             </div>
@@ -164,7 +158,6 @@
                                 <input type="password" name="password" id="loginSenha">
                             </div>
                             <div class="modal-body__botoes d-flex flex-column gap-2 justify-content-center">
-                                <!-- <button type="button" class="btn btn-secondary btn-cadastrar">Cadastrar</button> -->
                                 <button type="submit" class="btn btn-primary">Entrar</button>
                                 <span class="btn-cadastrar">Não tenho cadastro</span>
                             </div>
@@ -186,7 +179,7 @@
                     <i class="fa-light fa-bars fa-xl"></i>
                 </span>
                 <span class="cabecalho__container-logo">
-                    <a href="/"><img src="/img/imagem/logo-leisure.svg" alt=""></a>
+                    <a href="/leisure/index"><img src="/img/imagem/logo-leisure.svg" alt="logo leisure imoveis"></a>
                 </span>
             </label>
         
@@ -194,7 +187,7 @@
                 <div class="lista-menu__conteudo">
                     <li class="lista-menu__item home">
                         <span class="cabecalho__container-logo">
-                            <a href="/"><img src="/img/imagem/logo-leisure.svg" alt=""></a>
+                            <a href="/leisure/index"><img src="/img/imagem/logo-leisure.svg" alt="logo leisure imoveis"></a>
                         </span>
                         <label for="menu">
                             <i class="fa-light fa-xmark fa-2xl"></i>
@@ -202,12 +195,9 @@
                     </li>
                 </div>
                 <div class="cabecalho__container-welcome">
-                    <span th:text="'Bem-vindo(a), ' + ${usuario.nome}"></span>
+                    <span th:text="'Bem-vindo, ' + ${usuario.nome}"></span>
                 </div>
                 <div class="lista-menu__conteudo">
-                    <!-- <li class="lista-menu__item">
-                        <a class="container__link" href="/">Home</a>
-                    </li> -->
                     <li class="lista-menu__item btnAnunciar">
                         <a class="container__link btnAnunciar" href="/perfil/anunciar">
                             <span>Anunciar</span>

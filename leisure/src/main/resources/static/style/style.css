@@ -1,95 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-@import url('header.css');
 @import url('botoes.css');
-@import url('estilizacoes.css');
-@import url('carrossel.css');
-@import url('pesquisa.css');
-@import url('destaques.css');
-@import url('fiador.css');
-@import url('como-comprar.css');
-@import url('sobre.css');
-@import url('time.css');
-@import url('trabalhe.css');
-@import url('footer.css');
-@import url('premium.css');
+@import url('cabecalho.css');
 @import url('duvidas.css');
+@import url('estilizacoes.css');
+@import url('index-carrossel.css');
+@import url('index-como-comprar.css');
+@import url('index-destaques.css');
+@import url('index-fiador.css');
+@import url('index-sobre.css');
+@import url('index-time.css');
+@import url('login-cadastro.css');
+@import url('modal.css');
+@import url('pesquisa.css');
+@import url('premium.css');
 @import url('profile-anunciar.css');
 @import url('profile-anuncio.css');
 @import url('profile-meusdados.css');
-@import url('login-cadastro.css');
-@import url('modal.css');
 @import url('resultado-pesquisa.css');
+@import url('rodape.css');
+@import url('trabalhe.css');
 
 :root {
 
+	--font-family:"Montserrat", sans-serif;
 	--font-secundaria: "Quicksand", sans-serif;
 	--cor-font-principal: #363636;
 	--cor-font-destaque: #1e90ff;
 	--cor-barra-progresso: linear-gradient(to right, #1E90FF, #00FF00);
 	--cor-background-destaque: #ededed;
 
-	--font-family:"Montserrat", sans-serif;
-	--cor-hover: #F7F7F7;
     --cor-primeira: #FFFFFF;
     --cor-segunda: #9cc4e4;
     --cor-terceira: #3a89c9;
     --cor-quarta: #1b325f;
     --cor-quinta: #f26c4f;
-
+	
+	--cor-hover: #F7F7F7;
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
 body {
-	/* line-height: 1; */
 	font-family: var(--font-family);
 	color: var(--cor-font-principal);
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-.hidden {
-    display: none;
+	overflow-x: hidden;
 }
 
 input, select {
-
     font-family: var(--font-family);
     padding: 0.5em 0;
     width: 100%;
@@ -97,7 +53,6 @@ input, select {
 }
 
 select {
-
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -108,13 +63,11 @@ select:focus, input:focus {
 }
 
 input::placeholder {
-
     position: absolute;
     left: 0;
 }
 
 .titulo__segundo {
-
 	color: var(--cor-font-principal);
     font-weight: 700;
 	font-size: var(--titulo-segundo);
@@ -122,7 +75,6 @@ input::placeholder {
 }
 
 .titulo__segundo::after {
-
     content: '';
     display: block;
     width: 7%;
@@ -130,7 +82,6 @@ input::placeholder {
 }
 
 .titulo__terceiro {
-
 	color: var(--cor-font-principal);
     text-transform: uppercase;
 	font-size: var(--titulo-terceiro);
@@ -138,13 +89,8 @@ input::placeholder {
 }
 
 .titulo__quarto {
-
 	color: var(--cor-font-principal);
     font-weight: 500;
-}
-
-.no-decoration {
-    text-decoration: none;
 }
 
 @media (max-width: 767px) {

@@ -8,15 +8,14 @@
     <!-- CABEÇALHO -->
     <header th:replace="~{fragments/cabecalho :: perfil}"></header>
 
+    <!-- ANUNCIAR / ANUNCIO / MEUS-DADOS -->
     <main class="main">
-       
         <section th:replace="
             ( (${selecao} == anunciar) ? ~{fragments/profile :: anunciar} :
             ( (${selecao} == anuncio) ? ~{fragments/profile :: anuncio} :
             ( (${selecao} == meusdados) ? ~{fragments/profile :: meusdados} :
             ~{fragments/profile :: perfil} )))">
         </section>
-
     </main>
 
     <!-- RODAPE -->

@@ -8,9 +8,18 @@ var progresso = 0;
 var i = 0;
 
 // IMAGEM PERFIL
+
+const autoSubmitDaImagem = document.querySelector('#input-file');
 const id = document.getElementById("id_usuario").value;
 const imagemPerfil = document.querySelector('.meusdados__imagem label');
+const imagemPerfilBtn = document.querySelector('.container__usuario-imagem');
 imagemPerfil.style.backgroundImage = "url('http://localhost:8080/usuario/imagem/" + id + "')";
+imagemPerfilBtn.style.backgroundImage = "url('http://localhost:8080/usuario/imagem/" + id + "')";
+
+autoSubmitDaImagem.addEventListener('change', () => {
+	const form = document.querySelector('#form-imagem')
+	form.submit();
+})
 
 // NOVA FUNCAO DE PROXIMO/ANTERIOR
 

@@ -16,7 +16,7 @@ const listasubMenuCategoria = document.querySelectorAll('.lista-menu__sublista-c
 const listasubMenuDownload = document.querySelectorAll('.lista-menu__sublista-download');
 const listaSubMenu = document.querySelectorAll('.lista-menu__sublista-item');
 
-const btnLogout = document.querySelector('.logout');
+
 
 document.addEventListener('keydown', event =>{
     if(event.keyCode === 9){
@@ -122,8 +122,3 @@ btnMenu.addEventListener('change', () => {
 	btnMenuIcone.classList.toggle('fa-bars');
 	btnMenuIcone.classList.toggle('fa-xmark');
 });
-
-btnLogout.addEventListener('click', () => {
-	const menuLogout = document.querySelector('.logout__lista');
-	menuLogout.classList.toggle('hidden');
-})

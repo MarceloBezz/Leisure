@@ -1,0 +1,44 @@
+.time {
+    margin: 5em 0;
+}
+
+.time .titulo__terceiro {
+    margin-top: 2em;
+    text-align: center;
+}
+
+.swiper{
+    display: block !important;
+}
+.swiper{
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0;
+}
+.time__card{
+    margin: 0 0.25em;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    min-height: 250px;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    padding: 0 0.5em 2.5em 0.5em;
+}
+.time__card-imagem{
+    width: 100%;
+    border-radius: 50%;
+    margin: 1em 0;
+}
+.time__card__info{
+    display: block;
+}
+.time_card__info-texto{
+    font-size: var(--font-size);
+}
+.swiper-pagination{
+    position: initial;
+    margin: 1em 0;
+}

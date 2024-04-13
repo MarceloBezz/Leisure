@@ -29,16 +29,18 @@
 }
 
 .logout__lista {
-    padding: 1em 1.25em;
-    background: var(--cor-hover);
-    position: absolute;
-    top: 60px;
+    display: block;
+    padding: 0.5em;
+    /* background: var(--cor-hover); */
+    position: relative;
+    top: 10px;
     left: 0;
     border-radius: 10px;
 }
 
 .logout__item {
     margin: 0.75em 0;
+    font-size: var(--font-size);
 }
 
 .logout__item a {
@@ -52,5 +54,15 @@
 
     .btn-segundo {
         padding: 1em 1.5em;
+    }
+
+    .logout__lista {
+        display: none;
+        padding: 1em 1.25em;
+        background: var(--cor-hover);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        border-radius: 10px;
     }
 }

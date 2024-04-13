@@ -221,7 +221,7 @@
 <section th:fragment="anuncio" class="anuncio ">
     <div class="anuncio__card">
         <div class="anuncio__card__imagem">
-            <img src="/img/anuncio/card/card03.png" alt="Casa a venda">
+            <!-- <img src="/img/anuncio/card/card03.png" alt="Casa a venda"> -->
         </div>
         <form action="" method="get">
             <div class="anuncio__card__form">
@@ -287,17 +287,14 @@
 
 <!-- MEUS DADOS -->
 <section th:fragment="meusdados" class="meusdados ">
-    <form method="post" enctype="multipart/form-data" th:action="@{/usuario/salvar-foto}">
+    <form id="form-imagem" method="post" enctype="multipart/form-data" th:action="@{/usuario/salvar-foto}">
         <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
-        <input name="nomeImagem" th:value="${usuario.nomeImagem}" id="nomeImagem" hidden>
         <div class="meusdados__imagem">
             <label for="input-file">
-           <!-- <span>Alterar imagem</span> -->
+                <!-- imagem do usuario sera carregada aqui  -->
             </label>
-            <span id="vizualizarFoto"></span>
-            
             <input id="input-file" type="file" name="file" accept="image /*">
-            <button class="btn-terceiro" type="submit">Enviar foto</button>
+            <!-- <button class="btn-terceiro" type="submit">Enviar foto</button> -->
         </div>
     </form>
     

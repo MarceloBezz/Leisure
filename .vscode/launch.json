@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-LeisureApplication<leisure>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "org.deem.project.leisure.LeisureApplication",
+            "projectName": "leisure",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

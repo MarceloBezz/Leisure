@@ -8,7 +8,7 @@
     <header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
 
     <main class="main">
-        <section class="carrossel">
+        <!-- <section class="carrossel">
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active" data-bs-interval="3000">
@@ -20,9 +20,6 @@
                   <div class="carousel-item" data-bs-interval="3000">
                     <img src="/img/anuncio/anuncio3.png" class="d-block w-100" alt="...">
                   </div>
-                  <!-- <div class="carousel-item" data-bs-interval="3000">
-                    <a href="https://suntech.eco.br" target="_blank"><img src="/img/anuncio/anuncio4.png" class="d-block w-100" alt="..."></a>
-                  </div> -->
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -33,14 +30,17 @@
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
-        </section>
+        </section> -->
 
         <section class="resultado-pesquisa">
             <button id="btnFiltro" class="">
-                <span>Filtrar</span>
-                <i class="fa-solid fa-filter-list"></i>
+                <span>Filtrar imóveis</span>
+                <i class="fa-light fa-sliders-simple"></i>
             </button>
-            <div class="resultado-pesquisa__filtro hidden">
+            <div class="resultado-pesquisa__filtro">
+                <div class="resultado-pesquisa__btn-close">
+                    <i id="btnFiltroClose" class="fa-light fa-xmark fa-2xl"></i>
+                </div>
                 <form action="" class="resultado-pesquisa__filtro-form">
                     <div class="resultado-pesquisa__filtro-conteudo">
                         <label>
@@ -58,8 +58,11 @@
                     <div class="resultado-pesquisa__filtro-conteudo">
                         <label>
                             <span>Valor</span>
-                            <input type="text" name="valorMin" placeholder="Valor min">
-                            <input type="text" name="valorMax" placeholder="Valor max">
+                            <div class="resultado-pesquisa__filtro-conteudo-input">
+                                <input type="text" name="valorMin" placeholder="Valor min">
+                                <input type="text" name="valorMax" placeholder="Valor max">
+                            </div>
+                            
                         </label>
                     </div>
 

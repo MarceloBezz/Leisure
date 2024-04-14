@@ -1,6 +1,6 @@
 const input = document.querySelectorAll('input');
 const option = document.querySelectorAll('select');
-const btnMenu = document.querySelector('#menu');
+// const btnMenu = document.querySelector('#menu');
 const btnMenuIcone = document.querySelector('.container__rotulo i');
 const btnSubmenuIndex = document.querySelector('.btn-submenu');
 const btnSubmenuDownload = document.querySelector('.btn-download');
@@ -118,7 +118,7 @@ if(btnCadastrar){
 
 };
 
-btnMenu.addEventListener('change', () => {
-	btnMenuIcone.classList.toggle('fa-bars');
-	btnMenuIcone.classList.toggle('fa-xmark');
-});
+// btnMenu.addEventListener('change', () => {
+// 	btnMenuIcone.classList.toggle('fa-bars');
+// 	btnMenuIcone.classList.toggle('fa-xmark');
+// });

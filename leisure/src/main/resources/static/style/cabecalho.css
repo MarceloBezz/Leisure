@@ -119,10 +119,11 @@
     color: var(--cor-font-principal);
 }
 
-#menu:checked ~ .lista-menu{
+/* #menu:checked ~ .lista-menu{
     left: 0;
     transition: 0.5s;
-}
+} */
+
 .container__link{
     text-decoration: none;
     color: var(--cor-font-principal);
@@ -211,7 +212,7 @@
         position: relative;
         padding-right: 1em;
         width: 100vw;
-        left: 0;
+        left: 0 !important;
         margin-top: 0;
     }
 

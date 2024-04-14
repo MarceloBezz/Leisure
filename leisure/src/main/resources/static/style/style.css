@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('index-pesquisa.css');
 @import url('botoes.css');
 @import url('cabecalho.css');
 @import url('duvidas.css');
@@ -12,12 +13,11 @@
 @import url('index-time.css');
 @import url('login-cadastro.css');
 @import url('modal.css');
-@import url('pesquisa.css');
 @import url('premium.css');
 @import url('profile-anunciar.css');
 @import url('profile-anuncio.css');
 @import url('profile-meusdados.css');
-@import url('resultado-pesquisa.css');
+@import url('anuncio-resultado-pesquisa.css');
 @import url('rodape.css');
 @import url('trabalhe.css');
 

@@ -74,7 +74,8 @@
     }
 
     .meusdados__imagem label {
-        box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.5);
+        /* box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.5); */
+        box-shadow: var(--cor-sombra);
         border-radius: 50%;
         background-size: cover;
         background-repeat: no-repeat;

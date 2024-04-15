@@ -31,12 +31,13 @@
 	--cor-background-destaque: #ededed;
 
     --cor-primeira: #FFFFFF;
-    --cor-segunda: #9cc4e4;
-    --cor-terceira: #3a89c9;
+    --cor-segunda: #cacaca;
+    --cor-terceira: #24c0eb;
     --cor-quarta: #1b325f;
-    --cor-quinta: #f26c4f;
+    --cor-quinta: #5cceee;
 	
 	--cor-hover: #F7F7F7;
+	--cor-sombra: 1px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 body {

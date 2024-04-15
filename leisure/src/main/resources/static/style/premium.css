@@ -59,7 +59,8 @@
 }
 .premium__conteudo__box{
     margin-top: 1em;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+    /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8); */
+    box-shadow: var(--cor-sombra);
 }
 .premium__conteudo__box-lista{
     text-align: center;

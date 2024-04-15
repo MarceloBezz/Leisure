@@ -33,7 +33,7 @@
         </section> -->
 
         <section class="resultado-pesquisa">
-            <button id="btnFiltro" class="">
+            <button id="btnFiltro" class="resultado-pesquisa__botao">
                 <span>Filtrar imóveis</span>
                 <i class="fa-light fa-sliders-simple"></i>
             </button>
@@ -59,8 +59,18 @@
                         <label>
                             <span>Valor</span>
                             <div class="resultado-pesquisa__filtro-conteudo-input">
-                                <input type="text" name="valorMin" placeholder="Valor min">
-                                <input type="text" name="valorMax" placeholder="Valor max">
+                                <div class="resultado-pesquisa__filtro-conteudo-input-box">
+                                    <label for="valorMin">
+                                        <i class="fa-thin fa-brazilian-real-sign fa-lg"></i>
+                                    </label>
+                                    <input id="valorMin" class="resultado-pesquisa__filtro-conteudo-input-box-item" type="text" name="valorMin" maxlength="8" placeholder="Valor Min">
+                                </div>
+                                <div class="resultado-pesquisa__filtro-conteudo-input-box">
+                                    <label for="valorMin">
+                                        <i class="fa-thin fa-brazilian-real-sign fa-lg"></i>
+                                    </label>
+                                    <input id="valorMax" class="resultado-pesquisa__filtro-conteudo-input-box-item" type="text" name="valorMax" maxlength="8" placeholder="Valor Max">
+                                </div>
                             </div>
                             
                         </label>
@@ -69,14 +79,14 @@
                     <div class="resultado-pesquisa__filtro-conteudo">
                         <label>
                             <span>Cidade</span>
-                            <input type="text" name="cidade" placeholder="Cidade">
+                            <input class="resultado-pesquisa__filtro-conteudo-item" type="text" name="cidade" maxlength="40" placeholder="Cidade">
                         </label>
                     </div>
 
                     <div class="resultado-pesquisa__filtro-conteudo">
                         <label>
                             <span>Bairro</span>
-                            <input type="text" name="bairro" placeholder="Bairro">
+                            <input class="resultado-pesquisa__filtro-conteudo-item" type="text" name="bairro" maxlength="40" placeholder="Bairro">
                         </label>
                     </div>
 
@@ -91,6 +101,9 @@
                                 <option value="4">+4</option>
                             </select>
                         </label>
+                    </div>
+                    <div class="resultado-pesquisa__filtro-botao">
+                        <button class="btn-filtrar" type="submit">Filtrar</button>
                     </div>
                 </form>
             </div>

@@ -24,61 +24,6 @@ document.addEventListener('keydown', event =>{
     }
 })
 
-const swiper = new Swiper('.swiper', {
-	// spaceBetween: 20,
-	slidesPerView: 3,
-	loop: false,
-	breakpoints: {
-		768: {
-		  slidesPerView: 4,
-		//   spaceBetween: 30
-		},
-		1024: {
-			slidesPerView: 5,
-		  //   spaceBetween: 30
-		  }
-	},
-	pagination: {
-		el: '.swiper-pagination',
-	},
-	
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	},
-	
-	scrollbar: {
-		el: '.swiper-scrollbar',
-	},
-});	
-
-const swiperDestaques = new Swiper('.swiperDestaques', {
-	spaceBetween: 20,
- 	slidesPerView: 2,
-	loop: true,
-	breakpoints: {
-		768: {
-		  slidesPerView: 3,
-		  spaceBetween: 30
-		},
-		1024: {
-			slidesPerView: 4,
-			spaceBetween: 30
-		  }
-	},
-	pagination: {
-	  el: '.swiper-pagination',
-	},
-  
-	navigation: {
-	  nextEl: '.swiper-button-next',
-	  prevEl: '.swiper-button-prev',
-	},
-  
-	scrollbar: {
-	  el: '.swiper-scrollbar',
-	},
-});
 
 if(btnSubmenuIndex){
 	btnSubmenuIndex.addEventListener('click', () => {
@@ -92,13 +37,6 @@ if(btnSubmenuIndex){
 
 };
 
-// btnSubmenuDownload.addEventListener('click', () => {
-// 	listasubMenuDownload.forEach(click => {
-// 		click.classList.toggle('hidden');
-// 	});
-// 	btnArrowReplaceDownload.classList.toggle('fa-chevron-right');
-// 	btnArrowReplaceDownload.classList.toggle('fa-chevron-down');
-// });
 
 if(btnLogin){
 	btnLogin.addEventListener('click', () =>{
@@ -118,7 +56,3 @@ if(btnCadastrar){
 
 };
 
-// btnMenu.addEventListener('change', () => {
-// 	btnMenuIcone.classList.toggle('fa-bars');
-// 	btnMenuIcone.classList.toggle('fa-xmark');
-// });

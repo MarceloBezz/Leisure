@@ -23,7 +23,8 @@
     width: auto;
     min-height: 250px;
     text-align: center;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+    /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8); */
+    box-shadow: var(--cor-sombra);
     border-radius: 5px;
     padding: 0 0.5em 2.5em 0.5em;
 }

@@ -301,7 +301,7 @@
         </div>
     </form>
     
-    <form class="meusdados__container">
+    <form class="meusdados__container" method="post" th:action="@{/usuario/atualizacao}">
         <div class="meusdados__container__form">
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosNome">Nome completo:</label>
@@ -325,7 +325,7 @@
                 <input type="password" name="cpf" id="meusdadosCpf" th:value="${usuario.cpf}" disabled>
             </div>
         </div>
-        
+          <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
         <div class="anuncio__card__botao">
             <button type="submit">
                 <span>Salvar alterações</span>

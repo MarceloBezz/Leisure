@@ -64,10 +64,13 @@ public class UsuarioController{
 								String mensagem) throws IOException {
 			
 			Usuario usuarioBD = usuarioService.findById(usuario.getId());
-			usuarioService.save(usuarioBD);
-			redirect.addAttribute("usuario", usuarioBD);
-			redirect.addFlashAttribute("mensagem", "Dados atualizados com sucesso!");
-			return "redirect:/usuario/perfil";
+			usuarioBD.setNome(usuario.getNome());
+			usuarioBD.setData(usuario.getData());
+			usuarioBD.setTelefone(usuario.getTelefone());
+			usuarioService.atualizar(usuarioBD);			
+			//redirect.addAttribute("usuario", usuarioBD);
+			//redirect.addFlashAttribute("mensagem", "Dados atualizados com sucesso!");
+			return "redirect:/perfil/meusdados";
 			
 	}
 		

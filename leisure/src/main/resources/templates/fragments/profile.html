@@ -329,4 +329,8 @@
             </button>
         </div>
     </form>
+    <form method="post" th:action="@{/usuario/deletar}">
+		  <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
+		<button type="submit">Deletar conta</button>
+	</form>
 </section>

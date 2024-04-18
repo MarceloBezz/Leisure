@@ -44,15 +44,10 @@ public class UsuarioController{
 	}
 	
 	//  ------------------------------------------- DELETAR USUÁRIO -------------------------------------------------------------	
-		@PostMapping("/deletar/{id}")
-		public String deletar(@PathVariable(value = "id") Long id, RedirectAttributes redirect) {
+		@PostMapping("/deletar")
+		public String deletar(@RequestParam(value = "id") Long id, RedirectAttributes redirect) {
 			Usuario usuario = usuarioService.findById(id);
-			if (usuario != null) {
-				redirect.addFlashAttribute("mensagem", "Sua conta foi deletada!");
-				usuarioService.delete(usuario.getId());
-			} else {
-				redirect.addFlashAttribute("mensagem", "Este usuário não existe.\nVerifique se os dados estão corretos.");
-			}
+			usuarioService.delete(usuario.getId());
 			return "redirect:/leisure/index";
 		}  
 		

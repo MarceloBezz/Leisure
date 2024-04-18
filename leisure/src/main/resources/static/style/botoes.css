@@ -59,7 +59,7 @@
     }
 
     .logout__lista {
-        display: none;
+        /* display: none; */
         padding: 1em 1.25em;
         background: var(--cor-hover);
         position: absolute;

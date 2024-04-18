@@ -12,6 +12,7 @@
 .meusdados__imagem label {
     /* box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.5); */
     border-radius: 50%;
+    /* border: 1px solid var(--cor-font-principal); */
     background-size: cover;
     background-repeat: no-repeat;
     width: 50px;

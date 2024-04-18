@@ -1,51 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <!-- HEAD -->
 <head th:replace="~{fragments/head :: head}"></head>
-<body class="body">
+<body>
 
     <!-- CABEÇALHO -->
     <header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
 
     <main class="main">
-        <!-- <section class="carrossel">
-            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="/img/anuncio/anuncio1.png" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <img src="/img/anuncio/anuncio2.png" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <img src="/img/anuncio/anuncio3.png" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-        </section> -->
 
-        <section class="resultado-pesquisa">
-            <button id="btnFiltro" class="resultado-pesquisa__botao">
+        <section class="filtro">
+            <button id="btnFiltro" class="filtro__botao">
                 <span>Filtrar imóveis</span>
                 <i class="fa-light fa-sliders-simple"></i>
             </button>
-            <div class="resultado-pesquisa__filtro">
-                <div class="resultado-pesquisa__btn-close">
+            <div class="filtro__filtro">
+                <div class="filtro__btn-close">
                     <i id="btnFiltroClose" class="fa-light fa-xmark fa-2xl"></i>
                 </div>
-                <form action="" class="resultado-pesquisa__filtro-form">
-                    <div class="resultado-pesquisa__filtro-conteudo">
+                <form action="" class="filtro__filtro-form">
+                    <div class="filtro__filtro-conteudo">
                         <label>
                             <span>Imovel</span>
-                            <select class="resultado-pesquisa__filtro-item">
+                            <select class="filtro__filtro-item">
                                 <option value="" selected></option>
                                 <option value="apartamento">apartamento</option>
                                 <option value="casa">casa</option>
@@ -55,45 +33,45 @@
                         </label>
                     </div>
 
-                    <div class="resultado-pesquisa__filtro-conteudo">
+                    <div class="filtro__filtro-conteudo">
                         <label>
                             <span>Valor</span>
-                            <div class="resultado-pesquisa__filtro-conteudo-input">
-                                <div class="resultado-pesquisa__filtro-conteudo-input-box">
+                            <div class="filtro__filtro-conteudo-input">
+                                <div class="filtro__filtro-conteudo-input-box">
                                     <label for="valorMin">
                                         <i class="fa-thin fa-brazilian-real-sign fa-lg"></i>
                                     </label>
-                                    <input id="valorMin" class="resultado-pesquisa__filtro-conteudo-input-box-item" type="text" name="valorMin" maxlength="8" placeholder="Valor Min">
+                                    <input id="valorMin" class="filtro__filtro-conteudo-input-box-item" type="text" name="valorMin" maxlength="8" placeholder="Valor Min">
                                 </div>
-                                <div class="resultado-pesquisa__filtro-conteudo-input-box">
+                                <div class="filtro__filtro-conteudo-input-box">
                                     <label for="valorMin">
                                         <i class="fa-thin fa-brazilian-real-sign fa-lg"></i>
                                     </label>
-                                    <input id="valorMax" class="resultado-pesquisa__filtro-conteudo-input-box-item" type="text" name="valorMax" maxlength="8" placeholder="Valor Max">
+                                    <input id="valorMax" class="filtro__filtro-conteudo-input-box-item" type="text" name="valorMax" maxlength="8" placeholder="Valor Max">
                                 </div>
                             </div>
                             
                         </label>
                     </div>
 
-                    <div class="resultado-pesquisa__filtro-conteudo">
+                    <div class="filtro__filtro-conteudo">
                         <label>
                             <span>Cidade</span>
-                            <input class="resultado-pesquisa__filtro-conteudo-item" type="text" name="cidade" maxlength="40" placeholder="Cidade">
+                            <input class="filtro__filtro-conteudo-item" type="text" name="cidade" maxlength="40" placeholder="Cidade">
                         </label>
                     </div>
 
-                    <div class="resultado-pesquisa__filtro-conteudo">
+                    <div class="filtro__filtro-conteudo">
                         <label>
                             <span>Bairro</span>
-                            <input class="resultado-pesquisa__filtro-conteudo-item" type="text" name="bairro" maxlength="40" placeholder="Bairro">
+                            <input class="filtro__filtro-conteudo-item" type="text" name="bairro" maxlength="40" placeholder="Bairro">
                         </label>
                     </div>
 
-                    <div class="resultado-pesquisa__filtro-conteudo">
+                    <div class="filtro__filtro-conteudo">
                         <label>
                             <span>Quartos</span>
-                            <select class="resultado-pesquisa__filtro-item">
+                            <select class="filtro__filtro-item">
                                 <option value="" selected></option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -102,14 +80,25 @@
                             </select>
                         </label>
                     </div>
-                    <div class="resultado-pesquisa__filtro-botao">
+                    <div class="filtro__filtro-botao">
                         <button class="btn-filtrar" type="submit">Filtrar</button>
                     </div>
                 </form>
             </div>
         </section>
 
+        <section class="resultado">
+            <div class="resultado__pesquisa">
+                <span class="resultado__pesquisa__item">
+                    1 resultado para o filtro
+                </span>
+            </div>
+            <div th:replace="~{fragments/resultado-pesquisa :: resultado-pesquisa}"></div>
+            
+        </section>
+
     </main>
+
     <!-- RODAPE -->
     <footer th:replace="~{fragments/rodape :: rodape}"></footer>
 </body>

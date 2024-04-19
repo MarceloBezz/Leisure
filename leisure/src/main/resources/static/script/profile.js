@@ -1,5 +1,6 @@
 // const notCheckedBox = document.querySelector('#menu');
 
+
 //VARIAVEIS DO CADASTRO DE IMOVEIS
 var barra = document.querySelector('.anunciar__conteudo__progresso-barra');
 const listaBtnAnterior = document.querySelectorAll('.anunciar__conteudo__botao-anterior');
@@ -14,10 +15,11 @@ const id = document.getElementById("id_usuario").value;
 const imagemPerfil = document.querySelector('.meusdados__imagem label');
 const btnPerfil = document.querySelector('.container__usuario-imagem');
 
+
 //IMAGEM PERFIL
 	try {
 		imagemPerfil.style.backgroundImage = "url('http://localhost:8080/usuario/imagem/" + id + "')";
-		btnPerfil.style.backgroundImage = "url('http://localhost:8080/usuario/imagem/" + id + "')";
+		btnPerfil.style.backgroundImage = "url('http://localhost:8080/usuario/imagem/" + id + "')";		
 		autoSubmitDaImagem.addEventListener('change', () => {
 			const form = document.querySelector('#form-imagem')
 			form.submit();

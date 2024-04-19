@@ -291,7 +291,10 @@
         <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
         <div class="meusdados__imagem">
             <label for="input-file">
+				<!--<img th:src="http://localhost:8080/usuario/imagem/" + ${usuario.id}>-->
+				<img th:src="|http://localhost:8080/usuario/imagem/${usuario.id}|">
                 <!-- imagem do usuario sera carregada aqui  -->
+                
             </label>
             <input id="input-file" type="file" name="file" accept="image /*">
             <!-- <button class="btn-terceiro" type="submit">Enviar foto</button> -->

@@ -6,12 +6,7 @@
 <div th:fragment="logout" th:if="${usuario != null}" class="container__usuario logout">
     <span class="container__usuario-imagem">
         <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
-        <div class="meusdados__imagem">
-            <!--<label for="menu-perfil">-->
-				<label for="input-file">
-                <!-- IMAAGEM DE PERFIL EXIBIDA AQUI -->
-            </label>
-        </div>
+        <img th:src="|http://localhost:8080/usuario/imagem/${usuario.id}|">
     </span>
 
     <ul class="logout__lista hidden">

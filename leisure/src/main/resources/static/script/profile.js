@@ -15,20 +15,6 @@ const id = document.getElementById("id_usuario").value;
 const imagemPerfil = document.querySelector('.meusdados__imagem label');
 const btnPerfil = document.querySelector('.container__usuario-imagem');
 
-
-//IMAGEM PERFIL
-	try {
-		imagemPerfil.style.backgroundImage = "url('http://localhost:8080/usuario/imagem/" + id + "')";
-		btnPerfil.style.backgroundImage = "url('http://localhost:8080/usuario/imagem/" + id + "')";		
-		autoSubmitDaImagem.addEventListener('change', () => {
-			const form = document.querySelector('#form-imagem')
-			form.submit();
-		})
-	}catch (error) {
-		
-	}
-//FIM
-
 //FUNÇAO BOTAO ANTERIOR E PROXIMO DO CADASTRO DE IMOVEIS
 	try{
 		listaBtnProximo.forEach(function (botao){

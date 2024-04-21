@@ -65,7 +65,7 @@ public class UsuarioController{
 			usuarioService.atualizar(usuarioBD);			
 			//redirect.addAttribute("usuario", usuarioBD);
 			//redirect.addFlashAttribute("mensagem", "Dados atualizados com sucesso!");
-			return "redirect:/perfil/meusdados";
+			return "redirect:/usuario/perfil/meusdados";
 			
 	}
 		
@@ -85,7 +85,7 @@ public class UsuarioController{
 				e.printStackTrace();
 			}
 			
-			return "redirect:/perfil/meusdados";
+			return "redirect:/usuario/perfil/meusdados";
 		}
 
 		// --------------------------------------- VISUALIZAR IMAGEM DE PERFIL ------------------------------------------------------

@@ -1,10 +1,14 @@
 package org.deem.project.leisure.controller;
 
+import java.util.List;
+
 import org.deem.project.leisure.model.Imovel;
 import org.deem.project.leisure.model.Usuario;
 import org.deem.project.leisure.service.ImovelService;
+import org.deem.project.leisure.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,12 +21,17 @@ public class ImovelController {
 	@Autowired
 	private ImovelService service;
 	
-//				---------------------- CADASTRAR IMÓVEL ----------------------------- pazzzzzzzzzzzzzz
+	@Autowired
+	private UsuarioService usuarioService;
+	
+//				---------------------- CADASTRAR IMÓVEL -----------------------------
 	@PostMapping("/cadastrar")
 	public String cadastrarImovel(Imovel imovel, String mensagem, RedirectAttributes redirect) {
 		boolean save = service.existsByCepAndNumero(imovel.getCep(), imovel.getNumero());
+	
 		
 		if(save == false) { //VERIFICA SE OS DADOS DO IMÓVEL JÁ ESTÃO CADASTRADOS OU NÃO
+		imovel.setUsuario(usuarioService.getAuthenticatedUser());
 		Imovel _imovel = service.save(imovel);
 		redirect.addAttribute("imovel", _imovel);
 		redirect.addFlashAttribute("mensagem", "Imóvel cadastrado com sucesso!");
@@ -58,11 +67,18 @@ public class ImovelController {
 	@GetMapping("/deletar-imovel")
 	public String deletar(Imovel imovel, RedirectAttributes redirect) {
 		redirect.addFlashAttribute("mensagem", "Imóvel deletado!");
-		//imovel.setAtivo(false);
 		service.save(imovel);
 		
 		return "redirect:/usuario/perfil/imovel";
 	}
 	
+	/*@GetMapping("/anuncio")
+	public String visualizarImovel(Model model) {
+		Usuario usuarioLogado = usuarioService.getAuthenticatedUser();
+		List<Imovel> imovelPorId = service.findByUsuarioId(usuarioLogado.getId());
+		model.addAttribute("imoveisPorId", imovelPorId);
+		return "perfil :: #anuncio";
+	}
+	*/
 
 }

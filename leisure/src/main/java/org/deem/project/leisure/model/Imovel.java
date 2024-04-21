@@ -20,7 +20,7 @@ public class Imovel {
 	private long id;
 	
 	@ManyToOne
-	@JoinColumn(name="USUARIO", nullable = false)
+	@JoinColumn(name="USUARIO" ,nullable = false)
 	public Usuario usuario;
 	
 	@Column(name="NUM_QUARTOS")
@@ -33,10 +33,10 @@ public class Imovel {
 	private int vagasGaragem;
 	
 	@Column(name="CEP")
-	private int cep;
-
-	@Column(name="RUA")
-	private String rua;
+	private String cep;
+	
+	@Column(name="BAIRRO")
+	private String bairro;
 	
 	@Column(name="CIDADE")
 	private String cidade;
@@ -56,16 +56,22 @@ public class Imovel {
 	@Column(name="TIPO")
 	private String tipo;
 	
+	@Column(name="SUSTENTABILIDADE")
+	private String sustentabilidade;
+	
 	//@Column
 	private double iptu;
 	private double area;
-	private String foto;
 	
 	public Imovel() {	
 	}
 	
-	public Imovel(long id, Usuario usuario, int numQuartos, int numBanheiros, int vagasGaragem, int cep, String rua,
-			String cidade, String estado, int numero, String descricao, int valor, String tipo) {
+
+
+
+	public Imovel(long id, Usuario usuario, int numQuartos, int numBanheiros, int vagasGaragem, String cep, String bairro,
+			String cidade, String estado, int numero, String descricao, double valor, String tipo,
+			String sustentabilidade, double iptu, double area) {
 		super();
 		this.id = id;
 		this.usuario = usuario;
@@ -73,15 +79,63 @@ public class Imovel {
 		this.numBanheiros = numBanheiros;
 		this.vagasGaragem = vagasGaragem;
 		this.cep = cep;
-		this.rua = rua;
+		this.bairro = bairro;
 		this.cidade = cidade;
 		this.estado = estado;
 		this.numero = numero;
 		this.descricao = descricao;
 		this.valor = valor;
 		this.tipo = tipo;
+		this.sustentabilidade = sustentabilidade;
+		this.iptu = iptu;
+		this.area = area;
 	}
-	
+
+
+
+
+	public String getBairro() {
+		return bairro;
+	}
+
+
+
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+
+
+
+	public String getSustentabilidade() {
+		return sustentabilidade;
+	}
+
+	public void setSustentabilidade(String sustentabilidade) {
+		this.sustentabilidade = sustentabilidade;
+	}
+
+	public double getIptu() {
+		return iptu;
+	}
+
+	public void setIptu(double iptu) {
+		this.iptu = iptu;
+	}
+
+	public double getArea() {
+		return area;
+	}
+
+	public void setArea(double area) {
+		this.area = area;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -122,21 +176,14 @@ public class Imovel {
 		this.vagasGaragem = vagasGaragem;
 	}
 
-	public int getCep() {
+	public String getCep() {
 		return cep;
 	}
 
-	public void setCep(int cep) {
+	public void setCep(String cep) {
 		this.cep = cep;
 	}
 
-	public String getRua() {
-		return rua;
-	}
-
-	public void setRua(String rua) {
-		this.rua = rua;
-	}
 
 	public String getCidade() {
 		return cidade;

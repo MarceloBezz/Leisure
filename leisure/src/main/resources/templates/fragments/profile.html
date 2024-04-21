@@ -2,7 +2,7 @@
 
 <!-- ANUNCIAR -->
 <section th:fragment="anunciar" class="anunciar ">
-    <form action="" method="post" class="anunciar__conteudo">
+    <form th:action="@{/usuario/perfil/cadastrar}" method="post" class="anunciar__conteudo">
         <div class="anunciar__conteudo__progresso-linha" >
             <div class="anunciar__conteudo__progresso-barra"></div>
             <div class="anunciar__conteudo__progresso-coluna">Dados sustentáveis</div>
@@ -15,7 +15,7 @@
                 <i class="fa-thin fa-house-building"></i>
             </div>
             <p>Qual é o tipo de imóvel que você deseja anunciar?</p>
-            <select class="anunciar__conteudo__selecao" name="imovelTipo" id="imovelTipo">
+            <select class="anunciar__conteudo__selecao" name="tipo" id="imovelTipo">
                 <option class="anunciar__conteudo__selecao-opcao" value="apartamento">Apartamento</option>
                 <option class="anunciar__conteudo__selecao-opcao" value="casa">Casa</option>
                 <option class="anunciar__conteudo__selecao-opcao" value="terreno">Terreno</option>
@@ -31,17 +31,17 @@
             <div class="anunciar__conteudo__box__animacao">
                 <i class="fa-thin fa-face-thinking"></i>
             </div>
-            <p>Em qual área o seu imóvel está situado?</p>
+            <!--<p>Em qual área o seu imóvel está situado?</p>
             <select class="anunciar__conteudo__selecao" name="imovelLocal" id="imovelLocal">
                 <option class="anunciar__conteudo__selecao-opcao" value="areaLivre">Área livre</option>
                 <option class="anunciar__conteudo__selecao-opcao" value="condominio">Condominio</option>
                 <option class="anunciar__conteudo__selecao-opcao" value="rural">Rural</option>
                 <option class="anunciar__conteudo__selecao-opcao" value="urbano">Urbano</option>
-            </select>
-            <div class="anunciar__conteudo__botao">
+            </select> 
+            --><div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior anterior1" type="button">Anterior</button>
                 <button class="anunciar__conteudo__botao-proximo proximo2" type="button">Próximo</button>
-            </div>
+            </div> 
         </div>
         <div id="form3" class="anunciar__conteudo__box" >
             <h3 class="titulo__terceiro">Sustentabilidade</h3>
@@ -49,9 +49,9 @@
                 <i class="fa-thin fa-seedling"></i>
             </div>
             <p>O imóvel possui algum tipo de recurso sustentável?</p>
-            <select class="anunciar__conteudo__selecao" name="imovelSustentavel" id="imovelSustentavel">
+            <select class="anunciar__conteudo__selecao" name="sustentabilidade" id="imovelSustentavel">
                 <option class="anunciar__conteudo__selecao-opcao" value="solar">Energia solar</option>
-                <option class="anunciar__conteudo__selecao-opcao" value="chuva">Captação água da chuva</option>
+                <option class="anunciar__conteudo__selecao-opcao" value="chuva">Captação de água da chuva</option>
                 <option class="anunciar__conteudo__selecao-opcao" value="led">Lâmpadas led</option>
                 <option class="anunciar__conteudo__selecao-opcao" value="aerador">Torneiras com aerador</option>
                 <option class="anunciar__conteudo__selecao-opcao" value="composteira">Coleta seletiva</option>
@@ -68,7 +68,7 @@
                 <i class="fa-thin fa-bed"></i>
             </div>
             <p>Quantos quartos o imóvel possui?</p>
-            <input class="anunciar__conteudo__input" type="number" name="quarto" id="anunciarQuarto">
+            <input class="anunciar__conteudo__input" type="number" name="numQuartos" id="anunciarQuarto">
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior anterior3" type="button">Anterior</button>
                 <button class="anunciar__conteudo__botao-proximo proximo4" type="button">Próximo</button>
@@ -79,20 +79,20 @@
             <div class="anunciar__conteudo__box__animacao">
                 <i class="fa-thin fa-couch"></i>
             </div>
-            <p>Quantas salas o imóvel possui?</p>
+      <!--      <p>Quantas salas o imóvel possui?</p>
             <input class="anunciar__conteudo__input" type="number" name="sala" id="anunciarSala">
             <div class="anunciar__conteudo__botao">
-                <button class="anunciar__conteudo__botao-anterior anterior4" type="button">Anterior</button>
+               --> <button class="anunciar__conteudo__botao-anterior anterior4" type="button">Anterior</button>
                 <button class="anunciar__conteudo__botao-proximo proximo5" type="button">Próximo</button>
             </div>
-        </div>
+        </div> 
         <div id="form6" class="anunciar__conteudo__box" >
             <h3 class="titulo__terceiro">sobre o imóvel</h3>
             <div class="anunciar__conteudo__box__animacao">
                 <i class="fa-thin fa-shower"></i>
             </div>
             <p>Quantos banheiros o imóvel possui?</p>
-            <input class="anunciar__conteudo__input" type="number" name="banheiro" id="anunciarBanheiro">
+            <input class="anunciar__conteudo__input" type="number" name="numBanheiros" id="anunciarBanheiro">
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior anterior5" type="button">Anterior</button>
                 <button class="anunciar__conteudo__botao-proximo proximo6" type="button">Próximo</button>
@@ -104,7 +104,7 @@
                 <i class="fa-thin fa-garage-car"></i>
             </div>
             <p>Quantas vagas de garagem imóvel possui?</p>
-            <input class="anunciar__conteudo__input" type="number" name="vaga" id="anunciarVaga">
+            <input class="anunciar__conteudo__input" type="number" name="vagasGaragem" id="anunciarVaga">
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior anterior6" type="button">Anterior</button>
                 <button class="anunciar__conteudo__botao-proximo proximo7" type="button">Próximo</button>
@@ -129,10 +129,10 @@
                     <span>Cep</span>
                     <input class="anunciar__conteudo__input" name="cep" type="text" id="cep" value="" maxlength="9" onblur="pesquisacep(this.value);" />
                 </div>
-                <div class="dados__container__conteudo">
+                <!--<div class="dados__container__conteudo">
                     <span>Rua</span>
                     <input class="anunciar__conteudo__input" name="rua" type="text" id="rua" disabled />
-                </div>
+                </div>-->
                 <div class="dados__container__conteudo">
                     <span>Número</span>
                     <input class="anunciar__conteudo__input" name="numero" type="text" id="anunciarNumero"/>
@@ -145,11 +145,10 @@
                     <span>Cidade</span>
                     <input class="anunciar__conteudo__input" name="cidade" type="text" id="cidade"  disabled/>
                 </div>
-                <div class="dados__container__conteudo">
+                <!--<div class="dados__container__conteudo">
                     <span>Estado</span>
                     <input class="anunciar__conteudo__input" name="uf" type="text" id="uf" disabled/>
-                </div>
-            <!-- </form> -->
+                </div>-->    
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior anterior8" type="button">Anterior</button>
                 <button class="anunciar__conteudo__botao-proximo proximo9" type="button">Próximo</button>
@@ -187,7 +186,7 @@
                 </label>
             </div>
             <p>Envie a melhor foto que você possui do seu imóvel</p>
-            <input class="anunciar__conteudo__input hidden" type="file" accept="image/jpg, image/jpeg, image/png" id="imovelImagem"name="imovelImagem">
+            <input class="anunciar__conteudo__input hidden" type="file" accept="image/jpg, image/jpeg, image/png" id="imovelImagem">
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior anterior10" type="button">Anterior</button>
                 <button class="anunciar__conteudo__botao-proximo proximo11" type="button">Próximo</button>
@@ -223,72 +222,64 @@
         <div class="anuncio__card__imagem">
             <!-- <img src="/img/anuncio/card/card03.png" alt="Casa a venda"> -->
         </div>
-        <form action="" method="get">
+     <!--   <form> -->  
             <div class="anuncio__card__form">
-                <div class="anuncio__card__conteudo">
+                <div class="anuncio__card__conteudo" th:each="imovel : ${imovelPorId}" >
+					<div th:if="${imovel != null}">
                     <label for="anuncioNumQuartos">Quartos:</label>
-                    <input type="number" name="numQuartos" id="anuncioNumQuartos">
-    
+                    <input type="number" name="numQuartos" id="anuncioNumQuartos" th:value="${imovel.numQuartos}">
                 </div>
-                <div class="anuncio__card__conteudo">
+               <div class="anuncio__card__conteudo">
                     <label for="anuncioNumBanheiros">Banheiros:</label>
-                    <input type="number" name="numBanheiros" id="anuncioNumBanheiros">
-    
-                </div>
+                    <input type="number" name="numBanheiros" id="anuncioNumBanheiros" th:value="${imovel.numBanheiros}">
+    				
+                </div> 
                 <div class="anuncio__card__conteudo">
                     <label for="anuncioVagasGaragem">Vagas:</label>
-                    <input type="number" name="vagasGaragem" id="anuncioVagasGaragem">
-    
+                    <input type="number" name="vagasGaragem" id="anuncioVagasGaragem" th:value="${imovel.vagasGaragem}">
+    				
                 </div>
                 <div class="anuncio__card__conteudo">
                     <label for="AnuncioCep">CEP:</label>
-                    <input type="text" name="cep" id="AnuncioCep">
-    
-                </div>
-                <div class="anuncio__card__conteudo">
-                    <label for="anuncioRua">Rua:</label>
-                    <input type="text" name="rua" id="anuncioRua">
+                    <input type="text" name="cep" id="AnuncioCep" th:value="${imovel.cep}">
     
                 </div>
                 <div class="anuncio__card__conteudo">
                     <label for="anuncioCidade">Cidade:</label>
-                    <input type="text" name="cidade" id="anuncioCidade">
+                    <input type="text" name="cidade" id="anuncioCidade" th:value="${imovel.cidade}">
     
                 </div>
-                <div class="anuncio__card__conteudo">
-                    <label for="anuncioEstado">Estado:</label>
-                    <input type="text" name="estado" id="anuncioEstado">
-    
-                </div>
+
                 <div class="anuncio__card__conteudo">
                     <label for="anuncioNumero">Número:</label>
-                    <input type="number" name="numero" id="anuncioNumero">
+                    <input type="number" name="numero" id="anuncioNumero" th:value="${imovel.numero}">
     
                 </div>
                 <div class="anuncio__card__conteudo">
                     <label for="anuncioDescricao">Descrição:</label>
-                    <input type="text" name="descricao" id="anuncioDescricao">
+                    <input type="text" name="descricao" id="anuncioDescricao" th:value="${imovel.descricao}">
     
                 </div>
                 <div class="anuncio__card__conteudo">
                     <label for="anuncioValor">Valor:</label>
-                    <input type="number" name="valor" id="anuncioValor">
+                    <input type="number" name="valor" id="anuncioValor" th:value="${imovel.valor}">
     
                 </div>
-            </div>
+            </div> 
             <div class="anuncio__card__botao">
-                <button type="submit">
+               <button>
                     <span>Salvar alterações</span>
-                </button>
+                </button>  
             </div>
-        </form>
+            </div>
+        <!--</form>-->
     </div>
 </section>
 
 <!-- MEUS DADOS -->
 <section th:fragment="meusdados" class="meusdados ">
     <form id="form-imagem" method="post" enctype="multipart/form-data" th:action="@{/usuario/salvar-foto}">
-        <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
+      <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
         <div class="meusdados__imagem">
             <label for="input-file">
 				<!--<img th:src="http://localhost:8080/usuario/imagem/" + ${usuario.id}>-->

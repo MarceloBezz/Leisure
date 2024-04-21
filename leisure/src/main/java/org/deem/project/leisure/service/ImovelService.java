@@ -2,6 +2,8 @@ package org.deem.project.leisure.service;
 
 
 
+import java.util.List;
+
 import org.deem.project.leisure.model.Imovel;
 import org.deem.project.leisure.repository.ImovelRepository;
 import org.springframework.stereotype.Service;
@@ -30,8 +32,12 @@ public class ImovelService {
 		return repository.save(imovel);
 	}
 	
-	public boolean existsByCepAndNumero(int cep, int numero) {
+	public boolean existsByCepAndNumero(String cep, int numero) {
 		return repository.existsByCepAndNumero(cep, numero);
+	}
+	
+	public List<Imovel> findByUsuarioId(Long id) {
+		return repository.findByUsuarioId(id);
 	}
 	
 

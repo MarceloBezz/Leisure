@@ -9,6 +9,7 @@ import org.deem.project.leisure.model.Usuario;
 import org.deem.project.leisure.repository.UsuarioRepository;
 import org.deem.project.leisure.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -27,7 +28,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/usuario")
 public class UsuarioController{
 	
-	private static String pathImage = "D:\\Imagens";
+	// private static String pathImage = "D:\\Imagens";
+	private static String pathImage = "src\\main\\resources\\Imagens\\ImagensPerfil";
+	
+	@Value("${image.path}")
+	private String imagePath;
+
 	
 	@Autowired
 	private UsuarioService usuarioService;

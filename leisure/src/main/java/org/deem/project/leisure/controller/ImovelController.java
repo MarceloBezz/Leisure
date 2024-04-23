@@ -19,6 +19,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/usuario/perfil")
 public class ImovelController {
 	
+	private static String pathImage = "src\\main\\resources\\Imagens\\ImagensImovel";
+
 	@Autowired
 	private ImovelService Imovelservice;
 	
@@ -51,18 +53,6 @@ public class ImovelController {
 		redirect.addAttribute("imovel", novoImovel);
 		return "redirect:/usuario/perfil";
 	}
-	
-//				----------------------- PÁGINA DE VISUALIZAÇÃO DOS IMÓVEIS ----------------	
-/*	@GetMapping("/imovel")
-	public String imovel(Usuario usuario, RedirectAttributes redirect) {
-		if(usuario.getId() != 0) {
-			return "/usuario/perfil"; //FALTA O ID DO FRAGMENTO DA TELA DOS IMÓVEIS
-		}
-		else {
-			redirect.addFlashAttribute("mensagem", "Erro ao tentar acessar esta página. Faça login primeiro!");
-			return "redirect:leisure/index";
-		}
-	}*/
 	
 // 				---------------------- DELETAR IMÓVEL ------------------------------------
 	@GetMapping("/deletar-imovel")

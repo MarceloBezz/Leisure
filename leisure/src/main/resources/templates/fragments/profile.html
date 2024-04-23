@@ -217,58 +217,56 @@
 <section th:fragment="anuncio" class="anuncio " th:each="imovel : ${imovelPorId}">
     <div class="anuncio__card">
         <div class="anuncio__card__imagem">
-            <!-- <img src="/img/anuncio/card/card03.png" alt="Casa a venda"> -->
+            <img src="/img/anuncio/card/card01.png" alt="Casa a venda">
         </div>
-        <!--   <form> -->
+        <!-- <form> -->  
         <div class="anuncio__card__form">
-            <div class="anuncio__card__conteudo" th:each="imovel : ${imovelPorId}">
-                <!-- <div th:if="${imovel != null}"> -->
-                    <label for="anuncioNumQuartos">Quartos:</label>
-                    <input type="number" name="numQuartos" id="anuncioNumQuartos" th:value="${imovel.numQuartos}">
-                </div>
-                <div class="anuncio__card__conteudo">
-                    <label for="anuncioNumBanheiros">Banheiros:</label>
-                    <input type="number" name="numBanheiros" id="anuncioNumBanheiros" th:value="${imovel.numBanheiros}">
-
-                </div>
-                <div class="anuncio__card__conteudo">
-                    <label for="anuncioVagasGaragem">Vagas:</label>
-                    <input type="number" name="vagasGaragem" id="anuncioVagasGaragem" th:value="${imovel.vagasGaragem}">
-
-                </div>
-                <div class="anuncio__card__conteudo">
-                    <label for="AnuncioCep">CEP:</label>
-                    <input type="text" name="cep" id="AnuncioCep" th:value="${imovel.cep}">
-
-                </div>
-                <div class="anuncio__card__conteudo">
-                    <label for="anuncioCidade">Cidade:</label>
-                    <input type="text" name="cidade" id="anuncioCidade" th:value="${imovel.cidade}">
-
-                </div>
-
-                <div class="anuncio__card__conteudo">
-                    <label for="anuncioNumero">Número:</label>
-                    <input type="number" name="numero" id="anuncioNumero" th:value="${imovel.numero}">
-
-                </div>
-                <div class="anuncio__card__conteudo">
-                    <label for="anuncioDescricao">Descrição:</label>
-                    <input type="text" name="descricao" id="anuncioDescricao" th:value="${imovel.descricao}">
-
-                </div>
-                <div class="anuncio__card__conteudo">
-                    <label for="anuncioValor">Valor:</label>
-                    <input type="number" name="valor" id="anuncioValor" th:value="${imovel.valor}">
-
-                </div>
+            
+            <div class="anuncio__card__conteudo" >
+                
+                <label for="anuncioNumQuartos">Quartos:</label>
+                <input type="number" name="numQuartos" id="anuncioNumQuartos" th:value="${imovel.numQuartos}">
             </div>
-           
-            <div class="anuncio__card__botao">
-                <button>
-                    <span>Salvar alterações</span>
-                </button>
+            <div class="anuncio__card__conteudo">
+                <label for="anuncioNumBanheiros">Banheiros:</label>
+                <input type="number" name="numBanheiros" id="anuncioNumBanheiros" th:value="${imovel.numBanheiros}">
+                
+            </div> 
+            <div class="anuncio__card__conteudo">
+                <label for="anuncioVagasGaragem">Vagas:</label>
+                <input type="number" name="vagasGaragem" id="anuncioVagasGaragem" th:value="${imovel.vagasGaragem}">
+                
             </div>
+            <div class="anuncio__card__conteudo">
+                <label for="AnuncioCep">CEP:</label>
+                <input type="text" name="cep" id="AnuncioCep" th:value="${imovel.cep}">
+
+            </div>
+            <div class="anuncio__card__conteudo">
+                <label for="anuncioCidade">Cidade:</label>
+                <input type="text" name="cidade" id="anuncioCidade" th:value="${imovel.cidade}">
+
+            </div>
+
+            <div class="anuncio__card__conteudo">
+                <label for="anuncioNumero">Número:</label>
+                <input type="number" name="numero" id="anuncioNumero" th:value="${imovel.numero}">
+
+            </div>
+            <div class="anuncio__card__conteudo">
+                <label for="anuncioDescricao">Descrição:</label>
+                <input type="text" name="descricao" id="anuncioDescricao" th:value="${imovel.descricao}">
+
+            </div>
+            <div class="anuncio__card__conteudo">
+                <label for="anuncioValor">Valor:</label>
+                <input type="number" name="valor" id="anuncioValor" th:value="${imovel.valor}">
+            </div>
+        </div> 
+        <div class="anuncio__card__botao">
+            <button>
+                <span>Salvar alterações</span>
+            </button>  
         </div>
         <!--</form>-->
     </div>

@@ -19,6 +19,14 @@
     justify-content: center;
     align-items: center;
 }
+
+.anuncio__card__form{
+    padding: 2em 0;
+    display: grid;
+    gap: 0.5em;
+    overflow: hidden;
+}
+
 .anuncio__card img {
     
     width: 100%;

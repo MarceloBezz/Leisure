@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.deem.project.leisure.model.Imovel;
 import org.deem.project.leisure.model.Usuario;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -23,5 +24,7 @@ public interface ImovelRepository extends JpaRepository<Imovel, Long>{
 	boolean existsByCepAndNumero(String cep, int numero);
 	
 	List<Imovel> findByUsuarioId(Long id);
+
+	List<Imovel> findAll(Specification<Imovel> spec);
 	
 }

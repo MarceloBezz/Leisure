@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -19,7 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class ImovelController {
 	
 	@Autowired
-	private ImovelService service;
+	private ImovelService Imovelservice;
 	
 	@Autowired
 	private UsuarioService usuarioService;
@@ -27,12 +28,12 @@ public class ImovelController {
 //				---------------------- CADASTRAR IMÓVEL -----------------------------
 	@PostMapping("/cadastrar")
 	public String cadastrarImovel(Imovel imovel, String mensagem, RedirectAttributes redirect) {
-		boolean save = service.existsByCepAndNumero(imovel.getCep(), imovel.getNumero());
+		boolean save = Imovelservice.existsByCepAndNumero(imovel.getCep(), imovel.getNumero());
 	
 		
 		if(save == false) { //VERIFICA SE OS DADOS DO IMÓVEL JÁ ESTÃO CADASTRADOS OU NÃO
 		imovel.setUsuario(usuarioService.getAuthenticatedUser());
-		Imovel _imovel = service.save(imovel);
+		Imovel _imovel = Imovelservice.save(imovel);
 		redirect.addAttribute("imovel", _imovel);
 		redirect.addFlashAttribute("mensagem", "Imóvel cadastrado com sucesso!");
 		return "redirect:/usuario/perfil";
@@ -46,13 +47,13 @@ public class ImovelController {
 	@PostMapping("/atualizar")
 	public String atualizarImovel(Imovel imovel, String mensagem, RedirectAttributes redirect) {
 		
-		Imovel novoImovel = service.save(imovel);
+		Imovel novoImovel = Imovelservice.save(imovel);
 		redirect.addAttribute("imovel", novoImovel);
 		return "redirect:/usuario/perfil";
 	}
 	
 //				----------------------- PÁGINA DE VISUALIZAÇÃO DOS IMÓVEIS ----------------	
-	@GetMapping("/imovel")
+/*	@GetMapping("/imovel")
 	public String imovel(Usuario usuario, RedirectAttributes redirect) {
 		if(usuario.getId() != 0) {
 			return "/usuario/perfil"; //FALTA O ID DO FRAGMENTO DA TELA DOS IMÓVEIS
@@ -61,24 +62,12 @@ public class ImovelController {
 			redirect.addFlashAttribute("mensagem", "Erro ao tentar acessar esta página. Faça login primeiro!");
 			return "redirect:leisure/index";
 		}
-	}
+	}*/
 	
 // 				---------------------- DELETAR IMÓVEL ------------------------------------
 	@GetMapping("/deletar-imovel")
-	public String deletar(Imovel imovel, RedirectAttributes redirect) {
-		redirect.addFlashAttribute("mensagem", "Imóvel deletado!");
-		service.save(imovel);
-		
-		return "redirect:/usuario/perfil/imovel";
+	public String deletar(Imovel imovel, RedirectAttributes redirect,@RequestParam("id") Long id) {
+		Imovelservice.deleteById(id);
+		return "redirect:/usuario/perfil/anuncio";
 	}
-	
-	/*@GetMapping("/anuncio")
-	public String visualizarImovel(Model model) {
-		Usuario usuarioLogado = usuarioService.getAuthenticatedUser();
-		List<Imovel> imovelPorId = service.findByUsuarioId(usuarioLogado.getId());
-		model.addAttribute("imoveisPorId", imovelPorId);
-		return "perfil :: #anuncio";
-	}
-	*/
-
 }

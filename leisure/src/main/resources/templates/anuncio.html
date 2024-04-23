@@ -19,11 +19,11 @@
                 <div class="filtro__btn-close">
                     <i id="btnFiltroClose" class="fa-light fa-xmark fa-2xl"></i>
                 </div>
-                <form action="" class="filtro__filtro-form">
+                <form th:action="@{/leisure/filtragem}" method="post" class="filtro__filtro-form">
                     <div class="filtro__filtro-conteudo">
                         <label>
                             <span>Imovel</span>
-                            <select class="filtro__filtro-item">
+                            <select class="filtro__filtro-item" name="tipo">
                                 <option value="" selected></option>
                                 <option value="apartamento">apartamento</option>
                                 <option value="casa">casa</option>
@@ -41,13 +41,13 @@
                                     <label for="valorMin">
                                         <i class="fa-thin fa-brazilian-real-sign fa-lg"></i>
                                     </label>
-                                    <input id="valorMin" class="filtro__filtro-conteudo-input-box-item" type="text" name="valorMin" maxlength="8" placeholder="Valor Min">
+                                    <input id="valorMin" class="filtro__filtro-conteudo-input-box-item" type="text" name="precoMinimo" maxlength="8" placeholder="Valor Min">
                                 </div>
                                 <div class="filtro__filtro-conteudo-input-box">
                                     <label for="valorMin">
                                         <i class="fa-thin fa-brazilian-real-sign fa-lg"></i>
                                     </label>
-                                    <input id="valorMax" class="filtro__filtro-conteudo-input-box-item" type="text" name="valorMax" maxlength="8" placeholder="Valor Max">
+                                    <input id="valorMax" class="filtro__filtro-conteudo-input-box-item" type="text" name="precoMaximo" maxlength="8" placeholder="Valor Max">
                                 </div>
                             </div>
                             
@@ -71,7 +71,7 @@
                     <div class="filtro__filtro-conteudo">
                         <label>
                             <span>Quartos</span>
-                            <select class="filtro__filtro-item">
+                            <select class="filtro__filtro-item" name="numQuartos">
                                 <option value="" selected></option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>

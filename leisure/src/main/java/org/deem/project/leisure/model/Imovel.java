@@ -41,17 +41,14 @@ public class Imovel {
 	@Column(name="CIDADE")
 	private String cidade;
 	
-	@Column(name="ESTADO")
-	private String estado;
-	
 	@Column(name="NUMERO")
 	private int numero;
 	
 	@Column(name="DESCRICAO")
 	private String descricao;
 	
-	@Column(name="VALOR")
-	private double valor;
+	@Column(name="PRECO")
+	private Double preco;
 	
 	@Column(name="TIPO")
 	private String tipo;
@@ -66,13 +63,9 @@ public class Imovel {
 	public Imovel() {	
 	}
 	
-
-
-
-	public Imovel(long id, Usuario usuario, int numQuartos, int numBanheiros, int vagasGaragem, String cep, String bairro,
-			String cidade, String estado, int numero, String descricao, double valor, String tipo,
+	public Imovel(long id, Usuario usuario, int numQuartos, int numBanheiros, int vagasGaragem, String cep,
+			String bairro, String cidade, int numero, String descricao, Double preco, String tipo,
 			String sustentabilidade, double iptu, double area) {
-		super();
 		this.id = id;
 		this.usuario = usuario;
 		this.numQuartos = numQuartos;
@@ -81,15 +74,17 @@ public class Imovel {
 		this.cep = cep;
 		this.bairro = bairro;
 		this.cidade = cidade;
-		this.estado = estado;
 		this.numero = numero;
 		this.descricao = descricao;
-		this.valor = valor;
+		this.preco = preco;
 		this.tipo = tipo;
 		this.sustentabilidade = sustentabilidade;
 		this.iptu = iptu;
 		this.area = area;
 	}
+
+
+
 
 
 
@@ -130,10 +125,6 @@ public class Imovel {
 
 	public void setArea(double area) {
 		this.area = area;
-	}
-
-	public void setValor(double valor) {
-		this.valor = valor;
 	}
 
 	public long getId() {
@@ -192,15 +183,7 @@ public class Imovel {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
-
-	public String getEstado() {
-		return estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
+	
 	public int getNumero() {
 		return numero;
 	}
@@ -217,12 +200,12 @@ public class Imovel {
 		this.descricao = descricao;
 	}
 
-	public double getValor() {
-		return valor;
+	public Double getPreco() {
+		return preco;
 	}
 
-	public void setValor(int valor) {
-		this.valor = valor;
+	public void setPreco(Double preco) {
+		this.preco = preco;
 	}
 
 	public String getTipo() {

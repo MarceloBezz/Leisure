@@ -2,6 +2,7 @@ package org.deem.project.leisure.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.deem.project.leisure.model.Imovel;
 import org.deem.project.leisure.model.Usuario;
@@ -50,4 +51,5 @@ public class PerfilController {
         model.addAttribute("selecao", "meusdados");
         return "perfil";
     }
+    
 }

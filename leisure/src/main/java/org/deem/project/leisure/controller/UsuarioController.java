@@ -29,7 +29,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class UsuarioController{
 	
 	// private static String pathImage = "D:\\Imagens";
-	private static String pathImage = "src\\main\\resources\\Imagens\\ImagensPerfil";
+	private static String pathImage = "src\\main\\resources\\Imagens\\ImagensPerfil\\";
 	
 	@Value("${image.path}")
 	private String imagePath;

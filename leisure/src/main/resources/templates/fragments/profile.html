@@ -143,6 +143,10 @@
                 <span>Cidade</span>
                 <input class="anunciar__conteudo__input" name="cidade" type="text" id="cidade"  />
             </div>
+            <div class="dados__container__conteudo">
+                <span>Rua</span>
+                <input class="anunciar__conteudo__input" name="rua" type="text" id="rua"  />
+            </div>
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior anterior8" type="button">Anterior</button>
                 <button class="anunciar__conteudo__botao-proximo proximo9" type="button">Próximo</button>
@@ -168,7 +172,7 @@
                 <i class="fa-thin fa-tags"></i>
             </div>
             <p>Digite o valor que deseja vender seu imóvel</p>
-            <input class="anunciar__conteudo__input" type="text" name="valor" placeholder="200000,00">
+            <input class="anunciar__conteudo__input" type="text" name="preco" placeholder="200000,00">
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior anterior10" type="button">Anterior</button>
                 <button class="anunciar__conteudo__botao-proximo proximo11" type="button">Próximo</button>
@@ -260,7 +264,7 @@
             </div>
             <div class="anuncio__card__conteudo">
                 <label for="anuncioValor">Valor:</label>
-                <input type="number" name="valor" id="anuncioValor" th:value="${imovel.valor}">
+                <input type="number" name="valor" id="anuncioValor" th:value="${imovel.preco}">
             </div>
         </div> 
         <div class="anuncio__card__botao">
@@ -319,8 +323,8 @@
             </button>
         </div>
     </form>
-    <!-- <form method="post" th:action="@{/usuario/deletar}">
+    <form method="post" th:action="@{/usuario/deletar}">
         <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
         <button type="submit">Deletar conta</button>
-    </form> -->
+    </form>
 </section>

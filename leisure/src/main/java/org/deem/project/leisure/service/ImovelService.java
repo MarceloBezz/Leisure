@@ -17,10 +17,6 @@ public class ImovelService {
 		this.repository = repository;
 	}
 	
-	/*public List<Imovel> findAll() {
-		return repository.findAllByAtivo(true);
-	}*/
-	
 	public Imovel findById(long id) {
 		return repository.findById(id);
 	}

@@ -1,0 +1,62 @@
+.como-comprar {
+    margin: 5em 0;
+}
+
+.como-comprar__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--cor-quinta);
+    padding: 1em;
+}
+
+.como-comprar__container-imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.como-comprar__container-imagem img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.como-comprar__container__conteudo {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    margin: 2em;
+    padding: 4em 1.5em 1em 1.5em;
+    line-height: 1.3;
+    font-size: var(--font-size);
+}
+
+.como-comprar__container a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.5em;
+    margin-top: 2em;
+    text-align: center;
+    font-weight: 500;
+    color: var(--cor-font-principal);
+    margin-bottom: 1em;
+    font-size: var(--font-size);
+}
+
+@media (min-width: 768px) {
+
+    .como-comprar__container {
+        display: flex;
+        flex-direction: row-reverse;
+        text-align: center;
+    }
+
+    .como-comprar__container__conteudo {
+        margin: 2em 3em;
+        padding: 4em 2;
+    }
+}

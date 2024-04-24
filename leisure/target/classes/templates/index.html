@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- HEAD -->
+<head th:replace="~{fragments/head :: head}"></head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
+
+    <main class="main">
+        <section class="carrossel">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="/img/anuncio/anuncio1.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <img src="/img/anuncio/anuncio2.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <img src="/img/anuncio/anuncio3.png" class="d-block w-100" alt="...">
+                  </div>
+                  <!-- <div class="carousel-item" data-bs-interval="3000">
+                    <a href="https://suntech.eco.br" target="_blank"><img src="/img/anuncio/anuncio4.png" class="d-block w-100" alt="..."></a>
+                  </div> -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+              <!-- PESQUISA -->
+              <section th:replace="~{fragments/pesquisa :: pesquisa}"></section>
+
+        </section>
+        
+        <!-- DESTAQUES -->
+        <section class="destaques" th:fragment="destaques">
+            <div class="destaques__container">
+                <div class="destaques__container-imagem">
+                    <img src="/img/imagem/destaques.png" alt="...">
+                </div>
+                <div class="destaques__container__conteudo">
+                    <h2 class="titulo__segundo">Vem ver os destaques que separamos para você</h2>
+                    <p>Procurando um imóvel novo para chamar de seu? Então você está no lugar certo! Veja os imóveis destaques que temos por aqui</p>
+                    <a class="no-decoration btn-primeiro" href="#">Ver destaques</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FIADOR -->
+        <section class="sem-fiador" th:fragment="fiador">
+            <div class="sem-fiador__container">
+                <div class="sem-fiador__container-imagem">
+                    <img src="/img/imagem/sem-fiador.svg" alt="...">  
+                </div>
+                <div class="sem-fiador__container__conteudo">
+                    <h2 class="titulo__segundo">Sem complicações e sem fiador</h2>
+                    <p>Sem aquelas burocracias para comprar seu tão sonhado imóvel e também sem a necessidade de um fiador.</p>
+                    <span>
+                        <a class="no-decoration" href="#">Como comprar sem fiador <i class="fa-solid fa-arrow-right"></i></a>
+                    </span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- COMO-COMPRAR -->
+        <section class="como-comprar" th:fragment="como-comprar">
+            <div class="como-comprar__container">
+                <div class="como-comprar__container-imagem">
+                    <img src="/img/imagem/familia.svg" alt="...">
+                </div>
+                <div class="como-comprar__container__conteudo">
+                    <h2 class="titulo__segundo">Comprar um imóvel para chamar de seu e da sua familia</h2>
+                    <p>Temos as melhores ofertas de casas para você e sua familia podendo ser negociada diretamente com o proprietário.</p>
+                    <a class="no-decoration btn-segundo" href="#">Veja destaques</a>
+                    <span>
+                        <a class="no-decoration" href="#">Como comprar na LeisureImoveis <i class="fa-solid fa-arrow-right"></i></a>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="sobre">
+            <h2 class="titulo__segundo">Sobre a Leisure imóveis</h2>
+            <div class="sobre__conteudo">
+                <div class="sobre__container-imagem">
+                    <img class="sobre__imagem" src="/img/imagem/escritorio.png" alt="Imagem do escritório Leisure imóveis">
+                </div>
+                <ul class="sobre__conteudo__lista">
+                    <li class="sobre__conteudo__lista-item">
+                        <ul class="sobre__conteudo__lista">
+                            <li class="sobre__conteudo__lista-item">
+                                <h3 class="titulo__terceiro">Compromisso</h3>
+                                <p class="sobre__conteudo__lista-texto">Na Leisure Imóveis, estamos empenhados em ajudar você a encontrar o lar perfeito, onde possa criar memórias preciosas e viver momentos especiais.</p>
+                                <p class="sobre__conteudo__lista-texto">Somos uma empresa especializada no mercado imobiliario sempre buscando o melhor para atender nossos clientes.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sobre__conteudo__lista-item">
+                        <ul class="sobre__conteudo__lista">
+                            <li class="sobre__conteudo__lista-item">
+                                <h3 class="titulo__terceiro">Nossa missão</h3>
+                                <p class="sobre__conteudo__lista-texto">Nossa missão é simplificar a busca por imóveis. Com um catálogo diversificado, que abrange desde apartamentos urbanos a casas espaçosas nos subúrbios, oferecemos opções para todos os estilos de vida e orçamentos.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sobre__conteudo__lista-item">
+                        <ul class="sobre__conteudo__lista">
+                            <li class="sobre__conteudo__lista-item">
+                                <h3 class="titulo__terceiro">O que nos torna únicos</h3>
+                                <p class="sobre__conteudo__lista-texto">Na Leisure Imóveis, nos destacamos pelo nosso comprometimento com a qualidade e a satisfação do cliente.</p>
+                                <ul class="sobre__conteudo__lista">
+                                    <li class="sobre__conteudo__lista-item lista-lista">
+                                        <p class="sobre__conteudo__lista-texto">
+                                            <i class="fa-light fa-check" style="color: #74C0FC;"></i>
+                                        </p>
+                                        <p class="sobre__conteudo__lista-texto">Tecnologias modernas</p>
+                                    </li>
+                                    <li class="sobre__conteudo__lista-item lista-lista">
+                                        <p class="sobre__conteudo__lista-texto">
+                                            <i class="fa-light fa-check" style="color: #74C0FC;"></i>
+                                        </p>
+                                        <p class="sobre__conteudo__lista-texto">contribuição com o meio hambiente</p>
+                                    </li>
+                                    <li class="sobre__conteudo__lista-item lista-lista">
+                                        <p class="sobre__conteudo__lista-texto">
+                                            <i class="fa-light fa-check" style="color: #74C0FC;"></i>
+                                        </p>
+                                        <p class="sobre__conteudo__lista-texto">Facilidade de acesso</p>
+                                    </li>
+                                    <li class="sobre__conteudo__lista-item lista-lista">
+                                        <p class="sobre__conteudo__lista-texto">
+                                            <i class="fa-light fa-check" style="color: #74C0FC;"></i>
+                                        </p>
+                                        <p class="sobre__conteudo__lista-texto">Selos de qualidade</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>  
+        </section>
+
+        <section id="time" class="time">
+            <h3 class="titulo__terceiro">Nosso time</h3>
+            <div class="swiper">
+                <div class="swiper-pagination"></div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="time__card">
+                            <img class="time__card-imagem" src="/img/imagem/Danilo.jpg" alt="Foto do Danilo">
+                            <div class="time__card__info">
+                                <h3 class="titulo__terceiro">Danilo</h3>
+                                <p class="time_card__info-texto">Front-end / UX</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="time__card">
+                            <img class="time__card-imagem" src="/img/imagem/Enzo.jpg" alt="Foto do Enzo">
+                            <div class="time__card__info">
+                                <h3 class="titulo__terceiro">Enzo</h3>
+                                <p class="time_card__info-texto">Back-end / DBA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="time__card">
+                            <img class="time__card-imagem" src="/img/imagem/Esau.jpg" alt="Foto do Esau">
+                            <div class="time__card__info">
+                                <h3 class="titulo__terceiro">Esau</h3>
+                                <p class="time_card__info-texto">Dev mobile / UX</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="time__card">
+                            <img class="time__card-imagem" src="/img/imagem/Marcelo.jpg" alt="Foto do Marcelo">
+                            <div class="time__card__info">
+                                <h3 class="titulo__terceiro">Marcelo</h3>
+                                <p class="time_card__info-texto">Back-end / DBA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="time__card">
+                            <img class="time__card-imagem" src="/img/imagem/Marcos.jpeg" alt="Foto do Marcos">
+                            <div class="time__card__info">
+                                <h3 class="titulo__terceiro">Marcos</h3>
+                                <p class="time_card__info-texto">Dev mobile / QA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+        <!-- <section class="trabalhe">
+            <div class="trabalhe__conteudo">
+                <h3 class="titulo__terceiro trabalhe__conteudo-titulo">Quer fazer parte da equipe?</h3>
+                <p class="trabalhe__conteudo-texto">Temos várias posições abertas, entre elas: Software Engineer, UI/UX Designer, Project Manager e mais.</p>
+                <p class="trabalhe__conteudo-texto">Clique no botão abaixo e confira os beneficios e as posições em aberto.</p>
+                <p class="trabalhe__conteudo-texto">Aqui você terá chance de trabalhar com as melhores tecnologias e os profissionais mais capacitados.</p>
+                <div class="trabalhe__conteudo__botao">
+                    <a class="trabalhe__conteudo__botao-link" href="#">Eu quero!</a>
+                </div>
+            </div>
+        </section> -->
+    </main>
+    <!-- RODAPE -->
+    <footer th:replace="~{fragments/rodape :: rodape}"></footer>
+</body>
+</html>

@@ -53,8 +53,9 @@ public class UsuarioController{
 		@PostMapping("/deletar")
 		public String deletar(@RequestParam(value = "id") Long id, RedirectAttributes redirect) {
 			Usuario usuario = usuarioService.findById(id);
-			usuarioService.delete(usuario.getId());
-			return "redirect:/leisure/index";
+			usuarioRepository.deleteUsuario(usuario.getId());
+			usuarioService.deleteById(usuario.getId());
+			return "redirect:/usuario/logout";
 		}  
 		
 		// ------------------------------------------------ ATUALIZAR DADOS ---------------------------------------------------------

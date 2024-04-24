@@ -127,7 +127,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 	}
 
 	@Override
-	public void delete(Long id) {
+	public void deleteById(Long id) {
 		usuarioRepository.deleteUsuario(id);
 	}
 

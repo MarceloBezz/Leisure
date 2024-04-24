@@ -12,7 +12,7 @@ public interface UsuarioService extends UserDetailsService{
 	Usuario findById(long id);
 	Usuario findByEmailAndSenha(String email, String senha);
 	Usuario save(Usuario usuario);
-	void delete(Long id);
+	void deleteById(Long id);
 	void takeOffMask(Usuario usuario);
 	boolean existsByEmailOrCpf(Usuario usuario);
 	void atualizacao(Usuario usuarioDes, Usuario usuarioNovo);

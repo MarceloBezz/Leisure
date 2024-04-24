@@ -15,6 +15,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 	Usuario findByEmailAndSenha(String email, String senha);
 	Usuario findByNome(String nome);
 	Usuario findByEmail(String email);
+	
 	@Procedure(procedureName="delete_usuario")
 	void deleteUsuario(@Param("id") Long id);
 }

@@ -61,8 +61,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 							  usuario.getTelefone(),
 							  usuario.getCpf(),
 							  usuario.getRole_usuario(),
-							  new ArrayList<>(),
-							  usuario.getNomeImagem()); 
+							  new ArrayList<>()); 
 		usuario.setRole_usuario("ROLE_USER");
 		usuarioRepository.save(usuario);
 		this.addRoleToUser(usuario.getEmail(), "ROLE_USER");

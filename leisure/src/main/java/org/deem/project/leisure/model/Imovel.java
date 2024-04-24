@@ -11,54 +11,57 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="IMOVEL")
+@Table(name="imovel")
 public class Imovel {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID")
+	@Column(name="id")
 	private long id;
 	
 	@ManyToOne
-	@JoinColumn(name="USUARIO" ,nullable = false)
+	@JoinColumn(name="id_vendedor" ,nullable = false)
 	public Usuario usuario;
 	
-	@Column(name="NUM_QUARTOS")
+	@Column(name="qtde_quarto")
 	private int numQuartos;
 	
-	@Column(name="NUM_BANHEIROS")
+	@Column(name="qtde_banheiro")
 	private int numBanheiros;
 	
-	@Column(name="VAGAS_GARAGEM")
+	@Column(name="qtde_vaga_garagem")
 	private int vagasGaragem;
 	
-	@Column(name="CEP")
+	@Column(name="cep")
 	private String cep;
 	
-	@Column(name="BAIRRO")
+	@Column(name="bairro")
 	private String bairro;
 	
-	@Column(name="CIDADE")
+	@Column(name="cidade")
 	private String cidade;
 	
-	@Column(name="NUMERO")
+	@Column(name="num_residencia")
 	private int numero;
 	
-	@Column(name="DESCRICAO")
+	@Column(name="descricao")
 	private String descricao;
 	
-	@Column(name="PRECO")
+	@Column(name="preco")
 	private Double preco;
 	
-	@Column(name="TIPO")
+	@Column(name="tipo")
 	private String tipo;
 	
-	@Column(name="SUSTENTABILIDADE")
+	@Column(name="sustentabilidade")
 	private String sustentabilidade;
 	
-	//@Column
-	private double iptu;
-	private double area;
+	@Column(name="iptu")
+	private Double iptu;
+	
+	@Column(name="area")
+	private Double area;
+	
 	
 	public Imovel() {	
 	}

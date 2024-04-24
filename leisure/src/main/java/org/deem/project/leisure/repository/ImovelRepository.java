@@ -18,7 +18,7 @@ public interface ImovelRepository extends JpaRepository<Imovel, Long>{
 	//@Query("SELECT i FROM Imovel i WHERE i.proprietario = :usuario")
 	Imovel findByUsuario(@Param("usuario") Usuario usuario);
 	
-	@Query("SELECT CASE WHEN COUNT(i) > 0 THEN TRUE ELSE FALSE END FROM Imovel i WHERE i.cep = :cep AND i.numero = :numero")
+	@Query("SELECT CASE WHEN COUNT(i) > 0 THEN TRUE ELSE FALSE END FROM Imovel i WHERE i.cep = :cep AND i.num_residencia = :numero")
 	boolean existsByCepAndNumero(@Param("cep")int cep, @Param("numero")int numero);
 
 	boolean existsByCepAndNumero(String cep, int numero);

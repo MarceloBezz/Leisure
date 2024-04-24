@@ -23,45 +23,43 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="USUARIO")
+@Table(name="usuario")
 public class Usuario implements UserDetails {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID")
+	@Column(name="id")
 	private long id;
 
     @OneToMany(mappedBy="usuario", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
     private List<Imovel> imoveis = new ArrayList<>(); 
 	
-	@Column(name="NOME")
+	@Column(name="nome")
 	private String nome;
 	
-	@Column(name="NASCIMENTO")
+	@Column(name="nascimento")
 	private String data;
 	
-	@Column(name="EMAIL")
+	@Column(name="email")
 	private String email;
 	
-	@Column(name="SENHA")
+	@Column(name="senha")
 	private String senha;
 	
-	@Column(name="TELEFONE")
+	@Column(name="celular")
 	private String telefone;
 	
-	@Column(name="CPF")
+	@Column(name="cpf")
 	private String cpf;
 	
-	@Column(name="PERFIL")
+	@Column(name="perfil_principal")
 	private String role_usuario;
 	
-	@Column(name="CAMINHO_IMAGEM")
-	private String nomeImagem;
 
 	// FetchType.EAGER => Busca também os relacionados
 	// FetchType.Lazy => Traz somente o referido
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "USUARIO_PERFIL",
+	@JoinTable(name = "usuario_perfil",
 			   joinColumns = @JoinColumn(name = "id_usuario", referencedColumnName="id"),
 			   inverseJoinColumns = @JoinColumn(name = "id_perfil", referencedColumnName="id"))
 	private Collection<Roles> roles;
@@ -75,7 +73,7 @@ public class Usuario implements UserDetails {
 	
 
 	public Usuario(long id,List<Imovel> imoveis, String nome, String data, String email, String senha, String telefone,
-			String cpf,String role_usuario, Collection<Roles> roles, String nomeImagem) {
+			String cpf,String role_usuario, Collection<Roles> roles) {
 		this.id = id;
 		this.imoveis = imoveis;
 		this.nome = nome;
@@ -86,17 +84,15 @@ public class Usuario implements UserDetails {
 		this.cpf = cpf;
 		this.role_usuario = role_usuario;
 		this.roles = roles;
-		this.nomeImagem = nomeImagem;
 	}
 	
 	public Usuario(long id, String nome, String telefone, String cep, int numResidencia, String complemento,
-			String role_usuario, String nomeImagem, Collection<Roles> roles) {
+			String role_usuario, Collection<Roles> roles) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.telefone = telefone;
 		this.role_usuario = role_usuario;
-		this.nomeImagem = nomeImagem;
 		this.roles = roles;
 	}
 
@@ -110,22 +106,6 @@ public class Usuario implements UserDetails {
 		this.cpf = cpf;
 		this.roles = roles;
 	}
-
-	
-
-
-	public String getNomeImagem() {
-		return nomeImagem;
-	}
-
-
-
-
-	public void setNomeImagem(String nomeImagem) {
-		this.nomeImagem = nomeImagem;
-	}
-
-
 
 
 	public String getRole_usuario() {

@@ -1,6 +1,3 @@
-// const notCheckedBox = document.querySelector('#menu');
-
-
 //VARIAVEIS DO CADASTRO DE IMOVEIS
 var barra = document.querySelector('.anunciar__conteudo__progresso-barra');
 const listaBtnAnterior = document.querySelectorAll('.anunciar__conteudo__botao-anterior');
@@ -10,10 +7,20 @@ var progresso = 0;
 var i = 0;
 
 //IMAGEM PERFIL
-const autoSubmitDaImagem = document.querySelector('#input-file');
+const autoSubmitDaImagem = document.querySelector('[data-input-imagem]');
 const id = document.getElementById("id_usuario").value;
 const imagemPerfil = document.querySelector('.meusdados__imagem label');
 const btnPerfil = document.querySelector('.container__usuario-imagem');
+
+//INPUT IMAGEM PERFIL
+try {
+	autoSubmitDaImagem.addEventListener('change', () => {
+		const form = document.querySelector('[data-form-imagem]');
+		form.submit();
+	})
+}catch (error) {
+	
+}
 
 //FUNÇAO BOTAO ANTERIOR E PROXIMO DO CADASTRO DE IMOVEIS
 	try{

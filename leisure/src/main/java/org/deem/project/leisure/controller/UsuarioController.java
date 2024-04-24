@@ -28,11 +28,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/usuario")
 public class UsuarioController{
 	
-	// private static String pathImage = "D:\\Imagens";
+	
 	private static String pathImage = "src\\main\\resources\\Imagens\\ImagensPerfil\\";
 	
-	@Value("${image.path}")
-	private String imagePath;
 
 	
 	@Autowired
@@ -53,7 +51,6 @@ public class UsuarioController{
 		@PostMapping("/deletar")
 		public String deletar(@RequestParam(value = "id") Long id, RedirectAttributes redirect) {
 			Usuario usuario = usuarioService.findById(id);
-			usuarioRepository.deleteUsuario(usuario.getId());
 			usuarioService.deleteById(usuario.getId());
 			return "redirect:/usuario/logout";
 		}  

@@ -62,7 +62,6 @@ public class UsuarioController{
 		@PostMapping("/atualizacao")
 		public String updateAll(RedirectAttributes redirect, 
 								Usuario usuario, 
-								@RequestParam(name = "fotoPerfil", required = false) MultipartFile fotoPerfil,
 								String mensagem) throws IOException {
 			
 			Usuario usuarioBD = usuarioService.findById(usuario.getId());
@@ -84,8 +83,6 @@ public class UsuarioController{
 					byte[] bytes = file.getBytes();
 					Path caminho = Paths.get(pathImage + String.valueOf(usuario_.getId()) +"fotoPerfil.png");
 					Files.write(caminho, bytes);
-					
-					usuario_.setNomeImagem(String.valueOf(caminho).replace(".png", ""));
 					usuarioService.atualizar(usuario_);
 				}
 			} catch(IOException e){

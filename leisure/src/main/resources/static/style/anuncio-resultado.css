@@ -1,0 +1,60 @@
+.resultado {
+    padding: 0 1em 1em 1em;
+}
+
+.resultado__pesquisa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultado__pesquisa__item {
+    padding: 2em;
+}
+.resultado__filtro {
+    display: flex;
+    flex-direction: column;
+}
+.resultado__filtro__card {
+    margin: 1em 0;
+}
+.resultado__filtro__card__conteudo {
+    
+}
+.resultado__filtro__card__conteudo__imagem {
+    max-width: 400px;
+    max-height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.resultado__filtro__card__conteudo__imagem img {
+    max-width: 100%;
+    max-height: auto;
+}
+
+.resultado__filtro__card__conteudo__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    margin: 0.5em 0;
+}
+.resultado__filtro__card__conteudo__content__item {
+}
+.resultado__filtro__card__conteudo__content__item__tipo {
+    font-size: var(--font-size);
+    background: var(--cor-hover);
+    display: inline-block;
+    padding: 0.25em 2em;
+    border-radius: 5px;
+}
+.resultado__filtro__card__conteudo__content__item__valor {
+}
+.fa-thin {
+}
+.fa-brazilian-real-sign {
+}
+.fa-lg {
+}
+.resultado__filtro__card__conteudo__content__item__comodos {
+}

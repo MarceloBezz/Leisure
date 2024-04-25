@@ -1,0 +1,15 @@
+.text-center {
+    text-align: center;
+}
+
+.margin-top {
+    margin-top: 1em;
+}
+
+.hidden {
+    display: none;
+}
+
+.no-decoration {
+    text-decoration: none;
+}

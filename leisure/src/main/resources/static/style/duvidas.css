@@ -17,3 +17,17 @@
 .duvidas__container__imagem-conteudo{
     width: 50%;
 }
+
+@media (min-width: 768px) {
+
+    .duvidas__container__imagem-conteudo{
+        width: 25%;
+        margin-bottom: 2em;
+    }
+
+    .duvidas__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}

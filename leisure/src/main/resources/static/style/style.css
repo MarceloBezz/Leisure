@@ -111,6 +111,10 @@ input::placeholder {
 		--titulo-segundo: 1.25em;
 		--titulo-terceiro: 1.15em;
 	}
+
+	main {
+		margin-top: 7em;
+	}
 }
 
 @media screen and (min-width: 1024px){

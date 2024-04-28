@@ -1,8 +1,14 @@
-.modal__cadastrar, .modal__login{
+/* .modal__cadastrar, .modal__login{
+    padding: 1em;
+    border-radius: 10px;
+} */
+
+.modal-content{
     padding: 1em;
     border-radius: 10px;
 }
-.modal__cadastrar > i, .modal__login > i{
+
+.modal-content > i, .modal__login > i{
     position: relative;
     top: 10px;
     left: 95%;
@@ -31,4 +37,5 @@
     margin: 2em 0 1em 0;
     font-size: var(--font-size);
     color: var(--cor-font-destaque);
+    cursor: pointer;
 }

@@ -25,10 +25,10 @@
                 </div>
 
                 <div class="lista-menu__conteudo">
-                    <li class="lista-menu__item btn-submenu">
-                        <span>Categorias <i class="arrow-replace-categoria fa-solid fa-sm fa-chevron-right"></i></span>
+                    <li class="lista-menu__item" data-menu>
+                        <span>Categorias <i class="fa-solid fa-sm fa-chevron-right" data-arrow></i></span>
 
-                        <ul class="lista-menu__sublista-categoria hidden">
+                        <ul class="lista-menu__sublista-categoria hidden" data-submenu>
                             <li class="lista-menu__sublista-item">                                
                                     <a class="container__link" th:href="@{/leisure/filtragem}"><span>Apartamentos</span></a>
                             </li>
@@ -46,35 +46,21 @@
                             </li>
                         </ul>
                     </li>
-    
-                    <!-- <li class="lista-menu__item">
-                        <a class="container__link" href="/#sobre">Sobre</a>
-                    </li> -->
-                    <!-- <li class="lista-menu__item">
-                        <a class="container__link" href="/#servicos">Serviços</a>
-                    </li> -->
-                    <!-- <li class="lista-menu__item">
-                        <a class="container__link" href="/#time">Time</a>
-                    </li> -->
                     <li class="lista-menu__item">
                         <a class="container__link" href="/leisure/premium">Premium</a>
-                        <!-- <span href="@{premium}" class="container__link">Premium</span> -->
                     </li>
                     <li class="lista-menu__item">
                         <a class="container__link" href="/usuario/perfil/anunciar">Anunciar</a>
                     </li>
                     <li class="lista-menu__item">
-                        <a class="container__link" href="/leisure#contato">Links úteis</a>
+                        <a class="container__link" href="/leisure/index#contato">Links úteis</a>
                     </li>
-                    <!-- <li class="lista-menu__item">
-                        <a class="container__link" href="/duvidas">Dúvidas</a>
-                    </li> -->
-                    <li class="lista-menu__item btn-download">
-                        <span>Nosso App <i class="arrow-replace-download fa-solid fa-sm fa-chevron-right"></i></span>
+                    <li class="lista-menu__item" data-menu>
+                        <span>Nosso App <i class="fa-solid fa-sm fa-chevron-right" data-arrow></i></span>
                         <span>
                             
                         </span>
-                        <ul class="lista-menu__sublista-download hidden">
+                        <ul class="lista-menu__sublista-download hidden" data-submenu>
                             <li class="lista-menu__sublista-item">
                                 <a class="container__link" href="https://play.google.com/store/apps" target="_blank">
                                     <span>Google play</span>
@@ -101,10 +87,10 @@
         </div>
     </nav>
     <div class="cabecalho__navegacao">
-        <!-- Modal -->
+        <!-- MODAL -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content modal__cadastrar">
+                <div class="modal-content modal__cadastrar" data-modal>
                     <i class="fa-regular fa-xmark fa-2xl" data-bs-dismiss="modal"></i>
                     <div class="modal__titulo">
                         <h2>Cadastro</h2>
@@ -113,27 +99,27 @@
                         <form class="cadastro__container" th:action="@{/usuario/cadastrar}"method="post">
                             <div class="cadastro__container__conteudo">
                                 <label for="meusdadosNome">Nome completo</label>
-                                <input type="text" name="nome" id="cadastroNome">
-                            </div>
-                            <div class="cadastro__container__conteudo">
-                                <label for="cadastroData">Data de nascimento</label>
-                                <input type="date" name="data" id="cadastroData">
-                            </div>
-                            <div class="cadastro__container__conteudo">
-                                <label for="cadastroEmail">E-mail</label>
-                                <input type="email" name="email" id="cadastroEmail">
-                            </div>
-                            <div class="cadastro__container__conteudo">
-                                <label for="cadastroSenha">Senha</label>
-                                <input type="password" name="senha" id="cadastroSenha">
-                            </div>
-                            <div class="cadastro__container__conteudo">
-                                <label for="dadoTelefone">Telefone</label>
-                                <input type="tel" name="telefone">
+                                <input type="text" name="nome" id="cadastroNome" minlength="3" required>
                             </div>
                             <div class="cadastro__container__conteudo">
                                 <label for="cadastroCpf">CPF</label>
-                                <input type="password" name="cpf" id="cadastroCpf">
+                                <input type="text" name="cpf" id="cadastroCpf" placeholder="Ex: 123.456.789-10" minlength="11" maxlength="14" required data-cadastro="cadastroCpf">
+                            </div>
+                            <div class="cadastro__container__conteudo">
+                                <label for="cadastroData">Data de nascimento</label>
+                                <input type="date" name="data" id="cadastroData" required data-cadastro="cadastroData">
+                            </div>
+                            <div class="cadastro__container__conteudo">
+                                <label for="cadastroEmail">E-mail</label>
+                                <input type="email" name="email" id="cadastroEmail" minlength="8" required>
+                            </div>
+                            <div class="cadastro__container__conteudo">
+                                <label for="cadastroSenha">Senha</label>
+                                <input type="password" name="senha" id="cadastroSenha" placeholder="Min de 8 caracteres" minlength="8" required>
+                            </div>
+                            <div class="cadastro__container__conteudo">
+                                <label for="dadoTelefone">Telefone</label>
+                                <input type="tel" name="telefone" placeholder="Ex: (11)91010-2215" minlength="11" maxlength="14" required data-cadastro="cadastroTelefone">
                             </div>
                             <div class="modal-body__botoes d-flex flex-column gap-2 justify-content-center">
                                 <button type="submit" class="btn btn-primary">Cadastrar</button>
@@ -195,7 +181,6 @@
                     </li>
                 </div>
                 <div class="cabecalho__container-welcome">
-                 <!--   <span th:text="'Bem-vindo, ' + ${usuario.nome}"></span> -->
                 </div>
                 <div class="lista-menu__conteudo">
                     <li class="lista-menu__item btnAnunciar">

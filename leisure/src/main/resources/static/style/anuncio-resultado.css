@@ -18,9 +18,7 @@
 .resultado__filtro__card {
     margin: 1em 0;
 }
-.resultado__filtro__card__conteudo {
-    
-}
+
 .resultado__filtro__card__conteudo__imagem {
     max-width: 400px;
     max-height: 250px;
@@ -39,8 +37,7 @@
     row-gap: 1em;
     margin: 0.5em 0;
 }
-.resultado__filtro__card__conteudo__content__item {
-}
+
 .resultado__filtro__card__conteudo__content__item__tipo {
     font-size: var(--font-size);
     background: var(--cor-hover);
@@ -48,13 +45,10 @@
     padding: 0.25em 2em;
     border-radius: 5px;
 }
-.resultado__filtro__card__conteudo__content__item__valor {
-}
-.fa-thin {
-}
-.fa-brazilian-real-sign {
-}
-.fa-lg {
-}
-.resultado__filtro__card__conteudo__content__item__comodos {
+
+@media (min-width: 768px) {
+    .resultado__pesquisa {
+        margin-left: 5em;
+        display: block;
+    }
 }

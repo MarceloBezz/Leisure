@@ -3,21 +3,21 @@
 
 <!-- HEAD -->
 <head th:replace="~{fragments/head :: head}"></head>
-<body>
+<body data-main="anuncio">
 
     <!-- CABEÇALHO -->
     <header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
 
-    <main class="main">
+    <main data-main="conteudo">
 
         <section class="filtro">
-            <button id="btnFiltro" class="filtro__botao">
+            <button class="filtro__botao" data-filtro="filtrar">
                 <span>Filtrar imóveis</span>
                 <i class="fa-light fa-sliders-simple"></i>
             </button>
             <div class="filtro__filtro">
                 <div class="filtro__btn-close">
-                    <i id="btnFiltroClose" class="fa-light fa-xmark fa-2xl"></i>
+                    <i class="fa-light fa-xmark fa-2xl" data-filtro="filtrarClose"></i>
                 </div>
                 <form th:action="@{/leisure/filtragem}" method="post" class="filtro__filtro-form">
                     <div class="filtro__filtro-conteudo">
@@ -93,8 +93,7 @@
                     1 resultado para o filtro
                 </span>
             </div>
-            <div th:replace="~{fragments/resultado-pesquisa :: resultado-pesquisa}"></div>
-            
+            <div th:replace="~{fragments/resultado-pesquisa :: resultado-pesquisa}"></div>   
         </section>
 
     </main>

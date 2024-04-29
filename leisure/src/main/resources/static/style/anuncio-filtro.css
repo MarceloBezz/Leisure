@@ -28,7 +28,6 @@
 
 .filtro__filtro {
     background: var(--cor-primeira);
-    /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); */
     box-shadow: var(--cor-sombra);
     border-radius: 5px;
     position: absolute;
@@ -99,4 +98,44 @@
     border-radius: 2em;
     padding: 0.75em 0;
     box-shadow: var(--cor-sombra);
+}
+
+@media (min-width: 768px) {
+    [data-main="anuncio"] {
+        .resultado {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    [data-main="conteudo"] {
+        margin: 0;
+        margin-top: 7em;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filtro {
+        padding: 0;
+    }
+
+    .filtro__botao {
+        display: none;
+    }
+
+    .filtro__filtro {
+        background: var(--cor-primeira);
+        box-shadow: var(--cor-sombra);
+        border-radius: 0;
+        position: relative;
+        min-height: 100vh;
+        left: -7em;
+        top: 0;
+        padding: 1em;
+        z-index: 1;
+    }
+
+    .filtro__btn-close {
+        display: none;
+    }
 }

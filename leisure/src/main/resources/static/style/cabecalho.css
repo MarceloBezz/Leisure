@@ -158,6 +158,11 @@
         flex-direction: column-reverse;
         padding: 0;
     }
+    .cabecalho__container {
+        position: fixed;
+        top: 0;
+        z-index: 3;
+    }
     .cabecalho__container .container__rotulo{
         display: none;
         padding: 0;
@@ -231,10 +236,6 @@
     }
     .lista-menu__item{
         padding: 0.75em 0.5em;
-    }
-
-    .lista-menu__item:hover {
-        /* background: var(--cor-hover); */
     }
 
     .lista-menu__sublista-categoria, .lista-menu__sublista-download{

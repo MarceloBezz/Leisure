@@ -13,3 +13,8 @@
 .no-decoration {
     text-decoration: none;
 }
+
+.row-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}

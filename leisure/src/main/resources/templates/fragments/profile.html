@@ -187,7 +187,7 @@
             </div>
             <p>Envie a melhor foto que você possui do seu imóvel</p>
             <input class="anunciar__conteudo__input hidden" type="file" accept="image/jpg, image/jpeg, image/png"
-                id="imovelImagem">
+                id="imovelImagem" name="file">
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior anterior10" type="button">Anterior</button>
                 <button class="anunciar__conteudo__botao-proximo proximo11" type="button">Próximo</button>
@@ -218,7 +218,8 @@
 </section>
 
 <!-- MEUS ANUNCIOS -->
-<section th:fragment="anuncio" class="anuncio " th:each="imovel : ${imovelPorId}">
+<th:block th:fragment="anuncio">
+<section class="anuncio " th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}">
     <div class="anuncio__card">
         <div class="anuncio__card__imagem">
             <img src="/img/anuncio/card/card01.png" alt="Casa a venda">
@@ -227,7 +228,6 @@
         <div class="anuncio__card__form">
             
             <div class="anuncio__card__conteudo" >
-                
                 <label for="anuncioNumQuartos">Quartos:</label>
                 <input type="number" name="numQuartos" id="anuncioNumQuartos" th:value="${imovel.numQuartos}">
             </div>
@@ -275,6 +275,10 @@
         <!--</form>-->
     </div>
 </section>
+<div th:if="${imovelPorId.size == 0}">
+    <span>Não</span>
+</div>
+</th:block>
 
 <!-- MEUS DADOS -->
 <section th:fragment="meusdados" class="meusdados">

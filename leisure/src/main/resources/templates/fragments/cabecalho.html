@@ -99,11 +99,11 @@
                         <form class="cadastro__container" th:action="@{/usuario/cadastrar}"method="post">
                             <div class="cadastro__container__conteudo">
                                 <label for="meusdadosNome">Nome completo</label>
-                                <input type="text" name="nome" id="cadastroNome" minlength="3" required>
+                                <input type="text" name="nome" id="cadastroNome" autocomplete="off" minlength="3" required>
                             </div>
                             <div class="cadastro__container__conteudo">
                                 <label for="cadastroCpf">CPF</label>
-                                <input type="text" name="cpf" id="cadastroCpf" placeholder="Ex: 123.456.789-10" minlength="11" maxlength="14" required data-cadastro="cadastroCpf">
+                                <input type="text" name="cpf" id="cadastroCpf" autocomplete="off" placeholder="Ex: 123.456.789-10" minlength="14" maxlength="14" required data-cadastro="cadastroCpf">
                             </div>
                             <div class="cadastro__container__conteudo">
                                 <label for="cadastroData">Data de nascimento</label>
@@ -111,7 +111,7 @@
                             </div>
                             <div class="cadastro__container__conteudo">
                                 <label for="cadastroEmail">E-mail</label>
-                                <input type="email" name="email" id="cadastroEmail" minlength="8" required>
+                                <input type="email" name="email" id="cadastroEmail" autocomplete="off" minlength="8" required>
                             </div>
                             <div class="cadastro__container__conteudo">
                                 <label for="cadastroSenha">Senha</label>
@@ -119,7 +119,7 @@
                             </div>
                             <div class="cadastro__container__conteudo">
                                 <label for="dadoTelefone">Telefone</label>
-                                <input type="tel" name="telefone" placeholder="Ex: (11)91010-2215" minlength="11" maxlength="14" required data-cadastro="cadastroTelefone">
+                                <input type="tel" name="telefone" autocomplete="off" placeholder="Ex: (11)91010-2215" minlength="15" maxlength="15" required data-cadastro="cadastroTelefone">
                             </div>
                             <div class="modal-body__botoes d-flex flex-column gap-2 justify-content-center">
                                 <button type="submit" class="btn btn-primary">Cadastrar</button>

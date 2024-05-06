@@ -6,10 +6,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import org.deem.project.leisure.model.Usuario;
-import org.deem.project.leisure.repository.UsuarioRepository;
+//import org.deem.project.leisure.repository.UsuarioRepository;
 import org.deem.project.leisure.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -36,8 +35,8 @@ public class UsuarioController{
 	@Autowired
 	private UsuarioService usuarioService;
 	
-	@Autowired
-	private UsuarioRepository usuarioRepository;
+	// @Autowired
+	// private UsuarioRepository usuarioRepository;
 
 //	Página direcionada após o login bem sucedido		
 	@GetMapping("/perfil")
@@ -61,7 +60,7 @@ public class UsuarioController{
 								Usuario usuario, 
 								String mensagem) throws IOException {
 			
-			Usuario usuarioBD = usuarioService.findById(usuario.getId());
+			Usuario usuarioBD = usuarioService.getAuthenticatedUser();
 			usuarioBD.setNome(usuario.getNome());
 			usuarioBD.setData(usuario.getData());
 			usuarioBD.setTelefone(usuario.getTelefone());

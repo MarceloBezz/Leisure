@@ -1,6 +1,6 @@
 package org.deem.project.leisure.model;
 
-import java.io.Serializable;
+
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.Column;

@@ -1,9 +1,7 @@
 package org.deem.project.leisure.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
+import java.util.List;
 import org.deem.project.leisure.model.Imovel;
 import org.deem.project.leisure.model.Usuario;
 import org.deem.project.leisure.service.ImovelService;

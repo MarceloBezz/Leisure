@@ -1,4 +1,5 @@
-<div th:fragment="resultado-pesquisa" class="resultado__filtro">
+<th:block th:fragment="resultado-pesquisa">
+<div th:fragment="resultado-pesquisa" class="resultado__filtro" th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}">
     <div class="resultado__filtro__card">
         <div class="resultado__filtro__card__conteudo">
             <div class="resultado__filtro__card__conteudo__imagem">
@@ -19,10 +20,11 @@
                     <p class="resultado__filtro__card__conteudo__content__item__comodos">
                         <span>• 2 quartos</span>
                         <span>• 1 sala</span>   
-                        <span>• 1 vaga</span>
+                        <span>• 4 vaga</span>
                     </p>
                 </span>
             </div>
         </div>
     </div>
 </div>
+</th:block> 

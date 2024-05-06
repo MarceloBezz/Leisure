@@ -1,10 +1,9 @@
 package org.deem.project.leisure.service;
 
-import java.util.List;
+
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.deem.project.leisure.model.Roles;
 import org.deem.project.leisure.model.Usuario;
-import org.deem.project.leisure.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
 
 @Service

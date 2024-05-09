@@ -19,11 +19,16 @@
 
 .container__usuario {
     text-align: center;
-    margin: 0 0.5em;
+    margin: 0 0.5em 1em 0.5em;
     padding: 0.25em 0;
     width: 90%;
     border-radius: 5px;
     cursor: pointer;
+    background: var(--cor-font-destaque);
+}
+
+.logout {
+    background: transparent;
 }
 
 .container__usuario-imagem img{
@@ -178,6 +183,7 @@
 
     .container__usuario{
         display: flex;
+        margin: 0 0.5em;
         position: relative;
         column-gap: 0.5em;
         left: 10px;

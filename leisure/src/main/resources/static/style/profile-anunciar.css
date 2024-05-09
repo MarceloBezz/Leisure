@@ -27,8 +27,8 @@
 }
 .anunciar__conteudo__box__animacao{
     text-align: center;
-    margin: 0 0 30px 0;
-    font-size: 10em;
+    margin: 30px 0 30px 0;
+    font-size: 5em;
 }
 .anunciar__conteudo__box p{
     text-align: center;
@@ -39,6 +39,7 @@
     position: relative;
     top: 0.75em;
 }
+
 .dados__container__conteudo{
     width: 100%;
 }
@@ -107,9 +108,13 @@
     width: 100%;
 }
 
-#form2, #form3, #form4, #form5, #form6, #form7, #form8, #form9, #form10, #form11, #form12, #form13{
+/* #form2, #form3, #form4, #form5, #form6, #form7, #form8, #form9, #form10, #form11, #form12, #form13, #form14{
+    left: 450px;
+} */
+[data-profile="anunciar"] {
     left: 450px;
 }
+
 .anunciar__conteudo__progresso-barra{
     position: absolute;
     height: 100%;

@@ -42,19 +42,20 @@ public class ImovelController {
 		
 		if(save == false) { //VERIFICA SE OS DADOS DO IMÓVEL JÁ ESTÃO CADASTRADOS OU NÃO
 			try {
+				imovel.setUsuario(usuarioService.getAuthenticatedUser());
+				Imovel _imovel = imovelService.save(imovel);
+				redirect.addAttribute("imovel", _imovel);
+				redirect.addFlashAttribute("mensagem", "Imóvel cadastrado com sucesso!");
 				if(!file.isEmpty()) {
 					byte[] bytes = file.getBytes();
-					Path caminho = Paths.get(pathImage + String.valueOf(usuario_.getId()) + "fotoImovel.png");
+					Path caminho = Paths.get(pathImage + String.valueOf(imovel.getId()) + "fotoImovel.png");
 					Files.write(caminho, bytes);
 				//	usuarioService.atualizar(usuario_);
 				}
 			} catch(IOException e){
 				e.printStackTrace();
 			}
-		imovel.setUsuario(usuarioService.getAuthenticatedUser());
-		Imovel _imovel = imovelService.save(imovel);
-		redirect.addAttribute("imovel", _imovel);
-		redirect.addFlashAttribute("mensagem", "Imóvel cadastrado com sucesso!");
+
 		return "redirect:/usuario/perfil";
 	}else {
 		redirect.addFlashAttribute("mensagem", "Erro no cadastro \nEndereço do imóvel já cadastrado!");
@@ -63,8 +64,9 @@ public class ImovelController {
 }
 
 		// --------------------------------------- VISUALIZAR IMAGEM DO IMÓVEL ------------------------------------------------------
-		@GetMapping("/imovel/{id}")
+		@GetMapping("/imovel/imagem/{id}")
 		public ResponseEntity<byte[]> getImagem(@PathVariable int id, Usuario usuario, Imovel imovel) throws IOException {
+			try{
 			imovel = imovelService.findById(id);
 			String path = pathImage + imovel.getId() + "fotoImovel.png";
 			Path caminho = Paths.get(path);
@@ -72,6 +74,9 @@ public class ImovelController {
 			HttpHeaders header = new HttpHeaders();
 			header.setContentType(MediaType.IMAGE_PNG);
 			return new ResponseEntity<>(bytes, header, HttpStatus.OK);
+			}catch(Exception e){
+				return null;
+			}
 			}
 
 	

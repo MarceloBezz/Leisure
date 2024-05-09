@@ -4,12 +4,12 @@ CREATE TABLE imovel
 (
  id				BIGINT				IDENTITY,
  preco				DECIMAL(10,2)			NOT NULL,
- iptu				DECIMAL(7,2)			NOT NULL,
+ iptu				DECIMAL(7,2)			NULL,
  tipo				VARCHAR(30)			NOT NULL,
  descricao			VARCHAR(6000)			NULL,
  cidade				VARCHAR(50)			NULL,
  bairro				VARCHAR(50)			NULL,
- cep				CHAR(8)				NOT NULL,
+ cep				CHAR(8)				 NULL,
  num_residencia			SMALLINT			NULL,
  qtde_quarto			TINYINT				NULL,
  qtde_banheiro			TINYINT				NULL,
@@ -20,7 +20,7 @@ CREATE TABLE imovel
 
  CONSTRAINT PK_IMOVEL PRIMARY KEY(id),
 
- CONSTRAINT CK_TIPO CHECK(tipo IN('Apartamento', 'Casa', 'Terreno', 'Sítio')),
+ CONSTRAINT CK_TIPO CHECK(tipo IN('Apartamento', 'Casa', 'Terreno', 'Sï¿½tio')),
  
  CONSTRAINT FK_ID_VENDEDOR_IMOVEL FOREIGN KEY(id_vendedor)
 			    REFERENCES USUARIO(id) 

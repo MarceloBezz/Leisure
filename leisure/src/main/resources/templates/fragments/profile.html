@@ -2,7 +2,7 @@
 
 <!-- ANUNCIAR -->
 <section th:fragment="anunciar" class="anunciar ">
-    <form th:action="@{/usuario/perfil/cadastrar}" method="post" class="anunciar__conteudo">
+    <form th:action="@{/usuario/perfil/cadastrar}" method="post" class="anunciar__conteudo" enctype="multipart/form-data">
         <div class="anunciar__conteudo__progresso-linha">
             <div class="anunciar__conteudo__progresso-barra"></div>
             <div class="anunciar__conteudo__progresso-coluna">Dados sustentáveis</div>
@@ -221,10 +221,21 @@
 <th:block th:fragment="anuncio">
 <section class="anuncio " th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}">
     <div class="anuncio__card">
-        <div class="anuncio__card__imagem">
+        <!-- <div class="anuncio__card__imagem">
             <img src="/img/anuncio/card/card01.png" alt="Casa a venda">
-        </div>
-        <!-- <form> -->  
+        </div> -->
+        <form id="form-imagem" method="post" enctype="multipart/form-data" th:action="@{/usuario/salvar-foto}" data-form-imagem>
+            <input name="id" th:value="${imovel.id}" id="id_imovel" hidden>
+            <div class="meusdados__imagem">
+    
+                <!-- FRAGMENT -->
+                <label for="input-file">
+                    <img th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
+                </label>
+    
+                <input id="input-file" type="file" name="file" accept="image /*" data-input-imagem>
+            </div>
+        </form>
         <div class="anuncio__card__form">
             
             <div class="anuncio__card__conteudo" >

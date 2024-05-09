@@ -37,7 +37,9 @@ public class LeisureController {
 		return "index";
 	}
 	@GetMapping("/pesquisa")
-	public String getPesquisa() {
+	public String getPesquisa(Usuario usuario) {
+		usuario = usuarioService.getAuthenticatedUser(); //Puxar os dados do usuário logado(se nulo, não há usuário logado)
+		//model.addAttribute("usuario", usuario);
 		return "anuncio";
 	}
 	@GetMapping("/premium")

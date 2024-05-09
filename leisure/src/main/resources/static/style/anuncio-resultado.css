@@ -46,6 +46,12 @@
     border-radius: 5px;
 }
 
+.resultado__filtro__card__conteudo__content__lista {
+    display: flex;
+    column-gap: 1em;
+}
+
+
 @media (min-width: 768px) {
     .resultado__pesquisa {
         margin-left: 5em;

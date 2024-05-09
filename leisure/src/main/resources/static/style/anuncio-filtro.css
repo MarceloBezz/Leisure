@@ -7,6 +7,15 @@
     overflow: hidden;
 }
 
+/* [data-main="conteudo"] {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+} */
+
 .filtro__botao {
     border-radius: 5px;
     width: 90vw;
@@ -103,6 +112,7 @@
 @media (min-width: 768px) {
     [data-main="anuncio"] {
         .resultado {
+            margin-top: 1em;
             display: flex;
             flex-direction: column;
         }
@@ -115,8 +125,13 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    [data-main="conteudo"] * {
+        justify-self: start;
+    }
+
     .filtro {
         padding: 0;
+        margin: 0;
     }
 
     .filtro__botao {
@@ -124,13 +139,15 @@
     }
 
     .filtro__filtro {
-        background: var(--cor-primeira);
-        box-shadow: var(--cor-sombra);
+        /* background: var(--cor-primeira); */
+        background: transparent;
+        /* box-shadow: var(--cor-sombra); */
+        box-shadow: none;
         border-radius: 0;
-        position: relative;
-        min-height: 100vh;
-        left: -7em;
-        top: 0;
+        position: absolute;
+        height: 100vh;
+        left: 0;
+        top: 6em;
         padding: 1em;
         z-index: 1;
     }

@@ -49,6 +49,10 @@
 
 @media (min-width: 768px) {
 
+    .como-comprar {
+        margin: 5em 10em;
+    }
+
     .como-comprar__container {
         display: flex;
         flex-direction: row-reverse;

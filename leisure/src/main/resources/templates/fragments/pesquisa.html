@@ -1,6 +1,6 @@
 <section class="pesquisa" th:fragment="pesquisa">
     <div class="pesquisa__container">
-        <form action="" class="pesquisa__container__formulario">
+        <form th:action="@{/leisure/filtragem}" method="post" class="pesquisa__container__formulario">
             <h3 class="titulo__terceiro">Encontre um imóvel para chamar de seu</h3>
             <h4 class="titulo__quarto">Comprar</h4>
             <hr />
@@ -19,7 +19,7 @@
                 </div>
                 <div class="pesquisa__container__formulario-conteudo">
                     <span>Bairro</span>
-                    <input type="text" name="" id="pesquisaBairro" placeholder="Busque por bairro">
+                    <input type="text" name="bairro" id="pesquisaBairro" placeholder="Busque por bairro">
                 </div>
             </label>
             <div class="pesquisa__container__formulario-duplo">
@@ -29,7 +29,7 @@
                     </div>
                     <div class="pesquisa__container__formulario-conteudo">
                         <span>Valor total até</span>
-                        <input type="text" name="" id="pesquisaValor" placeholder="Digite um valor">
+                        <input type="text" name="precoMaximo" id="pesquisaValor" placeholder="Digite um valor">
                     </div>
                 </label>
                 <label for="pesquisaQuartos">
@@ -38,7 +38,7 @@
                     </div>
                     <div class="pesquisa__container__formulario-conteudo">
                         <span>Quartos</span>
-                        <select name="" id="pesquisaQuartos">
+                        <select name="numQuartos" id="pesquisaQuartos">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>

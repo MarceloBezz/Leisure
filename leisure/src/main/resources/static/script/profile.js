@@ -3,6 +3,7 @@ var barra = document.querySelector('.anunciar__conteudo__progresso-barra');
 const listaBtnAnterior = document.querySelectorAll('.anunciar__conteudo__botao-anterior');
 const listaBtnProximo = document.querySelectorAll('.anunciar__conteudo__botao-proximo');
 const formBox = document.querySelectorAll('.anunciar__conteudo__box');
+const valorInput = document.querySelectorAll('.anunciar__conteudo__input');
 var progresso = 0;
 var i = 0;
 
@@ -31,13 +32,16 @@ try {
 				function proximoForm (){
 					formBox[i].style.left = '-450px';
 					i = i+1;
-					progresso += 30;
+					progresso += 26;
 					formBox[i].style.left = '40px';
 					barra.style.width = `${progresso}px`;
 				}
-				if(index < formBox.length){
+				valorInput.forEach(valor => {
+					valor = valorInput.value;
+				})
+				if(index < formBox.length || valor !=''){
 					proximoForm();
-				}		
+				}
 			})
 		});
 		listaBtnAnterior.forEach(function (botao){
@@ -49,7 +53,7 @@ try {
 					formBox[i].style.left = '40px';
 					i = index;
 					formBox[i].style.left = '450px';
-					progresso -= 30;
+					progresso -= 26;
 					barra.style.width = `${progresso}px`;
 				}
 				if(index){

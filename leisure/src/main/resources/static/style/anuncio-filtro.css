@@ -145,6 +145,7 @@
         box-shadow: none;
         border-radius: 0;
         position: absolute;
+        max-width: 50vw;
         height: 100vh;
         left: 0;
         top: 6em;

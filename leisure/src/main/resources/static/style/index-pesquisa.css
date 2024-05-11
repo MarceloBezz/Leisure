@@ -28,7 +28,8 @@
     grid-template-columns: 10% 70%;
     border: 1px solid lightgrey;
     border-radius: 5px;
-    padding: 1.5em 0;
+    padding: 1.5em 0.5em;
+    column-gap: 16px;
 }
 
 .pesquisa__container__formulario-duplo {
@@ -36,14 +37,15 @@
     grid-template-columns: repeat(2, 1fr);
     border: 1px solid lightgrey;
     border-radius: 5px;
+    column-gap: 16px;
 }
 
 .pesquisa__container__formulario-duplo > label{
     display: flex;
     align-items: center;
-    column-gap: 1em;
-    border-right: 1px solid lightgrey;
-    padding: 1.5em 1em;
+    column-gap: 16px;
+    border-left: 1px solid lightgrey;
+    padding: 1.5em 0.5em;
     margin: 0;
 }
 

@@ -51,19 +51,24 @@
 }
 
 .financiamento__container__conteudo__imagem {
-    width: 100px;
+    width: 5em;
 }
 
 @media (min-width: 768px) {
 
     .financiamento {
-        margin: 5em 10em;
+        margin: 5em 8vw;
     }
 
     .financiamento__container {
         display: flex;
         flex-direction: row;
         text-align: center;
+    }
+
+    .financiamento__container-imagem img {
+        max-width: 50em;
+        min-width: 14em;
     }
 
     .financiamento__container__conteudo__links {

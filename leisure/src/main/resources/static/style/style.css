@@ -126,11 +126,11 @@ input::placeholder {
 	}
 }
 
-@media screen and (min-width: 1920px){
+/* @media screen and (min-width: 1920px){
 
 	:root {
 		--font-size: 1.25em;
 		--titulo-segundo: 1.5em;
 		--titulo-terceiro: 1.35em;
 	}
-}
+} */

@@ -50,13 +50,18 @@
 @media (min-width: 768px) {
 
     .como-comprar {
-        margin: 5em 10em;
+        margin: 5em 8vw;
     }
 
     .como-comprar__container {
         display: flex;
         flex-direction: row-reverse;
         text-align: center;
+    }
+
+    .como-comprar__container-imagem img {
+        max-width: 50em;
+        min-width: 14em;
     }
 
     .como-comprar__container__conteudo {

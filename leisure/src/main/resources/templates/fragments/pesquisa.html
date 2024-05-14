@@ -10,7 +10,7 @@
                 </div>
                 <div class="pesquisa__container__formulario-conteudo">
                     <span>Cidade</span>
-                    <input type="text" name="" id="pesquisaCidade" placeholder="Busque por cidade">
+                    <input type="text" name="cidade" id="pesquisaCidade" placeholder="Busque por cidade">
                 </div>
             </label>
             <label for="pesquisaBairro" class="pesquisa__container__formulario-item">
@@ -48,6 +48,9 @@
                     </div>
                 </label>
             </div>
+            <div th:if="${usuario != null}">
+            <input name="id" th:value="${usuario.id}" hidden>
+        </div>
             <div class="pesquisa__container__formulario-botao">
                 <button class="btn-primeiro" type="submit">Buscar imóveis</button>
             </div>

@@ -1,6 +1,7 @@
 package org.deem.project.leisure.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.deem.project.leisure.model.Imovel;
 import org.deem.project.leisure.model.Usuario;
@@ -37,9 +38,9 @@ public class LeisureController {
 		return "index";
 	}
 	@GetMapping("/pesquisa")
-	public String getPesquisa(Usuario usuario) {
+	public String getPesquisa(Usuario usuario, Model model) {
 		usuario = usuarioService.getAuthenticatedUser(); //Puxar os dados do usuário logado(se nulo, não há usuário logado)
-		//model.addAttribute("usuario", usuario);
+		model.addAttribute("usuario", usuario);
 		return "anuncio";
 	}
 	@GetMapping("/premium")
@@ -51,12 +52,18 @@ public class LeisureController {
 	public String getDuvidas() {
 		return "duvidas";
 	}
-	
+
 	@PostMapping("/filtragem")
-	public String filtro(String tipo, Double precoMinimo, Double precoMaximo, String cidade, String bairro, Integer numQuartos, Model model) {
+	public String filtro(Usuario usuario, Long id,String tipo, Double precoMinimo, Double precoMaximo, String cidade, String bairro, Integer numQuartos, Model model) {
 		List<Imovel> imoveisFiltrados = filtroService.filtragemDeImoveis(tipo, precoMinimo, precoMaximo, cidade, bairro, numQuartos);
 		model.addAttribute("imovelPorId", imoveisFiltrados);
+		model.addAttribute("usuario", usuario);
 		return "anuncio";
+}
+
+	@GetMapping("/filtragem")
+	public String retorno(){
+		return "redirect:/leisure/index";
 	}
-	
+
 }

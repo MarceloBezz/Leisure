@@ -92,6 +92,12 @@
 
 .anuncio__container__mensagem__link {
     color: var(--cor-font-principal);
+    transition: 0.3s;
+}
+
+.anuncio__container__mensagem__link:hover {
+    color: var(--cor-segunda);
+    transition: 0.3s;
 }
 
 

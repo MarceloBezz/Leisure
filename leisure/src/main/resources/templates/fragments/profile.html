@@ -265,79 +265,80 @@
 
 <!-- MEUS ANUNCIOS -->
 <th:block th:fragment="anuncio">
-<section class="anuncio " th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}">
-    <div class="anuncio__card">
-        <!-- <div class="anuncio__card__imagem">
-            <img src="/img/anuncio/card/card01.png" alt="Casa a venda">
-        </div> -->
-        <form id="form-imagem" method="post" enctype="multipart/form-data" th:action="@{/usuario/salvar-foto}" data-form-imagem>
-            <input name="id" th:value="${imovel.id}" id="id_imovel" hidden>
-            <div class="meusdados__imagem">
-    
-                <!-- FRAGMENT -->
-                <label for="input-file">
-                    <img th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
-                </label>
-    
-                <input id="input-file" type="file" name="file" accept="image /*" data-input-imagem>
-            </div>
-        </form>
-        <div class="anuncio__card__form">
-            
-            <div class="anuncio__card__conteudo" >
-                <label for="anuncioNumQuartos">Quartos:</label>
-                <input type="number" name="numQuartos" id="anuncioNumQuartos" th:value="${imovel.numQuartos}">
-            </div>
-            <div class="anuncio__card__conteudo">
-                <label for="anuncioNumBanheiros">Banheiros:</label>
-                <input type="number" name="numBanheiros" id="anuncioNumBanheiros" th:value="${imovel.numBanheiros}">
+    <section class="anuncio " th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}">
+        <div class="anuncio__card">
+            <!-- <div class="anuncio__card__imagem">
+                <img src="/img/anuncio/card/card01.png" alt="Casa a venda">
+            </div> -->
+            <form id="form-imagem" method="post" enctype="multipart/form-data" th:action="@{/usuario/salvar-foto}" data-form-imagem>
+                <input name="id" th:value="${imovel.id}" id="id_imovel" hidden>
+                <div class="meusdados__imagem">
+        
+                    <!-- FRAGMENT -->
+                    <label for="input-file">
+                        <img th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
+                    </label>
+        
+                    <input id="input-file" type="file" name="file" accept="image /*" data-input-imagem>
+                </div>
+            </form>
+            <div class="anuncio__card__form">
                 
+                <div class="anuncio__card__conteudo" >
+                    <label for="anuncioNumQuartos">Quartos:</label>
+                    <input type="number" name="numQuartos" id="anuncioNumQuartos" th:value="${imovel.numQuartos}">
+                </div>
+                <div class="anuncio__card__conteudo">
+                    <label for="anuncioNumBanheiros">Banheiros:</label>
+                    <input type="number" name="numBanheiros" id="anuncioNumBanheiros" th:value="${imovel.numBanheiros}">
+                    
+                </div> 
+                <div class="anuncio__card__conteudo">
+                    <label for="anuncioVagasGaragem">Vagas:</label>
+                    <input type="number" name="vagasGaragem" id="anuncioVagasGaragem" th:value="${imovel.vagasGaragem}">
+                    
+                </div>
+                <div class="anuncio__card__conteudo">
+                    <label for="AnuncioCep">CEP:</label>
+                    <input type="text" name="cep" id="AnuncioCep" th:value="${imovel.cep}">
+
+                </div>
+                <div class="anuncio__card__conteudo">
+                    <label for="anuncioCidade">Cidade:</label>
+                    <input type="text" name="cidade" id="anuncioCidade" th:value="${imovel.cidade}">
+
+                </div>
+
+                <div class="anuncio__card__conteudo">
+                    <label for="anuncioNumero">Número:</label>
+                    <input type="number" name="numero" id="anuncioNumero" th:value="${imovel.numero}">
+
+                </div>
+                <div class="anuncio__card__conteudo">
+                    <label for="anuncioDescricao">Descrição:</label>
+                    <input type="text" name="descricao" id="anuncioDescricao" th:value="${imovel.descricao}">
+
+                </div>
+                <div class="anuncio__card__conteudo">
+                    <label for="anuncioValor">Valor:</label>
+                    <input type="number" name="valor" id="anuncioValor" th:value="${imovel.preco}">
+                </div>
             </div> 
-            <div class="anuncio__card__conteudo">
-                <label for="anuncioVagasGaragem">Vagas:</label>
-                <input type="number" name="vagasGaragem" id="anuncioVagasGaragem" th:value="${imovel.vagasGaragem}">
-                
+            <div class="anuncio__card__botao">
+                <button>
+                    <span>Salvar alterações</span>
+                </button>  
             </div>
-            <div class="anuncio__card__conteudo">
-                <label for="AnuncioCep">CEP:</label>
-                <input type="text" name="cep" id="AnuncioCep" th:value="${imovel.cep}">
-
-            </div>
-            <div class="anuncio__card__conteudo">
-                <label for="anuncioCidade">Cidade:</label>
-                <input type="text" name="cidade" id="anuncioCidade" th:value="${imovel.cidade}">
-
-            </div>
-
-            <div class="anuncio__card__conteudo">
-                <label for="anuncioNumero">Número:</label>
-                <input type="number" name="numero" id="anuncioNumero" th:value="${imovel.numero}">
-
-            </div>
-            <div class="anuncio__card__conteudo">
-                <label for="anuncioDescricao">Descrição:</label>
-                <input type="text" name="descricao" id="anuncioDescricao" th:value="${imovel.descricao}">
-
-            </div>
-            <div class="anuncio__card__conteudo">
-                <label for="anuncioValor">Valor:</label>
-                <input type="number" name="valor" id="anuncioValor" th:value="${imovel.preco}">
-            </div>
-        </div> 
-        <div class="anuncio__card__botao">
-            <button>
-                <span>Salvar alterações</span>
-            </button>  
+            <!--</form>-->
         </div>
-        <!--</form>-->
+    </section>
+    <div class="anuncio__container__mensagem" th:if="${imovelPorId.size == 0}">
+        <p class="anuncio__container__mensagem__content">Poxa, você ainda não possui um anúncio.</p>
+        <div class="anuncio__container__mensagem__imagem">
+            <img src="/img/imagem/sad-dinosaur.svg" alt="Poxa, você ainda não possui um anúncio.">
+        </div>
+        <a class="no-decoration anuncio__container__mensagem__link" href="anunciar">anunciar <i class="fa-solid fa-arrow-right"></i></a>
     </div>
-</section>
-<div th:if="${imovelPorId.size == 0}">
-    <span>Não</span>
-    <div class="anuncio__card__imagem">
-        <img src="/img/anuncio/card/card01.png" alt="Casa a venda">
-    </div>
-</div>
 </th:block>
 
 <!-- MEUS DADOS -->
@@ -351,7 +352,7 @@
                 <img th:src="|http://localhost:8080/usuario/imagem/${usuario.id}|">
             </label>
 
-            <input id="input-file" type="file" name="file" accept="image /*" data-input-imagem>
+            <input type="file" name="file" accept="image /*" data-input-imagem>
         </div>
     </form>
 
@@ -359,11 +360,11 @@
         <div class="meusdados__container__form">
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosNome">Nome completo:</label>
-                <input type="text" name="nome" id="meusdadosNome" th:value="${usuario.nome}">
+                <input type="text" name="nome" id="meusdadosNome" th:value="${usuario.nome}" disabled>
             </div>
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosData">Data de nascimento:</label>
-                <input type="date" name="data" id="meusdadosData" th:value="${usuario.data}">
+                <input type="date" name="data" id="meusdadosData" th:value="${usuario.data}" disabled>
             </div>
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosEmail">E-mail:</label>
@@ -372,11 +373,11 @@
 
             <div class="meusdados__container__conteudo">
                 <label for="dadoTelefone">Telefone:</label>
-                <input type="tel" name="telefone" id="dadoTelefone" th:value="${usuario.telefone}">
+                <input type="tel" name="telefone" id="dadoTelefone" th:value="${usuario.telefone}" maxlength="15" >
             </div>
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosCpf">CPF</label>
-                <input type="password" name="cpf" id="meusdadosCpf" th:value="${usuario.cpf}" disabled>
+                <input type="text" name="cpf" id="meusdadosCpf" th:value="${usuario.cpf}" maxlength="14" disabled>
             </div>
         </div>
         <!-- <input name="id" th:value="${usuario.id}" id="id_usuario" hidden> -->
@@ -386,8 +387,8 @@
             </button>
         </div>
     </form>
-    <form method="post" th:action="@{/usuario/deletar}">
+    <!-- <form method="post" th:action="@{/usuario/deletar}">
         <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
         <button type="submit">Deletar conta</button>
-    </form>
+    </form> -->
 </section>

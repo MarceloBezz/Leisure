@@ -70,6 +70,37 @@
     transition: 0.2s;
 }
 
+.anuncio__container__mensagem {
+    height: 50vh;
+    /* margin: 5em 0; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 3em;
+}
+
+.anuncio__container__mensagem__content {
+    color: var(--cor-segunda);
+    font-size: var(--font-size);
+    font-weight: 500;
+}
+
+.anuncio__container__mensagem__imagem img {
+    width: 200px;
+}
+
+.anuncio__container__mensagem__link {
+    color: var(--cor-font-principal);
+    transition: 0.3s;
+}
+
+.anuncio__container__mensagem__link:hover {
+    color: var(--cor-segunda);
+    transition: 0.3s;
+}
+
+
 @media screen and (min-width: 768px){
     .anuncio {
         padding: 1em 5em;

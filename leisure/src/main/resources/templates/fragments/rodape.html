@@ -11,7 +11,7 @@
             <li class="rodape__conteudo-item">
                 <a href="#" class="rodape__conteudo-link">
                     <i class="fa-regular fa-gears"></i>
-                    <span>como comprar</span>
+                    <span>Como comprar</span>
                 </a>
             </li>
             <li class="rodape__conteudo-item">
@@ -35,30 +35,34 @@
         </ul>
         <ul class="rodape__conteudo-lista">
             <h3 class="titulo__terceiro">Categorias</h3>
-            <li class="rodape__conteudo-item">
-                <a href="" class="rodape__conteudo-link">
-                    <i class="fa-regular fa-building"></i>
-                    <span>Apartamentos</span>
-                </a>
-            </li>
-            <li class="rodape__conteudo-item">
-                <a href="" class="rodape__conteudo-link">
-                    <i class="fa-regular fa-house"></i>
-                    <span>Casas</span>
-                </a>
-            </li>
-            <li class="rodape__conteudo-item">
-                <a href="" class="rodape__conteudo-link">
+            <form method="post" th:action="@{/leisure/filtragem}">
+                <li class="rodape__conteudo-item">
                     <i class="fa-regular fa-house-tree"></i>
-                    <span>Sitios</span>
-                </a>
-            </li>
-            <li class="rodape__conteudo-item">
-                <a href="" class="rodape__conteudo-link">
-                    <i class="fa-regular fa-trowel-bricks"></i>
-                    <span>Terrenos</span>
-                </a>
-            </li>
+                    <input type="hidden" name="tipo" value="apartamento">
+                    <button type="submit" class="rodape__conteudo-link">Apartamentos</button>
+                </li>
+            </form>
+            <form method="post" th:action="@{/leisure/filtragem}">
+                <li class="rodape__conteudo-item">
+                    <i class="fa-regular fa-house-tree"></i>
+                    <input type="hidden" name="tipo" value="casa">
+                    <button type="submit" class="rodape__conteudo-link">Casas</button>
+                </li>
+            </form>
+            <form method="post" th:action="@{/leisure/filtragem}">
+                <li class="rodape__conteudo-item">
+                    <i class="fa-regular fa-house-tree"></i>
+                    <input type="hidden" name="tipo" value="sitio">
+                    <button type="submit" class="rodape__conteudo-link">Sítios</button>
+                </li>
+            </form>
+            <form method="post" th:action="@{/leisure/filtragem}">
+                <li class="rodape__conteudo-item">
+                    <i class="fa-regular fa-house-tree"></i>
+                    <input type="hidden" name="tipo" value="terreno">
+                    <button type="submit" class="rodape__conteudo-link">Terrenos</button>
+                </li>
+            </form>
             <li class="rodape__conteudo-item">
                 <a href="" class="rodape__conteudo-link">
                     <!-- <i class="fa-regular fa-briefcase"></i> -->
@@ -83,7 +87,7 @@
             <li class="rodape__conteudo-item">
                 <a href="https://instagram.com" target="_blank" class="rodape__conteudo-link">
                     <i class="fa-brands fa-instagram"></i>
-                    <span>instagram</span>
+                    <span>Instagram</span>
                 </a>
             </li>
             <li class="rodape__conteudo-item">
@@ -101,5 +105,5 @@
         </ul>
     </div>
     <hr class="rodape__hr"/>
-    <p class="rodape__conteudo-texto">&copy 2024 Leisure Imoveis. Projeto fictício sem fins comerciais</p>
+    <p class="rodape__conteudo-texto">&copy 2024 Leisure Imóveis. Projeto fictício sem fins comerciais</p>
 </footer>

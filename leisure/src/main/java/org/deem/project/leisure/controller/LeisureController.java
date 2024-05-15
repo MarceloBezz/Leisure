@@ -55,6 +55,7 @@ public class LeisureController {
 	@PostMapping("/filtragem")
 	public String filtro(Usuario usuario, Long id,String tipo, Double precoMinimo, Double precoMaximo, String cidade, String bairro, Integer numQuartos, Model model) {
 		List<Imovel> imoveisFiltrados = filtroService.filtragemDeImoveis(tipo, precoMinimo, precoMaximo, cidade, bairro, numQuartos);
+		usuario = usuarioService.getAuthenticatedUser();
 		model.addAttribute("imovelPorId", imoveisFiltrados);
 		model.addAttribute("usuario", usuario);
 		return "anuncio";

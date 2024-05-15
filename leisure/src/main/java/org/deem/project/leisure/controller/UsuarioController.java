@@ -30,21 +30,27 @@ public class UsuarioController{
 	
 	private static String pathImage = "src\\main\\resources\\Imagens\\ImagensPerfil\\";
 	
-
-	
 	@Autowired
 	private UsuarioService usuarioService;
-	
-	// @Autowired
-	// private UsuarioRepository usuarioRepository;
+
+@PostMapping("/login")
+public String getMethodName(@RequestParam String param) {
+    return "redirect:/leisure/index";
+}
+
 
 //	Página direcionada após o login bem sucedido		
 	@GetMapping("/perfil")
-	public String perfil(Model model) {		
+	public String perfil(Model model) {	
+		try{	
 		Usuario usuario = usuarioService.getAuthenticatedUser();
 		model.addAttribute("usuario", usuario);
 		return "perfil";
+		}catch(Exception e){
+			return "redirect:/leisure/index";
+		}
 	}
+	
 	
 	//  ------------------------------------------- DELETAR USUÁRIO -------------------------------------------------------------	
 		@PostMapping("/deletar")
@@ -87,6 +93,7 @@ public class UsuarioController{
 			
 			return "redirect:/usuario/perfil/meusdados";
 		}
+
 
 		// --------------------------------------- VISUALIZAR IMAGEM DE PERFIL ------------------------------------------------------
 		@GetMapping("/imagem/{id}")

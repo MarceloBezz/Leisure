@@ -1,12 +1,10 @@
 package org.deem.project.leisure.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.deem.project.leisure.model.Imovel;
 import org.deem.project.leisure.model.Usuario;
 import org.deem.project.leisure.service.FiltroService;
-//import org.deem.project.leisure.service.ImovelService;
 import org.deem.project.leisure.service.UsuarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 
 
 
@@ -65,5 +64,13 @@ public class LeisureController {
 	public String retorno(){
 		return "redirect:/leisure/index";
 	}
+
+	@GetMapping("/login")
+	public String getMethodName(Usuario usuario, Model model) {
+		usuario = usuarioService.getAuthenticatedUser(); //Puxar os dados do usuário logado(se nulo, não há usuário logado)
+		model.addAttribute("usuario", usuario);
+		return "LoginCadastro";
+	}
+	
 
 }

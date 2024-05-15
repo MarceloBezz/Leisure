@@ -23,12 +23,6 @@ public class AuthController {
 	@Autowired
 	private AuthenticationManager authenticationManager;
 	
-	/*@GetMapping("/cadastrar")
-	public String cadastro(Usuario usuario, Model model) {
-		model.addAttribute("usuario", usuario);
-		return "perfil";
-	}*/
-	
 	@PostMapping("/cadastrar")
 	public String registrar(Usuario usuario, RedirectAttributes redirect, Model model) {
 		usuarioService.save(usuario);

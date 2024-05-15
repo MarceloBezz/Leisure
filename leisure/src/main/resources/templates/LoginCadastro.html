@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/cadastro</title>
+</head>
+<body>
+            <!-- MODAL -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content modal__cadastrar" data-modal>
+                        <i class="fa-regular fa-xmark fa-2xl" data-bs-dismiss="modal"></i>
+                        <div class="modal__titulo">
+                            <h2>Cadastro</h2>
+                        </div>
+                        <div class="modal-body">
+                            <form class="cadastro__container" th:action="@{/usuario/cadastrar}"method="post">
+                                <div class="cadastro__container__conteudo">
+                                    <label for="meusdadosNome">Nome completo</label>
+                                    <input type="text" name="nome" id="cadastroNome" autocomplete="off" minlength="3" required>
+                                </div>
+                                <div class="cadastro__container__conteudo">
+                                    <label for="cadastroCpf">CPF</label>
+                                    <input type="text" name="cpf" id="cadastroCpf" autocomplete="off" placeholder="Ex: 123.456.789-10" minlength="11" maxlength="14" required data-cadastro="cadastroCpf">
+                                </div>
+                                <div class="cadastro__container__conteudo">
+                                    <label for="cadastroData">Data de nascimento</label>
+                                    <input type="date" name="data" id="cadastroData" required data-cadastro="cadastroData">
+                                </div>
+                                <div class="cadastro__container__conteudo">
+                                    <label for="cadastroEmail">E-mail</label>
+                                    <input type="email" name="email" id="cadastroEmail" autocomplete="off" minlength="8" required>
+                                </div>
+                                <div class="cadastro__container__conteudo">
+                                    <label for="cadastroSenha">Senha</label>
+                                    <input type="password" name="senha" id="cadastroSenha" placeholder="Min de 8 caracteres" minlength="8" required>
+                                </div>
+                                <div class="cadastro__container__conteudo">
+                                    <label for="dadoTelefone">Telefone</label>
+                                    <input type="tel" name="telefone" autocomplete="off" placeholder="Ex: (11)91010-2215" minlength="11" maxlength="15" required data-cadastro="cadastroTelefone">
+                                </div>
+                                <div class="modal-body__botoes d-flex flex-column gap-2 justify-content-center">
+                                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                    <span class="btn-login" name="tenhoLogin">Já tenho cadastro</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-content modal__login hidden">
+                        <i class="fa-regular fa-xmark fa-2xl" data-bs-dismiss="modal"></i>
+                        <div class="modal__titulo">
+                            <h2>Login</h2>
+                        </div>
+                        <div class="modal-body" id="modalLogin">
+                            <form class="cadastro__container" method="post" th:action="@{/leisure/login}">
+                                <div class="cadastro__container__conteudo">
+                                    <label for="loginEmail">E-mail</label>
+                                    <input type="email" name="username" id="loginEmail">
+                                </div>
+    
+                                <div th:if="${param.error}">
+                                    <div class="alert alert-danger">Invalid username or
+                                        password.</div>
+                                </div>
+    
+                                <div class="cadastro__container__conteudo">
+                                    <label for="loginSenha">Senha</label>
+                                    <input type="password" name="password" id="loginSenha">
+                                </div>
+                                <div class="modal-body__botoes d-flex flex-column gap-2 justify-content-center">
+                                    <button type="submit" class="btn btn-primary" id="botaoDeLogin">Entrar</button>
+                                    <span class="btn-cadastrar">Não tenho cadastro</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+</body>
+</html>

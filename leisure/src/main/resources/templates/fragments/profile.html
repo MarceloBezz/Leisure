@@ -267,21 +267,19 @@
 <th:block th:fragment="anuncio">
     <section class="anuncio " th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}">
         <div class="anuncio__card">
-            <!-- <div class="anuncio__card__imagem">
-                <img src="/img/anuncio/card/card01.png" alt="Casa a venda">
-            </div> -->
-            <form id="form-imagem" method="post" enctype="multipart/form-data" th:action="@{/usuario/salvar-foto}" data-form-imagem>
-                <input name="id" th:value="${imovel.id}" id="id_imovel" hidden>
+            <form th:id="${imovel.id}" method="post" enctype="multipart/form-data" th:action="@{/usuario/perfil/salvar-foto}" data-form-imagem>
                 <div class="meusdados__imagem">
         
-                    <!-- FRAGMENT -->
                     <label for="input-file">
                         <img th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
                     </label>
-        
                     <input id="input-file" type="file" name="file" accept="image /*" data-input-imagem>
+
                 </div>
+                <input name="id" th:value="${imovel.id}" id="idIMovel" hidden>
+                <span th:text="${imovel.id}"></span>
             </form>
+            
             <div class="anuncio__card__form">
                 
                 <div class="anuncio__card__conteudo" >
@@ -325,9 +323,11 @@
                 </div>
             </div> 
             <div class="anuncio__card__botao">
-                <button>
-                    <span>Salvar alterações</span>
-                </button>  
+                <a th:href="|http://localhost:8080/usuario/perfil/editar-imovel/${imovel.id}" class="no-decoration">
+                    <button>
+                    <span>Editar imóvel</span>
+                    </button>  
+                </a>
             </div>
             <!--</form>-->
         </div>
@@ -347,14 +347,17 @@
         <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
         <div class="meusdados__imagem">
 
-            <!-- FRAGMENT -->
             <label for="input-file">
                 <img th:src="|http://localhost:8080/usuario/imagem/${usuario.id}|">
             </label>
 
-            <input type="file" name="file" accept="image /*" data-input-imagem>
+            <input id="input-file" type="file" name="file" accept="image /*" data-input-imagem>
         </div>
     </form>
+  
+    <div th:if="${mensagem}">
+        <div class="alert alert-success" th:text="${mensagem}"></div>
+    </div>
 
     <form class="meusdados__container" method="post" th:action="@{/usuario/atualizacao}">
         <div class="meusdados__container__form">
@@ -387,8 +390,8 @@
             </button>
         </div>
     </form>
-    <!-- <form method="post" th:action="@{/usuario/deletar}">
+    <form method="post" th:action="@{/usuario/deletar}">
         <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
         <button type="submit">Deletar conta</button>
-    </form> -->
+    </form>
 </section>

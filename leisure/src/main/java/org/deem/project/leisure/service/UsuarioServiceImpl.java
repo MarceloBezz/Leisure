@@ -58,6 +58,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 							  usuario.getData(),
 							  usuario.getEmail(),
 							  passwordEncoder.encode(usuario.getSenha()),
+							  usuario.getSenha(),
 							  usuario.getTelefone(),
 							  usuario.getCpf(),
 							  usuario.getRole_usuario(),

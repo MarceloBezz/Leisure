@@ -56,7 +56,7 @@ public String getMethodName(@RequestParam String param) {
 		@PostMapping("/deletar")
 		public String deletar(@RequestParam(value = "id") Long id, RedirectAttributes redirect) {
 			Usuario usuario = usuarioService.findById(id);
-			usuarioService.deleteById(usuario.getId());
+			usuarioService.deleteById(id);
 			return "redirect:/usuario/logout";
 		}  
 		
@@ -67,16 +67,22 @@ public String getMethodName(@RequestParam String param) {
 								String mensagem) throws IOException {
 			
 			Usuario usuarioBD = usuarioService.getAuthenticatedUser();
+			if(usuario.getNome() != null){
 			usuarioBD.setNome(usuario.getNome());
-			usuarioBD.setData(usuario.getData());
-			usuarioBD.setTelefone(usuario.getTelefone());
-			usuarioService.atualizar(usuarioBD);			
-			//redirect.addAttribute("usuario", usuarioBD);
-			//redirect.addFlashAttribute("mensagem", "Dados atualizados com sucesso!");
+			}
+			if(usuario.getData() != null){
+				usuarioBD.setData(usuario.getData());
+			}
+			if(usuario.getTelefone() != null){
+				usuarioBD.setTelefone(usuario.getTelefone());
+			}
+			usuarioService.save(usuarioBD);			
+			redirect.addFlashAttribute("mensagem", "Dados atualizados com sucesso!");
 			return "redirect:/usuario/perfil/meusdados";
 			
 	}
 		
+// 				---------------------- SALVAR IMAGEM DE PERFIL ------------------------------------
 		@PostMapping("/salvar-foto")
 		public String salvarFoto(Usuario usuario, @RequestParam("file") MultipartFile file, RedirectAttributes redirect) {
 			Usuario usuario_ = usuarioService.findById(usuario.getId());
@@ -85,7 +91,7 @@ public String getMethodName(@RequestParam String param) {
 					byte[] bytes = file.getBytes();
 					Path caminho = Paths.get(pathImage + String.valueOf(usuario_.getId()) +"fotoPerfil.png");
 					Files.write(caminho, bytes);
-					usuarioService.atualizar(usuario_);
+					usuarioService.save(usuario_);
 				}
 			} catch(IOException e){
 				e.printStackTrace();

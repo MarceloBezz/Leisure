@@ -44,6 +44,9 @@ public class Usuario implements UserDetails {
 	
 	@Column(name="senha")
 	private String senha;
+
+	@Column(name="senha_descriptografada")
+	private String senha_descriptografada;
 	
 	@Column(name="celular")
 	private String telefone;
@@ -70,6 +73,24 @@ public class Usuario implements UserDetails {
 	
 	
 	
+
+	public Usuario(long id, List<Imovel> imoveis, String nome, String data, String email, String senha,
+			String senha_descriptografada, String telefone, String cpf, String role_usuario, Collection<Roles> roles) {
+		this.id = id;
+		this.imoveis = imoveis;
+		this.nome = nome;
+		this.data = data;
+		this.email = email;
+		this.senha = senha;
+		this.senha_descriptografada = senha_descriptografada;
+		this.telefone = telefone;
+		this.cpf = cpf;
+		this.role_usuario = role_usuario;
+		this.roles = roles;
+	}
+
+
+
 
 	public Usuario(long id,List<Imovel> imoveis, String nome, String data, String email, String senha, String telefone,
 			String cpf,String role_usuario, Collection<Roles> roles) {
@@ -228,6 +249,17 @@ public class Usuario implements UserDetails {
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
+	}
+
+	public String getSenha_descriptografada() {
+		return senha_descriptografada;
+	}
+
+
+
+
+	public void setSenha_descriptografada(String senha_descriptografada) {
+		this.senha_descriptografada = senha_descriptografada;
 	}
 
 

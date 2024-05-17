@@ -3,10 +3,12 @@ import java.util.List;
 
 import org.deem.project.leisure.model.Imovel;
 import org.deem.project.leisure.repository.ImovelRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ImovelService {
+	@Autowired
 	private ImovelRepository repository;
 	
 	public ImovelService(ImovelRepository repository) {

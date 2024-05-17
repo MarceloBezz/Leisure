@@ -90,9 +90,8 @@
 
         <section class="resultado">
             <div class="resultado__pesquisa">
-                <span class="resultado__pesquisa__item">
-                    1 resultado para o filtro
-                </span>
+                <span class="resultado__pesquisa__item" th:text="${imovelPorId.size}">
+                </span><span> resultado(s) para a pesquisa</span>
             </div>
             <div th:replace="~{fragments/resultado-pesquisa :: resultado-pesquisa}"></div> 
         </section>

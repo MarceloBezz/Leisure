@@ -23,6 +23,20 @@ try {
 	
 }
 
+// try {
+// 		autoSubmitDaImagem.forEach(imagem =>{
+// 		imagem.addEventListener('change', () => {
+// 			const form = document.querySelector('[data-form-imagem]');
+// 			const idForm =
+// 			form.forEach(cadaForm =>{
+// 				form.submit();
+// 			})
+// 		})
+// 	})
+// 	}catch (error) {
+		
+// 	}
+
 //FUNÇAO BOTAO ANTERIOR E PROXIMO DO CADASTRO DE IMOVEIS
 	try{
 		listaBtnProximo.forEach(function (botao){

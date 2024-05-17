@@ -1,4 +1,9 @@
-<div th:fragment="login" th:if="${usuario == null}" class="container__usuario" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<!-- <div th:fragment="login" th:if="${usuario == null}" class="container__usuario" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <i class="fa-light fa-circle-user fa-2xl"></i>
+  <a th:href="@{/leisure/login}" class="no-decoration"><span name="Entrar">Entrar</span></a>
+</div> -->
+
+<div th:fragment="login" th:if="${usuario == null}" class="container__usuario">
     <i class="fa-light fa-circle-user fa-2xl"></i>
   <a th:href="@{/leisure/login}" class="no-decoration"><span name="Entrar">Entrar</span></a>
 </div>

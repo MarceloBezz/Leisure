@@ -1,0 +1,21 @@
+
+@media (min-width: 768px){
+    .login__cadastro {
+        padding: 5em 0 10em 0;
+        display: flex;
+        justify-content: center;
+    }  
+
+    .login__cadastro__container {
+        width: 80vw;
+        display: flex;
+        align-items: baseline;
+        column-gap: 2em;
+    }
+
+    .modal-body {
+        padding: 5em 2em;
+        border: 1px solid var(--cor-segunda);
+        border-radius: 1em;
+    }
+}

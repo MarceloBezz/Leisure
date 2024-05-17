@@ -67,16 +67,7 @@ public String getMethodName(@RequestParam String param) {
 								String mensagem) throws IOException {
 			
 			Usuario usuarioBD = usuarioService.getAuthenticatedUser();
-			if(usuario.getNome() != null){
-			usuarioBD.setNome(usuario.getNome());
-			}
-			if(usuario.getData() != null){
-				usuarioBD.setData(usuario.getData());
-			}
-			if(usuario.getTelefone() != null){
-				usuarioBD.setTelefone(usuario.getTelefone());
-			}
-			usuarioService.save(usuarioBD);			
+			usuarioService.atualizar(usuario,usuarioBD);			
 			redirect.addFlashAttribute("mensagem", "Dados atualizados com sucesso!");
 			return "redirect:/usuario/perfil/meusdados";
 			
@@ -91,7 +82,7 @@ public String getMethodName(@RequestParam String param) {
 					byte[] bytes = file.getBytes();
 					Path caminho = Paths.get(pathImage + String.valueOf(usuario_.getId()) +"fotoPerfil.png");
 					Files.write(caminho, bytes);
-					usuarioService.save(usuario_);
+					usuarioService.atualizar(usuario, usuario_);
 				}
 			} catch(IOException e){
 				e.printStackTrace();

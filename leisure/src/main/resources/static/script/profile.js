@@ -1,3 +1,4 @@
+//import $ from 'jquery';
 //VARIAVEIS DO CADASTRO DE IMOVEIS
 var barra = document.querySelector('.anunciar__conteudo__progresso-barra');
 const listaBtnAnterior = document.querySelectorAll('.anunciar__conteudo__botao-anterior');
@@ -78,4 +79,29 @@ try {
 	}catch {
 		
 	}
+
+//CADASTRO DOS IMÓVEIS
+$('#cidade').on('blur', function() {
+	var txt = $('#cidade').val();
+
+	let resultado = txt.split(" ");
+	let arr = resultado.map(x => x.substring(0,1).toUpperCase() + x.substring(1,x.length).toLowerCase());
+	$('#cidade').val(arr.join(" "));
+})
+
+$('#bairro').on('blur', function() {
+	var txt = $('#bairro').val();
+
+	let resultado = txt.split(" ");
+	let arr = resultado.map(x => x.substring(0,1).toUpperCase() + x.substring(1,x.length).toLowerCase());
+	$('#bairro').val(arr.join(" "));
+})
+
+$('#rua').on('blur', function() {
+	var txt = $('#rua').val();
+
+	let resultado = txt.split(" ");
+	let arr = resultado.map(x => x.substring(0,1).toUpperCase() + x.substring(1,x.length).toLowerCase());
+	$('#rua').val(arr.join(" "));
+})
 //FIM

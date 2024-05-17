@@ -64,15 +64,24 @@ public class UsuarioServiceImpl implements UsuarioService{
 							  usuario.getRole_usuario(),
 							  new ArrayList<>()); 
 		usuario.setRole_usuario("ROLE_USER");
+		takeOffMask(usuario);
 		usuarioRepository.save(usuario);
 		this.addRoleToUser(usuario.getEmail(), "ROLE_USER");
 		return usuario;
 	}
 	
 	@Override
-	public Usuario atualizar(Usuario usuario) {
-		usuarioRepository.save(usuario);
-		return usuario;
+	public Usuario atualizar(Usuario usuarioDes, Usuario usuarioAtt) {
+		if(usuarioDes.getNome() != null){
+			usuarioAtt.setNome(usuarioDes.getNome());
+			}
+			if(usuarioDes.getData() != null){
+				usuarioAtt.setData(usuarioDes.getData());
+			}
+			if(usuarioDes.getTelefone() != null){
+				usuarioAtt.setTelefone(usuarioDes.getTelefone());
+			}	
+		return usuarioRepository.save(usuarioAtt);
 	}
 
 

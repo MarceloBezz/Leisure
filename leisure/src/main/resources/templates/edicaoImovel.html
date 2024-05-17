@@ -4,7 +4,92 @@
 <!-- HEAD -->
 <head th:replace="~{fragments/head :: head}"></head>
 <body>
-
+        <th:block th:fragment="anuncio">
+                <section class="anuncio ">
+                    <div class="anuncio__card">
+                        <form method="post" enctype="multipart/form-data" th:action="@{/usuario/perfil/salvar-foto}" data-form-imagem>
+                            <div class="meusdados__imagem">
+                    
+                                <label for="input-file">
+                                    <img th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
+                                </label>
+                                <input id="input-file" type="file" name="file" accept="image /*" data-input-imagem>
+            
+                            </div>
+                            <input name="id" th:value="${imovel.id}" id="idIMovel" hidden>
+                        </form>
+                        
+                        <div class="anuncio__card__form">
+                            <form method="post" th:action="@{/usuario/perfil/atualizar}">
+                            <input name="id" th:value="${imovel.id}" hidden>
+                            <div class="anuncio__card__conteudo">
+                                <label for="anuncioValor">tipo:</label>
+                                <input type="number" name="tipo" id="anuncioValor" th:value="${imovel.tipo}" disabled>
+                            </div>
+                            <div class="anuncio__card__conteudo" >
+                                <label for="anuncioNumQuartos">Quartos:</label>
+                                <input type="number" name="numQuartos" id="anuncioNumQuartos" th:value="${imovel.numQuartos}">
+                            </div>
+                            <div class="anuncio__card__conteudo">
+                                <label for="anuncioNumBanheiros">Banheiros:</label>
+                                <input type="number" name="numBanheiros" id="anuncioNumBanheiros" th:value="${imovel.numBanheiros}">
+                                
+                            </div> 
+                            <div class="anuncio__card__conteudo">
+                                <label for="anuncioVagasGaragem">Vagas:</label>
+                                <input type="number" name="vagasGaragem" id="anuncioVagasGaragem" th:value="${imovel.vagasGaragem}">
+                                
+                            </div>
+                            <div class="anuncio__card__conteudo">
+                                <label for="AnuncioCep">CEP:</label>
+                                <input type="text" name="cep" id="AnuncioCep" th:value="${imovel.cep}" disabled>
+            
+                            </div>
+                            <div class="anuncio__card__conteudo">
+                                <label for="anuncioCidade">Cidade:</label>
+                                <input type="text" name="cidade" id="anuncioCidade" th:value="${imovel.cidade}" disabled>
+                            </div>
+                            <div class="anuncio__card__conteudo">
+                                <label for="anuncioValor">Bairro:</label>
+                                <input type="number" name="bairro" id="anuncioValor" th:value="${imovel.bairro}" disabled>
+                            </div>
+            
+                            <div class="anuncio__card__conteudo">
+                                <label for="anuncioNumero">Número:</label>
+                                <input type="number" name="numero" id="anuncioNumero" th:value="${imovel.numero}">
+            
+                            </div>
+                            <div class="anuncio__card__conteudo">
+                                <label for="anuncioDescricao">Descrição:</label>
+                                <input type="text" name="descricao" id="anuncioDescricao" th:value="${imovel.descricao}">
+            
+                            </div>
+                            <div class="anuncio__card__conteudo">
+                                <label for="anuncioValor">Valor:</label>
+                                <input type="number" name="preco" id="anuncioValor" th:value="${imovel.preco}">
+                            </div>
+                            <div class="anuncio__card__conteudo">
+                                <label for="anuncioValor">IPTU:</label>
+                                <input type="number" name="iptu" id="anuncioValor" th:value="${imovel.iptu}" disabled>
+                            </div>
+                            <div class="anuncio__card__conteudo">
+                                <label for="anuncioValor">Área:</label>
+                                <input type="number" name="area" id="anuncioValor" th:value="${imovel.area}"><span>m²</span>
+                            </div>
+                            <div class="anuncio__card__conteudo">
+                                <label for="anuncioValor">Sustentabilidade:</label>
+                                <input type="number" name="sustentabilidade" id="anuncioValor" th:value="${imovel.sustentabilidade}" disabled>
+                            </div>
+                        </div> 
+                        <div class="anuncio__card__botao">
+                                <button type="submit">
+                                <span>Salvar alterações</span>
+                                </button>  
+                        </div>
+                        </form>
+                    </div>
+                </section>
+            
         <!-- RODAPE -->
         <footer th:replace="~{fragments/rodape :: rodape}"></footer>
 </body>

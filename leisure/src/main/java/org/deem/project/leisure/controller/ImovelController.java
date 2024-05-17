@@ -51,7 +51,6 @@ public class ImovelController {
 					byte[] bytes = file.getBytes();
 					Path caminho = Paths.get(pathImage + String.valueOf(imovel.getId()) + "fotoImovel.png");
 					Files.write(caminho, bytes);
-				//	usuarioService.atualizar(usuario_);
 				}
 			} catch(IOException e){
 				e.printStackTrace();
@@ -59,8 +58,8 @@ public class ImovelController {
 
 		return "redirect:/usuario/perfil";
 	}else {
-		redirect.addFlashAttribute("mensagem", "Erro no cadastro \nEndereço do imóvel já cadastrado!");
-		return "redirect:/usuario/perfil";
+		redirect.addFlashAttribute("erro", "Erro no cadastro \nEndereço do imóvel já cadastrado!");
+		return "redirect:/usuario/perfil/anuncio";
 	}
 }
 
@@ -83,11 +82,11 @@ public class ImovelController {
 	
 //				--------------------- ATUALIZAR IMÓVEL -----------------------------------
 	@PostMapping("/atualizar")
-	public String atualizarImovel(Imovel imovel, String mensagem, RedirectAttributes redirect) {
-		
-		Imovel novoImovel = imovelService.save(imovel);
-		redirect.addAttribute("imovel", novoImovel);
-		return "redirect:/usuario/perfil";
+	public String atualizarImovel(Imovel imovel,@RequestParam("id") int id, String mensagem, RedirectAttributes redirect) {
+		Imovel novoImovel = imovelService.findById(id);
+		imovelService.atualizar(imovel,novoImovel);
+		redirect.addFlashAttribute("mensagem","Imovel atualizado com sucesso!");
+		return "redirect:/usuario/perfil/anuncio";
 	}
 	
 // 				---------------------- DELETAR IMÓVEL ------------------------------------
@@ -120,7 +119,7 @@ public String salvarFoto(Usuario usuario,@RequestParam("id")int id, @RequestPara
 @GetMapping("/editar-imovel/{id}")
 public String editarImovel(@PathVariable int id ,Model model) {
 	Imovel imovel = imovelService.findById(id);
-    model.addAttribute("imovelEditado", imovel);
+    model.addAttribute("imovel", imovel);
 	return "edicaoImovel";
 }
 

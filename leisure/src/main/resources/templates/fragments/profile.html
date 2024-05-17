@@ -1,4 +1,5 @@
-<section th:fragment="perfil"></section>
+<section th:fragment="perfil">
+</section>
 
 <!-- ANUNCIAR -->
 <section th:fragment="anunciar" class="anunciar ">
@@ -265,6 +266,12 @@
 
 <!-- MEUS ANUNCIOS -->
 <th:block th:fragment="anuncio">
+    <div th:if="${mensagem}">
+        <div class="alert alert-success" th:text="${mensagem}"></div>
+    </div>
+    <div th:if="${erro}">
+        <div class="alert alert-danger" th:text="${erro}"></div>
+    </div>
     <section class="anuncio " th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}">
         <div class="anuncio__card">
             <form th:id="${imovel.id}" method="post" enctype="multipart/form-data" th:action="@{/usuario/perfil/salvar-foto}" data-form-imagem>
@@ -277,7 +284,6 @@
 
                 </div>
                 <input name="id" th:value="${imovel.id}" id="idIMovel" hidden>
-                <span th:text="${imovel.id}"></span>
             </form>
             
             <div class="anuncio__card__form">
@@ -285,6 +291,7 @@
                 <div class="anuncio__card__conteudo" >
                     <label for="anuncioNumQuartos">Quartos:</label>
                     <input type="number" name="numQuartos" id="anuncioNumQuartos" th:value="${imovel.numQuartos}">
+                    <!-- <span th:text="${imovel.numQuartos} + ' Quartos'">Quartos</span> -->
                 </div>
                 <div class="anuncio__card__conteudo">
                     <label for="anuncioNumBanheiros">Banheiros:</label>

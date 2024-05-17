@@ -20,5 +20,5 @@ public interface UsuarioService extends UserDetailsService{
 	Usuario findByEmail(String email);
 	Roles saveRole(Roles role);
 	Usuario getAuthenticatedUser();
-	Usuario atualizar(Usuario usuario);
+	Usuario atualizar(Usuario usuarioDes, Usuario usuarioAtt);
 }

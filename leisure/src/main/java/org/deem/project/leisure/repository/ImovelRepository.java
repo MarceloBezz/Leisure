@@ -28,5 +28,6 @@ public interface ImovelRepository extends JpaRepository<Imovel, Long>{
 	List<Imovel> findAll(Specification<Imovel> spec);
 
 	Imovel save(Imovel imovel);
+//	Imovel atualizar(Imovel imovel);
 	
 }

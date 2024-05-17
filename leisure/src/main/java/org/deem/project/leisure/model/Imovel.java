@@ -60,7 +60,7 @@ public class Imovel {
 	private Double iptu;
 	
 	@Column(name="area")
-	private Double area;
+	private Integer area;
 	
 	
 	public Imovel() {	
@@ -68,7 +68,7 @@ public class Imovel {
 	
 	public Imovel(long id, Usuario usuario, int numQuartos, int numBanheiros, int vagasGaragem, String cep,
 			String bairro, String cidade, int numero, String descricao, Double preco, String tipo,
-			String sustentabilidade, double iptu, double area) {
+			String sustentabilidade, double iptu, Integer area) {
 		this.id = id;
 		this.usuario = usuario;
 		this.numQuartos = numQuartos;
@@ -122,11 +122,11 @@ public class Imovel {
 		this.iptu = iptu;
 	}
 
-	public double getArea() {
+	public Integer getArea() {
 		return area;
 	}
 
-	public void setArea(double area) {
+	public void setArea(Integer area) {
 		this.area = area;
 	}
 
@@ -146,7 +146,7 @@ public class Imovel {
 		this.usuario = usuario;
 	}
 
-	public int getNumQuartos() {
+	public Integer getNumQuartos() {
 		return numQuartos;
 	}
 
@@ -154,7 +154,7 @@ public class Imovel {
 		this.numQuartos = numQuartos;
 	}
 
-	public int getNumBanheiros() {
+	public Integer getNumBanheiros() {
 		return numBanheiros;
 	}
 
@@ -162,7 +162,7 @@ public class Imovel {
 		this.numBanheiros = numBanheiros;
 	}
 
-	public int getVagasGaragem() {
+	public Integer getVagasGaragem() {
 		return vagasGaragem;
 	}
 
@@ -187,7 +187,7 @@ public class Imovel {
 		this.cidade = cidade;
 	}
 	
-	public int getNumero() {
+	public Integer getNumero() {
 		return numero;
 	}
 

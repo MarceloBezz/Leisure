@@ -35,39 +35,41 @@
         </ul>
         <ul class="rodape__conteudo-lista">
             <h3 class="titulo__terceiro">Categorias</h3>
-            <form method="post" th:action="@{/leisure/filtragem}">
-                <li class="rodape__conteudo-item">
+            <li class="rodape__conteudo-item" data-rodape="link">
+                <label class="rodape__conteudo-link pointer">
                     <i class="fa-regular fa-house-tree"></i>
-                    <input type="hidden" name="tipo" value="apartamento">
-                    <button type="submit" class="rodape__conteudo-link">Apartamentos</button>
-                </li>
-            </form>
-            <form method="post" th:action="@{/leisure/filtragem}">
-                <li class="rodape__conteudo-item">
+                    <span>Apartamentos</span>
+                    <form method="post" th:action="@{/leisure/filtragem}" data-rodape="form">
+                        <input type="hidden" name="tipo" value="apartamento">
+                    </form>
+                </label>
+            </li>
+            <li class="rodape__conteudo-item" data-rodape="link">
+                <label class="rodape__conteudo-link pointer">
                     <i class="fa-regular fa-house-tree"></i>
-                    <input type="hidden" name="tipo" value="casa">
-                    <button type="submit" class="rodape__conteudo-link">Casas</button>
-                </li>
-            </form>
-            <form method="post" th:action="@{/leisure/filtragem}">
-                <li class="rodape__conteudo-item">
+                    <span>Casas</span>
+                    <form method="post" th:action="@{/leisure/filtragem}" data-rodape="form">
+                        <input type="hidden" name="tipo" value="casa">
+                    </form>
+                </label>
+            </li>
+            <li class="rodape__conteudo-item" data-rodape="link">
+                <label class="rodape__conteudo-link pointer">
                     <i class="fa-regular fa-house-tree"></i>
-                    <input type="hidden" name="tipo" value="sitio">
-                    <button type="submit" class="rodape__conteudo-link">Sítios</button>
-                </li>
-            </form>
-            <form method="post" th:action="@{/leisure/filtragem}">
-                <li class="rodape__conteudo-item">
+                    <span>Sítios</span>
+                    <form method="post" th:action="@{/leisure/filtragem}" data-rodape="form">
+                        <input type="hidden" name="tipo" value="sitio">
+                    </form>
+                </label>
+            </li>
+            <li class="rodape__conteudo-item" data-rodape="link">
+                <label class="rodape__conteudo-link pointer">
                     <i class="fa-regular fa-house-tree"></i>
-                    <input type="hidden" name="tipo" value="terreno">
-                    <button type="submit" class="rodape__conteudo-link">Terrenos</button>
-                </li>
-            </form>
-            <li class="rodape__conteudo-item">
-                <a href="" class="rodape__conteudo-link">
-                    <!-- <i class="fa-regular fa-briefcase"></i> -->
-                    <span>.</span>
-                </a>
+                    <span>Terrenos</span>
+                    <form method="post" th:action="@{/leisure/filtragem}" data-rodape="form">
+                        <input type="hidden" name="tipo" value="terreno">
+                    </form>
+                </label>
             </li>
         </ul>
         <ul class="rodape__conteudo-lista">

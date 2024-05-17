@@ -80,12 +80,12 @@ public class ImovelController {
 			}
 
 	
-//				--------------------- ATUALIZAR IMÓVEL -----------------------------------
+//				--------------------- DEVOLVER IMÓVEL ATUALIZADO -----------------------------------
 	@PostMapping("/atualizar")
 	public String atualizarImovel(Imovel imovel,@RequestParam("id") int id, String mensagem, RedirectAttributes redirect) {
 		Imovel novoImovel = imovelService.findById(id);
 		imovelService.atualizar(imovel,novoImovel);
-		redirect.addFlashAttribute("mensagem","Imovel atualizado com sucesso!");
+		redirect.addFlashAttribute("mensagem","Imóvel atualizado com sucesso!");
 		return "redirect:/usuario/perfil/anuncio";
 	}
 	
@@ -113,13 +113,16 @@ public String salvarFoto(Usuario usuario,@RequestParam("id")int id, @RequestPara
 		e.printStackTrace();
 	}
 	
-	return "redirect:/usuario/perfil/anuncio";
+	return "redirect:/usuario/perfil/editar-imovel/" + id;
 }
 
+// 				---------------------- ACESSAR PÁGINA DE EDIÇÃO DO IMÓVEL ------------------------------------
 @GetMapping("/editar-imovel/{id}")
-public String editarImovel(@PathVariable int id ,Model model) {
+public String editarImovel(@PathVariable int id ,Model model, Usuario usuario) {
+	usuario = usuarioService.getAuthenticatedUser();
 	Imovel imovel = imovelService.findById(id);
     model.addAttribute("imovel", imovel);
+	model.addAttribute("usuario", usuario);
 	return "edicaoImovel";
 }
 

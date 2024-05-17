@@ -1,10 +1,12 @@
 //import $ from 'jquery';
 //VARIAVEIS DO CADASTRO DE IMOVEIS
+
 var barra = document.querySelector('.anunciar__conteudo__progresso-barra');
 const listaBtnAnterior = document.querySelectorAll('.anunciar__conteudo__botao-anterior');
 const listaBtnProximo = document.querySelectorAll('.anunciar__conteudo__botao-proximo');
 const formBox = document.querySelectorAll('.anunciar__conteudo__box');
 const valorInput = document.querySelectorAll('.anunciar__conteudo__input');
+const endereco = document.querySelectorAll('[data-anunciar="endereco"]')
 var progresso = 0;
 var i = 0;
 
@@ -23,20 +25,6 @@ try {
 }catch (error) {
 	
 }
-
-// try {
-// 		autoSubmitDaImagem.forEach(imagem =>{
-// 		imagem.addEventListener('change', () => {
-// 			const form = document.querySelector('[data-form-imagem]');
-// 			const idForm =
-// 			form.forEach(cadaForm =>{
-// 				form.submit();
-// 			})
-// 		})
-// 	})
-// 	}catch (error) {
-		
-// 	}
 
 //FUNÇAO BOTAO ANTERIOR E PROXIMO DO CADASTRO DE IMOVEIS
 	try{
@@ -81,27 +69,11 @@ try {
 	}
 
 //CADASTRO DOS IMÓVEIS
-$('#cidade').on('blur', function() {
-	var txt = $('#cidade').val();
-
-	let resultado = txt.split(" ");
-	let arr = resultado.map(x => x.substring(0,1).toUpperCase() + x.substring(1,x.length).toLowerCase());
-	$('#cidade').val(arr.join(" "));
+endereco.forEach(contexto => {
+	contexto.addEventListener('blur', () => {
+		const text = contexto.value;
+		const resultado = text.split(' ');
+		const arr = resultado.map(input => input.substring(0,1).toUpperCase() + input.substring(1,input.length).toLowerCase());
+		contexto.value = arr.join(' ');
+	})
 })
-
-$('#bairro').on('blur', function() {
-	var txt = $('#bairro').val();
-
-	let resultado = txt.split(" ");
-	let arr = resultado.map(x => x.substring(0,1).toUpperCase() + x.substring(1,x.length).toLowerCase());
-	$('#bairro').val(arr.join(" "));
-})
-
-$('#rua').on('blur', function() {
-	var txt = $('#rua').val();
-
-	let resultado = txt.split(" ");
-	let arr = resultado.map(x => x.substring(0,1).toUpperCase() + x.substring(1,x.length).toLowerCase());
-	$('#rua').val(arr.join(" "));
-})
-//FIM

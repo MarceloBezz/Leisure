@@ -39,16 +39,16 @@
     width: 100%;
     margin: 0.5em 0;
 }
-.anuncio__card__conteudo label{
+.anuncio__card__conteudo p{
     font-weight: 500;
     font-size: var(--font-size);
 }
-.anuncio__card__conteudo input{
+.anuncio__card__conteudo span{
     width: 100%;
     border: none;
     background: transparent;
 }
-.anuncio__card__conteudo input:focus{
+.anuncio__card__conteudo span:focus{
     outline: 0;
 }
 .anuncio__card__botao{

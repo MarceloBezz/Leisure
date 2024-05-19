@@ -9,7 +9,7 @@
     <header th:replace="~{fragments/cabecalho :: perfil}"></header>
 
     <!-- ANUNCIAR / ANUNCIO / MEUS-DADOS -->
-    <main class="main">
+    <main class="perfil__main">
         <section th:replace="
             ( (${selecao} == anunciar) ? ~{fragments/profile :: anunciar} :
             ( (${selecao} == anuncio) ? ~{fragments/profile :: anuncio} :

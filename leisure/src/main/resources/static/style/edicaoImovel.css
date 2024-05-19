@@ -1,0 +1,151 @@
+.editar__anuncio {
+    padding: 10em;
+}
+
+.editar__anuncio__card {
+    height: auto;
+    padding: 1em;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--cor-sombra);
+}
+
+.editar__anuncio__card__imagem{
+    display: flex;
+    align-items: center;
+}
+
+.editar__anuncio__card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.editar__anuncio__card__valores {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 1em 0;
+}
+
+.editar__anuncio__card__conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 0.5em;
+    padding: 0.5em 0.5em;
+    border: 1px solid var(--cor-segunda);
+    border-radius: 0.25em;
+}
+
+.editar__anuncio__card__conteudo__texto {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: var(--font-size);
+}
+
+.editar__anuncio__card__conteudo__resultado {
+    display: flex !important;
+}
+
+.editar__anuncio__card__botao {
+    margin: 1em 0;
+    display: flex;
+    justify-content: center;
+}
+
+.editar__anuncio__card__botao button {
+    font-family: var(--font-family);
+    color: white;
+    padding: 0.75em 2.5em;
+    width: auto;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--cor-terceira);
+    transition: 0.3s;
+}
+
+.editar__anuncio__card__botao button:hover{
+    
+    background: var(--cor-font-destaque);
+    transition: 0.3s;
+}
+
+.editar__anuncio__container__mensagem {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 3em;
+}
+
+.editar__anuncio__container__mensagem__content {
+    color: var(--cor-segunda);
+    font-size: var(--font-size);
+    font-weight: 500;
+}
+
+.anuncio__container__mensagem__imagem img {
+    width: 200px;
+}
+
+.editar__anuncio__container__mensagem__link {
+    color: var(--cor-font-principal);
+    transition: 0.3s;
+}
+
+.editar__anuncio__container__mensagem__link:hover {
+    color: var(--cor-segunda);
+    transition: 0.3s;
+}
+
+
+@media screen and (min-width: 768px){
+    .editar__anuncio {
+        padding: 10em;
+    }
+
+    .editar__anuncio__card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        padding: 2em 0;
+    }
+
+    .editar__anuncio__card__imagem {
+        width: auto;
+        max-height: 400px;
+    }
+
+    .editar__anuncio__card__form {
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+
+    .editar__anuncio__card__valores {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+
+    .editar__anuncio__card__conteudo {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100%;
+        flex: 1 1;
+        white-space: nowrap;
+    }
+
+    .editar__anuncio__card__botao {
+        margin: 1em ;
+        display: flex;
+        justify-content: center;
+    }
+}

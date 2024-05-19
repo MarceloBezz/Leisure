@@ -1,4 +1,24 @@
+<!-- PERFIL -->
 <section th:fragment="perfil">
+    <section class="perfil__carrossel">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <a class="container__link" href="/usuario/perfil/anunciar">
+                        <img src="/img/anuncio/perfilanuncio1.png" class="d-block w-100" alt="...">
+                    </a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
 </section>
 
 <!-- ANUNCIAR -->
@@ -275,67 +295,89 @@
 
     <section class="anuncio " th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}">
         <div class="anuncio__card">
-            <!-- <form th:id="${imovel.id}" method="post" enctype="multipart/form-data" th:action="@{/usuario/perfil/salvar-foto}" > -->
-                <div class="meusdados__imagem">
-        
+            <ul class="anuncio__card__lista">
+                <li>
                     <label for="input-file">
-                        <img th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
+                        <img class="anuncio__card__lista__imagem" th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
+                        <!-- <img class="anuncio__card__lista__imagem" src="/img/anuncio/anuncio3.png" alt=""> -->
                     </label>
-                    <!-- <input id="input-file" type="file" name="file" accept="image /*" > -->
-
-                </div>
-                <!-- <input name="id" th:value="${imovel.id}" id="idIMovel" hidden> -->
-            <!-- </form> -->
+                </li>
+                <ul class="anuncio__card__form">
+                    <li class="anuncio__card__conteudo">
+                        <p class="anuncio__card__conteudo__titulo">Tipo: </p>
+                        <span class="anuncio__card__conteudo__resultado" th:text="${imovel.tipo}"></span>
+                    </li>
+    
+                    <li class="anuncio__card__conteudo">
+                        <p class="anuncio__card__conteudo__titulo">Área: 
+                            <span class="anuncio__card__conteudo__resultado" th:text="${imovel.area}"></span>
+                            <span class="anuncio__card__conteudo__resultado">m²</span>
+                        </p>
+                    </li>
+    
+                    <li class="anuncio__card__conteudo">
+                        <p class="anuncio__card__conteudo__titulo">Sustentabilidade: </p>
+                        <span class="anuncio__card__conteudo__resultado" th:text="${imovel.sustentabilidade}"></span>
+                    </li>
+                    
+                    <li class="anuncio__card__conteudo">
+                        <p class="anuncio__card__conteudo__titulo">IPTU:R$ </p>
+                        <span class="anuncio__card__conteudo__resultado" th:text="${imovel.iptu}"></span>
+                    </li>
+    
+                    <li class="anuncio__card__conteudo" >
+                        <p class="anuncio__card__conteudo__titulo">Quartos: </p>
+                        <span class="anuncio__card__conteudo__resultado" th:text="${imovel.numQuartos}"></span>
+                    </li>
+    
+                    <li class="anuncio__card__conteudo">
+                        <p class="anuncio__card__conteudo__titulo">Banheiros: </p>
+                        <span class="anuncio__card__conteudo__resultado" th:text="${imovel.numBanheiros}"></span>
+                    </li> 
+    
+                    <li class="anuncio__card__conteudo">
+                        <p class="anuncio__card__conteudo__titulo">Vagas: </p>
+                        <span class="anuncio__card__conteudo__resultado" th:text="${imovel.vagasGaragem}"></span>
+                    </li>
+    
+                    <li class="anuncio__card__conteudo">
+                        <p class="anuncio__card__conteudo__titulo">CEP: </p>
+                        <span class="anuncio__card__conteudo__resultado" th:text="${imovel.cep}"></span>
+                    </li>
+    
+                    <li class="anuncio__card__conteudo">
+                        <p class="anuncio__card__conteudo__titulo">Cidade: </p>
+                        <span class="anuncio__card__conteudo__resultado" th:text="${imovel.cidade}"></span>
+                    </li>
+    
+                    <li class="anuncio__card__conteudo">
+                        <p class="anuncio__card__conteudo__titulo">Bairro: </p>
+                        <span class="anuncio__card__conteudo__resultado" th:text="${imovel.bairro}"></span>
+                    </li>
+    
+                    <li class="anuncio__card__conteudo">
+                        <p class="anuncio__card__conteudo__titulo">Número: </p>
+                        <span class="anuncio__card__conteudo__resultado" th:text="${imovel.numero}"></span>
+                    </li>
+    
+                    <li class="anuncio__card__conteudo">
+                        <p class="anuncio__card__conteudo__titulo">Descrição: </p>
+                        <span class="anuncio__card__conteudo__resultado" th:text="${imovel.descricao}"></span>
+                    </li>
+    
+                    <li class="anuncio__card__conteudo">
+                        <p class="anuncio__card__conteudo__titulo">Valor:R$ </p>
+                        <span class="anuncio__card__conteudo__resultado" th:text="${imovel.preco}"></span>
+                    </li>
+                </ul> 
+            </ul>
             
-            <div class="anuncio__card__form">
-                <div class="anuncio__card__conteudo" >
-                    <p>Quartos: </p>
-                    <span th:text="${imovel.numQuartos}"></span>
-                </div>
-
-                <div class="anuncio__card__conteudo">
-                    <p>Banheiros: </p>
-                    <span th:text="${imovel.numBanheiros}"></span>
-                </div> 
-
-                <div class="anuncio__card__conteudo">
-                    <p>Vagas: </p>
-                    <span th:text="${imovel.vagasGaragem}"></span>
-                </div>
-
-                <div class="anuncio__card__conteudo">
-                    <p>CEP: </p>
-                    <span th:text="${imovel.cep}"></span>
-                </div>
-
-                <div class="anuncio__card__conteudo">
-                    <p>Cidade: </p>
-                    <span th:text="${imovel.cidade}"></span>
-                </div>
-
-                <div class="anuncio__card__conteudo">
-                    <p>Número: </p>
-                    <span th:text="${imovel.numero}"></span>
-                </div>
-
-                <div class="anuncio__card__conteudo">
-                    <p>Descrição: </p>
-                    <span th:text="${imovel.descricao}"></span>
-                </div>
-
-                <div class="anuncio__card__conteudo">
-                    <p>Valor: R$</p>
-                    <span th:text="${imovel.preco}"></span>
-                </div>
-            </div> 
+            
             <div class="anuncio__card__botao">
-                <a th:href="|http://localhost:8080/usuario/perfil/editar-imovel/${imovel.id}" class="no-decoration">
-                    <button>
-                    <span>Editar imóvel</span>
-                    </button>  
+                <a th:href="|/usuario/perfil/editar-imovel/${imovel.id}" class="no-decoration">
+                    Editar
                 </a>
             </div>
-            <!--</form>-->
         </div>
     </section>
     <div class="anuncio__container__mensagem" th:if="${imovelPorId.size == 0}">

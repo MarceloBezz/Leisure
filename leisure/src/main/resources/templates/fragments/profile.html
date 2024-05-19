@@ -155,15 +155,15 @@
             </div>
             <div class="dados__container__conteudo">
                 <span>Bairro</span>
-                <input class="anunciar__conteudo__input" name="bairro" type="text" id="bairro" required/>
+                <input class="anunciar__conteudo__input" name="bairro" type="text" id="bairro" required data-anunciar="endereco"/>
             </div>
             <div class="dados__container__conteudo">
                 <span>Cidade</span>
-                <input class="anunciar__conteudo__input" name="cidade" type="text" id="cidade" required/>
+                <input class="anunciar__conteudo__input" name="cidade" type="text" id="cidade" required data-anunciar="endereco"/>
             </div>
             <div class="dados__container__conteudo">
                 <span>Rua</span>
-                <input class="anunciar__conteudo__input" name="rua" type="text" id="rua" required/>
+                <input class="anunciar__conteudo__input" name="rua" type="text" id="rua" required data-anunciar="endereco"/>
             </div>
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior anterior8" type="button">Anterior</button>
@@ -275,59 +275,57 @@
 
     <section class="anuncio " th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}">
         <div class="anuncio__card">
-            <form th:id="${imovel.id}" method="post" enctype="multipart/form-data" th:action="@{/usuario/perfil/salvar-foto}" >
+            <!-- <form th:id="${imovel.id}" method="post" enctype="multipart/form-data" th:action="@{/usuario/perfil/salvar-foto}" > -->
                 <div class="meusdados__imagem">
         
                     <label for="input-file">
                         <img th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
                     </label>
-                    <input id="input-file" type="file" name="file" accept="image /*" disabled>
+                    <!-- <input id="input-file" type="file" name="file" accept="image /*" > -->
 
                 </div>
-                <input name="id" th:value="${imovel.id}" id="idIMovel" hidden>
-            </form>
+                <!-- <input name="id" th:value="${imovel.id}" id="idIMovel" hidden> -->
+            <!-- </form> -->
             
             <div class="anuncio__card__form">
-                
                 <div class="anuncio__card__conteudo" >
-                    <label for="anuncioNumQuartos">Quartos:</label>
-                    <input type="number" name="numQuartos" id="anuncioNumQuartos" th:value="${imovel.numQuartos}">
-                    <!-- <span th:text="${imovel.numQuartos} + ' Quartos'">Quartos</span> -->
+                    <p>Quartos: </p>
+                    <span th:text="${imovel.numQuartos}"></span>
                 </div>
+
                 <div class="anuncio__card__conteudo">
-                    <label for="anuncioNumBanheiros">Banheiros:</label>
-                    <input type="number" name="numBanheiros" id="anuncioNumBanheiros" th:value="${imovel.numBanheiros}">
-                    
+                    <p>Banheiros: </p>
+                    <span th:text="${imovel.numBanheiros}"></span>
                 </div> 
-                <div class="anuncio__card__conteudo">
-                    <label for="anuncioVagasGaragem">Vagas:</label>
-                    <input type="number" name="vagasGaragem" id="anuncioVagasGaragem" th:value="${imovel.vagasGaragem}">
-                    
-                </div>
-                <div class="anuncio__card__conteudo">
-                    <label for="AnuncioCep">CEP:</label>
-                    <input type="text" name="cep" id="AnuncioCep" th:value="${imovel.cep}">
 
-                </div>
                 <div class="anuncio__card__conteudo">
-                    <label for="anuncioCidade">Cidade:</label>
-                    <input type="text" name="cidade" id="anuncioCidade" th:value="${imovel.cidade}">
-
+                    <p>Vagas: </p>
+                    <span th:text="${imovel.vagasGaragem}"></span>
                 </div>
 
                 <div class="anuncio__card__conteudo">
-                    <label for="anuncioNumero">Número:</label>
-                    <input type="number" name="numero" id="anuncioNumero" th:value="${imovel.numero}">
-
+                    <p>CEP: </p>
+                    <span th:text="${imovel.cep}"></span>
                 </div>
-                <div class="anuncio__card__conteudo">
-                    <label for="anuncioDescricao">Descrição:</label>
-                    <input type="text" name="descricao" id="anuncioDescricao" th:value="${imovel.descricao}">
 
-                </div>
                 <div class="anuncio__card__conteudo">
-                    <label for="anuncioValor">Valor:</label>
-                    <input type="number" name="valor" id="anuncioValor" th:value="${imovel.preco}">
+                    <p>Cidade: </p>
+                    <span th:text="${imovel.cidade}"></span>
+                </div>
+
+                <div class="anuncio__card__conteudo">
+                    <p>Número: </p>
+                    <span th:text="${imovel.numero}"></span>
+                </div>
+
+                <div class="anuncio__card__conteudo">
+                    <p>Descrição: </p>
+                    <span th:text="${imovel.descricao}"></span>
+                </div>
+
+                <div class="anuncio__card__conteudo">
+                    <p>Valor: R$</p>
+                    <span th:text="${imovel.preco}"></span>
                 </div>
             </div> 
             <div class="anuncio__card__botao">

@@ -39,18 +39,18 @@ public String getMethodName(@RequestParam String param) {
 }
 
 
-//	Página direcionada após o login bem sucedido		
+//  ------------------------------------------- LOGIN BEM-SUCEDIDO -------------------------------------------------------------	
 	@GetMapping("/perfil")
-	public String perfil(Model model) {	
+	public String perfil(Model model, RedirectAttributes redirect) {	
 		try{	
 		Usuario usuario = usuarioService.getAuthenticatedUser();
 		model.addAttribute("usuario", usuario);
 		return "perfil";
 		}catch(Exception e){
-			return "redirect:/leisure/index";
+			redirect.addFlashAttribute("login", "Faça login ou se cadastre primeiro para entrar");
+			return "redirect:/leisure/login";
 		}
 	}
-	
 	
 	//  ------------------------------------------- DELETAR USUÁRIO -------------------------------------------------------------	
 		@PostMapping("/deletar")

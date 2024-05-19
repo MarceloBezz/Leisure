@@ -8,6 +8,9 @@
     <header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
 
     <main class="main">
+        <div th:if="${logout}">
+            <div class="alert alert-danger" th:text="${logout}"></div>
+        </div>
         <section class="carrossel">
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">

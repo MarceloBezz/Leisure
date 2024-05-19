@@ -17,8 +17,13 @@
                                     <img th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
                                 </label>
                                 <input id="input-file" type="file" name="file" accept="image /*" data-input-imagem>
-            
+
                             </div>
+                            <div class="anuncio__card__botao">
+                                <button type="submit">
+                                <span>Alterar foto do imóvel</span>
+                                </button>  
+                        </div>
                             <input name="id" th:value="${imovel.id}" id="idIMovel" hidden>
                         </form>
                         

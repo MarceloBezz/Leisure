@@ -43,18 +43,21 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-body" id="modalLogin">
+            <div th:if="${login}">
+                <div class="alert alert-danger" th:text="${login}"></div>
+            </div>
+            <div class="modal-body" id="modalLogin"> 
                 <div class="titulo__segundo text-center">Login</div>
+                <div th:if="${param.error}">
+                    <div class="alert alert-danger">Invalid username or
+                        password.</div>
+                </div>
                 <form class="cadastro__container" method="post" th:action="@{/leisure/login}">
                     <div class="cadastro__container__conteudo">
                         <label for="loginEmail">E-mail</label>
                         <input type="email" name="username" id="loginEmail">
                     </div>
-    
-                    <div th:if="${param.error}">
-                        <div class="alert alert-danger">Invalid username or
-                            password.</div>
-                    </div>
+
     
                     <div class="cadastro__container__conteudo">
                         <label for="loginSenha">Senha</label>

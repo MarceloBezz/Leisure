@@ -4,6 +4,10 @@
             <h3 class="titulo__terceiro">Encontre um imóvel para chamar de seu</h3>
             <h4 class="titulo__quarto">Comprar</h4>
             <hr />
+
+            <div th:if="${get}">
+                <div class="alert alert-info" th:text="${get}"></div>
+            </div>
             <label for="pesquisaCidade" class="pesquisa__container__formulario-item">
                 <div class="pesquisa__container__formulario-icone">
                     <i class="fa-thin fa-location-dot fa-lg"></i>

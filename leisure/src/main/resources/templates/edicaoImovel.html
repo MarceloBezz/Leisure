@@ -1,104 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <!-- HEAD -->
 <head th:replace="~{fragments/head :: head}"></head>
+
 <body>
 
+    <!-- CABEÇALHO -->
+    <header th:replace="~{fragments/cabecalho :: perfil}"></header>
 
-
-        <th:block th:fragment="anuncio">
-                <section class="anuncio ">
-                    <div class="anuncio__card">
-                        <form method="post" enctype="multipart/form-data" th:action="@{/usuario/perfil/salvar-foto}" data-form-imagem>
-                            <div class="meusdados__imagem">
+    <main class="main">
+        <th:block>
+            <section class="editar__anuncio">
+                <div class="editar__anuncio__card">
+                    <form method="post" enctype="multipart/form-data" th:action="@{/usuario/perfil/salvar-foto}" data-form-imagem>
+                        <!-- <span>Toque na imagem para alterar</span> -->
+                        <div class="editar__anuncio__card__imagem">
+                            <label for="input-file">
+                                <img th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
+                                <!-- <img src="/img/imagem/escritorio.png" alt=""> -->
+                            </label>
+                            <input class="hidden" id="input-file" type="file" name="file" accept="image /*" data-input-imagem>
+                        </div>
+                        <input name="id" th:value="${imovel.id}" id="idIMovel" hidden>
+                    </form>
                     
-                                <label for="input-file">
-                                    <img th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
-                                </label>
-                                <input id="input-file" type="file" name="file" accept="image /*" data-input-imagem>
-
-                            </div>
-                            <div class="anuncio__card__botao">
-                                <button type="submit">
-                                <span>Alterar foto do imóvel</span>
-                                </button>  
-                        </div>
-                            <input name="id" th:value="${imovel.id}" id="idIMovel" hidden>
-                        </form>
-                        
-                        <div class="anuncio__card__form">
-                            <form method="post" th:action="@{/usuario/perfil/atualizar}">
+                    <div>
+                        <form class="editar__anuncio__card__form" method="post" th:action="@{/usuario/perfil/atualizar}">
                             <input name="id" th:value="${imovel.id}" hidden>
-                            <div class="anuncio__card__conteudo">
-                                <label for="anuncioValor">tipo:</label>
-                                <input type="number" name="tipo" id="anuncioValor" th:value="${imovel.tipo}" disabled>
-                            </div>
-                            <div class="anuncio__card__conteudo" >
-                                <label for="anuncioNumQuartos">Quartos:</label>
-                                <input type="number" name="numQuartos" id="anuncioNumQuartos" th:value="${imovel.numQuartos}">
-                            </div>
-                            <div class="anuncio__card__conteudo">
-                                <label for="anuncioNumBanheiros">Banheiros:</label>
-                                <input type="number" name="numBanheiros" id="anuncioNumBanheiros" th:value="${imovel.numBanheiros}">
-                                
-                            </div> 
-                            <div class="anuncio__card__conteudo">
-                                <label for="anuncioVagasGaragem">Vagas:</label>
-                                <input type="number" name="vagasGaragem" id="anuncioVagasGaragem" th:value="${imovel.vagasGaragem}">
-                                
-                            </div>
-                            <div class="anuncio__card__conteudo">
-                                <label for="AnuncioCep">CEP:</label>
-                                <input type="text" name="cep" id="AnuncioCep" th:value="${imovel.cep}" disabled>
+                            <ul class="editar__anuncio__card__valores">
+                                <li class="editar__anuncio__card__conteudo">
+                                    <p class="editar__anuncio__card__conteudo__texto">Tipo: </p>
+                                    <span class="editar__anuncio__card__conteudo__resultado" th:text="${imovel.tipo}"></span>
+                                </li>
+    
+                                <li class="editar__anuncio__card__conteudo">
+                                    <p class="editar__anuncio__card__conteudo__texto">Área: </p>
+                                    <span class="editar__anuncio__card__conteudo__resultado" th:text="${imovel.area}"></span>
+                                    <span>m²</span>
+                                </li>
             
-                            </div>
-                            <div class="anuncio__card__conteudo">
-                                <label for="anuncioCidade">Cidade:</label>
-                                <input type="text" name="cidade" id="anuncioCidade" th:value="${imovel.cidade}" disabled>
-                            </div>
-                            <div class="anuncio__card__conteudo">
-                                <label for="anuncioValor">Bairro:</label>
-                                <input type="number" name="bairro" id="anuncioValor" th:value="${imovel.bairro}" disabled>
-                            </div>
+                                <li class="editar__anuncio__card__conteudo">
+                                    <p class="editar__anuncio__card__conteudo__texto">Sustentabilidade: </p>
+                                    <span class="editar__anuncio__card__conteudo__resultado" th:text="${imovel.sustentabilidade}"></span>
+                                </li>
             
-                            <div class="anuncio__card__conteudo">
-                                <label for="anuncioNumero">Número:</label>
-                                <input type="number" name="numero" id="anuncioNumero" th:value="${imovel.numero}">
+                                <li class="editar__anuncio__card__conteudo">
+                                    <label class="editar__anuncio__card__conteudo__texto" for="anuncioValor">IPTU:R$</label>
+                                    <input class="editar__anuncio__card__conteudo__resultado" type="text" name="preco" id="anuncioValor" th:value="${imovel.iptu}">
+                                </li>
             
-                            </div>
-                            <div class="anuncio__card__conteudo">
-                                <label for="anuncioDescricao">Descrição:</label>
-                                <input type="text" name="descricao" id="anuncioDescricao" th:value="${imovel.descricao}">
+                                <li class="editar__anuncio__card__conteudo" >
+                                    <p class="editar__anuncio__card__conteudo__texto">Quartos: </p>
+                                    <span class="editar__anuncio__card__conteudo__resultado" th:text="${imovel.numQuartos}"></span>
+                                </li>
             
+                                <li class="editar__anuncio__card__conteudo">
+                                    <p class="editar__anuncio__card__conteudo__texto">Banheiros: </p>
+                                    <span class="editar__anuncio__card__conteudo__resultado" th:text="${imovel.numBanheiros}"></span>
+                                </li> 
+            
+                                <li class="editar__anuncio__card__conteudo">
+                                    <p class="editar__anuncio__card__conteudo__texto">Vagas: </p>
+                                    <span class="editar__anuncio__card__conteudo__resultado" th:text="${imovel.vagasGaragem}"></span>
+                                </li>
+            
+                                <li class="editar__anuncio__card__conteudo">
+                                    <p class="editar__anuncio__card__conteudo__texto">CEP: </p>
+                                    <span class="editar__anuncio__card__conteudo__resultado" th:text="${imovel.cep}"></span>
+                                </li>
+            
+                                <li class="editar__anuncio__card__conteudo">
+                                    <p class="editar__anuncio__card__conteudo__texto">Cidade: </p>
+                                    <span class="editar__anuncio__card__conteudo__resultado" th:text="${imovel.cidade}"></span>
+                                </li>
+            
+                                <li class="editar__anuncio__card__conteudo">
+                                    <p class="editar__anuncio__card__conteudo__texto">Bairro: </p>
+                                    <span class="editar__anuncio__card__conteudo__resultado" th:text="${imovel.bairro}"></span>
+                                </li>
+            
+                                <li class="editar__anuncio__card__conteudo">
+                                    <p class="editar__anuncio__card__conteudo__texto">Número: </p>
+                                    <span class="editar__anuncio__card__conteudo__resultado" th:text="${imovel.numero}"></span>
+                                </li>
+
+                                <li class="editar__anuncio__card__conteudo">
+                                    <label class="editar__anuncio__card__conteudo__texto" for="anuncioValor">Valor:R$</label>
+                                    <input class="editar__anuncio__card__conteudo__resultado" type="text" name="preco" id="anuncioValor" th:value="${imovel.preco}">
+                                </li>
+                            </ul>
+
+                            <div class="editar__anuncio__card__conteudo">
+                                <label class="editar__anuncio__card__conteudo__texto" for="anuncioDescricao">Descrição:</label>
+                                <textarea class="editar__anuncio__card__conteudo__resultado" name="descricao" id="anuncioDescricao" rows="10" th:text="${imovel.descricao}"></textarea>
                             </div>
-                            <div class="anuncio__card__conteudo">
-                                <label for="anuncioValor">Valor:</label>
-                                <input type="number" name="preco" id="anuncioValor" th:value="${imovel.preco}">
-                            </div>
-                            <div class="anuncio__card__conteudo">
-                                <label for="anuncioValor">IPTU:</label>
-                                <input type="number" name="iptu" id="anuncioValor" th:value="${imovel.iptu}" disabled>
-                            </div>
-                            <div class="anuncio__card__conteudo">
-                                <label for="anuncioValor">Área:</label>
-                                <input type="number" name="area" id="anuncioValor" th:value="${imovel.area}"><span>m²</span>
-                            </div>
-                            <div class="anuncio__card__conteudo">
-                                <label for="anuncioValor">Sustentabilidade:</label>
-                                <input type="number" name="sustentabilidade" id="anuncioValor" th:value="${imovel.sustentabilidade}" disabled>
-                            </div>
-                        </div> 
-                        <div class="anuncio__card__botao">
+                            
+                            <!-- </div>  -->
+                            <div class="editar__anuncio__card__botao">
                                 <button type="submit">
-                                <span>Salvar alterações</span>
-                                </button>  
-                        </div>
+                                    <span>Salvar alterações</span>
+                                </button>
+                            </div>
                         </form>
                     </div>
-                </section>
-            
-        <!-- RODAPE -->
-        <footer th:replace="~{fragments/rodape :: rodape}"></footer>
+                </div>
+            </section>
+        </th:block>
+    </main>
+
+    <!-- RODAPE -->
+    <footer th:replace="~{fragments/rodape :: rodape}"></footer>
+
 </body>
 </html>

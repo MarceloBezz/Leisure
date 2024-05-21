@@ -11,6 +11,8 @@
         <div th:if="${logout}">
             <div class="alert alert-danger" th:text="${logout}"></div>
         </div>
+        <input type="text" id="email" onblur="checkIguality('email')">
+        <span id="email-feedback"></span>
         <section class="carrossel">
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">

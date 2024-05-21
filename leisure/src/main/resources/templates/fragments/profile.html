@@ -272,7 +272,6 @@
     <div th:if="${erro}">
         <div class="alert alert-danger" th:text="${erro}"></div>
     </div>
-
     <section class="anuncio " th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}">
         <div class="anuncio__card">
             <!-- <form th:id="${imovel.id}" method="post" enctype="multipart/form-data" th:action="@{/usuario/perfil/salvar-foto}" > -->

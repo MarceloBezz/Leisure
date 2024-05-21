@@ -9,7 +9,6 @@
 
     <main class="login__cadastro">
         <section class="login__cadastro__container">
-            
             <div class="modal-body">
                 <div class="titulo__segundo text-center">Cadastre-se</div>
                 <form class="cadastro__container" th:action="@{/usuario/cadastrar}"method="post">
@@ -19,7 +18,8 @@
                     </div>
                     <div class="cadastro__container__conteudo">
                         <label for="cadastroCpf">CPF</label>
-                        <input type="text" name="cpf" id="cadastroCpf" autocomplete="off" placeholder="Ex: 123.456.789-10" minlength="11" maxlength="14" required data-cadastro="cadastroCpf">
+                        <input type="text" name="cpf" id="cpf" autocomplete="off" placeholder="Ex: 123.456.789-10" minlength="11" maxlength="14" onblur="checkIguality('cpf')" required data-cadastro="cadastroCpf">
+                        <span id="cpf-feedback" class="feedback"></span>
                     </div>
                     <div class="cadastro__container__conteudo">
                         <label for="cadastroData">Data de nascimento</label>
@@ -27,7 +27,8 @@
                     </div>
                     <div class="cadastro__container__conteudo">
                         <label for="cadastroEmail">E-mail</label>
-                        <input type="email" name="email" id="cadastroEmail" autocomplete="off" minlength="8" required>
+                        <input type="email" name="email" id="email" autocomplete="off" minlength="8" onblur="checkIguality('email')" required>
+                        <span id="email-feedback" class="feedback"></span>
                     </div>
                     <div class="cadastro__container__conteudo">
                         <label for="cadastroSenha">Senha</label>
@@ -35,10 +36,11 @@
                     </div>
                     <div class="cadastro__container__conteudo">
                         <label for="dadoTelefone">Telefone</label>
-                        <input type="tel" name="telefone" autocomplete="off" placeholder="Ex: (11)91010-2215" minlength="11" maxlength="15" required data-cadastro="cadastroTelefone">
+                        <input type="tel" id="telefone" name="telefone" autocomplete="off" placeholder="Ex: (11)91010-2215" minlength="11" maxlength="15" onblur="checkIguality('telefone')" required data-cadastro="cadastroTelefone">
+                        <span id="telefone-feedback" class="feedback"></span>
                     </div>
                     <div class="modal-body__botoes d-flex flex-column gap-2 justify-content-center">
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <button type="submit" id="btnCadastro" class="btn btn-primary">Cadastrar</button>
                         <!-- <span class="btn-login" name="tenhoLogin">Já tenho cadastro</span> -->
                     </div>
                 </form>
@@ -49,8 +51,7 @@
             <div class="modal-body" id="modalLogin"> 
                 <div class="titulo__segundo text-center">Login</div>
                 <div th:if="${param.error}">
-                    <div class="alert alert-danger">Invalid username or
-                        password.</div>
+                    <div class="alert alert-danger">Email e/ou senha incorreto(s)!</div>
                 </div>
                 <form class="cadastro__container" method="post" th:action="@{/leisure/login}">
                     <div class="cadastro__container__conteudo">
@@ -65,7 +66,6 @@
                     </div>
                     <div class="modal-body__botoes d-flex flex-column gap-2 justify-content-center">
                         <button type="submit" class="btn btn-primary" id="botaoDeLogin">Entrar</button>
-                        <!-- <span class="btn-cadastrar">Não tenho cadastro</span> -->
                     </div>
                 </form>
             </div>

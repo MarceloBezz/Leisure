@@ -39,7 +39,7 @@ public class ImovelController {
 	@PostMapping("/cadastrar")
 	public String cadastrarImovel(Imovel imovel, String mensagem, RedirectAttributes redirect,@RequestParam("file") MultipartFile file) {
 		boolean save = imovelService.existsByCepAndNumero(imovel.getCep(), imovel.getNumero());
-		Usuario usuario_ = usuarioService.getAuthenticatedUser();
+
 		
 		if(save == false) { //VERIFICA SE OS DADOS DO IMÓVEL JÁ ESTÃO CADASTRADOS OU NÃO
 			try {
@@ -91,7 +91,9 @@ public class ImovelController {
 	
 // 				---------------------- DELETAR IMÓVEL ------------------------------------
 	@GetMapping("/deletar-imovel")
-	public String deletar(Imovel imovel, RedirectAttributes redirect,@RequestParam("id") Long id) {
+	public String deletar(Imovel imovel, RedirectAttributes redirect,@RequestParam("id") Long id) throws IOException {
+		Path caminho = Paths.get(pathImage + id +"fotoPerfil.png");
+		Files.delete(caminho);
 		imovelService.deleteById(id);
 		return "redirect:/usuario/perfil/anuncio";
 	}

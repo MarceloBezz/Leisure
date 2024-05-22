@@ -54,8 +54,9 @@ public String getMethodName(@RequestParam String param) {
 	
 	//  ------------------------------------------- DELETAR USUÁRIO -------------------------------------------------------------	
 		@PostMapping("/deletar")
-		public String deletar(@RequestParam(value = "id") Long id, RedirectAttributes redirect) {
-			Usuario usuario = usuarioService.findById(id);
+		public String deletar(@RequestParam(value = "id") Long id, RedirectAttributes redirect) throws IOException {
+			Path caminho = Paths.get(pathImage + id +"fotoPerfil.png");
+			Files.delete(caminho);
 			usuarioService.deleteById(id);
 			return "redirect:/usuario/logout";
 		}  

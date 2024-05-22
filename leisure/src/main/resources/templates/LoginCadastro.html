@@ -23,7 +23,8 @@
                     </div>
                     <div class="cadastro__container__conteudo">
                         <label for="cadastroData">Data de nascimento</label>
-                        <input type="date" name="data" id="cadastroData" required data-cadastro="cadastroData">
+                        <input type="date" name="data" id="data" required data-cadastro="cadastroData" onblur="dataValidation()">
+                        <span id="data-feedback" class="feedback"></span>
                     </div>
                     <div class="cadastro__container__conteudo">
                         <label for="cadastroEmail">E-mail</label>

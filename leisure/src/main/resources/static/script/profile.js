@@ -88,8 +88,18 @@ endereco.forEach(contexto => {
 //CADASTRO DO USUÁRIO
 
 function checkIguality(field) {
-	var value = document.getElementById(field).value;
+	var inputField = document.getElementById(field);
+	var value = inputField.value;
 	var feedback = document.getElementById(field + "-feedback");
+	var minLength = inputField.getAttribute('minlength');
+
+	// Verifica se o campo tem o comprimento mínimo
+	if (value.length < minLength) {
+		feedback.textContent = `O campo ${field} deve ter pelo menos ${minLength} caracteres.`;
+		feedback.style.color = "blue";
+		$('#btnCadastro').prop("disabled", true);
+		return;
+	}
 
 	//Fazer a requisição AJAX para o servidor
 	var xhr = new XMLHttpRequest();
@@ -102,7 +112,7 @@ function checkIguality(field) {
 			if(response.exists){
 				feedback.textContent = `Este ${field} já está cadastrado.`;
 				feedback.style.color = "red";
-			} else {
+			}else {
 				feedback.textContent = `${field.charAt(0).toUpperCase() + field.slice(1)} válido.`;
 				feedback.style.color = "green";
 			}
@@ -113,28 +123,76 @@ function checkIguality(field) {
 
 }	
 
+// Função para verificar todos os campos
 $(document).ready(function() {
-	// Função para verificar todos os campos
     function checkAllFields() {
         var emailField = $('#email');
         var telefoneField = $('#telefone');
         var cpfField = $('#cpf');
+		var dataValidacao = dataValidation();
 
-        var emailValid = emailField.val().length >= emailField.attr("minlength") && $('#email-feedback').css("color") === "rgb(0, 128, 0)"; // Verde
-        var telefoneValid = telefoneField.val().length >= telefoneField.attr("minlength") && $('#telefone-feedback').css("color") === "rgb(0, 128, 0)"; // Verde
-        var cpfValid = cpfField.val().length >= cpfField.attr("minlength") && $('#cpf-feedback').css("color") === "rgb(0, 128, 0)"; // Verde
+        var emailValid = emailField.val().length >= emailField.attr("minLength") && $('#email-feedback').css("color") === "rgb(0, 128, 0)"; // Verde
+        var telefoneValid = telefoneField.val().length >= telefoneField.attr("minLength") && $('#telefone-feedback').css("color") === "rgb(0, 128, 0)"; // Verde
+        var cpfValid = cpfField.val().length >= cpfField.attr("minLength") && $('#cpf-feedback').css("color") === "rgb(0, 128, 0)"; // Verde
 
-        if (emailValid && telefoneValid && cpfValid) { //Se todos estiverem corretos
+        if (emailValid && telefoneValid && cpfValid && dataValidacao) { //Se todos estiverem corretos
             $('#btnCadastro').prop("disabled", false);
         } else {
             $('#btnCadastro').prop("disabled", true);
         }
     }
 
+
+
+
 	setInterval(checkAllFields, 500); //Executar função a cada 0,5 segundos
 
-
-    // Desabilita o botão no início
-    $('#btnCadastro').prop("disabled", false);
 });
+
+function dataValidation() {
+    var dataFeedback = $('#data-feedback');
+    var dataValue = $('#data').val();
+    
+    // Verifica se o campo data está vazio
+    if (dataValue === "") {
+        dataFeedback.text("Data inválida. Campo vazio.");
+        dataFeedback.css("color", "red");
+        return;
+    }
+
+    var data = new Date(dataValue);
+    var ano = data.getFullYear();
+    var mes = data.getMonth() + 1;
+    var dia = data.getDate();
+
+    var today = new Date();
+    var anoAtual = today.getFullYear();
+    var mesAtual = today.getMonth() + 1; // Os meses começam de 0
+    var diaAtual = today.getDate();
+
+    // Verifica se o campo data está preenchido corretamente
+    if (!isNaN(data.getTime())) {
+        var idade = anoAtual - ano;
+
+        if (mesAtual < mes || (mesAtual === mes && diaAtual < dia)) {
+            idade--;
+        }
+
+		if(idade < 0 || idade > 120){
+			dataFeedback.text("Data inválida.");
+			dataFeedback.css("color", "red");
+			return false;
+		}
+       else if (idade >= 18) {
+            dataFeedback.text("Data válida.");
+            dataFeedback.css("color", "green");
+			return true;
+        } else if(idade < 18){
+            dataFeedback.text("Você deve ter pelo menos 18 anos.");
+            dataFeedback.css("color", "red");
+			return false;
+        }
+	}
+}
+
 

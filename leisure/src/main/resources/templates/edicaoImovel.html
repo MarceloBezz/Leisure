@@ -102,6 +102,12 @@
                                 </button>
                             </div>
                         </form>
+                        <form th:action="@{/usuario/perfil/deletar-imovel}" method="post">
+                            <input type="hidden" name="id" th:value="${imovel.id}">
+                        <button type="submit">
+                            <span>Deletar Imóvel</span>
+                        </button>
+                    </form>
                     </div>
                 </div>
             </section>

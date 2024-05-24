@@ -85,8 +85,10 @@ endereco.forEach(contexto => {
 	})
 })
 
-//CADASTRO DO USUÁRIO
 
+
+
+//CADASTRO DO USUÁRIO
 function checkIguality(field) {
 	var inputField = document.getElementById(field);
 	var value = inputField.value;
@@ -123,12 +125,13 @@ function checkIguality(field) {
 
 }	
 
-// Função para verificar todos os campos
+//FUNÇÃO PARA VERIFICAR TODOS OS CAMPOS
 $(document).ready(function() {
     function checkAllFields() {
         var emailField = $('#email');
         var telefoneField = $('#telefone');
         var cpfField = $('#cpf');
+		var senhaField = $('#senha');
 		var dataValidacao = dataValidation();
 
         var emailValid = emailField.val().length >= emailField.attr("minLength") && $('#email-feedback').css("color") === "rgb(0, 128, 0)"; // Verde
@@ -154,11 +157,11 @@ function dataValidation() {
     var dataValue = $('#data').val();
     
     // Verifica se o campo data está vazio
-    if (dataValue === "") {
-        dataFeedback.text("Data inválida. Campo vazio.");
-        dataFeedback.css("color", "red");
-        return;
-    }
+    // if (dataValue === "") {
+    //     dataFeedback.text("Data inválida. Campo vazio.");
+    //     dataFeedback.css("color", "red");
+    //     return false;
+    // }
 
     var data = new Date(dataValue);
     var ano = data.getFullYear();
@@ -195,4 +198,12 @@ function dataValidation() {
 	}
 }
 
+function validationLength(field){
+	var value = field.split(/[()\-]/).join('');
 
+	if(value < 11){
+		return false;
+	}else{
+		return true;
+	}
+}

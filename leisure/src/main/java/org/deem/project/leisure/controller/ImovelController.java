@@ -90,11 +90,12 @@ public class ImovelController {
 	}
 	
 // 				---------------------- DELETAR IMÓVEL ------------------------------------
-	@GetMapping("/deletar-imovel")
+	@PostMapping("/deletar-imovel")
 	public String deletar(Imovel imovel, RedirectAttributes redirect,@RequestParam("id") Long id) throws IOException {
-		Path caminho = Paths.get(pathImage + id +"fotoPerfil.png");
+		Path caminho = Paths.get(pathImage + id +"fotoImovel.png");
 		Files.delete(caminho);
 		imovelService.deleteById(id);
+		redirect.addFlashAttribute("mensagem", "Imóvel deletado com sucesso!");
 		return "redirect:/usuario/perfil/anuncio";
 	}
 

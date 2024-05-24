@@ -116,10 +116,6 @@ public class LeisureController {
 		String value = request.get("value");
 		boolean exists = false;
 
-		System.out.println("Campo recebido: " + field);
-        System.out.println("Valor recebido: " + value);
-
-
 		switch(field){
 			case "email":
 			exists = usuarioRepository.existsByEmail(value);

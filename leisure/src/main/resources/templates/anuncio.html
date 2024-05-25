@@ -20,11 +20,13 @@
                     <i class="fa-light fa-xmark fa-2xl" data-filtro="filtrarClose"></i>
                 </div>
                 <form th:action="@{/leisure/filtragem}" method="post" class="filtro__filtro-form">
+
+                    <!-- TIPO -->
                     <div class="filtro__filtro-conteudo">
                         <label>
                             <span>Imovel</span>
                             <select class="filtro__filtro-item" name="tipo">
-                                <option value="" selected></option>
+                                <option value="" selected>Todos</option>
                                 <option value="apartamento">Apartamento</option>
                                 <option value="casa">Casa</option>
                                 <option value="sitio">Sítio</option>
@@ -33,6 +35,31 @@
                         </label>
                     </div>
 
+                    <!-- SUSTENTABILIDADE -->
+                    <div class="filtro__filtro-conteudo">
+                        <label>
+                            <span>Sustentabilidade</span>
+                            <select class="filtro__filtro-item" name="sustentabilidade">
+                                <option value="" selected>Todas</option>
+                                <option value="solar">Energia solar</option>
+                                <option value="chuva">Captação de água da chuva</option>
+                                <option value="led">Lâmpadas led</option>
+                                <option value="aerador">Torneiras com aerador</option>
+                                <option value="composteira">Coleta seletiva</option>
+                                <option value="verde">Cultivo de área verde</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <!-- ÁREA -->
+                    <div class="filtro__filtro-conteudo">
+                        <label>
+                            <span>Área do imóvel</span>
+                            <input class="filtro__filtro-conteudo-item" type="text" name="area" placeholder="Área m²">
+                        </label>
+                    </div>
+
+                    <!-- VALOR -->
                     <div class="filtro__filtro-conteudo">
                         <label>
                             <span>Valor</span>
@@ -54,6 +81,7 @@
                         </label>
                     </div>
 
+                    <!-- CIDADE -->
                     <div class="filtro__filtro-conteudo">
                         <label>
                             <span>Cidade</span>
@@ -61,6 +89,7 @@
                         </label>
                     </div>
 
+                    <!-- BAIRRO -->
                     <div class="filtro__filtro-conteudo">
                         <label>
                             <span>Bairro</span>
@@ -68,37 +97,43 @@
                         </label>
                     </div>
 
+                    <!-- QUARTOS -->
                     <div class="filtro__filtro-conteudo">
                         <label>
                             <span>Quartos</span>
                             <input class="filtro__filtro-conteudo-item" type="text" name="numQuartos" id="pesquisaQuartos" placeholder="Quartos">
-                            <!-- <select class="filtro__filtro-item" name="numQuartos">
-                                <option value="" selected></option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">+4</option>
-                            </select> -->
                         </label>
                     </div>
+
+                    <!-- VAGAS -->
+                    <div class="filtro__filtro-conteudo">
+                        <label>
+                            <span>Vagas de garagem</span>
+                            <input class="filtro__filtro-conteudo-item" type="text" name="vagasGaragem" placeholder="Quartos">
+                        </label>
+                    </div>
+
                     <div class="filtro__filtro-botao">
                         <button class="btn-filtrar" type="submit">Filtrar</button>
                     </div>
                 </form>
             </div>
         </section>
-
-        <section class="resultado">
-            <div class="resultado__pesquisa">
-                <span class="resultado__pesquisa__item" th:text="${imovelPorId.size}">
-                </span><span> resultado(s) para a pesquisa</span>
-            </div>
-            <div th:replace="~{fragments/resultado-pesquisa :: resultado-pesquisa}"></div> 
-        </section>
+        <div>
+            <section class="resultado">
+                <div class="resultado__pesquisa">
+                    <span class="resultado__pesquisa__item" th:text="${imovelPorId.size}">
+                    </span><span> resultado(s) para a pesquisa</span>
+                </div>
+                <div th:replace="~{fragments/resultado-pesquisa :: resultado-pesquisa}"></div> 
+            </section>
+            <!-- RODAPE -->
+            <footer th:replace="~{fragments/rodape :: rodape}"></footer>
+        </div>
+        
 
     </main>
 
-    <!-- RODAPE -->
-    <footer th:replace="~{fragments/rodape :: rodape}"></footer>
+    
 </body>
 </html>

@@ -3,6 +3,11 @@
     display: flex;
     flex-direction: column;
 }
+
+.cadastro__container__validacaoSenha {
+    color: red;
+}
+
 .cadastro__container__conteudo input{
     margin: 0.5em 0;
     height: 30px;

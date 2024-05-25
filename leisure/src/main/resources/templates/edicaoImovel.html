@@ -11,6 +11,11 @@
     <main class="main">
         <th:block>
             <section class="editar__anuncio">
+                <div class="editar__anuncio__voltar">
+                    <a href="/usuario/perfil/anuncio">
+                        <i class="fa-solid fa-xmark fa-2xl"></i>
+                    </a>
+                </div>
                 <div class="editar__anuncio__card">
                     <form method="post" enctype="multipart/form-data" th:action="@{/usuario/perfil/salvar-foto}" data-form-imagem>
                         <!-- <span>Toque na imagem para alterar</span> -->
@@ -24,7 +29,7 @@
                         <input name="id" th:value="${imovel.id}" id="idIMovel" hidden>
                     </form>
                     
-                    <div>
+                    <section>
                         <form class="editar__anuncio__card__form" method="post" th:action="@{/usuario/perfil/atualizar}">
                             <input name="id" th:value="${imovel.id}" hidden>
                             <ul class="editar__anuncio__card__valores">
@@ -95,20 +100,23 @@
                                 <textarea class="editar__anuncio__card__conteudo__resultado" name="descricao" id="anuncioDescricao" rows="10" th:text="${imovel.descricao}"></textarea>
                             </div>
                             
-                            <!-- </div>  -->
                             <div class="editar__anuncio__card__botao">
                                 <button type="submit">
-                                    <span>Salvar alterações</span>
+                                    <span>Salvar alterações </span>
+                                    <i class="fa-solid fa-check"></i>
                                 </button>
                             </div>
                         </form>
                         <form th:action="@{/usuario/perfil/deletar-imovel}" method="post">
                             <input type="hidden" name="id" th:value="${imovel.id}">
-                        <button type="submit">
-                            <span>Deletar Imóvel</span>
-                        </button>
-                    </form>
-                    </div>
+                            <div class="editar__anuncio__card__botao__excluir">
+                                <button type="submit">
+                                    <span>Deletar Imóvel</span>
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </section>
                 </div>
             </section>
         </th:block>

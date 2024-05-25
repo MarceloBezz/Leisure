@@ -163,7 +163,6 @@
         <div class="anunciar__conteudo__box" data-profile="anunciar">
             <h3 class="titulo__terceiro">Agora precisamos do endereço</h3>
             <!-- VIA CEP -->
-            <!-- <form method="get" action="."> -->
             <div class="dados__container__conteudo">
                 <span>Cep</span>
                 <input class="anunciar__conteudo__input" name="cep" type="text" id="cep" value="" maxlength="9"
@@ -375,6 +374,7 @@
             <div class="anuncio__card__botao">
                 <a th:href="|/usuario/perfil/editar-imovel/${imovel.id}" class="no-decoration">
                     Editar
+                    <i class="fa-solid fa-pen-to-square"></i>
                 </a>
             </div>
         </div>
@@ -431,14 +431,14 @@
             </div>
         </div>
         <!-- <input name="id" th:value="${usuario.id}" id="id_usuario" hidden> -->
-        <div class="anuncio__card__botao">
+        <div class="meusdados__card__botao">
             <button type="submit">
                 <span>Salvar alterações</span>
             </button>
         </div>
     </form>
-    <form method="post" th:action="@{/usuario/deletar}">
+    <!-- <form method="post" th:action="@{/usuario/deletar}">
         <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
         <button type="submit">Deletar conta</button>
-    </form>
+    </form> -->
 </section>

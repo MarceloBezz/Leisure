@@ -4,10 +4,11 @@
     display: flex;
     justify-content: space-between;
 }
-.cabecalho__container, .cabecalho__navegacao{
+.cabecalho__container {
     display: flex;
     align-items: center;
 }
+
 .container__hamburguer{
     display: block;
 }
@@ -20,7 +21,7 @@
 .container__usuario {
     display: block;
     text-align: center;
-    margin: 0 0.5em 1em 0.5em;
+    margin: 2em 0.5em 1em 0.5em;
     padding: 0.25em;
     width: 90%;
     border-radius: 5px;
@@ -30,6 +31,8 @@
 
 .logout {
     background: transparent;
+    margin: 0 0.5em 1em 0.5em !important;
+    padding: 0 0.75em !important;
 }
 
 .container__usuario-imagem img{
@@ -182,7 +185,7 @@
         display: none;
     }
 
-    .container__usuario{
+    .container__usuario {
         display: flex;
         margin: 0 0.5em;
         position: relative;

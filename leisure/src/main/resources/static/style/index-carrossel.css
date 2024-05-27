@@ -10,7 +10,8 @@
     
     .carousel-item img {
         object-fit: cover;
-        height: 800px;
+        min-height: 800px;
+        max-height: 1000px;
     }
 
     .carousel-control-prev, .carousel-control-next{

@@ -67,7 +67,8 @@
 
 @media (min-width: 768px) {
     .pesquisa {
-        width: 40%;
+        /* min-width: 100px; */
+        max-width: 500px;
         position: absolute;
         left: 1em;
         top: 250px;

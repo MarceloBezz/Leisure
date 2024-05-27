@@ -1,0 +1,26 @@
+.ad__container {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2em 0;
+    background-color: var(--cor-terceira);
+    color: var(--cor-primeira);
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    text-align: center;
+    box-shadow: 5px 5px 15px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ad__container__close {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+}
+
+@media (min-width: 768px) {
+    .ad__container {
+        display: none;
+    }
+}

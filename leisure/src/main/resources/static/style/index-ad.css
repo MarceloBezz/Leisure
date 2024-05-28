@@ -11,6 +11,7 @@
     border-top-right-radius: 0.5em;
     text-align: center;
     box-shadow: 5px 5px 15px 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
 
 .ad__container__close {

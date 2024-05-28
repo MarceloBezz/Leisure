@@ -11,23 +11,23 @@
         <div th:if="${logout}">
             <div class="alert alert-danger" th:text="${logout}"></div>
         </div>
-        <input type="text" id="email" onblur="checkIguality('email')">
+        <input type="text" id="email" onblur="checkIguality('email')" hidden>
         <span id="email-feedback"></span>
         <section class="carrossel">
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="3000">
+                  <div class="carousel-item active" data-bs-interval="4000">
                     <img src="/img/anuncio/anuncio1.png" class="d-block w-100" alt="...">
                   </div>
-                  <div class="carousel-item" data-bs-interval="3000">
+                  <div class="carousel-item" data-bs-interval="4000">
                     <img src="/img/anuncio/anuncio2.png" class="d-block w-100" alt="...">
                   </div>
-                  <div class="carousel-item" data-bs-interval="3000">
+                  <div class="carousel-item" data-bs-interval="4000">
                     <img src="/img/anuncio/anuncio3.png" class="d-block w-100" alt="...">
                   </div>
-                  <!-- <div class="carousel-item" data-bs-interval="3000">
-                    <a href="https://suntech.eco.br" target="_blank"><img src="/img/anuncio/anuncio4.png" class="d-block w-100" alt="..."></a>
-                  </div> -->
+                  <div class="carousel-item" data-bs-interval="4000">
+                    <a href="https://suntech.eco.br" target="_blank"><img src="/img/anuncio/anuncio4.png" class="d-block w-100" alt="suntech"></a>
+                  </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -25,57 +25,59 @@
                 </div>
 
                 <div class="lista-menu__conteudo">
-                    <li class="lista-menu__item" data-menu>
-                        <span>Categorias <i class="fa-solid fa-sm fa-chevron-right" data-arrow></i></span>
-
-                        <ul class="lista-menu__sublista-categoria hidden" data-submenu>
-                            <li class="lista-menu__sublista-item">                                
-                                    <a class="container__link" th:href="@{/leisure/filtragem}"><span>Apartamentos</span></a>
-                            </li>
-                            <li class="lista-menu__sublista-item">
-                                <a class="container__link" th:href="@{/leisure/filtragem}"><span>Casas</span></a>
-                            </li>
-                            <li class="lista-menu__sublista-item">
-                                <a class="container__link" th:href="@{/leisure/filtragem}"><span>Sitíos</span></a>
-                            </li>
-                            <li class="lista-menu__sublista-item">
-                                <a class="container__link" th:href="@{/leisure/filtragem}"><span>Terrenos</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="lista-menu__item">
-                        <a class="container__link" href="/leisure/premium">Premium</a>
-                    </li>
-                    <li class="lista-menu__item">
-                        <a class="container__link" href="/usuario/perfil/anunciar">Anunciar</a>
-                    </li>
-                    <li class="lista-menu__item">
-                        <a class="container__link" href="/leisure/index#contato">Links úteis</a>
-                    </li>
-                    <li class="lista-menu__item" data-menu>
-                        <span>Nosso App <i class="fa-solid fa-sm fa-chevron-right" data-arrow></i></span>
-                        <span>
-                            
-                        </span>
-                        <ul class="lista-menu__sublista-download hidden" data-submenu>
-                            <li class="lista-menu__sublista-item">
-                                <a class="container__link" href="https://play.google.com/store/apps" target="_blank">
-                                    <span>Google play</span>
-                                    <span>
-                                        <i class="fa-brands fa-google-play"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="lista-menu__sublista-item">
-                                <a class="container__link" href="https://www.apple.com/br/store" target="_blank">
-                                    <span>Apple store</span>
-                                    <span>
-                                        <i class="fa-brands fa-apple fa-lg"></i>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                    <div class="lista-menu__conteudo__lista">
+                        <li class="lista-menu__item" data-menu>
+                            <span>Categorias <i class="fa-solid fa-sm fa-chevron-right" data-arrow></i></span>
+    
+                            <ul class="lista-menu__sublista-categoria hidden" data-submenu>
+                                <li class="lista-menu__sublista-item">                                
+                                        <a class="container__link" th:href="@{/leisure/filtragem}"><span>Apartamentos</span></a>
+                                </li>
+                                <li class="lista-menu__sublista-item">
+                                    <a class="container__link" th:href="@{/leisure/filtragem}"><span>Casas</span></a>
+                                </li>
+                                <li class="lista-menu__sublista-item">
+                                    <a class="container__link" th:href="@{/leisure/filtragem}"><span>Sitíos</span></a>
+                                </li>
+                                <li class="lista-menu__sublista-item">
+                                    <a class="container__link" th:href="@{/leisure/filtragem}"><span>Terrenos</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="lista-menu__item">
+                            <a class="container__link" href="/leisure/premium">Premium</a>
+                        </li>
+                        <li class="lista-menu__item">
+                            <a class="container__link" href="/usuario/perfil/anunciar">Anunciar</a>
+                        </li>
+                        <li class="lista-menu__item">
+                            <a class="container__link" href="/leisure/index#contato">Links úteis</a>
+                        </li>
+                        <li class="lista-menu__item" data-menu>
+                            <span>Nosso App <i class="fa-solid fa-sm fa-chevron-right" data-arrow></i></span>
+                            <span>
+                                
+                            </span>
+                            <ul class="lista-menu__sublista-download hidden" data-submenu>
+                                <li class="lista-menu__sublista-item">
+                                    <a class="container__link" href="https://play.google.com/store/apps" target="_blank">
+                                        <span>Google play</span>
+                                        <span>
+                                            <i class="fa-brands fa-google-play"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="lista-menu__sublista-item">
+                                    <a class="container__link" href="https://www.apple.com/br/store" target="_blank">
+                                        <span>Apple store</span>
+                                        <span>
+                                            <i class="fa-brands fa-apple fa-lg"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
                     <div th:replace="~{fragments/botoes :: logout}"></div>
                     
                     <div th:replace="~{fragments/botoes :: login}"></div>
@@ -110,7 +112,8 @@
                         </label>
                     </li>
                 </div>
-                <div class="cabecalho__container-welcome">
+                <div class="cabecalho__container-welcome" th:if="${usuario != null}">
+                    <p>Seja bem-vindo (a) <span th:text="${usuario.nome}"></span></p>
                 </div>
                 <div class="lista-menu__conteudo">
                     <li class="lista-menu__item btnAnunciar">

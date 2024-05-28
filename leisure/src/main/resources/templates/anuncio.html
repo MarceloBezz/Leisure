@@ -119,11 +119,11 @@
                 </form>
             </div>
         </section>
-        <div>
+        <div class="res">
             <section class="resultado">
                 <div class="resultado__pesquisa">
-                    <span class="resultado__pesquisa__item" th:text="${imovelPorId.size}">
-                    </span><span> resultado(s) para a pesquisa</span>
+                    <span class="resultado__pesquisa__item" th:text="${imovelPorId.size}"></span>
+                    <span>resultado(s)</span>
                 </div>
                 <div th:replace="~{fragments/resultado-pesquisa :: resultado-pesquisa}"></div> 
             </section>

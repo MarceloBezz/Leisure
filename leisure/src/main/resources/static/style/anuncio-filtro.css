@@ -102,10 +102,18 @@
 
 @media (min-width: 768px) {
     [data-main="anuncio"] {
+        .res {
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
         .resultado {
             margin-top: 1em;
             display: flex;
             flex-direction: column;
+            max-width: 400px;
         }
     }
 

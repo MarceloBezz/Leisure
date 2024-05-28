@@ -14,9 +14,19 @@
 .resultado__filtro {
     display: flex;
     flex-direction: column;
+    /* max-width: 400px; */
 }
 .resultado__filtro__card {
     margin: 1em 0;
+    /* max-width: 400px; */
+}
+
+.resultado__filtro__card__conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* max-width: 400px; */
 }
 
 .resultado__filtro__card__conteudo__imagem {

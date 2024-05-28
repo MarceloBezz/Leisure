@@ -22,11 +22,11 @@ public class FiltroService {
 		}
 		
 		if(cidade != null && !cidade.isEmpty()) {
-			spec = spec.and((root, query, builder) -> builder.equal(root.get("cidade"), cidade));
+			spec = spec.and((root, query, builder) -> builder.like(root.get("cidade"),"%" + cidade + "%"));
 		}
 		
 		if(bairro != null && !bairro.isEmpty()) {
-			spec = spec.and((root, query, builder) -> builder.equal(root.get("bairro"), bairro));
+			spec = spec.and((root, query, builder) -> builder.equal(root.get("bairro"),"%" + bairro + "%"));
 		}
 		
 		if(numQuartos != null) {

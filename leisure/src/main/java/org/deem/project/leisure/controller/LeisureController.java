@@ -80,7 +80,7 @@ public class LeisureController {
 
 	@GetMapping("/filtragem")
 	public String retorno(Model model, RedirectAttributes redirect){
-		redirect.addFlashAttribute("get","Preencha o formulário de filtro para acessar o resultado da filtragem");
+		//redirect.addFlashAttribute("get","Preencha o formulário de filtro para acessar o resultado da filtragem");
 		return "redirect:/leisure/index";
 	}
 

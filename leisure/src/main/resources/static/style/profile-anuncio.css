@@ -49,6 +49,16 @@
     justify-content: center;
 }
 
+.anuncio__container__mensagem {
+    padding: 8em 0;
+    gap: 3em;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+}
+
 .anuncio__container__mensagem__content {
     color: var(--cor-segunda);
     font-size: var(--font-size);

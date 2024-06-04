@@ -18,14 +18,17 @@
 }
 .resultado__filtro__card {
     margin: 1em 0;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    padding: 0.5em;
     /* max-width: 400px; */
 }
 
 .resultado__filtro__card__conteudo {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     /* max-width: 400px; */
 }
 
@@ -48,7 +51,7 @@
     row-gap: 0.5em;
 }
 
-.esultado__filtro__card__conteudo__content__item {
+.resultado__filtro__card__conteudo__content__item {
     margin: 0.5em 0;
 }
 
@@ -60,18 +63,25 @@
     border-radius: 5px;
 }
 
+.resultado__filtro__card__conteudo__content__item__valor {
+    margin: 1em 0;
+    font-weight: 500;
+    text-align: center;
+}
+
 .resultado__filtro__card__conteudo__content__lista {
     display: flex;
     column-gap: 1em;
     margin: 0.75em 0;
 }
 
-.esultado__filtro__card__conteudo__content__contato {
+.resultado__filtro__card__conteudo__content__contato {
     padding: 1em 0;
+    /* margin: 1em 0; */
     text-align: center;
 }
 
-.esultado__filtro__card__conteudo__content__contato a{
+.resultado__filtro__card__conteudo__content__contato a{
     background-color: var(--cor-hover);
     border-radius: 1em;
     padding: 0.5em 1em;
@@ -80,7 +90,8 @@
     transition: 0.3s;
 
 }
-.esultado__filtro__card__conteudo__content__contato a:hover{
+
+.resultado__filtro__card__conteudo__content__contato a:hover{
     background-color: var(--cor-primeira);
     color: #07d27a;
     transition: 0.3s;

@@ -2,8 +2,11 @@
     <div th:fragment="resultado-pesquisa" class="resultado__filtro" th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}">
         <div class="resultado__filtro__card">
             <div class="resultado__filtro__card__conteudo">
-                <div class="resultado__filtro__card__conteudo__imagem">
-                    <img src="/img/anuncio/card/card01.png" alt="imagem teste card">
+                <div class="resultado__filtro__card__conteudo__imagem" data-anuncio="anuncio">
+                    <a href="">
+                        <img src="/img/anuncio/card/card01.png" alt="imagem teste card">
+                    </a>
+                    
                     <!-- <img th:src="|http://localhost:8080/leisure/imovel/imagem/${imovel.id}|" alt="Foto do imóvel"> -->
                 </div>
                 <div class="resultado__filtro__card__conteudo__content">
@@ -13,23 +16,25 @@
                     </span>
                     <span class="resultado__filtro__card__conteudo__content__item">
                         <p class="resultado__filtro__card__conteudo__content__item__valor">
-                            <p>R$ <span th:text="${imovel.preco}"></span></p>
+                            <span>R$ 
+                                <span th:text="${imovel.preco}"></span>
+                            </span>
                         </p>
                     </span>
-                    <span class="resultado__filtro__card__conteudo__content__item">
-                        <ul class="resultado__filtro__card__conteudo__content__lista">
-                            <li>• <span th:text="${imovel.numQuartos}"></span> quarto</li>
-                            <li>• <span th:text="${imovel.numBanheiros}"></span> banheiro</li>
-                            <li>• <span th:text="${imovel.vagasGaragem}"></span> vaga</li>
+                    <!-- <span class="resultado__filtro__card__conteudo__content__item">
+                        <ul class="resultado__filtro__card__conteudo__content__lista"> -->
+                            <!-- <li>• <span th:text="${imovel.numQuartos}"></span> quarto</li> -->
+                            <!-- <li>• <span th:text="${imovel.numBanheiros}"></span> banheiro</li> -->
+                            <!-- <li>• <span th:text="${imovel.vagasGaragem}"></span> vaga</li> -->
                             <!-- <li>• IPTU R$<span th:text="${imovel.iptu}"></span>,00</li> -->
-                            <li>• IPTU R$<span th:text="${imovel.iptu}"></span></li>
-                        </ul>
-                        <ul class="resultado__filtro__card__conteudo__content__lista">
+                            <!-- <li>• IPTU R$<span th:text="${imovel.iptu}"></span></li> -->
+                        <!-- </ul> -->
+                        <!-- <ul class="resultado__filtro__card__conteudo__content__lista">
                             <li>• <span th:text="${imovel.descricao}"></span></li>
-                        </ul>
-                    </span>
-                    <span class="esultado__filtro__card__conteudo__content__contato">
-                        <a href="web.whatsapp.com" target="_blank">
+                        </ul> -->
+                    <!-- </span> -->
+                    <span class="resultado__filtro__card__conteudo__content__contato">
+                        <a href="https://web.whatsapp.com" target="_blank">
                             <i class="fa-brands fa-whatsapp fa-xl"></i>
                             <span>Falar com vendedor</span>
                         </a>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- HEAD -->
+<head th:replace="~{fragments/head :: head}"></head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header th:replace="~{fragments/cabecalho :: perfil}"></header>
+
+    <main class="main">
+        <!-- <th:block th:fragment="resultado-pesquisa"> -->
+    <!-- <div th:fragment="resultado-pesquisa" class="detalhes__filtro" th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}"> -->
+        <section class="detalhes">
+            <div class="detalhes__filtro__card">
+                <div class="detalhes__filtro__card__conteudo">
+                    <div class="detalhes__filtro__card__conteudo__imagem" data-anuncio="anuncio">
+                            <img src="/img/anuncio/card/card01.png" alt="imagem teste card">
+                        <!-- <img th:src="|http://localhost:8080/leisure/imovel/imagem/${imovel.id}|" alt="Foto do imóvel"> -->
+                    </div>
+    
+                    <div class="detalhes__filtro__card__conteudo__content">
+                        <span class="detalhes__filtro__card__conteudo__content__item">
+                            <!-- <p class="detalhes__filtro__card__conteudo__content__item__tipo" th:text="${imovel.tipo}"></p>
+                            <p class="detalhes__filtro__card__conteudo__content__item__tipo" th:text="${imovel.cidade}"></p> -->
+    
+                            <p class="detalhes__filtro__card__conteudo__content__item__tipo">casa</p>
+                            <p class="detalhes__filtro__card__conteudo__content__item__tipo">Barueri</p>
+                        </span>
+                        <span class="detalhes__filtro__card__conteudo__content__item">
+                            <p class="detalhes__filtro__card__conteudo__content__item__valor">
+                                <!-- <p>R$ <span th:text="${imovel.preco}"></span></p> -->
+                                <span>R$ 
+                                    <span>2000000,00</span>
+                                </span>
+                            </p>
+                        </span>
+                        <!-- <span class="detalhes__filtro__card__conteudo__content__item">
+                            <ul class="detalhes__filtro__card__conteudo__content__lista"> -->
+                                <!-- <li>• <span th:text="${imovel.numQuartos}"></span> quarto</li> -->
+                                <!-- <li>• <span th:text="${imovel.numBanheiros}"></span> banheiro</li> -->
+                                <!-- <li>• <span th:text="${imovel.vagasGaragem}"></span> vaga</li> -->
+                                <!-- <li>• IPTU R$<span th:text="${imovel.iptu}"></span>,00</li> -->
+                                <!-- <li>• IPTU R$<span th:text="${imovel.iptu}"></span></li> -->
+                            <!-- </ul> -->
+                            <!-- <ul class="detalhes__filtro__card__conteudo__content__lista">
+                                <li>• <span th:text="${imovel.descricao}"></span></li>
+                            </ul> -->
+                        <!-- </span> -->
+
+
+                        <span class="detalhes__filtro__card__conteudo__content__item">
+                            <ul class="detalhes__filtro__card__conteudo__content__lista">
+                                <li>
+                                    <i class="fa-regular fa-bed-front"></i>
+                                    <span>4</span>
+                                </li>
+                                <li>
+                                    <i class="fa-sharp fa-solid fa-toilet"></i>
+                                    <span>2</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-car"></i>
+                                    <span>2</span>
+                                </li>
+                                <li>• IPTU R$<span>1000,00</span></li>
+                            </ul>
+                            <ul class="detalhes__filtro__card__conteudo__content__lista">
+                                <li>• <span class="detalhes__filtro__card__conteudo__content__lista__detalhes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta iusto quis quidem accusamus excepturi architecto illo assumenda obcaecati nulla sequi recusandae, et fuga, sed natus velit blanditiis voluptatem quibusdam vero.</span></li>
+                            </ul>
+                        </span>
+                        <span class="detalhes__filtro__card__conteudo__content__contato">
+                            <a href="web.whatsapp.com" target="_blank">
+                                <i class="fa-brands fa-whatsapp fa-xl"></i>
+                                <span>Falar com vendedor</span>
+                            </a>
+                        </span>
+                        <div class="financiamento__container__conteudo">
+                            <h2 class="titulo__segundo text-center">Simule um financiamento</h2>
+                            <span class="financiamento__container__conteudo__links">
+                                <a class="no-decoration" href="https://banco.bradesco/html/classic/produtos-servicos/emprestimo-e-financiamento/imoveis/credito-imobiliario-aquisicao-de-imoveis.shtm" target="_blank">
+                                    <img class="financiamento__container__conteudo__imagem" src="/img/imagem/bradesco.svg" alt="Financiamento com banco Bradesco">
+                                </a>
+                                <a class="no-decoration" href="https://www.caixa.gov.br/voce/habitacao/Paginas/default.aspx" target="_blank">
+                                    <img class="financiamento__container__conteudo__imagem" src="/img/imagem/caixa.svg" alt="Financiamento com banco Caixa">
+                                </a>
+                                <a class="no-decoration" href="https://credito-imobiliario.itau.com.br/" target="_blank">
+                                    <img class="financiamento__container__conteudo__imagem" src="/img/imagem/itau.svg" alt="Financiamento com banco Caixa">
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    <!-- </div> -->
+<!-- </th:block> -->
+    </main>
+
+    <!-- RODAPE -->
+    <footer th:replace="~{fragments/rodape :: rodape}"></footer>
+
+</body>
+</html>

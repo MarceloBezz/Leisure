@@ -1,0 +1,129 @@
+.detalhes {
+    padding: 0 1em 1em 1em;
+}
+
+.detalhes__pesquisa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detalhes__pesquisa__item {
+    padding: 2em;
+}
+
+.detalhes__filtro {
+    display: flex;
+    flex-direction: column;
+}
+
+.detalhes__filtro__card {
+    margin: 1em 0;
+}
+
+.detalhes__filtro__card__conteudo {
+    display: flex;
+    flex-direction: column;
+}
+
+.detalhes__filtro__card__conteudo__imagem {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.detalhes__filtro__card__conteudo__content {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5em 0;
+    row-gap: 0.5em;
+}
+
+.detalhes__filtro__card__conteudo__content__item {
+    margin: 0.5em 0;
+}
+
+.detalhes__filtro__card__conteudo__content__item__valor p span {
+    font-size: 3em;
+}
+
+.detalhes__filtro__card__conteudo__content__item__tipo {
+    font-size: var(--font-size);
+    background: var(--cor-hover);
+    display: inline-block;
+    padding: 0.25em 2em;
+    border-radius: 5px;
+}
+
+.detalhes__filtro__card__conteudo__content__lista {
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    column-gap: 1em;
+    margin: 1.75em 0;
+}
+
+.detalhes__filtro__card__conteudo__content__lista li {
+    display: flex;
+    column-gap: 1em;
+}
+
+.detalhes__filtro__card__conteudo__content__lista__detalhes {
+    font-weight: 300;
+}
+
+.detalhes__filtro__card__conteudo__content__contato {
+    padding: 1em 0;
+    text-align: center;
+}
+
+.detalhes__filtro__card__conteudo__content__contato a {
+    background-color: var(--cor-hover);
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #11ee8e;
+    transition: 0.3s;
+
+}
+.detalhes__filtro__card__conteudo__content__contato a:hover {
+    background-color: var(--cor-primeira);
+    color: #07d27a;
+    transition: 0.3s;
+}
+
+@media (min-width: 768px) {
+    .detalhes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .detalhes__filtro__card__conteudo {
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .detalhes__filtro__card__conteudo__imagem {
+        width: 600px;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .detalhes__filtro__card__conteudo__imagem img {
+        width: 100%;
+    }
+
+    .detalhes__filtro__card__conteudo__content__item__valor {
+        margin-top: 1em;
+        font-size: 2em;
+        font-weight: 600;
+        color: var(--cor-segunda);
+    }
+
+    .detalhes__pesquisa {
+        margin-left: 5em;
+        display: block;
+    }
+}

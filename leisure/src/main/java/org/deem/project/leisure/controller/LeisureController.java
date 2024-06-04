@@ -84,6 +84,12 @@ public class LeisureController {
 		return "redirect:/leisure/index";
 	}
 
+	//ADICIONADO POR DANILO PARA TESTES
+	@GetMapping("/detalhes-imovel")
+	public String getDetalhesImovel() {
+		return "detalhes-imovel";
+	}
+
 	@GetMapping("/login")
 	public String getMethodName(Usuario usuario, Model model) {
 		usuario = usuarioService.getAuthenticatedUser(); //Puxar os dados do usuário logado(se nulo, não há usuário logado)

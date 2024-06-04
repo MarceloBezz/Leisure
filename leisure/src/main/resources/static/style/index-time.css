@@ -7,16 +7,18 @@
     text-align: center;
 }
 
-.swiper{
+.swiper {
     display: block !important;
 }
-.swiper{
+
+.swiper {
     width: 90vw;
     justify-content: center;
     align-items: center;
     padding: 1em 0;
 }
-.time__card{
+
+.time__card {
     margin: 0 0.25em;
     display: flex;
     flex-direction: column;
@@ -27,18 +29,24 @@
     border-radius: 5px;
     padding: 0 0.5em 2.5em 0.5em;
 }
-.time__card-imagem{
+
+.time__card-imagem {
     width: 100%;
     border-radius: 50%;
     margin: 1em 0;
 }
-.time__card__info{
-    display: block;
+
+.time__card__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
 }
-.time_card__info-texto{
+
+.time_card__info-texto {
     font-size: var(--font-size);
 }
-.swiper-pagination{
+
+.swiper-pagination {
     position: initial;
     margin: 1em 0;
 }

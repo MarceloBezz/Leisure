@@ -12,11 +12,76 @@
     row-gap: 2em;
 }
 
+.cadastro__container__conteudo{
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.login__cadastro__container__botao__cadastro p {
+    margin: 3em 0 2em 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px
+}
+
+.login__cadastro__container__botao__cadastro p::before {
+    content: '';
+    display: block;
+    width: 240px;
+    height: 1px;
+    background: gray;
+}
+
+.login__cadastro__container__botao__cadastro p::after {
+    content: '';
+    display: block;
+    width: 240px;
+    height: 1px;
+    background: gray;
+}
+
+.login__cadastro__container__botao__cadastro span {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--cor-font-destaque);
+    transition: 0.3s;
+}
+
+.login__cadastro__container__botao__cadastro span:hover {
+    color: var(--cor-terceira);
+}
+
+.cadastro__container__validacaoSenha {
+    color: red;
+}
+
+.cadastro__container__conteudo input{
+    margin: 0.5em 0;
+    height: 30px;
+    border: 0;
+    border-bottom: 1px solid lightgray;
+}
+.cadastro__container__conteudo input:focus{
+    outline: none;
+}
+
 .modal-body {
     padding: 1em;
     width: 90vw;
     border: 1px solid var(--cor-segunda);
     border-radius: 1em;
+}
+
+[data-acesso="login"] {
+    display: block;
+}
+
+[data-acesso="cadastro"] {
+    display: none;
 }
 
 @media (min-width: 768px){
@@ -25,7 +90,7 @@
     }  
 
     .login__cadastro__container {
-        width: 80vw;
+        width: 600px;
         flex-direction: row;
         column-gap: 2em;
     }

@@ -9,7 +9,7 @@
 
     <main class="login__cadastro">
         <section class="login__cadastro__container">
-            <div class="modal-body">
+            <div class="modal-body" data-acesso="cadastro">
                 <div class="titulo__segundo text-center">Cadastre-se</div>
                 <form class="cadastro__container" th:action="@{/usuario/cadastrar}"method="post">
                     <div class="cadastro__container__conteudo">
@@ -51,11 +51,17 @@
                         <button type="submit" id="btnCadastro" class="btn btn-primary">Cadastrar</button>
                     </div>
                 </form>
+                <div class="login__cadastro__container__botao">
+                    <div class="login__cadastro__container__botao__cadastro">
+                        <p>ou</p>
+                        <span data-acesso="btn-login">Já tenho uma conta</span>
+                    </div>
+                </div>
             </div>
             <div th:if="${login}">
                 <div class="alert alert-danger" th:text="${login}"></div>
             </div>
-            <div class="modal-body" id="modalLogin"> 
+            <div class="modal-body" id="modalLogin" data-acesso="login"> 
                 <div class="titulo__segundo text-center">Login</div>
                 <div th:if="${param.error}">
                     <div class="alert alert-danger">Email e/ou senha incorreto(s)!</div>
@@ -73,6 +79,12 @@
                         <button type="submit" class="btn btn-primary" id="botaoDeLogin">Entrar</button>
                     </div>
                 </form>
+                <div class="login__cadastro__container__botao">
+                    <div class="login__cadastro__container__botao__cadastro">
+                        <p>ou</p>
+                        <span data-acesso="btn-cadastro">Criar uma conta</span>
+                    </div>
+                </div>
             </div>
         </section>
         
@@ -81,5 +93,6 @@
     <footer th:replace="~{fragments/rodape :: rodape}"></footer>
 
     <script src="/script/validarSenha.js"></script>
+    <script src="/script/loginCadastro.js"></script>
 </body>
 </html>

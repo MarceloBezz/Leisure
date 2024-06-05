@@ -73,6 +73,7 @@
     padding: 1em;
     width: 90vw;
     border: 1px solid var(--cor-segunda);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     border-radius: 1em;
 }
 

@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
@@ -85,8 +86,12 @@ public class LeisureController {
 	}
 
 	//ADICIONADO POR DANILO PARA TESTES
-	@GetMapping("/detalhes-imovel")
-	public String getDetalhesImovel() {
+	@GetMapping("/detalhes-imovel/{id}")
+	public String getDetalhesImovel(Usuario usuario, Model model,@PathVariable int id, Imovel imovel) {
+		usuario = usuarioService.getAuthenticatedUser();
+		model.addAttribute("usuario", usuario);
+		imovel = imovelService.findById(id);
+		model.addAttribute("imovel", imovel);
 		return "detalhes-imovel";
 	}
 

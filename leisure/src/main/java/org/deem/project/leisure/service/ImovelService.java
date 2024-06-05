@@ -1,4 +1,5 @@
 package org.deem.project.leisure.service;
+import java.text.DecimalFormat;
 import java.util.List;
 
 import org.deem.project.leisure.model.Imovel;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 public class ImovelService {
 	@Autowired
 	private ImovelRepository repository;
+	DecimalFormat df = new DecimalFormat("#.00");
 	
 	public ImovelService(ImovelRepository repository) {
 		this.repository = repository;
@@ -25,6 +27,7 @@ public class ImovelService {
 	
 	public Imovel save(Imovel imovel) {
 		takeOffMask(imovel);
+		imovel.setIptu(Double.parseDouble(df.format(imovel.getIptu())));
 		return repository.save(imovel);
 	}
 	
@@ -41,23 +44,7 @@ public class ImovelService {
 	}
 	
 	public Imovel atualizar(Imovel imovelDes, Imovel imovelAtt){
-		
-		if(imovelDes.getNumQuartos() != null){
-			imovelAtt.setNumQuartos(imovelDes.getNumQuartos());
-		}
-		
-		if(imovelDes.getNumBanheiros() != null){
-			imovelAtt.setNumBanheiros(imovelDes.getNumBanheiros());
-		}
-		
-		if(imovelDes.getVagasGaragem() != null){
-			imovelAtt.setVagasGaragem(imovelDes.getVagasGaragem());
-		}
-		
-		if(imovelDes.getNumero() != null){
-			imovelAtt.setNumero(imovelDes.getNumero());
-		}
-		
+
 		if(imovelDes.getDescricao() != null){
 			imovelAtt.setDescricao(imovelDes.getDescricao());
 		}
@@ -65,11 +52,11 @@ public class ImovelService {
 		if(imovelDes.getPreco() != null){
 			imovelAtt.setPreco(imovelDes.getPreco());
 		}
-
-		if(imovelDes.getArea() != null){
-			imovelAtt.setArea(imovelDes.getArea());
-		}
 		
+		if(imovelDes.getIptu() != null){
+			imovelAtt.setIptu(imovelDes.getIptu());
+		}
+
 		return repository.save(imovelAtt);
 	}
 	

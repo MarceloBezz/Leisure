@@ -114,11 +114,11 @@ public class Imovel {
 		this.sustentabilidade = sustentabilidade;
 	}
 
-	public double getIptu() {
+	public Double getIptu() {
 		return iptu;
 	}
 
-	public void setIptu(double iptu) {
+	public void setIptu(Double iptu) {
 		this.iptu = iptu;
 	}
 

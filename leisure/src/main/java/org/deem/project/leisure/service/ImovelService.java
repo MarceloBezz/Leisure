@@ -1,5 +1,4 @@
 package org.deem.project.leisure.service;
-import java.text.DecimalFormat;
 import java.util.List;
 
 import org.deem.project.leisure.model.Imovel;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Service;
 public class ImovelService {
 	@Autowired
 	private ImovelRepository repository;
-	DecimalFormat df = new DecimalFormat("#.00");
 	
 	public ImovelService(ImovelRepository repository) {
 		this.repository = repository;
@@ -27,7 +25,6 @@ public class ImovelService {
 	
 	public Imovel save(Imovel imovel) {
 		takeOffMask(imovel);
-		imovel.setIptu(Double.parseDouble(df.format(imovel.getIptu())));
 		return repository.save(imovel);
 	}
 	

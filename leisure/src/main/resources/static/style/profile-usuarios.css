@@ -1,0 +1,63 @@
+.usuarios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5em;
+}
+
+.usuarios table {
+    width: 90vw;
+    border-collapse: collapse;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.usuarios__tabela__cabeca th {
+    font-weight: 600;
+    color: black;
+    border: 1px solid var(--cor-segunda);
+    background: var(--cor-segunda);
+    text-align: center;
+    padding: 8px;
+    cursor: default;
+}
+
+.usuarios__tabela__corpo td {
+    border: 1px solid var(--cor-segunda);
+    text-align: left;
+    padding: 8px;
+}
+
+.tabela__id {
+    width: 1%;
+    text-align: center !important;
+}
+
+.tabela__nome {
+    width: 25%;
+}
+
+.tabela__cpf {
+    width: 11%;
+    text-align: center !important;
+}
+
+.tabela__nascimento {
+    width: 5%;
+    text-align: center !important;
+}
+
+.tabela__email {
+    width: 25%;
+}
+
+.tabela__telefone {
+    width: 5%;
+    text-align: center !important;
+}
+
+.tabela__deletar {
+    width: 1%;
+    text-align: center !important;
+    color: red;
+    cursor: pointer;
+}

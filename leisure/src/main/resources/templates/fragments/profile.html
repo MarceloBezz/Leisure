@@ -445,26 +445,28 @@
 
 <!-- USUARIOS -->
 <th:block th:fragment="usuarios">
-    <section>
+    <section class="usuarios">
         <table>
-            <thead>
+            <thead class="usuarios__tabela__cabeca">
                 <tr>
-                    <th>id</th>
-                    <th>Nome</th>
-                    <th>CPF</th>
-                    <th>nascimento</th>
-                    <th>email</th>
-                    <th>telefone</th>
+                    <th class="tabela__id">id</th>
+                    <th class="tabela__nome">Nome</th>
+                    <th class="tabela__cpf">CPF</th>
+                    <th class="tabela__nascimento">nascimento</th>
+                    <th class="tabela__email">email</th>
+                    <th class="tabela__telefone">telefone</th>
+                    <th class="tabela__deletar">del.</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="usuarios__tabela__corpo">
                 <tr>
-                    <td>01</td>
-                    <td>danilo</td>
-                    <td>000.000.000-10</td>
-                    <td>17/07/1991</td>
-                    <td>danilo@danilo.com</td>
-                    <td>11958616271</td>
+                    <td class="tabela__id">01</td>
+                    <td class="tabela__nome">danilo</td>
+                    <td class="tabela__cpf">000.000.000-10</td>
+                    <td class="tabela__nascimento">17/07/1991</td>
+                    <td class="tabela__email">danilo@danilo.com</td>
+                    <td class="tabela__telefone">11958616271</td>
+                    <td class="tabela__deletar"><i class="fa-sharp fa-solid fa-circle-xmark"></i></td>
                 </tr>
             </tbody>
         </table>

@@ -49,6 +49,7 @@
     cursor: pointer;
     color: var(--cor-font-destaque);
     transition: 0.3s;
+    column-gap: 0.5em;
 }
 
 .login__cadastro__container__botao__cadastro span:hover {

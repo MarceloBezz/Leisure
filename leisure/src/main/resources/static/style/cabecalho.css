@@ -61,7 +61,7 @@
 }
 
 .lista-menu{
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     top: 0;
     left: -600px;
     position: absolute;
@@ -106,7 +106,7 @@
     cursor: pointer;
 }
 .lista-menu__sublista-categoria, .lista-menu__sublista-download{
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     background-color: white;
     width: 50vw;
     margin-top: 16px;

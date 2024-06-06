@@ -10,11 +10,19 @@
 
     <!-- ANUNCIAR / ANUNCIO / MEUS-DADOS -->
     <main class="perfil__main">
-        <section th:replace="
+        <!-- <section th:replace="
             ( (${selecao} == anunciar) ? ~{fragments/profile :: anunciar} :
             ( (${selecao} == anuncio) ? ~{fragments/profile :: anuncio} :
             ( (${selecao} == meusdados) ? ~{fragments/profile :: meusdados} :
             ~{fragments/profile :: perfil} )))">
+        </section> -->
+        <section th:replace="
+            ( (${selecao} == anunciar) ? ~{fragments/profile :: anunciar} :
+            ( (${selecao} == anuncio) ? ~{fragments/profile :: anuncio} :
+            ( (${selecao} == meusdados) ? ~{fragments/profile :: meusdados} :
+            ( (${selecao} == usuarios) ? ~{fragments/profile :: usuarios} :
+            ( (${selecao} == imoveis) ? ~{fragments/profile :: imoveis} :
+            ~{fragments/profile :: perfil} )))))">
         </section>
     </main>
 

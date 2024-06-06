@@ -105,6 +105,17 @@
     font-size: var(--font-size);
     cursor: pointer;
 }
+
+.lista-menu__conteudo__sublista {
+    position: absolute;
+}
+
+.lista-menu__conteudo__sublista li {
+    margin-bottom: 0.25em;
+    padding: 1em;
+    background: gray;
+}
+
 .lista-menu__sublista-categoria, .lista-menu__sublista-download{
     /* text-transform: capitalize; */
     background-color: white;

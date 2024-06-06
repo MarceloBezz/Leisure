@@ -30,17 +30,40 @@
                             <span>Categorias <i class="fa-solid fa-sm fa-chevron-right" data-arrow></i></span>
     
                             <ul class="lista-menu__sublista-categoria hidden" data-submenu>
-                                <li class="lista-menu__sublista-item">                                
-                                        <a class="container__link" th:href="@{/leisure/filtragem}"><span>Apartamentos</span></a>
+                                <li class="lista-menu__sublista-item pointer" data-rodape="link">
+                                    <span>Apartamentos</span>
+                                    <label>
+                                        <form method="post" th:action="@{/leisure/filtragem}" data-rodape="form">
+                                            <input type="hidden" name="tipo" value="apartamento">
+                                        </form>
+                                    </label>
                                 </li>
-                                <li class="lista-menu__sublista-item">
-                                    <a class="container__link" th:href="@{/leisure/filtragem}"><span>Casas</span></a>
+
+                                <li class="lista-menu__sublista-item pointer" data-rodape="link">
+                                    <span>Casas</span>
+                                    <label>
+                                        <form method="post" th:action="@{/leisure/filtragem}" data-rodape="form">
+                                            <input type="hidden" name="tipo" value="casa">
+                                        </form>
+                                    </label>
                                 </li>
-                                <li class="lista-menu__sublista-item">
-                                    <a class="container__link" th:href="@{/leisure/filtragem}"><span>Sitíos</span></a>
+
+                                <li class="lista-menu__sublista-item pointer" data-rodape="link">
+                                    <span>Sítios</span>
+                                    <label>
+                                        <form method="post" th:action="@{/leisure/filtragem}" data-rodape="form">
+                                            <input type="hidden" name="tipo" value="sitio">
+                                        </form>
+                                    </label>
                                 </li>
-                                <li class="lista-menu__sublista-item">
-                                    <a class="container__link" th:href="@{/leisure/filtragem}"><span>Terrenos</span></a>
+
+                                <li class="lista-menu__sublista-item pointer" data-rodape="link">
+                                    <span>Terrenos</span>
+                                    <label>
+                                        <form method="post" th:action="@{/leisure/filtragem}" data-rodape="form">
+                                            <input type="hidden" name="tipo" value="terreno">
+                                        </form>
+                                    </label>
                                 </li>
                             </ul>
                         </li>
@@ -133,6 +156,68 @@
                     </li>
                     <div th:replace="~{fragments/botoes :: logout}"></div>
                 </div>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- CABEÇALHO ADM -->
+<header th:fragment="administrador" class="cabecalho">
+    <nav class="cabecalho__container">
+        <div class="container__hamburguer">
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <span class="container__rotulo">
+                    <i class="fa-light fa-bars fa-xl"></i>
+                </span>
+                <span class="cabecalho__container-logo">
+                    <a href="/leisure/index"><img src="/img/imagem/logo-leisure.svg" alt="logo leisure imoveis"></a>
+                </span>
+            </label>
+        
+            <ul class="lista-menu">
+                <div class="lista-menu__conteudo">
+                    <li class="lista-menu__item home">
+                        <span class="cabecalho__container-logo">
+                            <a href="/leisure/index"><img src="/img/imagem/logo-leisure.svg" alt="logo leisure imoveis"></a>
+                        </span>
+                        <label for="menu">
+                            <i class="fa-light fa-xmark fa-2xl"></i>
+                        </label>
+                    </li>
+                </div>
+                <div class="cabecalho__container-welcome" th:if="${usuario != null}">
+                    <p>Seja bem-vindo (a) <span th:text="${usuario.nome}"></span></p>
+                </div>
+                <ul class="lista-menu__conteudo">
+                    <li class="lista-menu__item btnAnunciar">
+                        <span>Administrador</span>
+                        <ul class="lista-menu__conteudo__sublista">
+                            <li>
+                                <span>Usuarios cadastrados</span>
+                            </li>
+                            <li>
+                                <span>imoveis cadastrados</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="lista-menu__item btnAnunciar">
+                        <a class="container__link btnAnunciar" href="/usuario/perfil/anunciar">
+                            <span>Anunciar</span>
+                        </a>
+                    </li>
+                    <li class="lista-menu__item btnMeusAnuncios">
+                        <a class="container__link btnAnunciar" href="/usuario/perfil/anuncio">
+                            <span>Meus anúncios</span>
+                        </a>
+                    </li>
+                    <li class="lista-menu__item btnMeusDados">
+                        <a class="container__link" href="/usuario/perfil/meusdados">
+                            <span>Meus dados</span>
+                        </a>
+                    </li>
+                    <div th:replace="~{fragments/botoes :: logout}"></div>
+                </ul>
             </ul>
         </div>
     </nav>

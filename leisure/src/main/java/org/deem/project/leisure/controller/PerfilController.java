@@ -49,5 +49,21 @@ public class PerfilController {
         model.addAttribute("selecao", "meusdados");
         return "perfil";
     }
-    
+
+	// CRIADO POR DANILO
+	@GetMapping("/perfil/usuarios")
+    public String getUsuarios(Model model) {
+    	Usuario usuario = usuarioService.getAuthenticatedUser();
+		model.addAttribute("usuario", usuario);
+        model.addAttribute("selecao", "usuarios");
+        return "perfil";
+    }
+
+	@GetMapping("/perfil/imoveis")
+    public String getImoveis(Model model) {
+    	Usuario usuario = usuarioService.getAuthenticatedUser();
+		model.addAttribute("usuario", usuario);
+        model.addAttribute("selecao", "imoveis");
+        return "perfil";
+    }
 }

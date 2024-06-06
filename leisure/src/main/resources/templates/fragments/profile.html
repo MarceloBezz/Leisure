@@ -442,3 +442,38 @@
         <button type="submit">Deletar conta</button>
     </form> -->
 </section>
+
+<!-- USUARIOS -->
+<th:block th:fragment="usuarios">
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>nascimento</th>
+                    <th>email</th>
+                    <th>telefone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>danilo</td>
+                    <td>000.000.000-10</td>
+                    <td>17/07/1991</td>
+                    <td>danilo@danilo.com</td>
+                    <td>11958616271</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</th:block>
+
+<!-- IMOVEIS -->
+<th:block th:fragment="imoveis">
+    <section class="imoveis" th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}">
+        
+    </section>
+</th:block>

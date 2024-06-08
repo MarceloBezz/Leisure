@@ -84,3 +84,19 @@ endereco.forEach(contexto => {
 		contexto.value = arr.join(' ');
 	})
 })
+
+//PÁGINA DE ADM
+function deletarUsuario(id){
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("POST", "/usuario/deletar/" + id, true)
+
+	xhttp.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200){
+			var response = JSON.parse(xhttp.responseText);
+			window.alert(response.mensagem);
+			window.location.reload();
+		}
+	}
+	
+	xhttp.send(JSON.stringify({id: id}));
+}

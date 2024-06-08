@@ -2,6 +2,9 @@ package org.deem.project.leisure.service;
 
 
 import org.springframework.security.core.userdetails.UserDetailsService;
+
+import java.util.List;
+
 import org.deem.project.leisure.model.Roles;
 import org.deem.project.leisure.model.Usuario;
 import org.springframework.stereotype.Service;
@@ -21,4 +24,5 @@ public interface UsuarioService extends UserDetailsService{
 	Roles saveRole(Roles role);
 	Usuario getAuthenticatedUser();
 	Usuario atualizar(Usuario usuarioDes, Usuario usuarioAtt);
+	List<Usuario> findAll();
 }

@@ -54,8 +54,10 @@ public class PerfilController {
 	@GetMapping("/perfil/usuarios")
     public String getUsuarios(Model model) {
     	Usuario usuario = usuarioService.getAuthenticatedUser();
+        List<Usuario> usuarios = usuarioService.findAll();
 		model.addAttribute("usuario", usuario);
         model.addAttribute("selecao", "usuarios");
+        model.addAttribute("listUsuarios", usuarios);
         return "perfil";
     }
 

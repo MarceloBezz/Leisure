@@ -133,11 +133,11 @@ public class LeisureController {
 			break;
 
 			case "telefone":
-			exists = usuarioRepository.existsByTelefone(value);
+			exists = usuarioRepository.existsByTelefone(value.replaceAll("[^0-9]", ""));
 			break;
 
 			case "cpf":
-			exists = usuarioRepository.existsByCpf(value);
+			exists = usuarioRepository.existsByCpf(value.replaceAll("[^0-9]", ""));
 			break;
 		}
 	

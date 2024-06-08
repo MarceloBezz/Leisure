@@ -2,11 +2,20 @@ const senha = document.querySelector('#senha')
 const senha2 = document.querySelector('#senha2')
 const mensagem = document.querySelector('.cadastro__container__validacaoSenha')
 
+
 senha2.addEventListener('blur', () => {
     senha.value != senha2.value ? 
-    (mensagem.style.color = 'red', mensagem.innerHTML = '<i class="fa-regular fa-circle-exclamation"></i> As senhas não conforem.') :
-    (mensagem.style.color = 'green', mensagem.innerHTML = '<i class="fa-solid fa-check"></i> Senhas conferem')
-})
+    (mensagem.style.color = 'red', mensagem.innerHTML = '<i class="fa-regular fa-circle-exclamation"></i> As senhas não conferem.') :
+    (mensagem.style.color = 'green', mensagem.innerHTML = '<i class="fa-solid fa-check"></i> Senhas conferem')})
+
+    function senhaValidation(){
+    if(senha.value == senha2.value){
+        return true
+    }else{
+        return false
+    }
+    }
+
 
 function checkIguality(field) {
 	var inputField = document.getElementById(field);
@@ -18,10 +27,8 @@ function checkIguality(field) {
 	if (value.length < minLength) {
 		feedback.textContent = `O campo ${field} deve ter pelo menos ${minLength} caracteres.`;
 		feedback.style.color = "blue";
-		$('#btnCadastro').prop("disabled", true);
 		return;
-	}
-
+	}else{
 	//Fazer a requisição AJAX para o servidor
 	var xhr = new XMLHttpRequest();
 	xhr.open("post", "/leisure/checar", true);
@@ -29,7 +36,7 @@ function checkIguality(field) {
 
 	xhr.onreadystatechange = function() {
 		if(xhr.readyState === 4 && xhr.status === 200){
-			var response = JSON.parse(xhr.responseText);
+            var response = JSON.parse(xhr.responseText);
 			if(response.exists){
 				feedback.textContent = `Este ${field} já está cadastrado.`;
 				feedback.style.color = "red";
@@ -41,46 +48,33 @@ function checkIguality(field) {
 	};
 
 	 xhr.send(JSON.stringify({field: field, value: value}));
-
+    }
 }	
 
 //FUNÇÃO PARA VERIFICAR TODOS OS CAMPOS
-$(document).ready(function() {
     function checkAllFields() {
         var emailField = $('#email');
         var telefoneField = $('#telefone');
         var cpfField = $('#cpf');
-		var senhaField = $('#senha');
 		var dataValidacao = dataValidation();
-
+        var senhaValidacao = senhaValidation();
+        var nome = document.getElementById("cadastroNome").value;
+        
+        var nomeValid = nomeValidation(nome);
         var emailValid = emailField.val().length >= emailField.attr("minLength") && $('#email-feedback').css("color") === "rgb(0, 128, 0)"; // Verde
         var telefoneValid = telefoneField.val().length >= telefoneField.attr("minLength") && $('#telefone-feedback').css("color") === "rgb(0, 128, 0)"; // Verde
         var cpfValid = cpfField.val().length >= cpfField.attr("minLength") && $('#cpf-feedback').css("color") === "rgb(0, 128, 0)"; // Verde
 
-        if (emailValid && telefoneValid && cpfValid && dataValidacao) { //Se todos estiverem corretos
-            $('#btnCadastro').prop("disabled", false);
+        if (emailValid && telefoneValid && cpfValid && dataValidacao && senhaValidacao && nomeValid) { //Se todos estiverem corretos
+            return true;
         } else {
-            $('#btnCadastro').prop("disabled", true);
+            return false;
         }
     }
-
-
-
-
-	setInterval(checkAllFields, 500); //Executar função a cada 0,5 segundos
-
-});
 
 function dataValidation() {
     var dataFeedback = $('#data-feedback');
     var dataValue = $('#data').val();
-    
-    // Verifica se o campo data está vazio
-    // if (dataValue === "") {
-    //     dataFeedback.text("Data inválida. Campo vazio.");
-    //     dataFeedback.css("color", "red");
-    //     return false;
-    // }
 
     var data = new Date(dataValue);
     var ano = data.getFullYear();
@@ -125,4 +119,27 @@ function validationLength(field){
 	}else{
 		return true;
 	}
+}
+
+document.getElementById("formCadastro").addEventListener("submit",function(event){
+    var verificar = checkAllFields()
+    if(verificar === true){
+        if(window.confirm("Deseja confirmar seu cadastro?")){
+            
+        }else{
+            alert("Cadastro cancelado");
+            event.preventDefault();
+        }
+    }else{
+        alert("Preencha o formulário corretamente");
+        event.preventDefault();
+    }
+})
+
+function nomeValidation(nome){
+    if(isNaN(nome)){
+        return true;
+    }else{
+        return false;
+    }
 }

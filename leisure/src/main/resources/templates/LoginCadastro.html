@@ -11,7 +11,7 @@
         <section class="login__cadastro__container">
             <div class="modal-body" data-acesso="cadastro">
                 <div class="titulo__segundo text-center">Cadastre-se</div>
-                <form class="cadastro__container" th:action="@{/usuario/cadastrar}"method="post">
+                <form class="cadastro__container" th:action="@{/usuario/cadastrar}" method="post" id="formCadastro">
                     <div class="cadastro__container__conteudo">
                         <label for="meusdadosNome">Nome completo</label>
                         <input type="text" name="nome" id="cadastroNome" autocomplete="off" minlength="3" required>
@@ -41,7 +41,6 @@
                         <input type="password" id="senha2" placeholder="Repetir senha" minlength="8" required>
                         <span class="cadastro__container__validacaoSenha"></span>
                     </div>
-
                     <div class="cadastro__container__conteudo">
                         <label for="dadoTelefone">Telefone</label>
                         <input type="tel" id="telefone" name="telefone" autocomplete="off" placeholder="Ex: (11)91010-2215" minlength="15" maxlength="15" onblur="checkIguality('telefone')" required data-cadastro="cadastroTelefone">

@@ -449,24 +449,24 @@
         <table>
             <thead class="usuarios__tabela__cabeca">
                 <tr>
-                    <th class="tabela__id">id</th>
+                    <th class="tabela__id">ID</th>
                     <th class="tabela__nome">Nome</th>
                     <th class="tabela__cpf">CPF</th>
-                    <th class="tabela__nascimento">nascimento</th>
-                    <th class="tabela__email">email</th>
-                    <th class="tabela__telefone">telefone</th>
-                    <th class="tabela__deletar">del.</th>
+                    <th class="tabela__nascimento">Nascimento</th>
+                    <th class="tabela__email">Email</th>
+                    <th class="tabela__telefone">Telefone</th>
+                    <th class="tabela__deletar">Deletar</th>
                 </tr>
             </thead>
-            <tbody class="usuarios__tabela__corpo">
+            <tbody class="usuarios__tabela__corpo" th:each="usuarios : ${listUsuarios}">
                 <tr>
-                    <td class="tabela__id">01</td>
-                    <td class="tabela__nome">danilo</td>
-                    <td class="tabela__cpf">000.000.000-10</td>
-                    <td class="tabela__nascimento">17/07/1991</td>
-                    <td class="tabela__email">danilo@danilo.com</td>
-                    <td class="tabela__telefone">11958616271</td>
-                    <td class="tabela__deletar"><i class="fa-sharp fa-solid fa-circle-xmark"></i></td>
+                    <td class="tabela__id"><span th:text="${usuarios.id}"></td>
+                    <td class="tabela__nome"><span th:text="${usuarios.nome}"></td>
+                    <td class="tabela__cpf"><span th:text="${usuarios.cpf}"></td>
+                    <td class="tabela__nascimento"><span th:text="${usuarios.data}"></span></td>
+                    <td class="tabela__email"><span th:text="${usuarios.email}"></td>
+                    <td class="tabela__telefone"><span th:text="${usuarios.telefone}"></td>
+                    <td class="tabela__deletar"><i class="fa-sharp fa-solid fa-circle-xmark" th:onclick="|deletarUsuario(${usuarios.id})|"></i></td>
                 </tr>
             </tbody>
         </table>

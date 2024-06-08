@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.deem.project.leisure.model.Usuario;
 //import org.deem.project.leisure.repository.UsuarioRepository;
@@ -53,14 +55,32 @@ public String getMethodName(@RequestParam String param) {
 	}
 	
 	//  ------------------------------------------- DELETAR USUÁRIO -------------------------------------------------------------	
-		@PostMapping("/deletar")
-		public String deletar(@RequestParam(value = "id") Long id, RedirectAttributes redirect) throws IOException {
-			Path caminho = Paths.get(pathImage + id +"fotoPerfil.png");
-			Files.delete(caminho);
-			usuarioService.deleteById(id);
-			return "redirect:/usuario/logout";
-		}  
+		// @PostMapping("/deletar/{id}")
+		// public String deletar(@PathVariable Long id, RedirectAttributes redirect) throws IOException {
+		// 	Path caminho = Paths.get(pathImage + id +"fotoPerfil.png");
+		// 	Files.delete(caminho);
+		// 	usuarioService.deleteById(id);
+		// 	return "redirect:/usuario/logout";
+		// }  
 		
+		@PostMapping("/deletar/{id}")
+		public ResponseEntity<Map<String, String>> deletar(@PathVariable Long id, RedirectAttributes redirect) throws IOException {
+			Usuario usuario = usuarioService.findById(id);
+			String usuarioNome = usuario.getNome();
+			try {
+				Path caminho = Paths.get(pathImage + id + "fotoPerfil.png");
+				Files.delete(caminho);
+			} catch (Exception e) {
+				// Tratamento de erro, se necessário
+			}
+			usuarioService.deleteById(id);
+			
+			Map<String, String> response = new HashMap<>();
+			response.put("mensagem", "O usuário " + usuarioNome + " foi deletado com sucesso!");
+			return ResponseEntity.ok(response);
+		}
+		
+
 		// ------------------------------------------------ ATUALIZAR DADOS ---------------------------------------------------------
 		@PostMapping("/atualizacao")
 		public String updateAll(RedirectAttributes redirect, 

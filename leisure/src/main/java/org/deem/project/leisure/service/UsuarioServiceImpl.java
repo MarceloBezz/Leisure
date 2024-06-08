@@ -169,4 +169,9 @@ public class UsuarioServiceImpl implements UsuarioService{
 		//COMPLETAR
 	}
 
+	@Override
+	public List<Usuario> findAll(){
+		return usuarioRepository.findAll();
+	}
+
 }

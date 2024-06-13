@@ -294,12 +294,15 @@
     <section class="anuncio " th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}">
         <div class="anuncio__card">
             <ul class="anuncio__card__lista">
+                <form th:action="@{/usuario/perfil/salvar-foto}" method="post" enctype="multipart/form-data">
                 <li>
                     <label for="input-file">
                         <img class="anuncio__card__lista__imagem" th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
-                        <!-- <img class="anuncio__card__lista__imagem" src="/img/anuncio/anuncio3.png" alt=""> -->
+                        <input class="anunciar__conteudo__input hidden" type="file" accept="image/jpg, image/jpeg, image/png"
+                        id="input-file" name="file">
                     </label>
                 </li>
+            </form>
                 <ul class="anuncio__card__form">
                     <li class="anuncio__card__conteudo">
                         <p class="anuncio__card__conteudo__titulo">Tipo: </p>

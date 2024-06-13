@@ -11,4 +11,4 @@ btnCadastro.addEventListener('click', () => {
 btnLogin.addEventListener('click', () => {
     campoCadastro.style.display = 'none'
     campoLogin.style.display = 'block'
-})
+});

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="/fotoTeste/enviar" enctype="multipart/form-data" id="form">
+    <input type="file" name="image" id="foto">
+    <button type="submit">Enviar</button>
+</form>
+
+<div th:if="${serverMessage}">
+    <div class="alert alert-danger" th:text="${serverMessage}"></div>
+</div>
+
+
+    <img th:src="|http://localhost:8080/foto|" alt="Foto do imóvel">
+
+
+<script>
+        var foto = document.getElementById('foto');
+        foto.addEventListener('change',() => {
+            var form = document.getElementById('form');
+            form.submit();
+        })
+</script>
+</body>
+</html>

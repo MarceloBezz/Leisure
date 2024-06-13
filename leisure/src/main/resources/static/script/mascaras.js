@@ -1,7 +1,7 @@
 const mascaras = document.querySelectorAll('[data-cadastro]');
     
 mascaras.forEach(campo => {
-    campo.addEventListener('keypress', () => {
+    campo.addEventListener('blur', () => {
         let dataAtribute = campo.getAttribute('data-cadastro')
         let inputLength = campo.value.length;
 

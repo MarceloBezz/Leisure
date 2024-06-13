@@ -8,9 +8,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.deem.project.leisure.model.Usuario;
+import org.deem.project.leisure.service.FotoService;
 //import org.deem.project.leisure.repository.UsuarioRepository;
 import org.deem.project.leisure.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -31,6 +33,9 @@ public class UsuarioController{
 	
 	
 	private static String pathImage = "src\\main\\resources\\Imagens\\ImagensPerfil\\";
+
+	@Autowired
+	FotoService fotoService;
 	
 	@Autowired
 	private UsuarioService usuarioService;
@@ -97,13 +102,10 @@ public String getMethodName(@RequestParam String param) {
 // 				---------------------- SALVAR IMAGEM DE PERFIL ------------------------------------
 		@PostMapping("/salvar-foto")
 		public String salvarFoto(Usuario usuario, @RequestParam("file") MultipartFile file, RedirectAttributes redirect) {
-			Usuario usuario_ = usuarioService.findById(usuario.getId());
+			usuario = usuarioService.getAuthenticatedUser();
 			try {
 				if(!file.isEmpty()) {
-					byte[] bytes = file.getBytes();
-					Path caminho = Paths.get(pathImage + String.valueOf(usuario_.getId()) +"fotoPerfil.png");
-					Files.write(caminho, bytes);
-					usuarioService.atualizar(usuario, usuario_);
+					String imagemUrl = fotoService.uploadImageToApiPic(file, (int) usuario.getId(), "fotoPerfil");
 				}
 			} catch(IOException e){
 				e.printStackTrace();
@@ -113,17 +115,18 @@ public String getMethodName(@RequestParam String param) {
 		}
 
 
-		// --------------------------------------- VISUALIZAR IMAGEM DE PERFIL ------------------------------------------------------
+		// // --------------------------------------- VISUALIZAR IMAGEM DE PERFIL ------------------------------------------------------
 		@GetMapping("/imagem/{id}")
-		public ResponseEntity<byte[]> getImagem(@PathVariable int id, Usuario usuario) throws IOException {
-			Usuario usuario_ = usuarioService.findById(id);
-			String path = pathImage + usuario_.getId() + "fotoPerfil.png";
-			Path caminho = Paths.get(path);
-			byte[] bytes = Files.readAllBytes(caminho);
-			HttpHeaders header = new HttpHeaders();
-			header.setContentType(MediaType.IMAGE_PNG);
-			return new ResponseEntity<>(bytes, header, HttpStatus.OK);
-			}
+        public ResponseEntity<Resource> downloadImage(Usuario usuario) {
+			usuario = usuarioService.getAuthenticatedUser();
+            String imageUrl = "https://suntech.eco.br/api/uploads/fotoPerfil" + usuario.getId() + ".png";
+            Resource image = fotoService.getImageFromApi(imageUrl);
+    
+            HttpHeaders headers = new HttpHeaders();
+            headers.add(HttpHeaders.CONTENT_TYPE, "image/png"); // Ajuste o tipo de conteúdo conforme necessário
+    
+            return new ResponseEntity<>(image, headers, HttpStatus.OK);
+        }
 
 
 	

@@ -6,9 +6,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.deem.project.leisure.model.Imovel;
 import org.deem.project.leisure.model.Usuario;
+import org.deem.project.leisure.service.FotoService;
 import org.deem.project.leisure.service.ImovelService;
 import org.deem.project.leisure.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -34,6 +36,9 @@ public class ImovelController {
 	
 	@Autowired
 	private UsuarioService usuarioService;
+
+	@Autowired
+	FotoService fotoService;
 	
 //				---------------------- CADASTRAR IMÓVEL -----------------------------
 	@PostMapping("/cadastrar")
@@ -48,9 +53,10 @@ public class ImovelController {
 				redirect.addAttribute("imovel", _imovel);
 				redirect.addFlashAttribute("mensagem", "Imóvel cadastrado com sucesso!");
 				if(!file.isEmpty()) {
-					byte[] bytes = file.getBytes();
-					Path caminho = Paths.get(pathImage + String.valueOf(imovel.getId()) + "fotoImovel.png");
-					Files.write(caminho, bytes);
+					// byte[] bytes = file.getBytes();
+					// Path caminho = Paths.get(pathImage + String.valueOf(imovel.getId()) + "fotoImovel.png");
+					// Files.write(caminho, bytes);
+					String imagemUrl = fotoService.uploadImageToApiPic(file, (int) imovel.getId(), "fotoImovel");
 				}
 			} catch(IOException e){
 				e.printStackTrace();
@@ -65,15 +71,15 @@ public class ImovelController {
 
 		// --------------------------------------- VISUALIZAR IMAGEM DO IMÓVEL ------------------------------------------------------
 		@GetMapping("/imovel/imagem/{id}")
-		public ResponseEntity<byte[]> getImagem(@PathVariable int id, Usuario usuario, Imovel imovel) throws IOException {
+		public ResponseEntity<Resource> getImagem(@PathVariable int id, Usuario usuario, Imovel imovel) throws IOException {
 			try{
-			imovel = imovelService.findById(id);
-			String path = pathImage + imovel.getId() + "fotoImovel.png";
-			Path caminho = Paths.get(path);
-			byte[] bytes = Files.readAllBytes(caminho);
-			HttpHeaders header = new HttpHeaders();
-			header.setContentType(MediaType.IMAGE_PNG);
-			return new ResponseEntity<>(bytes, header, HttpStatus.OK);
+            String imageUrl = "https://suntech.eco.br/api/uploads/fotoImovel" + imovel.getId() + ".png";
+            Resource image = fotoService.getImageFromApi(imageUrl);
+    
+            HttpHeaders headers = new HttpHeaders();
+            headers.add(HttpHeaders.CONTENT_TYPE, "image/png"); // Ajuste o tipo de conteúdo conforme necessário
+    
+            return new ResponseEntity<>(image, headers, HttpStatus.OK);
 			}catch(Exception e){
 				return null;
 			}
@@ -92,8 +98,8 @@ public class ImovelController {
 // 				---------------------- DELETAR IMÓVEL ------------------------------------
 	@PostMapping("/deletar-imovel")
 	public String deletar(Imovel imovel, RedirectAttributes redirect,@RequestParam("id") Long id) throws IOException {
-		Path caminho = Paths.get(pathImage + id +"fotoImovel.png");
-		Files.delete(caminho);
+		//Path caminho = Paths.get(pathImage + id +"fotoImovel.png");
+		//Files.delete(caminho);
 		imovelService.deleteById(id);
 		redirect.addFlashAttribute("mensagem", "Imóvel deletado com sucesso!");
 		return "redirect:/usuario/perfil/anuncio";
@@ -107,9 +113,7 @@ public String salvarFoto(Usuario usuario,@RequestParam("id")int id, @RequestPara
 	usuario = usuarioService.getAuthenticatedUser();
 	try {
 		if(!file.isEmpty()) {
-			byte[] bytes = file.getBytes();
-			Path caminho = Paths.get(pathImage + String.valueOf(imovel.getId()) + "fotoImovel.png");
-			Files.write(caminho, bytes);
+			String imagemUrl = fotoService.uploadImageToApiPic(file, (int) imovel.getId(), "fotoImovel");
 			imovelService.save(imovel_);
 		}
 	} catch(IOException e){

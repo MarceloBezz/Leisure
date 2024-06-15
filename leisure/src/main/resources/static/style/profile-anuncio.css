@@ -60,7 +60,7 @@
 }
 
 .anuncio__container__mensagem__content {
-    color: var(--cor-segunda);
+    color: var(--cor-font-principal);
     font-size: var(--font-size);
     font-weight: 500;
 }
@@ -75,7 +75,7 @@
 }
 
 .anuncio__container__mensagem__link:hover {
-    color: var(--cor-segunda);
+    color: var(--cor-font-principal);
     transition: 0.3s;
 }
 
@@ -123,6 +123,6 @@
     }
     
     .anuncio__card__conteudo__resultado {
-        color: var(--cor-segunda);
+        color: var(--cor-font-principal);
     }
 }

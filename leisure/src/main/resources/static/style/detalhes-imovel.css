@@ -119,7 +119,7 @@
         margin-top: 1em;
         font-size: 2em;
         font-weight: 600;
-        color: var(--cor-segunda);
+        color: var(--cor-font-principal);
     }
 
     .detalhes__pesquisa {

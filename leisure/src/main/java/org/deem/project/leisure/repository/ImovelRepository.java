@@ -24,6 +24,7 @@ public interface ImovelRepository extends JpaRepository<Imovel, Long>{
 	List<Imovel> findByUsuarioId(Long id);
 
 	List<Imovel> findAll(Specification<Imovel> spec);
+	List<Imovel> findAll();
 
 	Imovel save(Imovel imovel);
 	

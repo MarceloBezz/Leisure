@@ -114,6 +114,7 @@ public String salvarFoto(Usuario usuario,@RequestParam("id")int id, @RequestPara
 	try {
 		if(!file.isEmpty()) {
 			String imagemUrl = fotoService.uploadImageToApiPic(file, (int) imovel.getId(), "fotoImovel");
+			imovel_.setCaminho_Imagem(imagemUrl);
 			imovelService.save(imovel_);
 		}
 	} catch(IOException e){
@@ -125,11 +126,32 @@ public String salvarFoto(Usuario usuario,@RequestParam("id")int id, @RequestPara
 
 // 				---------------------- ACESSAR PÁGINA DE EDIÇÃO DO IMÓVEL ------------------------------------
 @GetMapping("/editar-imovel/{id}")
-public String editarImovel(@PathVariable int id ,Model model, Usuario usuario) {
+public String editarImovel(@PathVariable int id ,Model model, Usuario usuario, RedirectAttributes redirect) {
 	usuario = usuarioService.getAuthenticatedUser();
 	Imovel imovel = imovelService.findById(id);
+	if(!usuario.getImoveis().contains(imovel)){
+		return "redirect:/usuario/perfil/anuncio";
+	}
     model.addAttribute("imovel", imovel);
 	model.addAttribute("usuario", usuario);
+	redirect.addAttribute("imovel", imovel);
+	redirect.addAttribute("usuario", usuario);
+	return "edicaoImovel";
+}
+
+// @GetMapping("/editar-imovel/{id}")
+// public String editarImovel(@PathVariable int id ,Model model, Usuario usuario, RedirectAttributes redirect) {
+// 	usuario = usuarioService.getAuthenticatedUser();
+// 	Imovel imovel = imovelService.findById(id);
+//     model.addAttribute("imovel", imovel);
+// 	model.addAttribute("usuario", usuario);
+// 	redirect.addAttribute("imovel", imovel);
+// 	redirect.addAttribute("usuario", usuario);
+// 	return "redirect:/usuario/perfil/editar-imovel";
+// }
+
+@GetMapping("/editar-imovel")
+public String editarImovelSemId(){
 	return "edicaoImovel";
 }
 

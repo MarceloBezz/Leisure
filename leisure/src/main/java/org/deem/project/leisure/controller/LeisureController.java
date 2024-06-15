@@ -12,9 +12,11 @@ import org.deem.project.leisure.model.Imovel;
 import org.deem.project.leisure.model.Usuario;
 import org.deem.project.leisure.repository.UsuarioRepository;
 import org.deem.project.leisure.service.FiltroService;
+import org.deem.project.leisure.service.FotoService;
 import org.deem.project.leisure.service.ImovelService;
 import org.deem.project.leisure.service.UsuarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -45,6 +47,9 @@ public class LeisureController {
 
 	@Autowired
 	private FiltroService filtroService;
+
+	@Autowired
+	private FotoService fotoService;
 	
 	@GetMapping("/index")
 	public String getIndex(Usuario usuario, RedirectAttributes redirect, Model model) {
@@ -59,18 +64,23 @@ public class LeisureController {
 		return "anuncio";
 	}
 	@GetMapping("/premium")
-	public String getPremium() {
+	public String getPremium(Usuario usuario, Model model) {
+		usuario = usuarioService.getAuthenticatedUser();
+		model.addAttribute("usuario", usuario);
 		return "premium";
 	}
 	
 	@GetMapping("/duvidas")
-	public String getDuvidas() {
+	public String getDuvidas(Usuario usuario, Model model) {
+		usuario = usuarioService.getAuthenticatedUser();
+		model.addAttribute("usuario", usuario);
 		return "duvidas";
 	}
 
 	@PostMapping("/filtragem")
-	public String filtro(Usuario usuario, Long id,String tipo, Double precoMinimo, Double precoMaximo, String cidade, String bairro, Integer numQuartos, Model model) {
-		List<Imovel> imoveisFiltrados = filtroService.filtragemDeImoveis(tipo, precoMinimo, precoMaximo, cidade, bairro, numQuartos);
+	public String filtro(Usuario usuario, Long id,String tipo, Double precoMinimo, Double precoMaximo, String cidade, String bairro, Integer numQuartos,
+						 String sustentabilidade, Double area, Integer vagasGaragem, Model model) {
+		List<Imovel> imoveisFiltrados = filtroService.filtragemDeImoveis(tipo, precoMinimo, precoMaximo, cidade, bairro, numQuartos, sustentabilidade, area, vagasGaragem);
 		usuario = usuarioService.getAuthenticatedUser();	
 		model.addAttribute("imovelPorId", imoveisFiltrados);
 		model.addAttribute("usuario", usuario);
@@ -79,7 +89,6 @@ public class LeisureController {
 
 	@GetMapping("/filtragem")
 	public String retorno(Model model, RedirectAttributes redirect){
-		//redirect.addFlashAttribute("get","Preencha o formulário de filtro para acessar o resultado da filtragem");
 		return "redirect:/leisure/index";
 	}
 
@@ -87,8 +96,8 @@ public class LeisureController {
 	@GetMapping("/detalhes-imovel/{id}")
 	public String getDetalhesImovel(Usuario usuario, Model model,@PathVariable int id, Imovel imovel) {
 		usuario = usuarioService.getAuthenticatedUser();
-		model.addAttribute("usuario", usuario);
 		imovel = imovelService.findById(id);
+		model.addAttribute("usuario", usuario);
 		model.addAttribute("imovel", imovel);
 		return "detalhes-imovel";
 	}
@@ -102,16 +111,16 @@ public class LeisureController {
 
 
 //----------------------------------------- VISUALIZAR FOTO(PARA USUÁRIOS NÃO LOGADOS) ---------------------------------------------
-			@GetMapping("/imovel/imagem/{id}")
-		public ResponseEntity<byte[]> getImagem(@PathVariable int id, Usuario usuario, Imovel imovel) throws IOException {
+		@GetMapping("/imovel/imagem/{id}")
+		public ResponseEntity<Resource> getImagem(@PathVariable int id, Usuario usuario, Imovel imovel) throws IOException {
 			try{
 			imovel = imovelService.findById(id);
-			String path = pathImage + imovel.getId() + "fotoImovel.png";
-			Path caminho = Paths.get(path);
-			byte[] bytes = Files.readAllBytes(caminho);
-			HttpHeaders header = new HttpHeaders();
-			header.setContentType(MediaType.IMAGE_PNG);
-			return new ResponseEntity<>(bytes, header, HttpStatus.OK);
+			 String imageUrl = "https://suntech.eco.br/api/uploads/fotoImovel" + id + ".png";
+            Resource image = fotoService.getImageFromApi(imageUrl);
+    
+            HttpHeaders headers = new HttpHeaders();
+            headers.add(HttpHeaders.CONTENT_TYPE, "image/png"); // Ajuste o tipo de conteúdo conforme necessário
+			return new ResponseEntity<>(image, headers, HttpStatus.OK);
 			}catch(Exception e){
 				return null;
 			}

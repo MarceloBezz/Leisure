@@ -24,13 +24,13 @@ public class Imovel {
 	public Usuario usuario;
 	
 	@Column(name="qtde_quarto")
-	private int numQuartos;
+	private Integer numQuartos;
 	
 	@Column(name="qtde_banheiro")
-	private int numBanheiros;
+	private Integer numBanheiros;
 	
 	@Column(name="qtde_vaga_garagem")
-	private int vagasGaragem;
+	private Integer vagasGaragem;
 	
 	@Column(name="cep")
 	private String cep;
@@ -42,7 +42,7 @@ public class Imovel {
 	private String cidade;
 	
 	@Column(name="num_residencia")
-	private int numero;
+	private Integer numero;
 	
 	@Column(name="descricao")
 	private String descricao;
@@ -61,12 +61,15 @@ public class Imovel {
 	
 	@Column(name="area")
 	private Integer area;
+
+	@Column(name="caminho_imagem")
+	private String caminho_imagem;
 	
 	
 	public Imovel() {	
 	}
 	
-	public Imovel(long id, Usuario usuario, int numQuartos, int numBanheiros, int vagasGaragem, String cep,
+	public Imovel(long id, Usuario usuario, Integer numQuartos, Integer numBanheiros, int vagasGaragem, String cep,
 			String bairro, String cidade, int numero, String descricao, Double preco, String tipo,
 			String sustentabilidade, double iptu, Integer area) {
 		this.id = id;
@@ -88,7 +91,13 @@ public class Imovel {
 
 
 
+	public String getCaminho_Imagem(){
+		return caminho_imagem;
+	}
 
+	public void setCaminho_Imagem(String caminho_imagem){
+		this.caminho_imagem = caminho_imagem;
+	}
 
 
 
@@ -150,7 +159,7 @@ public class Imovel {
 		return numQuartos;
 	}
 
-	public void setNumQuartos(int numQuartos) {
+	public void setNumQuartos(Integer numQuartos) {
 		this.numQuartos = numQuartos;
 	}
 
@@ -158,7 +167,7 @@ public class Imovel {
 		return numBanheiros;
 	}
 
-	public void setNumBanheiros(int numBanheiros) {
+	public void setNumBanheiros(Integer numBanheiros) {
 		this.numBanheiros = numBanheiros;
 	}
 

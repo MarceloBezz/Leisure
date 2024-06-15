@@ -3,6 +3,7 @@ package org.deem.project.leisure.service;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.deem.project.leisure.model.Roles;

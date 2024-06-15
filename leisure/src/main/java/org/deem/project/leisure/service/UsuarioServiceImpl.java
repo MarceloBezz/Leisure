@@ -3,12 +3,18 @@ package org.deem.project.leisure.service;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import javax.imageio.ImageIO;
+
 import java.util.ArrayList;
 import org.deem.project.leisure.model.Roles;
 import org.deem.project.leisure.model.Usuario;
 import org.deem.project.leisure.repository.RoleRepository;
 import org.deem.project.leisure.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -19,7 +25,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService{
-	
+
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
@@ -29,6 +35,11 @@ public class UsuarioServiceImpl implements UsuarioService{
 	
 	@Autowired
 	private RoleRepository roleRepository;
+
+	@Autowired
+	private FotoService fotoService;
+
+	private static String imageUrl = "https://suntech.eco.br/api/uploads/fotoPadrao.png";
 	
 	//Método utilizado pelo Spring para validar o usuário quando ele
 	//tenta acessar um recurso protegido
@@ -65,6 +76,9 @@ public class UsuarioServiceImpl implements UsuarioService{
 							  new ArrayList<>()); 
 		usuario.setRole_usuario("ROLE_USER");
 		takeOffMask(usuario);
+		if(usuario.getCaminho_Imagem() == null){
+			usuario.setCaminho_Imagem(imageUrl);
+		}
 		usuarioRepository.save(usuario);
 		this.addRoleToUser(usuario.getEmail(), "ROLE_USER");
 		return usuario;

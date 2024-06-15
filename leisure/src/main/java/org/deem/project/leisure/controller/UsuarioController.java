@@ -5,9 +5,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.deem.project.leisure.model.Usuario;
+import org.deem.project.leisure.repository.RoleRepository;
+import org.deem.project.leisure.repository.UsuarioRepository;
 import org.deem.project.leisure.service.FotoService;
 //import org.deem.project.leisure.repository.UsuarioRepository;
 import org.deem.project.leisure.service.UsuarioService;
@@ -40,6 +43,12 @@ public class UsuarioController{
 	@Autowired
 	private UsuarioService usuarioService;
 
+	@Autowired
+	private RoleRepository roleRepository;
+
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+
 @PostMapping("/login")
 public String getMethodName(@RequestParam String param) {
     return "redirect:/leisure/index";
@@ -60,24 +69,10 @@ public String getMethodName(@RequestParam String param) {
 	}
 	
 	//  ------------------------------------------- DELETAR USUÁRIO -------------------------------------------------------------	
-		// @PostMapping("/deletar/{id}")
-		// public String deletar(@PathVariable Long id, RedirectAttributes redirect) throws IOException {
-		// 	Path caminho = Paths.get(pathImage + id +"fotoPerfil.png");
-		// 	Files.delete(caminho);
-		// 	usuarioService.deleteById(id);
-		// 	return "redirect:/usuario/logout";
-		// }  
-		
 		@PostMapping("/deletar/{id}")
 		public ResponseEntity<Map<String, String>> deletar(@PathVariable Long id, RedirectAttributes redirect) throws IOException {
 			Usuario usuario = usuarioService.findById(id);
 			String usuarioNome = usuario.getNome();
-			try {
-				Path caminho = Paths.get(pathImage + id + "fotoPerfil.png");
-				Files.delete(caminho);
-			} catch (Exception e) {
-				// Tratamento de erro, se necessário
-			}
 			usuarioService.deleteById(id);
 			
 			Map<String, String> response = new HashMap<>();
@@ -93,7 +88,8 @@ public String getMethodName(@RequestParam String param) {
 								String mensagem) throws IOException {
 			
 			Usuario usuarioBD = usuarioService.getAuthenticatedUser();
-			usuarioService.atualizar(usuario,usuarioBD);			
+			usuarioService.atualizar(usuario,usuarioBD);
+
 			redirect.addFlashAttribute("mensagem", "Dados atualizados com sucesso!");
 			return "redirect:/usuario/perfil/meusdados";
 			
@@ -106,6 +102,8 @@ public String getMethodName(@RequestParam String param) {
 			try {
 				if(!file.isEmpty()) {
 					String imagemUrl = fotoService.uploadImageToApiPic(file, (int) usuario.getId(), "fotoPerfil");
+					usuario.setCaminho_Imagem(imagemUrl);
+					usuarioRepository.save(usuario);
 				}
 			} catch(IOException e){
 				e.printStackTrace();
@@ -119,7 +117,8 @@ public String getMethodName(@RequestParam String param) {
 		@GetMapping("/imagem/{id}")
         public ResponseEntity<Resource> downloadImage(Usuario usuario) {
 			usuario = usuarioService.getAuthenticatedUser();
-            String imageUrl = "https://suntech.eco.br/api/uploads/fotoPerfil" + usuario.getId() + ".png";
+            // String imageUrl = "https://suntech.eco.br/api/uploads/fotoPerfil" + usuario.getId() + ".png";
+			String imageUrl = usuario.getCaminho_Imagem();
             Resource image = fotoService.getImageFromApi(imageUrl);
     
             HttpHeaders headers = new HttpHeaders();

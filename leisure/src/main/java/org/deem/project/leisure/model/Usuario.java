@@ -56,6 +56,9 @@ public class Usuario implements UserDetails {
 	
 	@Column(name="perfil_principal")
 	private String role_usuario;
+
+	@Column(name="caminho_imagem")
+	private String caminho_imagem;
 	
 
 	// FetchType.EAGER => Busca também os relacionados
@@ -125,6 +128,14 @@ public class Usuario implements UserDetails {
 		this.senha = senha;
 		this.cpf = cpf;
 		this.roles = roles;
+	}
+
+	public String getCaminho_Imagem(){
+		return caminho_imagem;
+	}
+
+	public void setCaminho_Imagem(String caminho_imagem){
+		this.caminho_imagem = caminho_imagem;
 	}
 
 

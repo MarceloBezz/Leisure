@@ -48,7 +48,7 @@ public class fotoController {
  
 	        // VAI USAR ESSE TRECHO 
 	        try {
-	            String imageUrl = fotoService.uploadImageToApi(file,2);
+	            String imageUrl = fotoService.uploadImageToApiPic(file,2,"fotoPerfil");
 	            redirectAttributes.addFlashAttribute("serverMessage", "Imagem enviada e URL salva com sucesso!");
                 model.addAttribute("link", imageUrl);
                 return "redirect:/fotoTeste";

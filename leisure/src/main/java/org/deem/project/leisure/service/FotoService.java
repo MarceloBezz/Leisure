@@ -32,40 +32,6 @@ public class FotoService {
 
     private final String apiUrl = "https://suntech.eco.br/api/upload";
 
-
-
-    public String uploadImageToApi(MultipartFile file, int usuarioId) throws IOException {
-        String imageUrl = "";
-        
-        // Extrai a extensão do nome original do arquivo
-        String originalFilename = file.getOriginalFilename();
-        String extension = originalFilename.substring(originalFilename.lastIndexOf("."));
-        String newFileName = "fotoPerfil" + usuarioId + extension;
- 
-        // Salva o arquivo com o novo nome temporariamente
-        File tempFile = new File(System.getProperty("java.io.tmpdir") + "/" + newFileName);
-        try (FileOutputStream fos = new FileOutputStream(tempFile)) {
-            fos.write(file.getBytes());
-        }
- 
-        // Chama a API REST /upload para enviar a imagem
-        MultiValueMap<String, Object> body = new LinkedMultiValueMap<>();
-        body.add("image", new FileSystemResource(tempFile)); // Adiciona a imagem ao formulário multipart
- 
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.MULTIPART_FORM_DATA);
- 
-        HttpEntity<MultiValueMap<String, Object>> requestEntity = new HttpEntity<>(body, headers);
- 
-        ResponseEntity<String> responseEntity = restTemplate.exchange(apiUrl, HttpMethod.POST, requestEntity, String.class);
- 
-        if (responseEntity.getStatusCode().is2xxSuccessful()) {
-            // Se a requisição for bem-sucedida, salva a URL na entidade ImageCliente
-            imageUrl = responseEntity.getBody(); // Obtém a URL da imagem da resposta da API
-        }
- 
-        return imageUrl;
-    }
     public String uploadImageToApiPic(MultipartFile file, int id, String tipo) throws IOException {
         String imageUrl = "";
         

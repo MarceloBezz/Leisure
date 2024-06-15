@@ -139,12 +139,12 @@
                     <p>Seja bem-vindo (a) <span th:text="${usuario.nome}"></span></p>
                 </div>
                 <div class="lista-menu__conteudo">
-                    <li class="lista-menu__item btnAnunciar">
+                    <li class="lista-menu__item btnAnunciar" sec:authorize="hasAuthority('ROLE_ADMIN')">
                         <a class="container__link btnAnunciar" href="/usuario/perfil/usuarios">
                             <span>ADM</span>
                         </a>
                     </li>
-                <div class="lista-menu__conteudo">
+                <!-- <div class="lista-menu__conteudo"> -->
                     <li class="lista-menu__item btnAnunciar">
                         <a class="container__link btnAnunciar" href="/usuario/perfil/anunciar">
                             <span>Anunciar</span>

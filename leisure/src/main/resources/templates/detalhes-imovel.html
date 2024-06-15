@@ -5,17 +5,16 @@
 
 <body>
 
+    <div th:replace="~{fragments/loading :: loading}"></div>
+
     <!-- CABEÇALHO -->
     <header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
 
     <main class="main">
-        <!-- <th:block th:fragment="resultado-pesquisa"> -->
-    <!-- <div th:fragment="resultado-pesquisa" class="detalhes__filtro" th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}"> -->
         <section class="detalhes">
             <div class="detalhes__filtro__card">
                 <div class="detalhes__filtro__card__conteudo">
                     <div class="detalhes__filtro__card__conteudo__imagem" data-anuncio="anuncio">
-                            <!-- <img src="/img/anuncio/card/card01.png" alt="imagem teste card"> -->
                         <img th:src="|http://localhost:8080/leisure/imovel/imagem/${imovel.id}|" alt="Foto do imóvel">
                     </div>
     
@@ -77,9 +76,6 @@
                 </div>
             </div>
         </section>
-        
-    <!-- </div> -->
-<!-- </th:block> -->
     </main>
 
     <!-- RODAPE -->

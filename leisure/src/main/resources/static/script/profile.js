@@ -3,9 +3,11 @@
 var barra = document.querySelector('.anunciar__conteudo__progresso-barra');
 const listaBtnAnterior = document.querySelectorAll('.anunciar__conteudo__botao-anterior');
 const listaBtnProximo = document.querySelectorAll('.anunciar__conteudo__botao-proximo');
+const listaQuestao = document.querySelectorAll('[data-profile="question"]')
 const formBox = document.querySelectorAll('.anunciar__conteudo__box');
 const valorInput = document.querySelectorAll('.anunciar__conteudo__input');
 const endereco = document.querySelectorAll('[data-anunciar="endereco"]')
+const validarValorNegativoELetras = document.querySelectorAll('[data-profile="imputValida"]')
 var progresso = 0;
 var i = 0;
 
@@ -28,6 +30,7 @@ try {
 	autoSubmitDaImagem.addEventListener('change', () => {
 		const form = document.querySelector('[data-form-imagem]');
 		form.submit();
+		loading();
 	})
 }catch (error) {
 	
@@ -100,3 +103,21 @@ function deletarUsuario(id){
 	
 	xhttp.send(JSON.stringify({id: id}));
 }
+
+//VALIDAR VALOR NEGATIVO E LETRAS
+
+// validarValorNegativoELetras.forEach(validacao => {
+// 	validacao.addEventListener('change', (event) => {
+// 		const valor = event.target.value;
+
+// 		isNaN(valor) || parseFloat(valor) < 0 ?
+// 		event.target.classList.add('invalid') :
+// 		event.target.classList.remove('invalid')
+// 	})
+// 	document.querySelector('[data-profile="formAnunciar"]').addEventListener('submit', (event) => {
+// 		validacao.classList.contains('invalid') ?
+// 		event.preventDefault() : null;
+// 		alert('inserir valores valido')
+// 	})
+// })
+

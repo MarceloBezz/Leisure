@@ -4,6 +4,8 @@
 <head th:replace="~{fragments/head :: head}"></head>
 <body>
 
+    <div th:replace="~{fragments/loading :: loading}"></div>
+
     <!-- CABEÇALHO -->
     <header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
 
@@ -91,7 +93,7 @@
                 <div class="como-comprar__container__conteudo">
                     <h2 class="titulo__segundo">Comprar um imóvel para chamar de seu e da sua familia</h2>
                     <p>Temos as melhores ofertas de casas para você e sua familia podendo ser negociada diretamente com o proprietário.</p>
-                    <a class="no-decoration btn-segundo" href="#">Veja as ofertas</a>
+                    <a class="no-decoration btn-segundo" href="#">Veja os melhores preços</a>
                     <span>
                         <a class="no-decoration" href="#">Como comprar na LeisureImoveis <i class="fa-solid fa-arrow-right"></i></a>
                     </span>
@@ -127,20 +129,20 @@
                     <li class="sobre__conteudo__lista-item">
                         <ul class="sobre__conteudo__lista">
                             <li class="sobre__conteudo__lista-item">
-                                <h3 class="titulo__terceiro">O que nos torna únicos</h3>
+                                <h3 class="titulo__terceiro">Sem complicações</h3>
                                 <p class="sobre__conteudo__lista-texto">Na Leisure Imóveis, nos destacamos pelo nosso comprometimento com a qualidade e a satisfação do cliente.</p>
                                 <ul class="sobre__conteudo__lista">
                                     <li class="sobre__conteudo__lista-item lista-lista">
                                         <p class="sobre__conteudo__lista-texto">
                                             <i class="fa-light fa-check" style="color: #74C0FC;"></i>
                                         </p>
-                                        <p class="sobre__conteudo__lista-texto">Tecnologias modernas</p>
+                                        <p class="sobre__conteudo__lista-texto">Designer prático</p>
                                     </li>
                                     <li class="sobre__conteudo__lista-item lista-lista">
                                         <p class="sobre__conteudo__lista-texto">
                                             <i class="fa-light fa-check" style="color: #74C0FC;"></i>
                                         </p>
-                                        <p class="sobre__conteudo__lista-texto">contribuição com o meio hambiente</p>
+                                        <p class="sobre__conteudo__lista-texto">Em prol do meio ambiente</p>
                                     </li>
                                     <li class="sobre__conteudo__lista-item lista-lista">
                                         <p class="sobre__conteudo__lista-texto">
@@ -152,7 +154,13 @@
                                         <p class="sobre__conteudo__lista-texto">
                                             <i class="fa-light fa-check" style="color: #74C0FC;"></i>
                                         </p>
-                                        <p class="sobre__conteudo__lista-texto">Selos de qualidade</p>
+                                        <p class="sobre__conteudo__lista-texto">Sem burocracias</p>
+                                    </li>
+                                    <li class="sobre__conteudo__lista-item lista-lista">
+                                        <p class="sobre__conteudo__lista-texto">
+                                            <i class="fa-light fa-check" style="color: #74C0FC;"></i>
+                                        </p>
+                                        <p class="sobre__conteudo__lista-texto">Contato com o anunciante</p>
                                     </li>
                                 </ul>
                             </li>
@@ -182,7 +190,7 @@
                             <img class="time__card-imagem" src="/img/imagem/Enzo.jpg" alt="Foto do Enzo">
                             <div class="time__card__info">
                                 <h3 class="titulo__terceiro">Enzo</h3>
-                                <p class="time_card__info-texto">DBA</p>
+                                <p class="time_card__info-texto">DBO</p>
                             </div>
                         </div>
                     </div>
@@ -218,18 +226,6 @@
                 <div class="swiper-button-next"></div>
             </div>
         </section>
-
-        <!-- <section class="trabalhe">
-            <div class="trabalhe__conteudo">
-                <h3 class="titulo__terceiro trabalhe__conteudo-titulo">Quer fazer parte da equipe?</h3>
-                <p class="trabalhe__conteudo-texto">Temos várias posições abertas, entre elas: Software Engineer, UI/UX Designer, Project Manager e mais.</p>
-                <p class="trabalhe__conteudo-texto">Clique no botão abaixo e confira os beneficios e as posições em aberto.</p>
-                <p class="trabalhe__conteudo-texto">Aqui você terá chance de trabalhar com as melhores tecnologias e os profissionais mais capacitados.</p>
-                <div class="trabalhe__conteudo__botao">
-                    <a class="trabalhe__conteudo__botao-link" href="#">Eu quero!</a>
-                </div>
-            </div>
-        </section> -->
     </main>
     <div class="ad__container" data-ad="ad-app">
         <i class="fa-light fa-xmark ad__container__close" data-ad="close"></i>

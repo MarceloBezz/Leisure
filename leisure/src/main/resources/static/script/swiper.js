@@ -1,15 +1,12 @@
 const swiper = new Swiper('.swiper', {
-	// spaceBetween: 20,
 	slidesPerView: 3,
 	loop: false,
 	breakpoints: {
 		768: {
 		  slidesPerView: 4,
-		//   spaceBetween: 30
 		},
 		1024: {
 			slidesPerView: 5,
-		  //   spaceBetween: 30
 		  }
 	},
 	pagination: {

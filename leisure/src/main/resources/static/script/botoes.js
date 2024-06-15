@@ -32,9 +32,6 @@
             btnPerfilLista.classList.toggle('hidden')
         })
         function closeClick(event) {
-            // if(btnPerfilLista && ! btnPerfilLista.contains(event.target)) {
-            //     btnPerfilLista.classList.add('hidden');
-            // }
             btnPerfilLista && ! btnPerfilLista.contains(event.target) ? btnPerfilLista.classList.add('hidden') : null;
         }
         

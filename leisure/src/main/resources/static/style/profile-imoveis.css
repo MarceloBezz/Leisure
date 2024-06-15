@@ -1,0 +1,103 @@
+.imoveis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5em;
+}
+
+.imoveis table {
+    width: 90vw;
+    border-collapse: collapse;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.imoveis__tabela__cabeca th {
+    font-weight: 600;
+    color: black;
+    border: 1px solid var(--cor-segunda);
+    background: var(--cor-segunda);
+    text-align: center;
+    padding: 8px;
+    cursor: default;
+}
+
+.imoveis__tabela__corpo td {
+    border: 1px solid var(--cor-segunda);
+    text-align: left;
+    padding: 8px;
+}
+
+.imoveis__tabela__id {
+    width: 1%;
+    text-align: center !important;
+}
+
+.imoveis__tabela__tipo {
+    width: 2%;
+}
+
+.imoveis__tabela__area {
+    width: 1%;
+    text-align: center !important;
+}
+
+.imoveis__tabela__sustentabilidade {
+    width: 5%;
+    text-align: center !important;
+}
+
+.imoveis__tabela__iptu {
+    width: 1%;
+}
+
+.imoveis__tabela__quartos {
+    width: 2%;
+    text-align: center !important;
+}
+
+.imoveis__tabela__banheiros {
+    width: 2%;
+    text-align: center !important;
+}
+
+.imoveis__tabela__vagas {
+    width: 1%;
+    text-align: center !important;
+}
+
+.imoveis__tabela__cep {
+width: 1%;
+    text-align: center !important;
+}
+
+.imoveis__tabela__cidade {
+    width: 5%;
+    text-align: center !important;
+}
+
+.imoveis__tabela__bairro {
+    width: 5%;
+    text-align: center !important;
+}
+
+.imoveis__tabela__numero {
+    width: 1%;
+    text-align: center !important;
+}
+
+.imoveis__tabela__valor {
+    width: 1%;
+    text-align: center !important;
+}
+
+.imoveis__tabela__descricao {
+    width: 10%;
+    text-align: center !important;
+}
+
+.imoveis__tabela__deletar {
+    width: 1%;
+    text-align: center !important;
+    color: red;
+    cursor: pointer;
+}

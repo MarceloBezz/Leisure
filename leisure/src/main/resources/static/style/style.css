@@ -16,6 +16,7 @@
 @import url('index-financiamento.css');
 @import url('index-sobre.css');
 @import url('index-time.css');
+@import url('loading.css');
 @import url('login-cadastro.css');
 @import url('loginCadastro.css');
 @import url('modal.css');
@@ -23,6 +24,7 @@
 @import url('premium.css');
 @import url('profile-anunciar.css');
 @import url('profile-anuncio.css');
+@import url('profile-imoveis.css');
 @import url('profile-meusdados.css');
 @import url('profile-usuarios.css');
 @import url('rodape.css');
@@ -62,13 +64,21 @@ input, select, textarea {
 }
 
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+	/* all: unset;
+	box-sizing: border-box; */
 }
 
 select:focus, input:focus, textarea:focus {
     outline: 0;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px white inset !important;
+	box-shadow: 0 0 0 100px white inset !important;
+	-webkit-text-fill-color: #000 !important;
 }
 
 input::placeholder {

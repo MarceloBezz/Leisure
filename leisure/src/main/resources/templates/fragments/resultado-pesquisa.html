@@ -4,11 +4,8 @@
             <div class="resultado__filtro__card__conteudo">
                 <div class="resultado__filtro__card__conteudo__imagem" data-anuncio="anuncio">
                     <a th:href="|http://localhost:8080/leisure/detalhes-imovel/${imovel.id}|">
-                        <!-- <img src="/img/anuncio/card/card01.png" alt="imagem teste card"> -->
                         <img th:src="|http://localhost:8080/leisure/imovel/imagem/${imovel.id}|" alt="Foto do imóvel">
-                    </a>
-                    
-                    
+                    </a>    
                 </div>
                 <div class="resultado__filtro__card__conteudo__content">
                     <span class="resultado__filtro__card__conteudo__content__item">
@@ -22,18 +19,6 @@
                             </span>
                         </p>
                     </span>
-                    <!-- <span class="resultado__filtro__card__conteudo__content__item">
-                        <ul class="resultado__filtro__card__conteudo__content__lista">
-                            <li>• <span th:text="${imovel.numQuartos}"></span> quarto</li>
-                            <li>• <span th:text="${imovel.numBanheiros}"></span> banheiro</li>
-                            <li>• <span th:text="${imovel.vagasGaragem}"></span> vaga</li>
-                            <li>• IPTU R$<span th:text="${imovel.iptu}"></span>,00</li>
-                            <li>• IPTU R$<span th:text="${imovel.iptu}"></span></li>
-                        </ul>
-                        <ul class="resultado__filtro__card__conteudo__content__lista">
-                            <li>• <span th:text="${imovel.descricao}"></span></li>
-                        </ul>
-                    </span> -->
                     <span class="resultado__filtro__card__conteudo__content__contato">
                         <a th:href="|https://wa.me/+55${imovel.usuario.telefone}?text=Olá,%20${imovel.usuario.nome}!%20Desejo%20conversar%20sobre%20seu%20anúncio%20de%20${imovel.tipo}%20na%20Leisure%20Imóveis!!!|" target="_blank">
                             <i class="fa-brands fa-whatsapp fa-xl"></i>

@@ -1,5 +1,5 @@
 <div th:fragment="login" th:if="${usuario == null}">
-    <a th:href="@{/leisure/login}" class="container__usuario no-decoration">
+    <a th:href="@{/leisure/login}" class="container__usuario no-decoration" onclick="loading()">
         <i class="fa-light fa-circle-user fa-2xl"></i>
         <span name="Entrar">Entrar</span>
     </a>
@@ -10,33 +10,14 @@
     <span class="container__usuario container__usuario-imagem logout">
         <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
         <img th:src="|http://localhost:8080/usuario/imagem/${usuario.id}|">
-        <!-- <img src="/img/imagem/escritorio.png" alt=""> -->
     </span>
 
     <ul class="logout__lista hidden">
-        <li class="logout__item">
+        <li class="logout__item" onclick="loading()">
             <a class="no-decoration" href="/usuario/perfil">Perfil</a>
         </li>
-        <li class="logout__item">
+        <li class="logout__item" onclick="loading()">
             <a class="no-decoration" th:href="@{/usuario/logout}">Sair</a>
         </li>
     </ul>
 </div>
-
-
-<!-- BACKUP -->
-<!-- <div th:fragment="logout" th:if="${usuario != null}" class="container__usuario logout">
-    <span class="container__usuario-imagem">
-        <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
-        <img th:src="|http://localhost:8080/usuario/imagem/${usuario.id}|">
-    </span>
-
-    <ul class="logout__lista hidden">
-        <li class="logout__item">
-            <a class="no-decoration" href="/usuario/perfil">Perfil</a>
-        </li>
-        <li class="logout__item">
-            <a class="no-decoration" th:href="@{/usuario/logout}">Sair</a>
-        </li>
-    </ul>
-</div> -->

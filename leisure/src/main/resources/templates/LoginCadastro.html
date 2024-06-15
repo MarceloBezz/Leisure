@@ -31,20 +31,19 @@
                         <input type="email" name="email" id="email" autocomplete="off" minlength="8" onblur="checkIguality('email')" required>
                         <span id="email-feedback" class="feedback"></span>
                     </div>
-
+                    <div class="cadastro__container__conteudo">
+                        <label for="dadoTelefone">Telefone</label>
+                        <input type="text" id="telefone" name="telefone" autocomplete="off" placeholder="Ex: " minlength="11" maxlength="15" onblur="checkIguality('telefone')" required data-cadastro="cadastroTelefone" pattern="\d*">
+                        <span id="telefone-feedback" class="feedback"></span>
+                    </div>
                     <div class="cadastro__container__conteudo">
                         <label for="cadastroSenha">Senha</label>
                         <input type="password" name="senha" id="senha" placeholder="Min de 8 caracteres" minlength="8" required>
                     </div>
                     <div class="cadastro__container__conteudo">
-                        <label for="cadastroSenha">Senha</label>
+                        <label for="cadastroSenha">Repetir senha</label>
                         <input type="password" id="senha2" placeholder="Repetir senha" minlength="8" required>
                         <span class="cadastro__container__validacaoSenha"></span>
-                    </div>
-                    <div class="cadastro__container__conteudo">
-                        <label for="dadoTelefone">Telefone</label>
-                        <input type="text" id="telefone" name="telefone" autocomplete="off" placeholder="Ex: " minlength="11" maxlength="15" onblur="checkIguality('telefone')" required data-cadastro="cadastroTelefone" pattern="\d*">
-                        <span id="telefone-feedback" class="feedback"></span>
                     </div>
                     <div class="modal-body__botoes d-flex flex-column gap-2 justify-content-center">
                         <button type="submit" id="btnCadastro" class="btn btn-primary">Cadastrar</button>

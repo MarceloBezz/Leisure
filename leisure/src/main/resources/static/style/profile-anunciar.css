@@ -43,7 +43,8 @@
 .dados__container__conteudo{
     width: 100%;
 }
-.anunciar__conteudo__selecao, .anunciar__conteudo__input{
+
+.anunciar__conteudo__input, .anunciar__conteudo__selecao {
     width: 100%;
     padding: 10px 5px;
     font-size: 1em;

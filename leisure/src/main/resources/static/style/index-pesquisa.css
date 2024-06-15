@@ -28,7 +28,9 @@
     grid-template-columns: 10% 70%;
     border: 1px solid lightgrey;
     border-radius: 5px;
-    padding: 1.5em 0.5em;
+    /* padding: 1.5em 0.5em; */
+    /* padding: 0.75em 0.5em; */
+    padding: 5% 2%;
     column-gap: 16px;
 }
 
@@ -45,7 +47,9 @@
     align-items: center;
     column-gap: 16px;
     border-left: 1px solid lightgrey;
-    padding: 1.5em 0.5em;
+    /* padding: 1.5em 0.5em; */
+    /* padding: 0.75em 0.5em; */
+    padding: 10% 2%;
     margin: 0;
 }
 
@@ -65,9 +69,8 @@
     margin: 2em 0;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .pesquisa {
-        /* min-width: 100px; */
         max-width: 500px;
         position: absolute;
         left: 1em;
@@ -89,5 +92,31 @@
         margin: 0;
         margin-top: 1em;
     }
+} */
 
+@media (min-width: 800px) {
+    .pesquisa {
+        width: 45vw;
+        max-width: 500px;
+        position: absolute;
+        left: 1em;
+        top: 20vh;
+        z-index: 2;
+    }
+
+    .pesquisa__container {
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 1em;
+        background: var(--cor-primeira);
+    }
+
+    .pesquisa__container__formulario .titulo__terceiro {
+        margin: 0;
+    }
+
+    .pesquisa__container__formulario-botao {
+        margin: 0;
+        margin-top: 1em;
+    }
 }

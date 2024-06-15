@@ -9,7 +9,7 @@
 }
 
 .editar__anuncio__voltar a {
-    color: var(--cor-segunda);
+    color: var(--cor-font-principal);
     transition: 0.3s;
 }
 
@@ -115,7 +115,7 @@
 }
 
 .editar__anuncio__container__mensagem__content {
-    color: var(--cor-segunda);
+    color: var(--cor-font-principal);
     font-size: var(--font-size);
     font-weight: 500;
 }
@@ -130,7 +130,7 @@
 }
 
 .editar__anuncio__container__mensagem__link:hover {
-    color: var(--cor-segunda);
+    color: var(--cor-font-principal);
     transition: 0.3s;
 }
 
@@ -149,17 +149,19 @@
     .editar__anuncio__card {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        align-items: center;
-        padding: 2em 0;
+        /* align-items: center; */
+        padding: 2em 1em;
     }
 
     .editar__anuncio__card__imagem {
-        width: auto;
         max-height: 400px;
+        position: relative;
+        top: 30px;
+        width: 100%;
     }
 
     .editar__anuncio__card__form {
-        padding: 1em;
+        padding: 0 1em;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;

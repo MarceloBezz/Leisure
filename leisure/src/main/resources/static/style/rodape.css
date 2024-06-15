@@ -13,7 +13,7 @@
 }
 .rodape__conteudo-link{
     text-decoration: none;
-    color: gray;
+    color: var(--cor-font-principal);
     font-size: var(--font-size);
     line-height: 2;
     display: flex;
@@ -30,7 +30,7 @@
 }
 .rodape__conteudo-texto{
     text-align: center;
-    color: gray;
+    color: var(--cor-font-principal); 
     font-size: var(--font-size);
 }
 

@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: baseline;
+    justify-content: center;
     row-gap: 2em;
 }
 
@@ -16,6 +17,13 @@
     margin: 1em 0;
     display: flex;
     flex-direction: column;
+}
+
+.login__cadastro__obrigatorio {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+    color: grey;
 }
 
 .login__cadastro__container__botao__cadastro p {
@@ -70,9 +78,9 @@
     outline: none;
 }
 
-.modal-body {
+.login__cadastro__card {
     padding: 1em;
-    width: 90vw;
+    width: 50vw;
     border: 1px solid var(--cor-segunda);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     border-radius: 1em;
@@ -88,16 +96,12 @@
 
 @media (min-width: 768px){
     .login__cadastro {
-        padding: 5em 0 10em 0;
+        padding: 1em 0 9em 0;
     }  
 
     .login__cadastro__container {
         width: 600px;
         flex-direction: row;
         column-gap: 2em;
-    }
-
-    .modal-body {
-        padding: 5em 2em;
     }
 }

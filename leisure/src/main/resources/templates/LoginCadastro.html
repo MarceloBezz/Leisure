@@ -9,42 +9,44 @@
 
     <main class="login__cadastro">
         <section class="login__cadastro__container">
-            <div class="modal-body" data-acesso="cadastro">
+            <div class="login__cadastro__card" data-acesso="cadastro">
                 <div class="titulo__segundo text-center">Cadastre-se</div>
                 <form class="cadastro__container" th:action="@{/usuario/cadastrar}" method="post" id="formCadastro">
                     <div class="cadastro__container__conteudo">
-                        <label for="meusdadosNome">Nome completo</label>
+                        <label for="meusdadosNome">Nome completo *</label>
                         <input type="text" name="nome" id="cadastroNome" autocomplete="off" minlength="3" required>
                     </div>
                     <div class="cadastro__container__conteudo">
-                        <label for="cadastroCpf">CPF</label>
+                        <label for="cadastroCpf">CPF *</label>
                         <input type="text" name="cpf" id="cpf" autocomplete="off" placeholder="Ex: 123.456.789-10" minlength="11" maxlength="14" onblur="checkIguality('cpf')" required data-cadastro="cadastroCpf">
                         <span id="cpf-feedback" class="feedback"></span>
                     </div>
                     <div class="cadastro__container__conteudo">
-                        <label for="cadastroData">Data de nascimento</label>
+                        <label for="cadastroData">Data de nascimento *</label>
                         <input type="date" name="data" id="data" required data-cadastro="cadastroData" onblur="dataValidation()">
                         <span id="data-feedback" class="feedback"></span>
                     </div>
                     <div class="cadastro__container__conteudo">
-                        <label for="cadastroEmail">E-mail</label>
+                        <label for="cadastroEmail">E-mail *</label>
                         <input type="email" name="email" id="email" autocomplete="off" minlength="8" onblur="checkIguality('email')" required>
                         <span id="email-feedback" class="feedback"></span>
                     </div>
                     <div class="cadastro__container__conteudo">
-                        <label for="dadoTelefone">Telefone</label>
+                        <label for="dadoTelefone">Telefone *</label>
                         <input type="text" id="telefone" name="telefone" autocomplete="off" placeholder="Ex: " minlength="14" maxlength="14" onblur="checkIguality('telefone')" required data-cadastro="cadastroTelefone">
                         <span id="telefone-feedback" class="feedback"></span>
                     </div>
                     <div class="cadastro__container__conteudo">
-                        <label for="cadastroSenha">Senha</label>
+                        <label for="cadastroSenha">Senha *</label>
                         <input type="password" name="senha" id="senha" placeholder="Min de 8 caracteres" minlength="8" required>
                     </div>
                     <div class="cadastro__container__conteudo">
-                        <label for="cadastroSenha">Repetir senha</label>
+                        <label for="cadastroSenha">Repetir senha *</label>
                         <input type="password" id="senha2" placeholder="Repetir senha" minlength="8" required>
                         <span class="cadastro__container__validacaoSenha"></span>
                     </div>
+
+                    <span class="login__cadastro__obrigatorio">* Campos obrigatórios</span>
                     <div class="modal-body__botoes d-flex flex-column gap-2 justify-content-center">
                         <button type="submit" id="btnCadastro" class="btn btn-primary">Cadastrar</button>
                     </div>
@@ -59,7 +61,7 @@
             <div th:if="${login}">
                 <div class="alert alert-danger" th:text="${login}"></div>
             </div>
-            <div class="modal-body" id="modalLogin" data-acesso="login"> 
+            <div class="login__cadastro__card" id="modalLogin" data-acesso="login"> 
                 <div class="titulo__segundo text-center">Login</div>
                 <div th:if="${param.error}">
                     <div class="alert alert-danger">Email e/ou senha incorreto(s)!</div>
@@ -85,7 +87,6 @@
                 </div>
             </div>
         </section>
-        
     </main>
     <!-- RODAPE -->
     <footer th:replace="~{fragments/rodape :: rodape}"></footer>

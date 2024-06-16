@@ -77,7 +77,7 @@ public class ImovelController {
             Resource image = fotoService.getImageFromApi(imageUrl);
     
             HttpHeaders headers = new HttpHeaders();
-            headers.add(HttpHeaders.CONTENT_TYPE, "image/png"); // Ajuste o tipo de conteúdo conforme necessário
+            headers.add(HttpHeaders.CONTENT_TYPE, "image/*"); // Ajuste o tipo de conteúdo conforme necessário
     
             return new ResponseEntity<>(image, headers, HttpStatus.OK);
 			}catch(Exception e){

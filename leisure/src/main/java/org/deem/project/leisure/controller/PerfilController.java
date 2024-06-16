@@ -51,14 +51,18 @@ public class PerfilController {
     }
 
 	// CRIADO POR DANILO
-	@GetMapping("/perfil/usuarios")
+	@GetMapping("/perfil/adm")
     public String getUsuarios(Model model) {
+        try{
     	Usuario usuario = usuarioService.getAuthenticatedUser();
         List<Usuario> usuarios = usuarioService.findAll();
 		model.addAttribute("usuario", usuario);
         model.addAttribute("selecao", "usuarios");
         model.addAttribute("listUsuarios", usuarios);
         return "perfil";
+        }catch(Exception e){
+            return "redirect:/usuario/perfil";
+        }
     }
 
 	@GetMapping("/perfil/imoveis")

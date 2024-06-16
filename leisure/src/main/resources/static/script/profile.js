@@ -88,7 +88,7 @@ endereco.forEach(contexto => {
 //PÁGINA DE ADM
 function deletarUsuario(id){
 	var xhttp = new XMLHttpRequest();
-	xhttp.open("POST", "/usuario/deletar/" + id, true)
+	xhttp.open("POST", "/adm/deletar/" + id, true)
 
 	xhttp.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){

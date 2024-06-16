@@ -69,16 +69,16 @@ public String getMethodName(@RequestParam String param) {
 	}
 	
 	//  ------------------------------------------- DELETAR USUÁRIO -------------------------------------------------------------	
-		@PostMapping("/deletar/{id}")
-		public ResponseEntity<Map<String, String>> deletar(@PathVariable Long id, RedirectAttributes redirect) throws IOException {
-			Usuario usuario = usuarioService.findById(id);
-			String usuarioNome = usuario.getNome();
-			usuarioService.deleteById(id);
+		// @PostMapping("/perfil/adm/deletar/{id}")
+		// public ResponseEntity<Map<String, String>> deletar(@PathVariable Long id, RedirectAttributes redirect) throws IOException {
+		// 	Usuario usuario = usuarioService.findById(id);
+		// 	String usuarioNome = usuario.getNome();
+		// 	usuarioService.deleteById(id);
 			
-			Map<String, String> response = new HashMap<>();
-			response.put("mensagem", "O usuário " + usuarioNome + " foi deletado com sucesso!");
-			return ResponseEntity.ok(response);
-		}
+		// 	Map<String, String> response = new HashMap<>();
+		// 	response.put("mensagem", "O usuário " + usuarioNome + " foi deletado com sucesso!");
+		// 	return ResponseEntity.ok(response);
+		// }
 		
 
 		// ------------------------------------------------ ATUALIZAR DADOS ---------------------------------------------------------

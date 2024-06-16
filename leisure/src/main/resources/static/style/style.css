@@ -83,7 +83,7 @@ input::placeholder {
 }
 
 .titulo__segundo {
-	color: var(--cor-font-principal);
+	color: var(--cor-font-principal); 
     font-weight: 700;
 	font-size: var(--titulo-segundo);
     text-transform: uppercase;

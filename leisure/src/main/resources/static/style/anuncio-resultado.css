@@ -11,6 +11,7 @@
 .resultado__pesquisa__item {
     padding: 2em;
 }
+
 .resultado__filtro {
     display: flex;
     flex-direction: column;
@@ -28,8 +29,8 @@
 }
 
 .resultado__filtro__card__conteudo__imagem {
-    max-width: 400px;
-    max-height: 250px;
+    width: 100%;
+    /* max-height: 250px; */
     overflow: hidden;
     border-radius: 10px;
 }
@@ -95,5 +96,23 @@
     .resultado__pesquisa {
         margin-left: 5em;
         display: block;
+    }
+
+    .resultado__filtro__card__conteudo__imagem {
+        max-width: 400px;
+        max-height: 250px;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .resultado__filtro__card__conteudo__imagem img {
+        max-width: 100%;
+        max-height: auto;
+    }
+
+    .resultado__pesquisa__anuncios {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
     }
 }

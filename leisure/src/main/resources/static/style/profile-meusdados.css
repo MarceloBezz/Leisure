@@ -105,6 +105,7 @@
     }
 
     .meusdados__imagem label img {
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
         height: 200px;
         width: 200px;
     }

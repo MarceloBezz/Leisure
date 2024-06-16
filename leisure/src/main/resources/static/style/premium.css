@@ -2,23 +2,24 @@
     padding: 0 1em;
 }
 .premium__conteudo{
-    text-align: center;
     margin: 0 2em;
+    text-align: center;
 }
 .titulo__principal{
     font-size: 1.5em;
     font-weight: 700;
-    text-transform: uppercase;
     margin: 1em 0;
+    text-transform: uppercase;
 }
 .premium__conteudo-texto{
     font-size: var(--font-size);
 }
 .premium__conteudo__lista-item{
+    align-items: center;
     display: flex;
+    font-size: var(--font-size);
     justify-content: center;
     margin: 1em;
-    font-size: var(--font-size);
 }
 .premium__lista-item-icone{
     color: rgb(8, 212, 8);
@@ -26,21 +27,21 @@
 }
 .box-pessoal{
     border: 1px solid lightgray;
-    padding-bottom: 1em;
     border-radius: 11px;
+    padding-bottom: 1em;
 }
 .box-imobiliario{
     border: 1px solid rgb(32, 130, 242);
-    padding-bottom: 1em;
     border-radius: 11px;
+    padding-bottom: 1em;
 }
 .titulo__premium{
     border-radius: 10px 10px 0 0;
     color: white;
     display: block;
+    font-weight: 600;
     padding: 1.5em;
     text-transform: uppercase;
-    font-weight: 600;
 }
 .pessoal{
     background-color: lightgrey;
@@ -54,45 +55,45 @@
     margin: 1em;
 }
 .box-texto-price > b{
-    font-weight: 400;
     color: gray;
+    font-weight: 400;
 }
 .premium__conteudo__box{
-    margin-top: 1em;
     box-shadow: var(--cor-sombra);
+    margin-top: 1em;
 }
 .premium__conteudo__box-lista{
     text-align: center;
 }
 .premium__conteudo__box-item{
-    margin: 1em 0;
     font-size: var(--font-size);
+    margin: 1em 0;
 }
 .premium__conteudo__box-botao{
-    margin: 1em;
     background-color: rgb(32, 130, 242);
-    display: inline-block;
     border-radius: 20px;
+    display: inline-block;
+    margin: 1em;
     padding: 0.75em 2em;
 }
 .premium__conteudo__box-link{
+    color: white;
     font-size: var(--font-size);
     text-decoration: none;
-    color: white;
 }
 .premium__conteudo__box-botao:hover {
     background-color: rgb(8, 212, 8);
 }
 
 .premium__tabela{
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
     margin: 2em 0;
 }
 .premium__tabela__conteudo{
-    font-size: var(--font-size);
     border-bottom: 1px solid lightgray;
+    font-size: var(--font-size);
 }
 .premium__tabela-titulo{
     font-weight: 700;
@@ -106,8 +107,8 @@
     
     .premium__conteudo__pacotes {
         display: grid;
-        grid-template-columns: 1fr 1fr;
         column-gap: 2em;
+        grid-template-columns: 1fr 1fr;
         padding: 0 1em;
     }
     .premium__tabela{

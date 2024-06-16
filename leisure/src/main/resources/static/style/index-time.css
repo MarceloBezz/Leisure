@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     width: auto;
-    height: auto;
+    height: 100%;
     text-align: center;
     box-shadow: var(--cor-sombra);
     border-radius: 5px;

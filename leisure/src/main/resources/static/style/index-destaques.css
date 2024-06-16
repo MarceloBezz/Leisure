@@ -26,6 +26,19 @@
     margin-top: 2em;
     text-align: center;
 }
+
+.destaques__modal .btn-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+.destaques__modal img {
+    border-radius: 1em;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
 .destaques__container-imagem img {
     max-width: 100vw;
 }

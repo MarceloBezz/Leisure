@@ -54,7 +54,19 @@
                 <div class="destaques__container__conteudo">
                     <h2 class="titulo__segundo">Vem ver os destaques que separamos para você</h2>
                     <p>Procurando um imóvel novo para chamar de seu? Então você está no lugar certo! Veja os imóveis destaques que temos por aqui</p>
-                    <a class="no-decoration btn-primeiro" href="#">Ver destaques</a>
+                    <a class="no-decoration btn-primeiro pointer" data-bs-toggle="modal" data-bs-target="#verDestaques">Ver destaques</a>
+                </div>
+            </div>
+            <div class="modal fade" id="verDestaques" tabindex="-1" aria-labelledby="destaquesModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="destaques__modal">
+                        <div class="">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <span>
+                            <img src="/img/imagem/emObras.svg" alt="Desculpe! Estamos em obras">
+                        </span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -95,8 +107,43 @@
                     <p>Temos as melhores ofertas de casas para você e sua familia podendo ser negociada diretamente com o proprietário.</p>
                     <a class="no-decoration btn-segundo" href="#">Veja os melhores preços</a>
                     <span>
-                        <a class="no-decoration" href="#">Como comprar na LeisureImoveis <i class="fa-solid fa-arrow-right"></i></a>
+                        <a class="no-decoration pointer" data-bs-toggle="modal" data-bs-target="#comoComprarModal">Como falar com um vendedor <i class="fa-solid fa-arrow-right"></i></a>
                     </span>
+                </div>
+            </div>
+            <div class="modal fade" id="comoComprarModal" tabindex="-1" aria-labelledby="comoComprarModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="como-comprar__modal modal-header">
+                            <h1 class="titulo__segundo mt-2">Como falar com um vendedor</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="como-comprar__modal p-3">
+                            <h2 class="titulo__quarto mb-2">
+                                Cadastro e login
+                            </h2>
+                            <span>
+                                <i class="fa-regular fa-square-check"></i>
+                                Primeiro passo você deverá realizar o cadastro em nosso site ou se já tiver um cadastro basta fazer o login.
+                            </span>
+                            <h2 class="titulo__quarto mt-3 mb-2">
+                                Procurar um imóvel
+                            </h2>
+                            <span>
+                                <i class="fa-regular fa-square-check"></i>
+                                No segundo passo você poderá utilizar nossos filtros para localizar o imóvel ideal de acordo com seus interesses.
+                            </span>
+                            <h2 class="titulo__quarto mt-3 mb-2">
+                                Contato com o vendedor
+                            </h2>
+                            <span>
+                                <i class="fa-regular fa-square-check"></i>
+                                Neste passo você deverá estar logado em sua conta para entrar em contato com um vendedor.
+                                Após localizar o imóvel desejado através de nossos filtros de pesquisa, basta clicar no botao "Falar com um vendedor" 
+                                e você será redirecionado para a aplicação do WhatsApp para iniciar uma conversa com o anunciante.
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -134,31 +181,31 @@
                                 <ul class="sobre__conteudo__lista">
                                     <li class="sobre__conteudo__lista-item lista-lista">
                                         <p class="sobre__conteudo__lista-texto">
-                                            <i class="fa-light fa-check" style="color: #74C0FC;"></i>
+                                            <i class="fa-solid fa-check fa-lg" style="color: #74C0FC;"></i>
                                         </p>
                                         <p class="sobre__conteudo__lista-texto">Designer prático</p>
                                     </li>
                                     <li class="sobre__conteudo__lista-item lista-lista">
                                         <p class="sobre__conteudo__lista-texto">
-                                            <i class="fa-light fa-check" style="color: #74C0FC;"></i>
+                                            <i class="fa-solid fa-check fa-lg" style="color: #74C0FC;"></i>
                                         </p>
                                         <p class="sobre__conteudo__lista-texto">Em prol do meio ambiente</p>
                                     </li>
                                     <li class="sobre__conteudo__lista-item lista-lista">
                                         <p class="sobre__conteudo__lista-texto">
-                                            <i class="fa-light fa-check" style="color: #74C0FC;"></i>
+                                            <i class="fa-solid fa-check fa-lg" style="color: #74C0FC;"></i>
                                         </p>
                                         <p class="sobre__conteudo__lista-texto">Facilidade de acesso</p>
                                     </li>
                                     <li class="sobre__conteudo__lista-item lista-lista">
                                         <p class="sobre__conteudo__lista-texto">
-                                            <i class="fa-light fa-check" style="color: #74C0FC;"></i>
+                                            <i class="fa-solid fa-check fa-lg" style="color: #74C0FC;"></i>
                                         </p>
                                         <p class="sobre__conteudo__lista-texto">Sem burocracias</p>
                                     </li>
                                     <li class="sobre__conteudo__lista-item lista-lista">
                                         <p class="sobre__conteudo__lista-texto">
-                                            <i class="fa-light fa-check" style="color: #74C0FC;"></i>
+                                            <i class="fa-solid fa-check fa-lg" style="color: #74C0FC;"></i>
                                         </p>
                                         <p class="sobre__conteudo__lista-texto">Contato com o anunciante</p>
                                     </li>

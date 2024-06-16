@@ -135,9 +135,6 @@
                         </label>
                     </li>
                 </div>
-                <div class="cabecalho__container-welcome" th:if="${usuario != null}">
-                    <p>Seja bem-vindo (a) <span th:text="${usuario.nome}"></span></p>
-                </div>
                 <div class="lista-menu__conteudo">
                     <li class="lista-menu__item btnAnunciar" sec:authorize="hasAuthority('ROLE_ADMIN')" onclick="loading()">
                         <a class="container__link btnAnunciar" href="/usuario/perfil/usuarios">

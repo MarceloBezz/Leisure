@@ -34,8 +34,6 @@
 }
 
 .editar__anuncio__card__imagem span {
-    /* display: flex;
-    align-items: center; */
     padding: 0;
     margin: 0;
     display: inline-block;
@@ -165,7 +163,6 @@
     .editar__anuncio__card {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        /* align-items: center; */
         padding: 2em 1em;
     }
 

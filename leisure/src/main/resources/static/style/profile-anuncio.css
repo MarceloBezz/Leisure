@@ -32,6 +32,8 @@
 }
 
 .anuncio__card__conteudo {
+    width: auto;
+    height: auto;
     display: flex;
     align-items: center;
     column-gap: 0.5em;
@@ -54,7 +56,6 @@
     gap: 3em;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
 
 }
@@ -107,12 +108,16 @@
         column-gap: 2em;
     }
 
+    .anuncio__card__lista__imagem {
+        width: 300px;
+    }
+
     .anuncio__card__form {
         padding: 0 0;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 0.5em;
+        column-gap: 0.5em;
     }
 
     .anuncio__card__conteudo {

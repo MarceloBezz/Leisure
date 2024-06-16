@@ -59,7 +59,6 @@
 }
 .premium__conteudo__box{
     margin-top: 1em;
-    /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8); */
     box-shadow: var(--cor-sombra);
 }
 .premium__conteudo__box-lista{
@@ -92,7 +91,6 @@
     margin: 2em 0;
 }
 .premium__tabela__conteudo{
-    /* font-size: 0.6em; */
     font-size: var(--font-size);
     border-bottom: 1px solid lightgray;
 }

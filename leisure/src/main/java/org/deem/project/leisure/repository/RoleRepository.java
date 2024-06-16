@@ -11,8 +11,8 @@ import org.springframework.data.repository.query.Param;
 
 public interface RoleRepository extends JpaRepository<Roles, Long>{
 	
-	@Query(value="SELECT * FROM perfil p WHERE p.tipo=tipo", nativeQuery=true)
-	Roles findByName(@Param("tipo")String roles);
+	@Query("SELECT r FROM Roles r WHERE r.role = :tipo")
+	Roles findByName(@Param("tipo")String tipo);
 
 	// @Query(value="SELECT id_perfil FROM usuario_perfil WHERE ID_USUARIO =?", nativeQuery = true)
 	// List<Long> findPapeisById(Long id);

@@ -104,6 +104,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 	public void addRoleToUser(String email, String roleName) {
 		Usuario usuario = usuarioRepository.findByEmail(email);
 	 	Roles role = roleRepository.findByName(roleName);
+		 
 		
 		usuario.getRoles().add(role);
 		usuarioRepository.save(usuario);

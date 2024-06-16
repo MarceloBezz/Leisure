@@ -2,22 +2,22 @@
     padding: 2em 2em;
 }
 .meusdados__imagem{
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    row-gap: 2em;
     font-family: var(--font-family);
+    row-gap: 2em;
 }
 
 .meusdados__imagem label img{
-    box-shadow: var(--cor-sombra);
-    border-radius: 50%;
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: var(--cor-sombra);
+    cursor: pointer;
+    height: 50px;
     object-fit: cover;
     width: 50px;
-    height: 50px;
-    cursor: pointer;
 }
 
 .meusdados__imagem span {
@@ -32,8 +32,8 @@
 }
 
 .meusdados__imagem input{
-    margin: 2em 0;
     display: none;
+    margin: 2em 0;
 }
 
 .meusdados__container {
@@ -41,35 +41,35 @@
 }
 
 .meusdados__container__conteudo{
-    margin: 0;
     display: flex;
     flex-direction: column;
+    margin: 0;
 }
 .meusdados__container__conteudo input{
-    font-family: var(--font-family);
+    background: transparent;
     border: none;
     border-bottom: 1px solid lightgray;
+    font-family: var(--font-family);
     margin: 2em 0;
-    background: transparent;
 }
 .meusdados__container__conteudo input:focus{
     outline: 0;
 }
 
 .meusdados__card__botao {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 .meusdados__card__botao button {
-    font-family: var(--font-family);
-    color: white;
-    padding: 0.75em 2.5em;
-    width: auto;
+    background-color: var(--cor-terceira);
     border: none;
     border-radius: 5px;
-    background-color: var(--cor-terceira);
+    color: white;
+    font-family: var(--font-family);
+    padding: 0.75em 2.5em;
     transition: 0.3s;
+    width: auto;
 }
 
 .meusdados__card__botao button:hover {
@@ -80,44 +80,54 @@
 @media screen and (min-width: 768px){
     
     .meusdados__imagem{
-        text-align: center;
-        margin: 3em 0;
+        align-items: center;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        row-gap: 2em;
         font-family: var(--font-family);
+        justify-content: center;
+        margin: 3em 0;
+        row-gap: 2em;
+        text-align: center;
     }
 
     .meusdados__container{
+        align-items: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
         padding: 1em 0;
     }
     .meusdados__container__form{
+        column-gap: 1em;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 1em;
         margin-bottom: 2em;
     }
 
     .meusdados__imagem label img {
-        width: 200px;
         height: 200px;
+        width: 200px;
     }
 
     .meusdados__container__conteudo{
-        display: flex;
         align-items: center;
-        flex-direction: row;
+        border-radius: 0.25em;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         column-gap: 0.5em;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         margin: 0.5em 0;
+        padding: 0.25em 0.5em;
     }
+
+    .meusdados__container__conteudo label {
+        white-space: nowrap;
+    }
+
     .meusdados__container__conteudo input{
         border: none;
         margin: 0;
+        width: auto;
     }
 }

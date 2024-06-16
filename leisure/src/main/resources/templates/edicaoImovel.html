@@ -5,6 +5,8 @@
 
 <body>
 
+    <div th:replace="~{fragments/loading :: loading}"></div>
+
     <!-- CABEÇALHO -->
     <header th:replace="~{fragments/cabecalho :: perfil}"></header>
 
@@ -12,19 +14,19 @@
         <th:block>
             <section class="editar__anuncio">
                 <div class="editar__anuncio__voltar">
-                    <a href="/usuario/perfil/anuncio">
+                    <a href="/usuario/perfil/anuncio" onclick="loading()">
                         <i class="fa-solid fa-xmark fa-2xl"></i>
                     </a>
                 </div>
                 <div class="editar__anuncio__card">
                     <form method="post" enctype="multipart/form-data" th:action="@{/usuario/perfil/salvar-foto}" data-form-imagem>
-                        <!-- <span>Toque na imagem para alterar</span> -->
                         <div class="editar__anuncio__card__imagem">
                             <label for="input-file">
                                 <img th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
-                                <!-- <img src="/img/imagem/escritorio.png" alt=""> -->
+                                <span>Alterar imagem <i class="fa-regular fa-file-image"></i></span>
                             </label>
                             <input class="hidden" id="input-file" type="file" name="file" accept="image /*" data-input-imagem>
+                            
                         </div>
                         <input name="id" th:value="${imovel.id}" id="idIMovel" hidden>
                     </form>
@@ -50,7 +52,7 @@
                                 </li>
             
                                 <li class="editar__anuncio__card__conteudo">
-                                    <label class="editar__anuncio__card__conteudo__texto" for="anuncioValor">IPTU:R$</label>
+                                    <label class="editar__anuncio__card__conteudo__texto" for="anuncioValor"><i class="fa-regular fa-pen-to-square"></i> IPTU:R$</label>
                                     <input class="editar__anuncio__card__conteudo__resultado" type="text" name="iptu" id="anuncioValor" th:value="${imovel.iptu}">
                                 </li>
             
@@ -90,18 +92,18 @@
                                 </li>
 
                                 <li class="editar__anuncio__card__conteudo">
-                                    <label class="editar__anuncio__card__conteudo__texto" for="anuncioValor">Valor:R$</label>
+                                    <label class="editar__anuncio__card__conteudo__texto" for="anuncioValor"><i class="fa-regular fa-pen-to-square"></i> Valor:R$</label>
                                     <input class="editar__anuncio__card__conteudo__resultado" type="text" name="preco" id="anuncioValor" th:value="${imovel.preco}">
                                 </li>
                             </ul>
 
                             <div class="editar__anuncio__card__conteudo">
-                                <label class="editar__anuncio__card__conteudo__texto" for="anuncioDescricao">Descrição:</label>
+                                <label class="editar__anuncio__card__conteudo__texto" for="anuncioDescricao"><i class="fa-regular fa-pen-to-square"></i> Descrição:</label>
                                 <textarea class="editar__anuncio__card__conteudo__resultado" name="descricao" id="anuncioDescricao" rows="10" th:text="${imovel.descricao}"></textarea>
                             </div>
                             
                             <div class="editar__anuncio__card__botao">
-                                <button type="submit">
+                                <button type="submit" onclick="loading()">
                                     <span>Salvar alterações </span>
                                     <i class="fa-solid fa-check"></i>
                                 </button>
@@ -110,7 +112,7 @@
                         <form th:action="@{/usuario/perfil/deletar-imovel}" method="post">
                             <input type="hidden" name="id" th:value="${imovel.id}">
                             <div class="editar__anuncio__card__botao__excluir">
-                                <button type="submit">
+                                <button type="submit" onclick="loading()">
                                     <span>Deletar Imóvel</span>
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>

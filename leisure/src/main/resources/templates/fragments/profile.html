@@ -1,6 +1,9 @@
 <!-- PERFIL -->
 <section th:fragment="perfil">
     <section class="perfil__carrossel">
+        <div class="cabecalho__container-welcome" th:if="${usuario != null}">
+            <p>Seja bem-vindo (a) <span th:text="${usuario.nome}"></span></p>
+        </div>
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="5000">
@@ -23,7 +26,7 @@
 
 <!-- ANUNCIAR -->
 <section th:fragment="anunciar" class="anunciar ">
-    <form th:action="@{/usuario/perfil/cadastrar}" method="post" class="anunciar__conteudo" enctype="multipart/form-data">
+    <form th:action="@{/usuario/perfil/cadastrar}" method="post" class="anunciar__conteudo" enctype="multipart/form-data" data-profile="formAnunciar">
         <div class="anunciar__conteudo__progresso-linha">
             <div class="anunciar__conteudo__progresso-barra"></div>
             <div class="anunciar__conteudo__progresso-coluna">Dados sustentáveis</div>
@@ -32,20 +35,20 @@
         </div>
 
         <!-- TIPO DE IMOVEL -->
-        <div class="anunciar__conteudo__box" data-profile="">
+        <div class="anunciar__conteudo__box">
             <h3 class="titulo__terceiro">tipo</h3>
             <div class="anunciar__conteudo__box__animacao">
                 <i class="fa-thin fa-house-building"></i>
             </div>
             <p>Qual é o tipo de imóvel que você deseja anunciar?</p>
             <select class="anunciar__conteudo__selecao" name="tipo" id="imovelTipo">
-                <option class="anunciar__conteudo__selecao-opcao" value="Apartamento">Apartamento</option>
-                <option class="anunciar__conteudo__selecao-opcao" value="Casa">Casa</option>
-                <option class="anunciar__conteudo__selecao-opcao" value="Sítio">Sitío</option>
-                <option class="anunciar__conteudo__selecao-opcao" value="Terreno">Terreno</option>
+                <option class="anunciar__conteudo__selecao-opcao" value="apartamento">Apartamento</option>
+                <option class="anunciar__conteudo__selecao-opcao" value="casa">Casa</option>
+                <option class="anunciar__conteudo__selecao-opcao" value="sitio">Sitío</option>
+                <option class="anunciar__conteudo__selecao-opcao" value="terreno">Terreno</option>
             </select>
             <div class="anunciar__conteudo__botao">
-                <button class="anunciar__conteudo__botao-anterior disable" type="button">Anterior</button>
+                <button class="anunciar__conteudo__botao-anterior" type="button" hidden>Anterior</button>
                 <button class="anunciar__conteudo__botao-proximo" type="button">Próximo</button>
             </div>
         </div>
@@ -98,10 +101,10 @@
                 <i class="fa-thin fa-ruler-combined"></i>
             </div>
                  <p>Qual o tamanho da área em metros quadrados?</p>
-            <input class="anunciar__conteudo__input" type="text" name="area" id="anunciarSala" required>
+            <input class="anunciar__conteudo__input" type="text" name="area" id="anunciarSala" required data-profile="question">
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior" type="button">Anterior</button>
-                <button class="anunciar__conteudo__botao-proximo" type="button">Próximo</button>
+                <button class="anunciar__conteudo__botao-proximo disabled" disabled type="button" data-profile="btnProximo">Próximo</button>
             </div>
         </div>
 
@@ -112,10 +115,10 @@
                 <i class="fa-thin fa-bed"></i>
             </div>
             <p>Quantos quartos o imóvel possui?</p>
-            <input class="anunciar__conteudo__input" type="text" name="numQuartos" id="anunciarQuarto" required>
+            <input class="anunciar__conteudo__input" type="text" name="numQuartos" id="anunciarQuarto" required data-profile="question">
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior" type="button">Anterior</button>
-                <button class="anunciar__conteudo__botao-proximo" type="button">Próximo</button>
+                <button class="anunciar__conteudo__botao-proximo disabled" disabled type="button" data-profile="btnProximo">Próximo</button>
             </div>
         </div>
 
@@ -126,10 +129,10 @@
                 <i class="fa-thin fa-shower"></i>
             </div>
             <p>Quantos banheiros o imóvel possui?</p>
-            <input class="anunciar__conteudo__input" type="text" name="numBanheiros" id="anunciarBanheiro" required >
+            <input class="anunciar__conteudo__input" type="text" name="numBanheiros" id="anunciarBanheiro" required data-profile="question">
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior" type="button">Anterior</button>
-                <button class="anunciar__conteudo__botao-proximo" type="button">Próximo</button>
+                <button class="anunciar__conteudo__botao-proximo disabled" disabled type="button" data-profile="btnProximo">Próximo</button>
             </div>
         </div>
 
@@ -140,24 +143,12 @@
                 <i class="fa-thin fa-garage-car"></i>
             </div>
             <p>Quantas vagas de garagem imóvel possui?</p>
-            <input class="anunciar__conteudo__input" type="text" name="vagasGaragem" id="anunciarVaga" required>
+            <input class="anunciar__conteudo__input" type="text" name="vagasGaragem" id="anunciarVaga" required data-profile="question">
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior" type="button">Anterior</button>
-                <button class="anunciar__conteudo__botao-proximo" type="button">Próximo</button>
+                <button class="anunciar__conteudo__botao-proximo disabled" disabled type="button" data-profile="btnProximo">Próximo</button>
             </div>
         </div>
-
-        <!-- QUASE TERMINANDO -->
-        <!-- <div class="anunciar__conteudo__box" data-profile="anunciar">
-            <h3 class="titulo__terceiro">Estamos quase terminando...</h3>
-            <div class="anunciar__conteudo__box__animacao">
-                <i class="fa-thin fa-face-laugh-squint"></i>
-            </div>
-            <div class="anunciar__conteudo__botao">
-                <button class="anunciar__conteudo__botao-anterior" type="button">Anterior</button>
-                <button class="anunciar__conteudo__botao-proximo" type="button">Próximo</button>
-            </div>
-        </div> -->
 
         <!-- ENDEREÇO DO IMOVEL -->
         <div class="anunciar__conteudo__box" data-profile="anunciar">
@@ -166,7 +157,7 @@
             <div class="dados__container__conteudo">
                 <span>Cep</span>
                 <input class="anunciar__conteudo__input" name="cep" type="text" id="cep" value="" maxlength="9"
-                    onblur="pesquisacep(this.value);" required/>
+                    onblur="pesquisacep(this.value);" required data-profile="question"/>
             </div>
             <div class="dados__container__conteudo">
                 <span>Número</span>
@@ -185,8 +176,8 @@
                 <input class="anunciar__conteudo__input" name="rua" type="text" id="rua" required data-anunciar="endereco"/>
             </div>
             <div class="anunciar__conteudo__botao">
-                <button class="anunciar__conteudo__botao-anterior anterior8" type="button">Anterior</button>
-                <button class="anunciar__conteudo__botao-proximo proximo9" type="button">Próximo</button>
+                <button class="anunciar__conteudo__botao-anterior" type="button">Anterior</button>
+                <button class="anunciar__conteudo__botao-proximo disabled" disabled type="button" data-profile="btnProximo">Próximo</button>
             </div>
         </div>
 
@@ -213,10 +204,10 @@
                 <i class="fa-thin fa-house"></i>
             </div>
             <p>Qual o valor do IPTU anual do imovel?</p>
-            <input class="anunciar__conteudo__input" type="text" name="iptu" placeholder="500,00" required>
+            <input class="anunciar__conteudo__input" type="text" name="iptu" placeholder="R$" required data-profile="question">
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior" type="button">Anterior</button>
-                <button class="anunciar__conteudo__botao-proximo" type="button">Próximo</button>
+                <button class="anunciar__conteudo__botao-proximo disabled" disabled type="button" data-profile="btnProximo">Próximo</button>
             </div>
         </div>
 
@@ -227,10 +218,10 @@
                 <i class="fa-thin fa-tags"></i>
             </div>
             <p>Digite o valor que deseja vender seu imóvel</p>
-            <input class="anunciar__conteudo__input" type="text" name="preco" placeholder="200000,00" required>
+            <input class="anunciar__conteudo__input" type="text" name="preco" placeholder="R$" required data-profile="question">
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior" type="button">Anterior</button>
-                <button class="anunciar__conteudo__botao-proximo" type="button">Próximo</button>
+                <button class="anunciar__conteudo__botao-proximo disabled" disabled type="button" data-profile="btnProximo">Próximo</button>
             </div>
         </div>
 
@@ -240,44 +231,23 @@
             <div class="anunciar__conteudo__box__animacao">
                 <label for="imovelImagem">
                     <i class="fa-thin fa-image"></i>
+                    <img id="imagemPreview" src="" alt="">
                 </label>
             </div>
             <p>Envie a melhor foto que você possui do seu imóvel</p>
             <input class="anunciar__conteudo__input hidden" type="file" accept="image/jpg, image/jpeg, image/png"
-                id="imovelImagem" name="file">
+                id="imovelImagem" name="file" data-profile="questionImage">
             <div class="anunciar__conteudo__botao">
                 <button class="anunciar__conteudo__botao-anterior" type="button">Anterior</button>
-                <button class="anunciar__conteudo__botao-proximo" type="button">Concluir</button>
+                <button class="anunciar__conteudo__botao-proximo btnAnunciarSubmit disabled" disabled type="button" data-profile="btnImageProximo" >Concluir</button>
             </div>
         </div>
-
-        <!-- CONFIRMAÇÃO DO ANUNCIO -->
-        <!-- <div class="anunciar__conteudo__box" data-profile="anunciar">
-            <h3 class="titulo__terceiro">Deseja confirmar o seu anuncios?</h3>
-            <div class="anunciar__conteudo__box__animacao">
-                <i class="fa-sharp fa-thin fa-question"></i>
-            </div> -->
-            <!-- <label>
-                <input class="" type="checkbox" name="" required>
-                <p>Confirmo que todos os dados fornecidos são verdadeiros.</p>
-            </label> -->
-            
-            <!-- <div class="anunciar__conteudo__botao">
-                <button class="anunciar__conteudo__botao-anterior" type="button">Anterior</button>
-                <button class="anunciar__conteudo__botao-proximo" type="button">Próximo</button>
-            </div>
-        </div> -->
 
         <!-- FINALIZAÇÃO -->
         <div class="anunciar__conteudo__box" data-profile="anunciar">
             <h3 class="titulo__terceiro">Parabéns! Seu anuncio foi criado</h3>
             <div class="anunciar__conteudo__box__imagem">
                 <img src="/img/imagem/congrat.gif" alt="Parabéns">
-            </div>
-            <div class="anunciar__conteudo__botao">
-                <button type="submit">
-                    <span>Concluir</span>
-                </button>
             </div>
         </div>
     </form>
@@ -295,14 +265,14 @@
         <div class="anuncio__card">
             <ul class="anuncio__card__lista">
                 <form th:action="@{/usuario/perfil/salvar-foto}" method="post" enctype="multipart/form-data">
-                <li>
-                    <label for="input-file">
-                        <img class="anuncio__card__lista__imagem" th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
-                        <input class="anunciar__conteudo__input hidden" type="file" accept="image/jpg, image/jpeg, image/png"
-                        id="input-file" name="file">
-                    </label>
-                </li>
-            </form>
+                    <li>
+                        <label for="input-file">
+                            <img class="anuncio__card__lista__imagem" th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
+                            <input class="anunciar__conteudo__input hidden" type="file" accept="image/jpg, image/jpeg, image/png"
+                            id="input-file" name="file">
+                        </label>
+                    </li>
+                </form>
                 <ul class="anuncio__card__form">
                     <li class="anuncio__card__conteudo">
                         <p class="anuncio__card__conteudo__titulo">Tipo: </p>
@@ -375,7 +345,7 @@
             
             
             <div class="anuncio__card__botao">
-                <a th:href="|/usuario/perfil/editar-imovel/${imovel.id}" class="no-decoration">
+                <a th:href="|/usuario/perfil/editar-imovel/${imovel.id}" class="no-decoration" onclick="loading()">
                     Editar
                     <i class="fa-solid fa-pen-to-square"></i>
                 </a>
@@ -387,7 +357,7 @@
         <div class="anuncio__container__mensagem__imagem">
             <img src="/img/imagem/sad-dinosaur.svg" alt="Poxa, você ainda não possui um anúncio.">
         </div>
-        <a class="no-decoration anuncio__container__mensagem__link" href="anunciar">anunciar <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="no-decoration anuncio__container__mensagem__link" href="anunciar" onclick="loading()">anunciar <i class="fa-solid fa-arrow-right"></i></a>
     </div>
 </th:block>
 
@@ -399,10 +369,12 @@
 
             <label for="input-file">
                 <img th:src="|http://localhost:8080/usuario/imagem/${usuario.id}|">
+                <span>Alterar imagem <i class="fa-regular fa-file-image"></i></span>
             </label>
 
             <input id="input-file" type="file" name="file" accept="image /*" data-input-imagem>
         </div>
+
     </form>
   
     <div th:if="${mensagem}">
@@ -427,23 +399,19 @@
             <div class="meusdados__container__conteudo">
                 <label for="dadoTelefone">Telefone:</label>
                 <input type="tel" name="telefone" id="dadoTelefone" th:value="${usuario.telefone}" maxlength="15" >
+                <i class="fa-regular fa-pen-to-square"></i>
             </div>
             <div class="meusdados__container__conteudo">
                 <label for="meusdadosCpf">CPF</label>
                 <input type="text" name="cpf" id="meusdadosCpf" th:value="${usuario.cpf}" maxlength="14" disabled>
             </div>
         </div>
-        <!-- <input name="id" th:value="${usuario.id}" id="id_usuario" hidden> -->
         <div class="meusdados__card__botao">
-            <button type="submit">
+            <button type="submit" onclick="loading()">
                 <span>Salvar alterações</span>
             </button>
         </div>
     </form>
-    <!-- <form method="post" th:action="@{/usuario/deletar}">
-        <input name="id" th:value="${usuario.id}" id="id_usuario" hidden>
-        <button type="submit">Deletar conta</button>
-    </form> -->
 </section>
 
 <!-- USUARIOS -->
@@ -463,13 +431,13 @@
             </thead>
             <tbody class="usuarios__tabela__corpo" th:each="usuarios : ${listUsuarios}">
                 <tr>
-                    <td class="tabela__id"><span th:text="${usuarios.id}"></td>
-                    <td class="tabela__nome"><span th:text="${usuarios.nome}"></td>
-                    <td class="tabela__cpf"><span th:text="${usuarios.cpf}"></td>
+                    <td class="tabela__id"><span th:text="${usuarios.id}"></span></td>
+                    <td class="tabela__nome"><span th:text="${usuarios.nome}"></span></td>
+                    <td class="tabela__cpf"><span th:text="${usuarios.cpf}"></span></td>
                     <td class="tabela__nascimento"><span th:text="${usuarios.data}"></span></td>
-                    <td class="tabela__email"><span th:text="${usuarios.email}"></td>
-                    <td class="tabela__telefone"><span th:text="${usuarios.telefone}"></td>
-                    <td class="tabela__deletar"><i class="fa-sharp fa-solid fa-circle-xmark" th:onclick="|deletarUsuario(${usuarios.id})|"></i></td>
+                    <td class="tabela__email"><span th:text="${usuarios.email}"></span></td>
+                    <td class="tabela__telefone"><span th:text="${usuarios.telefone}"></span></td>
+                    <td class="tabela__deletar"><i class="fa-sharp fa-solid fa-circle-xmark" th:onclick="|deletarUsuario(${usuarios.id})|" onclick="loading()"></i></td>
                 </tr>
             </tbody>
         </table>
@@ -478,7 +446,45 @@
 
 <!-- IMOVEIS -->
 <th:block th:fragment="imoveis">
-    <section class="imoveis" th:if="${imovelPorId.size != 0}" th:each="imovel : ${imovelPorId}">
-        
+        <table>
+            <thead class="imoveis__tabela__cabeca">
+                <tr>
+                    <th class="imoveis__tabela__id">ID</th>
+                    <th class="imoveis__tabela__tipo">TIPO</th>
+                    <th class="imoveis__tabela__area">ÁREA</th>
+                    <th class="imoveis__tabela__sustentabilidade">SUSTENTABILIDADE</th>
+                    <th class="imoveis__tabela__iptu">IPTU</th>
+                    <th class="imoveis__tabela__quartos">QUAR</th>
+                    <th class="imoveis__tabela__banheiros">BANH</th>
+                    <th class="imoveis__tabela__vagas">VAGAS</th>
+                    <th class="imoveis__tabela__cep">CEP</th>
+                    <th class="imoveis__tabela__cidade">CIDADE</th>
+                    <th class="imoveis__tabela__bairro">BAIRRO</th>
+                    <th class="imoveis__tabela__numero">NUM</th>
+                    <th class="imoveis__tabela__valor">VALOR</th>
+                    <th class="imoveis__tabela__descricao">DESC</th>
+                    <th class="imoveis__tabela__deletar">Deletar</th>
+                </tr>
+            </thead>
+            <tbody class="imoveis__tabela__corpo">
+                <tr>
+                    <td class="imoveis__tabela__id"><span>01</span></td>
+                    <td class="imoveis__tabela__tipo"><span>apartamento</span></td>
+                    <td class="imoveis__tabela__area"><span>120</span></td>
+                    <td class="imoveis__tabela__sustentabilidade"><span>captacao de agua da chuva</span></td>
+                    <td class="imoveis__tabela__iptu"><span>1000</span></td>
+                    <td class="imoveis__tabela__quartos"><span>10</span></td>
+                    <td class="imoveis__tabela__banheiros"><span>10</span></td>
+                    <td class="imoveis__tabela__vagas"><span>10</span></td>
+                    <td class="imoveis__tabela__cep"><span>00000000</span></td>
+                    <td class="imoveis__tabela__cidade"><span>santana de parnaiba</span></td>
+                    <td class="imoveis__tabela__bairro"><span>parque santana</span></td>
+                    <td class="imoveis__tabela__numero"><span>0000</span></td>
+                    <td class="imoveis__tabela__valor"><span>9999999,99</span></td>
+                    <td class="imoveis__tabela__descricao"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, cum?</span></td>
+                    <td class="imoveis__tabela__deletar"><i class="fa-sharp fa-solid fa-circle-xmark" onclick="loading()"></i></td>
+                </tr>
+            </tbody>
+        </table>
     </section>
 </th:block>

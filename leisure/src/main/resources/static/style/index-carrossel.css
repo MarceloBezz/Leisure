@@ -2,32 +2,11 @@
     display: none;
 }
 
-/* @media screen and (min-width: 768px){
-    .carrossel-inner {
-        width: 100%;
-        height: 800px !important;
-    }
-    
+@media screen and (min-width: 768px){
     .carousel-item img {
         object-fit: cover;
-        min-height: 800px;
-        max-height: 1000px;
-    }
-
-    .carousel-control-prev, .carousel-control-next{
-        display: block;
-    }
-} */
-
-@media screen and (min-width: 800px){
-    /* .carrossel-inner {
-        height: 80vh !important;
-    } */
-    
-    .carousel-item img {
-        object-fit: cover;
-        /* width: 100%; */
-        height: 80vh;
+        min-height: 80vh; 
+        max-height: 95vh;
     }
 
     .carousel-control-prev, .carousel-control-next{

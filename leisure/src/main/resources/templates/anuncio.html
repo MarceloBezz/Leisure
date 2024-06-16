@@ -5,6 +5,8 @@
 <head th:replace="~{fragments/head :: head}"></head>
 <body data-main="anuncio">
 
+    <div th:replace="~{fragments/loading :: loading}"></div>
+
     <!-- CABEÇALHO -->
     <header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
 
@@ -109,7 +111,7 @@
                     <div class="filtro__filtro-conteudo">
                         <label>
                             <span>Vagas de garagem</span>
-                            <input class="filtro__filtro-conteudo-item" type="text" name="vagasGaragem" placeholder="Quartos">
+                            <input class="filtro__filtro-conteudo-item" type="text" name="vagasGaragem" placeholder="Vagas">
                         </label>
                     </div>
 

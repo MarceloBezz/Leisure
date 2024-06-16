@@ -65,7 +65,7 @@
         background: var(--cor-hover);
         position: absolute;
         top: 80px;
-        right: 0.25em;
+        right: 0.5em;
         border-radius: 10px;
     }
 }

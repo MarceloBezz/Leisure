@@ -6,17 +6,13 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <body>
 
+    <div th:replace="~{fragments/loading :: loading}"></div>
+    
     <!-- CABEÇALHO -->
     <header th:replace="~{fragments/cabecalho :: perfil}"></header>
 
     <!-- ANUNCIAR / ANUNCIO / MEUS-DADOS -->
     <main class="perfil__main">
-        <!-- <section th:replace="
-            ( (${selecao} == anunciar) ? ~{fragments/profile :: anunciar} :
-            ( (${selecao} == anuncio) ? ~{fragments/profile :: anuncio} :
-            ( (${selecao} == meusdados) ? ~{fragments/profile :: meusdados} :
-            ~{fragments/profile :: perfil} )))">
-        </section> -->
         <section th:replace="
             ( (${selecao} == anunciar) ? ~{fragments/profile :: anunciar} :
             ( (${selecao} == anuncio) ? ~{fragments/profile :: anuncio} :

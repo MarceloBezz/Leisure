@@ -16,17 +16,17 @@
 @import url('index-financiamento.css');
 @import url('index-sobre.css');
 @import url('index-time.css');
-@import url('login-cadastro.css');
+@import url('loading.css');
 @import url('loginCadastro.css');
 @import url('modal.css');
 @import url('perfil-carrossel.css');
 @import url('premium.css');
 @import url('profile-anunciar.css');
 @import url('profile-anuncio.css');
+@import url('profile-imoveis.css');
 @import url('profile-meusdados.css');
 @import url('profile-usuarios.css');
 @import url('rodape.css');
-@import url('trabalhe.css');
 
 :root {
 
@@ -62,13 +62,19 @@ input, select, textarea {
 }
 
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
 }
 
 select:focus, input:focus, textarea:focus {
     outline: 0;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px white inset !important;
+	box-shadow: 0 0 0 100px white inset !important;
+	-webkit-text-fill-color: #000 !important;
 }
 
 input::placeholder {
@@ -111,20 +117,7 @@ input::placeholder {
 	}
 }
 
-/* @media screen and (min-width: 768px){
-
-	:root {
-		--font-size: 1em;
-		--titulo-segundo: 1.25em;
-		--titulo-terceiro: 1.15em;
-	}
-
-	main {
-		margin-top: 7em;
-	}
-} */
-
-@media screen and (min-width: 800px){
+@media screen and (min-width: 768px){
 
 	:root {
 		--font-size: 0.9em;
@@ -137,11 +130,11 @@ input::placeholder {
 	}
 }
 
-/* @media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px){
 
 	:root {
 		--font-size: 1em;
 		--titulo-segundo: 1.25em;
 		--titulo-terceiro: 1.15em;
 	}
-} */
+}

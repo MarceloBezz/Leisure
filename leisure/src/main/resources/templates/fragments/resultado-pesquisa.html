@@ -19,7 +19,7 @@
                             </span>
                         </p>
                     </span>
-                    <span class="resultado__filtro__card__conteudo__content__contato">
+                    <span class="resultado__filtro__card__conteudo__content__contato" th:if="${usuario != null}">
                         <a th:href="|https://wa.me/+55${imovel.usuario.telefone}?text=Olá,%20${imovel.usuario.nome}!%20Desejo%20conversar%20sobre%20seu%20anúncio%20de%20${imovel.tipo}%20na%20Leisure%20Imóveis!!!|" target="_blank">
                             <i class="fa-brands fa-whatsapp fa-xl"></i>
                             <span>Falar com vendedor</span>

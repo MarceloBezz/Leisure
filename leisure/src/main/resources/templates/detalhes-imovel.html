@@ -55,12 +55,14 @@
                                 <li><textarea rows="10" th:text="${imovel.descricao}" disabled></textarea></li>
                             </ul>
                         </span>
+                        <div th:if="${usuario != null}">
                         <span class="detalhes__filtro__card__conteudo__content__contato">
                             <a th:href="|https://wa.me/${imovel.usuario.telefone}?text=Olá,%20${imovel.usuario.nome}!%20Desejo%20conversar%20sobre%20seu%20anúncio%20de%20${imovel.tipo}%20na%20Leisure%20Imóveis!!!|" target="_blank">
                                 <i class="fa-brands fa-whatsapp fa-xl"></i>
                                 <span>Falar com vendedor</span>
                             </a>
                         </span>
+                        </div>
                         <div class="financiamento__container__conteudo">
                             <h2 class="titulo__segundo text-center">Simule um financiamento</h2>
                             <span class="financiamento__container__conteudo__links">
@@ -80,9 +82,9 @@
             </div>
         </section>
     </main>
-
+    
     <!-- RODAPE -->
     <footer th:replace="~{fragments/rodape :: rodape}"></footer>
-
+    
 </body>
 </html>

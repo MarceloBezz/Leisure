@@ -73,7 +73,7 @@ public class ImovelController {
 		@GetMapping("/imovel/imagem/{id}")
 		public ResponseEntity<Resource> getImagem(@PathVariable int id, Usuario usuario, Imovel imovel) throws IOException {
 			try{
-            String imageUrl = "https://suntech.eco.br/api/uploads/fotoImovel" + imovel.getId() + ".png";
+            String imageUrl = imovel.getCaminho_Imagem();
             Resource image = fotoService.getImageFromApi(imageUrl);
     
             HttpHeaders headers = new HttpHeaders();

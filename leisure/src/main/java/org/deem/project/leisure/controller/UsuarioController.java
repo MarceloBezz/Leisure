@@ -117,7 +117,6 @@ public String getMethodName(@RequestParam String param) {
 		@GetMapping("/imagem/{id}")
         public ResponseEntity<Resource> downloadImage(Usuario usuario) {
 			usuario = usuarioService.getAuthenticatedUser();
-            // String imageUrl = "https://suntech.eco.br/api/uploads/fotoPerfil" + usuario.getId() + ".png";
 			String imageUrl = usuario.getCaminho_Imagem();
             Resource image = fotoService.getImageFromApi(imageUrl);
     

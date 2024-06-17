@@ -115,7 +115,7 @@ public class LeisureController {
 		public ResponseEntity<Resource> getImagem(@PathVariable int id, Usuario usuario, Imovel imovel) throws IOException {
 			try{
 			imovel = imovelService.findById(id);
-			 String imageUrl = "https://suntech.eco.br/api/uploads/fotoImovel" + id + ".png";
+			 String imageUrl = imovel.getCaminho_Imagem();
             Resource image = fotoService.getImageFromApi(imageUrl);
     
             HttpHeaders headers = new HttpHeaders();

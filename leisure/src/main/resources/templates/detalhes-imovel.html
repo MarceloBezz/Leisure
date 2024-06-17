@@ -14,9 +14,13 @@
         <section class="detalhes">
             <div class="detalhes__filtro__card">
                 <div class="detalhes__filtro__card__conteudo">
+                    <div class="fundo__desfocado">
+                        <img th:src="|http://localhost:8080/leisure/imovel/imagem/${imovel.id}|" alt="Foto do imóvel">
+                    </div>
                     <div class="detalhes__filtro__card__conteudo__imagem" data-anuncio="anuncio">
                         <img th:src="|http://localhost:8080/leisure/imovel/imagem/${imovel.id}|" alt="Foto do imóvel">
                     </div>
+                    
     
                     <div class="detalhes__filtro__card__conteudo__content">
                         <span class="detalhes__filtro__card__conteudo__content__item">
@@ -30,7 +34,6 @@
                                 </span>
                             </p>
                         </span>
-
 
                         <span class="detalhes__filtro__card__conteudo__content__item">
                             <ul class="detalhes__filtro__card__conteudo__content__lista">
@@ -49,7 +52,7 @@
                                 <li>• IPTU R$<span th:text="${imovel.iptu}"></span></li>
                             </ul>
                             <ul class="detalhes__filtro__card__conteudo__content__lista">
-                                <li>• <span th:text="${imovel.descricao}"></span></li>
+                                <li><textarea rows="10" th:text="${imovel.descricao}" disabled></textarea></li>
                             </ul>
                         </span>
                         <span class="detalhes__filtro__card__conteudo__content__contato">

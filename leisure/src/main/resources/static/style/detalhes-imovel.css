@@ -26,9 +26,29 @@
     flex-direction: column;
 }
 
+.fundo__desfocado img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 56vh;
+    filter: blur(8px);
+    z-index: -1;
+}
+
 .detalhes__filtro__card__conteudo__imagem {
-    overflow: hidden;
     border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 95vw;
+    height: 45vh;
+}
+
+.detalhes__filtro__card__conteudo__imagem img {
+    width: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
 }
 
 .detalhes__filtro__card__conteudo__content {
@@ -55,19 +75,29 @@
 }
 
 .detalhes__filtro__card__conteudo__content__lista {
+    width: 95vw;
     font-size: 1.5em;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    column-gap: 1em;
+    flex-wrap: wrap;
+    gap: 1em;
     margin: 1.75em 0;
 }
 
 .detalhes__filtro__card__conteudo__content__lista li {
     display: flex;
-    column-gap: 1em;
+    column-gap: 0.5em;
+    font-size: var(--font-size);
 }
 
+.detalhes__filtro__card__conteudo__content__lista li textarea {
+    width: 95vw;
+}
+
+.detalhes__filtro__card__conteudo__content__lista li textarea {
+    width: 95vw;
+}
+ 
 .detalhes__filtro__card__conteudo__content__lista__detalhes {
     font-weight: 300;
 }
@@ -105,14 +135,19 @@
         flex-direction: column;
     }
 
+    .fundo__desfocado img {
+        height: 630px;
+    }
+
     .detalhes__filtro__card__conteudo__imagem {
         width: 600px;
-        overflow: hidden;
-        border-radius: 10px;
+        height: 500px;
     }
 
     .detalhes__filtro__card__conteudo__imagem img {
         width: 100%;
+        height: 100%;
+        z-index: 1;
     }
 
     .detalhes__filtro__card__conteudo__content__item__valor {
@@ -125,5 +160,9 @@
     .detalhes__pesquisa {
         margin-left: 5em;
         display: block;
+    }
+
+    .detalhes__filtro__card__conteudo__content__lista li textarea {
+        width: 600px;
     }
 }

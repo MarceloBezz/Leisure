@@ -230,7 +230,7 @@
             <h3 class="titulo__terceiro">A melhor foto</h3>
             <div class="anunciar__conteudo__box__animacao">
                 <label for="imovelImagem">
-                    <i class="fa-thin fa-image"></i>
+                    <i class="fa-thin fa-image pointer"></i>
                     <img id="imagemPreview" src="" alt="">
                 </label>
             </div>
@@ -267,7 +267,12 @@
                 <form th:action="@{/usuario/perfil/salvar-foto}" method="post" enctype="multipart/form-data">
                     <li>
                         <label for="input-file">
-                            <img class="anuncio__card__lista__imagem" th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|">
+                            <!-- <div class="anuncio__imagem__fundo">
+                                <img th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|" alt="imagem do imovel">
+                            </div> -->
+                            <div class="anuncio__card__lista__imagem">
+                                <img th:src="|http://localhost:8080/usuario/perfil/imovel/imagem/${imovel.id}|" alt="imagem do imovel">
+                            </div>
                             <input class="anunciar__conteudo__input hidden" type="file" accept="image/jpg, image/jpeg, image/png"
                             id="input-file" name="file">
                         </label>

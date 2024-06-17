@@ -47,6 +47,10 @@
 	--cor-sombra: 1px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
+html {
+	overflow-x: hidden;
+}
+
 body {
 	color: var(--cor-font-principal);
 	font-family: var(--font-family);
@@ -82,8 +86,16 @@ input::placeholder {
     left: 0;
 }
 
+input:disabled,
+select:disabled,
+textarea:disabled {
+	background-color: transparent;
+	opacity: 1;
+	color: inherit;
+}
+
 .titulo__segundo {
-	color: var(--cor-font-principal);
+	color: var(--cor-font-principal); 
     font-weight: 700;
 	font-size: var(--titulo-segundo);
     text-transform: uppercase;

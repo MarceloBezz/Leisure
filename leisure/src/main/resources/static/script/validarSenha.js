@@ -6,14 +6,20 @@ const mensagem = document.querySelector('.cadastro__container__validacaoSenha')
 senha2.addEventListener('blur', () => {
     senha.value != senha2.value ? 
     (mensagem.style.color = 'red', mensagem.innerHTML = '<i class="fa-regular fa-circle-exclamation"></i> As senhas não conferem.') :
-    (mensagem.style.color = 'green', mensagem.innerHTML = '<i class="fa-solid fa-check"></i> Senhas conferem')})
+    (mensagem.style.color = 'green', mensagem.innerHTML = '<i class="fa-solid fa-check"></i> Senhas conferem')
+
+    senha.value == '' || senha2.value == '' ?
+    (mensagem.style.color = 'red', mensagem.innerHTML = '<i class="fa-regular fa-circle-exclamation"></i> As senhas não devem ficar em branco.'):
+    null;
+
+})
 
     function senhaValidation(){
-    if(senha.value == senha2.value){
-        return true
-    }else{
-        return false
-    }
+        if(senha.value == senha2.value){
+            return true
+        }else{
+            return false
+        }
     }
 
 

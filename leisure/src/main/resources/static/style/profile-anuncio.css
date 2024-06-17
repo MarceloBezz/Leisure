@@ -19,8 +19,10 @@
 }
 
 .anuncio__card__lista__imagem {
+
     width: 100%;
     border-radius: 0.5em;
+    background-size: cover;
 }
 
 .anuncio__card__form {
@@ -110,6 +112,16 @@
 
     .anuncio__card__lista__imagem {
         width: 300px;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .anuncio__card__lista__imagem img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
     .anuncio__card__form {

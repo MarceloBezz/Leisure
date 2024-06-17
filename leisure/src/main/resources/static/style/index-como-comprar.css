@@ -34,6 +34,10 @@
     font-size: var(--font-size);
 }
 
+.como-comprar__container__conteudo span a {
+    display: inline-block;
+}
+
 .como-comprar__container a{
     display: flex;
     align-items: center;
@@ -45,6 +49,16 @@
     color: var(--cor-font-principal);
     margin-bottom: 1em;
     font-size: var(--font-size);
+}
+
+.como-comprar__modal span {
+    line-height: 1.5;
+}
+
+.como-comprar__modal h2,
+.como-comprar__modal h1,
+.como-comprar__modal span i {
+    color: var(--cor-font-destaque) !important;
 }
 
 @media (min-width: 768px) {

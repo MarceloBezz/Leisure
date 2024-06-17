@@ -50,13 +50,12 @@ public class ImovelController {
 			try {
 				imovel.setUsuario(usuarioService.getAuthenticatedUser());
 				Imovel _imovel = imovelService.save(imovel);
-				redirect.addAttribute("imovel", _imovel);
+				// redirect.addAttribute("imovel", _imovel);
 				redirect.addFlashAttribute("mensagem", "Imóvel cadastrado com sucesso!");
 				if(!file.isEmpty()) {
-					// byte[] bytes = file.getBytes();
-					// Path caminho = Paths.get(pathImage + String.valueOf(imovel.getId()) + "fotoImovel.png");
-					// Files.write(caminho, bytes);
 					String imagemUrl = fotoService.uploadImageToApiPic(file, (int) imovel.getId(), "fotoImovel");
+					_imovel.setCaminho_Imagem(imagemUrl);
+					imovelService.save(_imovel);
 				}
 			} catch(IOException e){
 				e.printStackTrace();
